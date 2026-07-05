@@ -1,0 +1,56 @@
+{
+  "target": "supplemental_fig2",
+  "comparison_mode": "feature_data_first",
+  "visual_match_role": "secondary_reference",
+  "required_formula_cards": [
+    "EQC003",
+    "EQC005",
+    "EQC006",
+    "EQC007",
+    "EQC009"
+  ],
+  "L": 40,
+  "t2": 1.0,
+  "gamma": 2.4,
+  "n_beta": 150,
+  "inner_transition_abs_t1": 0.6633249580710799,
+  "outer_transition_abs_t1": 1.5620499351813308,
+  "spectrum_line_identity": "eigenvalue_continuation_branch",
+  "spectrum_connect_rule": "connect_within_branch_id_in_t1_order",
+  "mismatch_count_away_from_transitions": 0,
+  "feature_acceptance": {
+    "four_transition_points_present": true,
+    "winding_plateaus_match": true,
+    "center_region_trivial": true,
+    "intermediate_regions_topological": true,
+    "outer_regions_trivial": true
+  },
+  "sample_values": {
+    "-2.0": {
+      "t1": -2.0,
+      "W": 0,
+      "expected_W": 0
+    },
+    "-1.0": {
+      "t1": -1.0,
+      "W": 1,
+      "expected_W": 1
+    },
+    "0.0": {
+      "t1": 0.0,
+      "W": 0,
+      "expected_W": 0
+    },
+    "1.0": {
+      "t1": 1.0,
+      "W": 1,
+      "expected_W": 1
+    },
+    "2.0": {
+      "t1": 2.0,
+      "W": 0,
+      "expected_W": 0
+    }
+  },
+  "status": "physically_consistent"
+}

@@ -1,0 +1,89 @@
+{
+  "target": "T001",
+  "L": 40,
+  "t2": 1.0,
+  "gamma": 1.3333333333333333,
+  "t1_points": 301,
+  "analytic_transition_abs_t1": 1.2018504251546631,
+  "bloch_gap_closing_abs_t1": [
+    0.3333333333333333,
+    1.6666666666666667
+  ],
+  "complex_spectrum_abs_t1_window": 0.6666666666666666,
+  "max_imag_outside_gamma_half_window": 0.0,
+  "probe_spectra": {
+    "center": {
+      "t1": 0.0,
+      "abs0": 1.3355259948040708e-07,
+      "abs1": 1.3355259948040708e-07,
+      "abs2": 0.7267455335638734,
+      "abs3": 0.7267455335638734
+    },
+    "inside_positive": {
+      "t1": 1.0,
+      "abs0": 3.4863188807503105e-06,
+      "abs1": 3.4863188807503105e-06,
+      "abs2": 0.26489068413476524,
+      "abs3": 0.26489068413476524
+    },
+    "inside_negative": {
+      "t1": -1.0,
+      "abs0": 3.4863188807503105e-06,
+      "abs1": 3.4863188807503105e-06,
+      "abs2": 0.26489068413476524,
+      "abs3": 0.26489068413476524
+    },
+    "near_positive_transition": {
+      "t1": 1.2000000000000002,
+      "abs0": 0.037335867305600054,
+      "abs1": 0.037335867305600054,
+      "abs2": 0.11570898039755154,
+      "abs3": 0.11570898039755154
+    },
+    "outside_positive": {
+      "t1": 1.4000000000000004,
+      "abs0": 0.2436247598406056,
+      "abs1": 0.2436247598406056,
+      "abs2": 0.27862038089764984,
+      "abs3": 0.27862038089764984
+    },
+    "outside_negative": {
+      "t1": -1.4,
+      "abs0": 0.24362475984060472,
+      "abs1": 0.24362475984060472,
+      "abs2": 0.27862038089764973,
+      "abs3": 0.27862038089764973
+    }
+  },
+  "tolerances": {
+    "zero_mode_abs_E": 0.001,
+    "outside_min_abs_E": 0.05,
+    "chiral_pair_residual": 1e-08,
+    "imaginary_tail_outside_gamma_half_window": 1e-08
+  },
+  "eigenvalue_method": "chiral_block",
+  "spectrum_line_identity": "eigenvalue_continuation_branch",
+  "spectrum_connect_rule": "connect_within_branch_id_in_t1_order",
+  "abs_panel_render": "outputs/figures/fig2_abs_panel.png",
+  "abs_panel_render_source": "independent_open_chain_numerics",
+  "real_panel_render": "outputs/figures/fig2_real_panel.png",
+  "real_panel_render_source": "independent_open_chain_numerics",
+  "imag_panel_render": "outputs/figures/fig2_imag_panel.png",
+  "imag_panel_render_source": "independent_open_chain_numerics",
+  "max_chiral_pair_residual": 0.0,
+  "max_direct_eig_chiral_pair_residual": 0.2047966868640821,
+  "pass_flags": {
+    "chiral_pairing": true,
+    "no_spurious_imaginary_tail": true,
+    "inside_zero_modes": true,
+    "outside_zero_modes_absent": true,
+    "finite_size_gap_near_transition": true
+  },
+  "status": "physically_consistent",
+  "notes": [
+    "No digitized paper curve is used yet.",
+    "The transition value is taken from the paper's analytic expression.",
+    "Finite L=40 data has a nonzero gap near the thermodynamic transition, so transition fitting is not used as a hard check.",
+    "Direct dense eig is numerically unstable near strongly non-normal points; the run uses the chiral block structure."
+  ]
+}

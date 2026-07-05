@@ -1,0 +1,40 @@
+{
+  "target": "supplemental_fig1",
+  "comparison_mode": "feature_data_first",
+  "visual_match_role": "secondary_reference",
+  "required_formula_cards": [
+    "EQC006",
+    "EQC007",
+    "EQC008"
+  ],
+  "L": 120,
+  "t2": 1.0,
+  "gamma": 1.3333333333333333,
+  "t1_values": [
+    0.2,
+    0.6,
+    1.0
+  ],
+  "checks_by_t1": {
+    "0.2": {
+      "finite_bulk_count": 238,
+      "median_nearest_theory_distance": 0.0017987536528532681,
+      "p95_nearest_theory_distance": 0.005789270893826565
+    },
+    "0.6": {
+      "finite_bulk_count": 238,
+      "median_nearest_theory_distance": 0.0006138298445601935,
+      "p95_nearest_theory_distance": 0.001686642441557702
+    },
+    "1.0": {
+      "finite_bulk_count": 238,
+      "median_nearest_theory_distance": 0.0007990783576090621,
+      "p95_nearest_theory_distance": 0.0029715393997381207
+    }
+  },
+  "feature_acceptance": {
+    "finite_spectra_close_to_theory": true,
+    "three_t1_cases_present": true
+  },
+  "status": "physically_consistent"
+}

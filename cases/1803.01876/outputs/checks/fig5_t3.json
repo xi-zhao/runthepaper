@@ -1,0 +1,87 @@
+{
+  "target": "T004",
+  "comparison_mode": "feature_data_first",
+  "visual_match_role": "secondary_reference",
+  "required_formula_cards": [
+    "EQC001",
+    "EQC009",
+    "EQC010"
+  ],
+  "L": 100,
+  "t2": 1.0,
+  "gamma": 1.3333333333333333,
+  "t3": 0.2,
+  "n_beta_caption": 200,
+  "transition_points_from_zero_energy_beta_roots": {
+    "negative": -1.562,
+    "positive": 1.5620000000000003
+  },
+  "source_caption_transition_abs_t1": 1.56,
+  "mismatch_count_away_from_transition": 0,
+  "cbeta_t1": 1.1,
+  "cbeta_point_count": 384,
+  "cbeta_radius_min": 0.49141975903696633,
+  "cbeta_radius_max": 0.7757707381394987,
+  "cbeta_radius_range": 0.2843509791025324,
+  "cbeta_max_middle_pair_relative_error": 0.025336977140972543,
+  "spectrum_line_identity": "open_chain_abs_energy_level",
+  "spectrum_connect_rule": "connect_within_branch_id_in_t1_order",
+  "spectrum_render_source": "independent_open_chain_numerics",
+  "spectrum_reference_source": "official paper figure, not redistributed in this public repository",
+  "left_panel_render": "outputs/figures/fig5_t3_left_panel.png",
+  "spectrum_branch_count": 100,
+  "spectrum_t1_points": 301,
+  "cbeta_line_identity": "middle_beta_root_pair_locus",
+  "cbeta_connect_rule": "connect_within_root_branch_in_angle_order",
+  "feature_acceptance": {
+    "transition_near_caption_value": true,
+    "winding_plateau_matches_transition": true,
+    "sample_inside_negative_is_one": true,
+    "sample_inside_positive_is_one": true,
+    "sample_outside_negative_is_zero": true,
+    "sample_outside_positive_is_zero": true,
+    "cbeta_is_not_unit_circle": true,
+    "cbeta_lies_inside_unit_circle": true,
+    "cbeta_middle_roots_are_paired": true
+  },
+  "sample_values": {
+    "-2.0": {
+      "t1": -2.0,
+      "W": 0,
+      "root_labels": "abab",
+      "middle_modulus_gap": 1.7281624077930053
+    },
+    "-1.5": {
+      "t1": -1.5,
+      "W": 1,
+      "root_labels": "aabb",
+      "middle_modulus_gap": 0.16601730312541108
+    },
+    "0.0": {
+      "t1": 0.0,
+      "W": 1,
+      "root_labels": "aabb",
+      "middle_modulus_gap": 1.7888543819998317
+    },
+    "1.5": {
+      "t1": 1.5,
+      "W": 1,
+      "root_labels": "aabb",
+      "middle_modulus_gap": 0.035866365961480684
+    },
+    "2.0": {
+      "t1": 2.0,
+      "W": 0,
+      "root_labels": "abab",
+      "middle_modulus_gap": 0.7748944596119683
+    }
+  },
+  "notes": [
+    "The nonzero-t3 topological interval is checked from the zero-energy quartic beta roots.",
+    "The criterion is that the two smallest beta roots at E=0 come from the same off-diagonal factor; the change occurs when the middle two moduli meet.",
+    "C_beta is reconstructed from open-chain energies by retaining the middle beta-root pair with nearly equal moduli.",
+    "The visible spectrum is independently generated from open-chain |E| levels; rendered source EPS is only a visual reference comparator.",
+    "For this |E| panel, branch_id labels the ordered open-chain absolute-energy level, avoiding artificial sign or phase swaps of complex E near degeneracies."
+  ],
+  "status": "physically_consistent"
+}

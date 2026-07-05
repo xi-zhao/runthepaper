@@ -1,0 +1,139 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "EQC001_matrix_form",
+      "passed": true,
+      "max_symbolic_residual": "0"
+    },
+    {
+      "name": "EQC001_chiral_symmetry",
+      "passed": true,
+      "max_symbolic_residual": "0"
+    },
+    {
+      "name": "EQC002_eigenvalue_square",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "EQC003_open_chain_matrix_entries",
+      "passed": true,
+      "matrix_size": 6,
+      "basis_order": "(A1, B1, A2, B2, ...)",
+      "checked_entries": [
+        "H[A_n,B_n]=t1+gamma/2",
+        "H[B_n,A_n]=t1-gamma/2",
+        "H[A_n,B_{n-1}]=t2",
+        "H[B_n,A_{n+1}]=t2"
+      ],
+      "max_abs_residual": 0.0
+    },
+    {
+      "name": "EQC006_beta_quadratic",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "EQC006_beta_root_sum",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "EQC006_beta_root_product",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "EQC008_open_boundary_spectrum_formula",
+      "passed": true,
+      "checked_identity": "non_bloch_ab(beta=r exp(ik)) product equals paper Eq. spectra",
+      "sampled_t1_sectors": [
+        {
+          "t1": -1.4,
+          "radius": 1.6787441193290351,
+          "sign_t1_plus_gamma_over_2": -1,
+          "sign_t1_minus_gamma_over_2": -1,
+          "max_abs_residual": 8.93762658382636e-16
+        },
+        {
+          "t1": -0.4,
+          "radius": 2.0,
+          "sign_t1_plus_gamma_over_2": 1,
+          "sign_t1_minus_gamma_over_2": -1,
+          "max_abs_residual": 3.1401849173675503e-16
+        },
+        {
+          "t1": 0.4,
+          "radius": 0.49999999999999994,
+          "sign_t1_plus_gamma_over_2": 1,
+          "sign_t1_minus_gamma_over_2": -1,
+          "max_abs_residual": 3.1401849173675503e-16
+        },
+        {
+          "t1": 1.4,
+          "radius": 0.5956833971812706,
+          "sign_t1_plus_gamma_over_2": 1,
+          "sign_t1_minus_gamma_over_2": 1,
+          "max_abs_residual": 5.474926339192801e-16
+        }
+      ],
+      "k_samples": 17,
+      "max_abs_residual": 8.93762658382636e-16
+    },
+    {
+      "name": "EQC005_transition_roots",
+      "passed": true,
+      "lhs": [
+        "-sqrt(gamma**2 + 4*t2**2)/2",
+        "sqrt(gamma**2 + 4*t2**2)/2"
+      ],
+      "rhs": [
+        "-sqrt(gamma**2/4 + t2**2)",
+        "sqrt(gamma**2/4 + t2**2)"
+      ],
+      "residuals": [
+        "0",
+        "0"
+      ]
+    },
+    {
+      "name": "EQC009_Q_flattening",
+      "passed": true,
+      "max_symbolic_residual": "0"
+    },
+    {
+      "name": "EQC009_q_inverse",
+      "passed": true,
+      "residual": "0"
+    },
+    {
+      "name": "EQC009_Q_squared",
+      "passed": true,
+      "max_symbolic_residual": "0"
+    },
+    {
+      "name": "EQC009_winding_sanity",
+      "passed": true,
+      "observed": {
+        "-1.4": 0,
+        "-1.0": 1,
+        "0.0": 1,
+        "1.0": 1,
+        "1.4": 0
+      },
+      "expected": {
+        "-1.4": 0,
+        "-1.0": 1,
+        "0.0": 1,
+        "1.0": 1,
+        "1.4": 0
+      }
+    },
+    {
+      "name": "EQC010_t3_quartic",
+      "passed": true,
+      "residual": "0"
+    }
+  ]
+}

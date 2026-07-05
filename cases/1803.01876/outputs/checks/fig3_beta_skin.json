@@ -1,0 +1,57 @@
+{
+  "target": "T002",
+  "comparison_mode": "feature_data_first",
+  "visual_match_role": "secondary_reference",
+  "required_formula_cards": [
+    "EQC003",
+    "EQC006",
+    "EQC007"
+  ],
+  "L": 40,
+  "t1_main": 1.0,
+  "t1_transition": 1.2018504251546631,
+  "t2": 1.0,
+  "gamma": 1.3333333333333333,
+  "cbeta_radius": 0.447213595499958,
+  "absbeta_panel_render": "outputs/figures/fig3_absbeta_panel.png",
+  "cbeta_panel_render": "outputs/figures/fig3_cbeta_panel.png",
+  "profile_panel_render": "outputs/figures/fig3_profile_panel.png",
+  "expected_radius_t1_1": 0.4472135954999579,
+  "radius_error": 5.551115123125783e-17,
+  "beta_equal_modulus_error": 1.1102230246251565e-16,
+  "transition_low_energy_radius_error": 0.0,
+  "profile_checks": {
+    "zero_profile_left_localized": true,
+    "zero_profile_cell_2_ratio": 0.33333333333333337,
+    "expected_zero_profile_cell_2_ratio": 0.33333333333333337,
+    "zero_profile_sites_total": 80,
+    "zero_profile_site_even_sublattice_is_zero": true,
+    "bulk_left_right_weight_ratios": [
+      1119356387451460.0,
+      1110450917729683.0,
+      1119123026049935.5,
+      1192892856806343.0,
+      1448047685774764.2,
+      1913711975763853.5,
+      2283604090101770.5,
+      2514192057641211.0
+    ],
+    "bulk_profiles_left_localized": true
+  },
+  "feature_acceptance": {
+    "cbeta_radius_matches": true,
+    "bulk_beta_equal_modulus": true,
+    "transition_beta_touches_low_energy": true,
+    "zero_mode_left_localized": true,
+    "bulk_profiles_left_localized": true
+  },
+  "status": "physically_consistent",
+  "notes": [
+    "Formula gate is checked before running.",
+    "Panel (a) uses beta roots from Eq. (bulkeigen).",
+    "Panel (b) uses the verified C_beta radius.",
+    "Panel (c) uses the analytic zero-mode profile plus deterministic bulk right eigenvectors.",
+    "Published EPS panels are rendered for visual reference but not digitized.",
+    "Acceptance is based on feature-level numeric checks, not pixel similarity."
+  ]
+}

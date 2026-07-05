@@ -1,0 +1,72 @@
+{
+  "target": "T002",
+  "comparison_mode": "feature_data_first",
+  "visual_match_role": "secondary_reference",
+  "required_formula_cards": [
+    "EQC003",
+    "EQC005"
+  ],
+  "L": 40,
+  "t2": 1.0,
+  "gamma": 1.3333333333333333,
+  "left_bond_delta": -0.8,
+  "analytic_transition_abs_t1": 1.2018504251546631,
+  "physical_line_identity": "eigenvalue_continuation_branch",
+  "physical_connect_rule": "connect_within_branch_id_in_t1_order",
+  "spectrum_line_identity": "open_chain_abs_energy_level",
+  "spectrum_connect_rule": "connect_abs_energy_rank_in_t1_order",
+  "render_line_identity": "open_chain_abs_energy_level",
+  "render_connect_rule": "connect_abs_energy_rank_in_t1_order",
+  "zero_mode_render_rule": "finite_chain_lowest_abs_energy_inside_transition",
+  "low_energy_zoom_figure": "outputs/figures/fig2_boundary_perturbation_low_energy_zoom.png",
+  "probe_spectra": {
+    "center": {
+      "t1": 0.0,
+      "abs0": 0.0,
+      "abs1": 0.0,
+      "abs2": 0.7661528318585776,
+      "abs3": 0.7661528318585776
+    },
+    "inside_positive": {
+      "t1": 1.0,
+      "abs0": 1.4873289222981286e-05,
+      "abs1": 1.4873289222981286e-05,
+      "abs2": 0.12981469915856625,
+      "abs3": 0.12981469915856625
+    },
+    "inside_negative": {
+      "t1": -1.0,
+      "abs0": 4.344819934289165e-06,
+      "abs1": 4.344819934289165e-06,
+      "abs2": 0.2653065362320963,
+      "abs3": 0.2653065362320963
+    },
+    "outside_positive": {
+      "t1": 1.4000000000000004,
+      "abs0": 0.1779513042874854,
+      "abs1": 0.1779513042874854,
+      "abs2": 0.24629293431083496,
+      "abs3": 0.24629293431083496
+    },
+    "outside_negative": {
+      "t1": -1.4,
+      "abs0": 0.24401541483761555,
+      "abs1": 0.24401541483761555,
+      "abs2": 0.2800399386496737,
+      "abs3": 0.2800399386496737
+    }
+  },
+  "feature_acceptance": {
+    "zero_modes_robust_inside": true,
+    "outside_zero_modes_absent": true,
+    "boundary_perturbation_has_extra_nonzero_near_zero": true
+  },
+  "status": "physically_consistent",
+  "notes": [
+    "Formula gate is checked before running.",
+    "Acceptance checks that the robust zero modes survive the left-edge perturbation.",
+    "The extra nonzero modes are treated as a feature, not as a failure.",
+    "The visible |E| panel is rendered as ordered absolute-energy levels to match the source figure's line convention.",
+    "Physical branch-tracked rows were also computed for diagnostics: 24080 samples."
+  ]
+}

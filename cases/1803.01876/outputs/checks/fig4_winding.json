@@ -1,0 +1,66 @@
+{
+  "target": "T003",
+  "comparison_mode": "feature_data_first",
+  "visual_match_role": "secondary_reference",
+  "required_formula_cards": [
+    "EQC006",
+    "EQC007",
+    "EQC009"
+  ],
+  "t2": 1.0,
+  "gamma": 1.3333333333333333,
+  "n_beta": 150,
+  "t1_points": 301,
+  "analytic_transition_abs_t1": 1.2018504251546631,
+  "mismatch_count_away_from_transition": 0,
+  "feature_acceptance": {
+    "winding_plateau_values_match": true,
+    "transition_location_matches": true,
+    "inside_samples_are_one": true,
+    "outside_samples_are_zero": true
+  },
+  "sample_values": {
+    "-1.4": {
+      "t1": -1.4,
+      "W": 0,
+      "expected_W": 0,
+      "wind_a": 0.0,
+      "wind_b": 0.0
+    },
+    "-1.0": {
+      "t1": -1.0,
+      "W": 1,
+      "expected_W": 1,
+      "wind_a": 1.0,
+      "wind_b": -1.0
+    },
+    "0.0": {
+      "t1": 0.0,
+      "W": 1,
+      "expected_W": 1,
+      "wind_a": 1.0,
+      "wind_b": -0.9999999999999999
+    },
+    "1.0": {
+      "t1": 1.0,
+      "W": 1,
+      "expected_W": 1,
+      "wind_a": 1.0,
+      "wind_b": -1.0
+    },
+    "1.4": {
+      "t1": 1.4000000000000004,
+      "W": 0,
+      "expected_W": 0,
+      "wind_a": 0.0,
+      "wind_b": 0.0
+    }
+  },
+  "status": "physically_consistent",
+  "notes": [
+    "Formula gate is checked before running.",
+    "Comparison uses the analytic transition from the verified derivation.",
+    "Published EPS curve is rendered for visual reference but not digitized yet.",
+    "Acceptance is based on feature-level numeric checks, not pixel similarity."
+  ]
+}
