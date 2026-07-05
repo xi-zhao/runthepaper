@@ -4,11 +4,11 @@ RunThePaper is a public case library for reproduced papers. The roadmap is
 organized around one question: what helps a human reader trust, run, and improve
 a reproduction case?
 
-## Phase 1: Make The First Case Trustworthy
+## Phase 1: Make The Initial Cases Trustworthy
 
 Current focus:
 
-- keep `1803.01876` easy to read from the case README;
+- keep `1803.01876` and `1804.04672` easy to read from their case READMEs;
 - keep the reproduction note, code, generated data, generated figures, and
   checks aligned;
 - make the public boundary explicit: no original paper PDFs, arXiv source

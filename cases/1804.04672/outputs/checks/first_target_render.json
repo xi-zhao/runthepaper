@@ -1,0 +1,17 @@
+{
+  "status": "passed_with_warnings",
+  "target_id": "T001",
+  "figure_path": "outputs/figures/first_target.png",
+  "render_mode": "non_bloch_edge_core_markers",
+  "line_segments_drawn": 0,
+  "spectrum_points": 14400,
+  "edge_localization_candidate_points": 13026,
+  "edge_branch_core_points": 102,
+  "unconfirmed_edge_localization_candidate_points": 12924,
+  "edge_branch_rule": "analytic chiral edge trace E=+-sin(kx)+-i gamma with plateau validation",
+  "edge_trace_residual_tolerance": 0.005,
+  "plateau_imag_tolerance": 0.006,
+  "source_reference": "official paper figure, not redistributed in this public repository",
+  "source_reference_mode": "external_visual_reference_only",
+  "warning": "The red points follow the analytic chiral edge trace. Source-derived point-set and pixel-layout validation are internal checks and are not required for this public run."
+}

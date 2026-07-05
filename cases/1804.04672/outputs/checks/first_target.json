@@ -1,0 +1,58 @@
+{
+  "status": "passed",
+  "target_id": "T001",
+  "row_count": 14400,
+  "parameters": {
+    "t_x": 1.0,
+    "t_y": 1.0,
+    "v_x": 1.0,
+    "v_y": 1.0,
+    "gamma_x": 0.2,
+    "gamma_y": 0.2,
+    "gamma_z": 0.0,
+    "m": 1.717,
+    "L_y": 40,
+    "target_id": "T001",
+    "kx_grid_points": 180
+  },
+  "data_path": "outputs/data/first_target.csv",
+  "checks": [
+    {
+      "name": "formula_sanity",
+      "status": "passed",
+      "reason": "Hermitian limit gives H=H^dagger within tolerance.",
+      "residual": 0.0,
+      "tolerance": 1e-12
+    },
+    {
+      "name": "row_count",
+      "status": "passed",
+      "reason": "Expected 14400 rows from 180 kx values and 2*Ly bands.",
+      "expected": 14400,
+      "actual": 14400
+    },
+    {
+      "name": "edge_weight_bounds",
+      "status": "passed",
+      "reason": "All edge localization weights are normalized probabilities."
+    }
+  ],
+  "generated_data_provenance": "independent_numerics",
+  "edge_classification": {
+    "rule": "right-eigenvector boundary weight only; diagnostic, not final red branch",
+    "edge_layers": 4,
+    "threshold": 0.35,
+    "edge_labeled_rows": 13026,
+    "series_counts": {
+      "bulk_spectrum_all_kx": 1374,
+      "edge_localization_candidate": 13026
+    },
+    "interpretation_warning": "Boundary localization is only an edge-localization candidate; it is not yet a confirmed chiral edge branch because skin-effect localized states can also have large boundary weight."
+  },
+  "runtime_seconds": 1.4372752499766648,
+  "notes": [
+    "This runner uses paper-derived equations only; source EPS is not used as generated data.",
+    "Branch keys identify sorted eigenvalues at each kx and do not imply physical line continuity.",
+    "The edge_localization_candidate series is diagnostic only; the rendered red branch is selected by the analytic chiral edge trace, not by boundary weight alone."
+  ]
+}

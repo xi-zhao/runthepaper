@@ -34,13 +34,15 @@ readers back to the official paper source.
 
 | Paper ID | Topic | Status |
 | --- | --- | --- |
-| `1803.01876` | Non-Hermitian SSH model and non-Bloch bulk-boundary correspondence | First public reproduction case |
+| `1803.01876` | Non-Hermitian SSH model and non-Bloch bulk-boundary correspondence | Feature-level reproduction |
+| `1804.04672` | Non-Hermitian Chern bands and non-Bloch Chern physics | Feature-level reproduction |
 
 Start here:
 
 - [Case README](cases/1803.01876/README.md)
 - [Reproduction Note](cases/1803.01876/note/reproduction-note.md)
 - [Code README](cases/1803.01876/code/README.md)
+- [Second Case README](cases/1804.04672/README.md)
 - [Roadmap](ROADMAP.md)
 
 ## Repository Structure

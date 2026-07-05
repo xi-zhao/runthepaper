@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "target_id": "T005",
+  "physical_object": "supplemental finite-size gap-square extrapolation",
+  "rows": 12,
+  "fit_rows": 3,
+  "data_path": "outputs/data/figs2_gap_scaling.csv",
+  "fit_path": "outputs/data/figs2_gap_scaling_fit.csv",
+  "figure_path": "outputs/figures/figs2_gap_scaling.png",
+  "source_reference": "official paper figure, not redistributed in this public repository",
+  "grid": {
+    "radii": [
+      20,
+      24,
+      28,
+      32
+    ],
+    "eigen_count": 8
+  },
+  "fit_summary": {
+    "fig_s2a": {
+      "m": 2.2,
+      "intercept": 0.028461438937924063,
+      "slope": 4.7256968288798245
+    },
+    "fig_s2b": {
+      "m": 2.08,
+      "intercept": 0.002516306784894053,
+      "slope": 2.923146222261326
+    },
+    "fig_s2c": {
+      "m": 2.04,
+      "intercept": 2.894406017709631e-05,
+      "slope": 2.0891332384687433
+    }
+  }
+}

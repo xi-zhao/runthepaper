@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "target_id": "T002",
+  "physical_object": "cylinder phase diagram from non-Bloch band-touching boundaries",
+  "rows": 3485,
+  "data_path": "outputs/data/fig3a_cylinder_phase.csv",
+  "figure_path": "outputs/figures/fig3a_cylinder_phase.png",
+  "source_reference": "official paper figure, not redistributed in this public repository",
+  "star_point": {
+    "m": 1.717,
+    "gamma": 0.2
+  },
+  "star_region": "chern_one",
+  "boundary_formula": "m=1+sqrt(1±2γ+2γ^2)",
+  "classification_criterion": "gapless inside the two non-Bloch cylinder band-touching boundaries; chern_one to the left and chern_zero to the right",
+  "grid": {
+    "gamma_points": 41,
+    "m_points": 81,
+    "kx_points": 41,
+    "ky_points": 41
+  }
+}

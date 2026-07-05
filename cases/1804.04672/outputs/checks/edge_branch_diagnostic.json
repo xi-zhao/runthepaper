@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "paper_id": "1804.04672",
+  "target_id": "T001",
+  "status": "diagnosed",
+  "physical_object": "cylinder complex spectrum edge branch classifier",
+  "row_count": 14400,
+  "old_edge_localization_candidate_count": 13026,
+  "high_confidence_edge_core_count": 102,
+  "edge_trace_residual_tolerance": 0.005,
+  "plateau_imag_tolerance": 0.006,
+  "edge_weight_diagnostic_threshold": 0.35,
+  "bulk_ky_points": 720,
+  "bulk_distance_quantiles": {
+    "min": 2.191576428795558e-06,
+    "p50": 0.0009554917969738469,
+    "p90": 0.0026622638749908794,
+    "p95": 0.003114833451606908,
+    "p99": 0.0037753081045235424,
+    "max": 0.3114587884519428
+  },
+  "diagnosis": {
+    "primary_suspect": "edge_state_classification",
+    "interpretation": "Boundary weight alone over-labels skin-localized bulk states. The red edge branch is better captured by tracing the analytic chiral edge energies E_+=sin(kx)+i gamma and E_-=-sin(kx)-i gamma; right-eigenvector edge weight and non-Bloch bulk distance are diagnostics.",
+    "next_step": "Promote EPS/PDF point-set extraction into a quantitative validation gate for red branch cardinality, marker placement, and pixel layout."
+  },
+  "outputs": {
+    "check": "outputs/checks/edge_branch_diagnostic.json",
+    "figure": "outputs/figures/edge_branch_diagnostic.png"
+  }
+}

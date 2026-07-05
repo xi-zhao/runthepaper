@@ -1,0 +1,4 @@
+target_id,parameter_set,m,intercept,slope,source
+T005,fig_s2a,2.2,0.028461438937924063,4.7256968288798245,linear_fit_to_independent_numerics
+T005,fig_s2b,2.08,0.002516306784894053,2.923146222261326,linear_fit_to_independent_numerics
+T005,fig_s2c,2.04,2.894406017709631e-05,2.0891332384687433,linear_fit_to_independent_numerics
