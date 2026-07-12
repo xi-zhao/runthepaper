@@ -1,0 +1,88 @@
+{
+  "status": "passed",
+  "source": "remote_a100_campaign",
+  "paper_wc": 16.5,
+  "sizes": {
+    "24": {
+      "w_grid": [
+        8.0,
+        10.0,
+        12.0,
+        14.0,
+        15.0,
+        16.0,
+        16.5,
+        17.0,
+        18.0,
+        20.0,
+        24.0,
+        28.0,
+        32.0,
+        40.0
+      ],
+      "goe_end_r": 0.5309806650413166,
+      "poisson_end_r": 0.3886684688051082,
+      "gap_ratio_midpoint_crossing_W": 16.58762702064016,
+      "chi_peak_W": 14.0,
+      "gates": {
+        "goe_end_matches": true,
+        "poisson_end_matches": true,
+        "crossing_near_paper_wc": true,
+        "chi_peak_below_wc": true
+      }
+    },
+    "28": {
+      "w_grid": [
+        8.0,
+        10.0,
+        12.0,
+        14.0,
+        15.0,
+        16.0,
+        16.5,
+        17.0,
+        18.0,
+        20.0,
+        24.0,
+        28.0,
+        32.0,
+        40.0
+      ],
+      "goe_end_r": 0.5325627711917559,
+      "poisson_end_r": 0.3893791349915829,
+      "gap_ratio_midpoint_crossing_W": 16.59892712082144,
+      "chi_peak_W": 15.0,
+      "gates": {
+        "goe_end_matches": true,
+        "poisson_end_matches": true,
+        "crossing_near_paper_wc": true,
+        "chi_peak_below_wc": true
+      }
+    },
+    "31": {
+      "w_grid": [
+        12.0,
+        14.0,
+        15.0,
+        16.0,
+        16.5,
+        17.0,
+        18.0,
+        20.0,
+        24.0
+      ],
+      "goe_end_r": 0.5304451233757506,
+      "poisson_end_r": 0.3952638509486255,
+      "gap_ratio_midpoint_crossing_W": 16.563992630875727,
+      "chi_peak_W": 15.0,
+      "gates": {
+        "goe_end_matches": true,
+        "poisson_end_matches": true,
+        "crossing_near_paper_wc": true,
+        "chi_peak_below_wc": true
+      }
+    }
+  },
+  "rows_total": 605,
+  "summary_csv": "outputs/data/remote_campaign_summary.csv"
+}

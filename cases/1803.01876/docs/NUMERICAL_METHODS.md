@@ -100,14 +100,19 @@ figure were redrawn with different colors, marker spacing, or layout.
 
 - Verify that `EQC001`, `EQC009`, and `EQC010` have open formula gates.
 - Use the nonzero-`t3` quartic beta equation from the supplemental material.
+- For the visible open-chain spectrum, use the paper's `L=100` and evaluate the
+  chiral-block squared spectrum at 35 decimal digits. Ordinary double
+  precision is rejected because the non-normal matrix produces visible
+  pseudospectral drift near the transition.
 - For the lower-panel invariant, evaluate the four `E=0` beta roots and sort
   them by modulus. The topological interval is the region where the two smallest
   roots come from the same off-diagonal factor; the transition occurs when the
   middle two moduli meet.
 - For `C_beta` at `t1=1.1`, solve open-chain energies, compute the four beta
   roots for each energy, and retain the middle pair when their moduli agree.
-  The plotted curve preserves `root_branch` identity and connects each branch in
-  `angle_beta` order; it does not average different middle roots into one line.
+  Both middle roots are samples of one closed GBZ locus, so the renderer joins
+  the combined point set in `angle_beta` order. It does not close each root
+  label separately, which would create non-physical chords.
 
 Checks:
 

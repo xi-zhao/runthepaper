@@ -90,10 +90,10 @@ the next paper.
 
 | Candidate | Why it is reusable | Suggested destination |
 | --- | --- | --- |
-| Edge-branch classifier contract | Many topological spectra need to separate physical edge modes from bulk/skin modes before styling | `agent/harness/rr_harness/target_contract.py` or repair planner extension |
-| EPS point-object extraction | Some arXiv source figures preserve colored marker objects even when original plotting data is unavailable | `agent/harness/rr_harness/source_reference.py` or a case-to-generic extraction helper |
+| Edge-branch classifier contract | Many topological spectra need to separate physical edge modes from bulk/skin modes before styling | shared target contract or repair planner extension |
+| EPS point-object extraction | Some arXiv source figures preserve colored marker objects even when original plotting data is unavailable | internal source-reference helper |
 | Analytic phase-boundary checker | Phase diagrams often have source images with low-resolution local distortions but formula-derived boundaries | case-local physics module first; promote generic phase-boundary contract if repeated |
-| Case learning digest | Every multi-target paper should leave machine-readable learning output for the next paper | `agent/harness/rr_harness/case_learning_digest.py` |
+| Case learning digest | Every multi-target paper should leave machine-readable learning output for the next paper | shared learning-digest helper |
 
 ## Efficient Reproduction Implementations
 
@@ -103,10 +103,10 @@ the next paper.
 ## Harness Backlog Items
 
 Abstract cross-paper lessons should be copied to
-`agent/harness/REPRODUCTION_EXPERIENCE.md`.
+the internal reproduction experience log.
 
 Concrete tool, checker, template, field, or workflow changes should be copied to
-`agent/harness/HARNESS_BACKLOG.md`.
+the internal workflow backlog.
 
 | Priority | Improvement | Evidence from this case | Status |
 | --- | --- | --- | --- |

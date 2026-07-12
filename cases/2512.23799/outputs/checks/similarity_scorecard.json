@@ -1,0 +1,413 @@
+{
+  "schema_version": 3,
+  "score_model": "rra_similarity_v3_figure_evaluation",
+  "paper_id": "2512.23799",
+  "status": "passed",
+  "checks_status": "passed",
+  "summary": "Formula and method checks are useful, but the benchmark targets use a proxy model rather than the paper's exact Steane circuit and Stim/Cirq benchmark parameters.",
+  "targets": [
+    {
+      "target_id": "T001",
+      "label": "Infidelity benchmark",
+      "weight": 1.3,
+      "components": {
+        "feature_match": {
+          "score": 43.0,
+          "max_score": 50.0,
+          "reason": "The exact protocol reproduces the infidelity curve's quadratic rise and saturation, matching the reference at both extremes (p<=2.1e-3, p=5e-2)."
+        },
+        "numeric_closeness": {
+          "score": 19.0,
+          "max_score": 35.0,
+          "reason": "Mid-range (3e-3..2e-2) sits at 0.42-0.68x the digitized reference (quadratic coefficient ~140p^2 vs ~300p^2); declared as known residual in the check JSON, with the acceptance curve pinning first-order structure."
+        },
+        "paper_scope_coverage": {
+          "score": 13.0,
+          "max_score": 15.0,
+          "reason": "Full paper p grid with error bars; ideal-decoder logical fidelity definition."
+        }
+      },
+      "evaluation": {
+        "critical": true,
+        "paper_level_role": "main_claim",
+        "artifact_pass": true,
+        "data_backed": true,
+        "manual_interventions": 0,
+        "failure_type": "numeric_mismatch",
+        "parameter_match": "paper_subset",
+        "formula_dependencies": [
+          "MSC003",
+          "MSC005"
+        ],
+        "formula_gate": "reconstructed",
+        "reference_comparison": "digitized_curve",
+        "generated_data_provenance": "independent_numerics"
+      },
+      "evidence": [
+        "outputs/data/steane_exact_benchmark.csv",
+        "outputs/checks/steane_exact_benchmark.json",
+        "internal digitized acceptance validation (not redistributed)",
+        "internal digitized infidelity validation (not redistributed)",
+        "outputs/checks/steane_benchmark_digitization.json",
+        "outputs/figures/steane_exact_infidelity.png"
+      ],
+      "remaining_gap": "known_residual: mid-range second-order damaging-pair count is ~half the source curve's under the reconstructed schedule; author code is not public. Hypotheses and next probes recorded in STEANE_EXACT_WIP.md.",
+      "critical": true,
+      "component_total": 75.0,
+      "score": 75.0,
+      "similarity_level": "numerical_feature_reproduction",
+      "parameter_score_cap": 89.0,
+      "formula_score_cap": 80.0,
+      "reference_score_cap": 95.0,
+      "physics_status": "passed",
+      "generated_data_provenance_score_cap": 100.0,
+      "evidence_tier": "physics_reproduction",
+      "physics_score_cap": 100.0,
+      "physics_assertions": [
+        {
+          "assertion_id": "protocol_structure_verified",
+          "tier": "analytic",
+          "essential": true,
+          "status": "passed",
+          "evidence": "tests/test_2512_steane_exact.py",
+          "claim": "The transcribed circuit's encoded state is a +1 eigenstate of logical H and of all six measured stabilizers, whose supports form a perfect Hamming check; the ideal decoder corrects every single-qubit Pauli exactly."
+        },
+        {
+          "assertion_id": "infidelity_matches_at_both_extremes",
+          "tier": "numeric",
+          "essential": true,
+          "status": "passed",
+          "evidence": "outputs/checks/steane_exact_benchmark.json#infidelity_edge_checks",
+          "claim": "Decoded logical infidelity matches the digitized reference at low p (<=2.1e-3) and at saturation (5e-2) within the declared ratio band."
+        },
+        {
+          "assertion_id": "mid_range_quadratic_coefficient_matches",
+          "tier": "numeric",
+          "essential": false,
+          "status": "failed",
+          "evidence": "outputs/checks/steane_exact_benchmark.json#known_residual",
+          "claim": "Mid-range infidelity quadratic coefficient equals the source curve's; currently 0.42-0.68x - recorded openly as the remaining residual."
+        }
+      ],
+      "figure_refs": [
+        "Fig. stim-vs-cirq-1"
+      ],
+      "panel_coverage": {
+        "panels": [
+          {
+            "panel_id": "a",
+            "status": "reproduced",
+            "note": "exact-protocol infidelity curve; mid-range residual is the numeric axis",
+            "evidence": "outputs/figures/steane_exact_infidelity.png"
+          },
+          {
+            "panel_id": "b",
+            "status": "not_applicable",
+            "note": "scored by T002"
+          }
+        ],
+        "panel_scope_cap": 15.0
+      }
+    },
+    {
+      "target_id": "T002",
+      "label": "Acceptance-rate benchmark",
+      "weight": 1.2,
+      "components": {
+        "feature_match": {
+          "score": 46.0,
+          "max_score": 50.0,
+          "reason": "The exact Fig. CH-meas-circ protocol reproduces the acceptance curve's full decline: correct scale, correct shape, all twelve paper grid points."
+        },
+        "numeric_closeness": {
+          "score": 30.0,
+          "max_score": 35.0,
+          "reason": "All 12 points match the digitized state-vector reference within max(0.012, 3 sigma); e.g. 0.836/0.833 at p=1e-3 and 0.173/0.174 at 1e-2."
+        },
+        "paper_scope_coverage": {
+          "score": 14.0,
+          "max_score": 15.0,
+          "reason": "The full paper p grid linspace(1e-3,1e-2,9)+[0.02,0.035,0.05] is run; shot counts (3e4-1e5) sit at the lower end of the paper's 1e5-1e6 range."
+        }
+      },
+      "evaluation": {
+        "critical": true,
+        "paper_level_role": "main_claim",
+        "artifact_pass": true,
+        "data_backed": true,
+        "manual_interventions": 0,
+        "failure_type": "none",
+        "parameter_match": "paper_subset",
+        "formula_dependencies": [
+          "MSC004"
+        ],
+        "formula_gate": "reconstructed",
+        "reference_comparison": "digitized_curve",
+        "generated_data_provenance": "independent_numerics"
+      },
+      "evidence": [
+        "outputs/data/steane_exact_benchmark.csv",
+        "outputs/checks/steane_exact_benchmark.json",
+        "internal digitized acceptance validation (not redistributed)",
+        "internal digitized infidelity validation (not redistributed)",
+        "outputs/checks/steane_benchmark_digitization.json",
+        "outputs/figures/steane_exact_acceptance.png"
+      ],
+      "remaining_gap": "Panel (c) slice structure and panel (a) noise placement are reconstructed details validated by the acceptance verdict; author shot counts not fully matched.",
+      "critical": true,
+      "component_total": 90.0,
+      "score": 80.0,
+      "similarity_level": "numerical_feature_reproduction",
+      "parameter_score_cap": 89.0,
+      "formula_score_cap": 80.0,
+      "reference_score_cap": 95.0,
+      "physics_status": "passed",
+      "generated_data_provenance_score_cap": 100.0,
+      "evidence_tier": "physics_reproduction",
+      "physics_score_cap": 100.0,
+      "physics_assertions": [
+        {
+          "assertion_id": "protocol_structure_verified",
+          "tier": "analytic",
+          "essential": true,
+          "status": "passed",
+          "evidence": "tests/test_2512_steane_exact.py",
+          "claim": "The transcribed circuit's encoded state is a +1 eigenstate of logical H and of all six measured stabilizers, whose supports form a perfect Hamming check; the ideal decoder corrects every single-qubit Pauli exactly."
+        },
+        {
+          "assertion_id": "acceptance_curve_matches_all_12_points",
+          "tier": "numeric",
+          "essential": true,
+          "status": "passed",
+          "evidence": "outputs/checks/steane_exact_benchmark.json#acceptance_checks",
+          "claim": "The exact-protocol acceptance rate matches the digitized paper curve at all 12 grid points within max(0.012, 3 sigma)."
+        }
+      ],
+      "figure_refs": [
+        "Fig. stim-vs-cirq-1"
+      ],
+      "panel_coverage": {
+        "panels": [
+          {
+            "panel_id": "a",
+            "status": "not_applicable",
+            "note": "scored by T001"
+          },
+          {
+            "panel_id": "b",
+            "status": "reproduced",
+            "note": "12/12 acceptance points",
+            "evidence": "outputs/figures/steane_exact_acceptance.png"
+          }
+        ],
+        "panel_scope_cap": 15.0
+      }
+    },
+    {
+      "target_id": "T003",
+      "label": "Average time per shot benchmark",
+      "weight": 1.1,
+      "score_cap": 55.0,
+      "cap_reason": "Runtime is a local proxy, not the paper Stim/Cirq benchmark timing.",
+      "components": {
+        "feature_match": {
+          "score": 40.0,
+          "reason": "The low-p propagated-error route is substantially faster than the state-vector-like route.",
+          "max_score": 50.0
+        },
+        "numeric_closeness": {
+          "score": 15.0,
+          "reason": "The reported speedup is a local calibrated proxy, not the authors' measured timing.",
+          "max_score": 35.0
+        },
+        "paper_scope_coverage": {
+          "score": 12.0,
+          "reason": "The target runtime panel is represented and labeled as proxy timing.",
+          "max_score": 15.0
+        }
+      },
+      "evaluation": {
+        "critical": true,
+        "paper_level_role": "method_validation",
+        "artifact_pass": true,
+        "data_backed": true,
+        "manual_interventions": 0,
+        "failure_type": "missing_benchmark_metadata",
+        "parameter_match": "proxy_model",
+        "formula_dependencies": [
+          "MSC006"
+        ],
+        "formula_gate": "reconstructed",
+        "reference_comparison": "source_figure_only",
+        "generated_data_provenance": "independent_numerics"
+      },
+      "evidence": [
+        "outputs/data/runtime_proxy_benchmark.csv",
+        "outputs/figures/fig3_runtime_reproduction.png"
+      ],
+      "remaining_gap": "declared_boundary[author_hardware_timing]: the paper's per-shot timings were measured on the authors' machine with their Stim/Cirq builds; wall-clock equality is unreproducible by design. The calibrated local proxy reproduces the claim's substance - the stabilizer-based method's growing speedup toward low p.",
+      "critical": true,
+      "component_total": 67.0,
+      "score": 55.0,
+      "similarity_level": "feature_not_accepted",
+      "parameter_score_cap": 55.0,
+      "formula_score_cap": 80.0,
+      "reference_score_cap": 70.0,
+      "physics_status": "passed",
+      "generated_data_provenance_score_cap": 100.0,
+      "evidence_tier": "physics_reproduction",
+      "physics_score_cap": 100.0,
+      "figure_refs": [
+        "Fig. stim-vs-cirq-2"
+      ],
+      "panel_coverage": {
+        "panels": [
+          {
+            "panel_id": "single",
+            "status": "reproduced",
+            "note": "runtime curves generated (proxy timing via parameter axis)",
+            "evidence": "outputs/figures/fig3_runtime_reproduction.png"
+          }
+        ],
+        "panel_scope_cap": 15.0
+      },
+      "physics_assertions": [
+        {
+          "assertion_id": "speedup_direction_reproduced",
+          "tier": "numeric",
+          "essential": true,
+          "status": "passed",
+          "evidence": "outputs/data/runtime_proxy_benchmark.csv",
+          "claim": "The calibrated proxy shows the stabilizer-based method beating state-vector simulation with the margin growing toward low p, the substance of the paper's ~10x claim."
+        },
+        {
+          "assertion_id": "author_walltime_equality",
+          "tier": "alignment",
+          "essential": false,
+          "status": "failed",
+          "evidence": "outputs/checks/numerical_feature_checks.json",
+          "claim": "Matching the paper's absolute per-shot seconds requires the authors' hardware and builds - recorded openly as a permanent boundary."
+        }
+      ]
+    },
+    {
+      "target_id": "T004",
+      "label": "Formula and sampling gate",
+      "weight": 0.8,
+      "score_cap": 90.0,
+      "cap_reason": "This validates the method chain but is not an original numerical figure.",
+      "components": {
+        "feature_match": {
+          "score": 47.0,
+          "reason": "PSC square checks, controlled-H propagation, Pauli-rank reconstruction, and sampling scaling all pass.",
+          "max_score": 50.0
+        },
+        "numeric_closeness": {
+          "score": 27.0,
+          "reason": "Matrix residuals are at roundoff level and sampling slope is -0.498, close to the expected -0.5.",
+          "max_score": 35.0
+        },
+        "paper_scope_coverage": {
+          "score": 10.0,
+          "reason": "The formula path behind the benchmark is covered, but the full Steane gadget is not implemented.",
+          "max_score": 15.0
+        }
+      },
+      "evaluation": {
+        "critical": false,
+        "paper_level_role": "method_validation",
+        "artifact_pass": true,
+        "data_backed": true,
+        "manual_interventions": 0,
+        "failure_type": "none",
+        "parameter_match": "not_applicable",
+        "formula_dependencies": [
+          "MSC001",
+          "MSC002",
+          "MSC003"
+        ],
+        "formula_gate": "verified",
+        "reference_comparison": "analytic_reference",
+        "generated_data_provenance": "analytic_reference"
+      },
+      "evidence": [
+        "outputs/checks/formula_verification.json",
+        "outputs/data/sampling_scaling.csv",
+        "outputs/figures/fig4_sampling_precision_reproduction.png"
+      ],
+      "remaining_gap": "Use the formula gate as support, not as a substitute for exact benchmark rerun.",
+      "critical": false,
+      "component_total": 84.0,
+      "score": 84.0,
+      "similarity_level": "numerical_feature_reproduction",
+      "parameter_score_cap": 100.0,
+      "formula_score_cap": 100.0,
+      "reference_score_cap": 90.0,
+      "physics_status": "undeclared",
+      "generated_data_provenance_score_cap": 100.0,
+      "evidence_tier": "physics_reproduction",
+      "physics_score_cap": 100.0,
+      "figure_refs": [
+        "none:formula_and_sampling_gate"
+      ],
+      "panel_coverage": {
+        "panels": [
+          {
+            "panel_id": "single",
+            "status": "not_applicable",
+            "note": "method gate, not a paper figure"
+          }
+        ]
+      }
+    }
+  ],
+  "overall_score": 73.0,
+  "similarity_level": "numerical_feature_reproduction",
+  "evaluation_summary": {
+    "scored_items": 4,
+    "critical_items": 3,
+    "artifact_pass_rate": 1.0,
+    "data_backed_rate": 1.0,
+    "manual_interventions_total": 0,
+    "manual_interventions_per_item": 0.0,
+    "failure_type_counts": {
+      "numeric_mismatch": 1,
+      "none": 2,
+      "missing_benchmark_metadata": 1
+    },
+    "parameter_match_counts": {
+      "paper_subset": 2,
+      "proxy_model": 1,
+      "not_applicable": 1
+    },
+    "reference_comparison_counts": {
+      "digitized_curve": 2,
+      "source_figure_only": 1,
+      "analytic_reference": 1
+    },
+    "generated_data_provenance_counts": {
+      "independent_numerics": 3,
+      "analytic_reference": 1
+    },
+    "evidence_tier_counts": {
+      "physics_reproduction": 4
+    },
+    "formula_gate_counts": {
+      "reconstructed": 3,
+      "verified": 1
+    },
+    "paper_level_role_counts": {
+      "main_claim": 2,
+      "method_validation": 2
+    },
+    "physics_status_counts": {
+      "passed": 3,
+      "undeclared": 1
+    },
+    "physics_assertion_status_counts": {
+      "passed": 5,
+      "failed": 2
+    },
+    "essential_physics_failures": []
+  }
+}

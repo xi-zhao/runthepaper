@@ -1,0 +1,36 @@
+{
+  "target": "T002",
+  "source": "Algorithm 1, reverse traversal section, and evaluation metrics",
+  "all_hardware_compliant": true,
+  "ising_topology_aligned_additional_cnot": 0,
+  "qft_checks": {
+    "qft6": {
+      "first_additional_cnot": 21,
+      "fbf_additional_cnot": 9,
+      "first_depth": 34,
+      "fbf_depth": 31,
+      "fbf_not_worse_on_additional_gates": true,
+      "fbf_not_worse_on_depth": true,
+      "hardware_compliant": true
+    },
+    "qft8": {
+      "first_additional_cnot": 42,
+      "fbf_additional_cnot": 21,
+      "first_depth": 70,
+      "fbf_depth": 57,
+      "fbf_not_worse_on_additional_gates": true,
+      "fbf_not_worse_on_depth": true,
+      "hardware_compliant": true
+    },
+    "qft10": {
+      "first_additional_cnot": 54,
+      "fbf_additional_cnot": 36,
+      "first_depth": 109,
+      "fbf_depth": 92,
+      "fbf_not_worse_on_additional_gates": true,
+      "fbf_not_worse_on_depth": true,
+      "hardware_compliant": true
+    }
+  },
+  "status": "passed"
+}

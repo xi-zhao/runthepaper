@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "paper_feature_checks": {
+    "chaotic_pt_distance_dips_near_t_star": {
+      "observed_min_time": 1.788,
+      "paper_t_star": 1.79,
+      "passed": true
+    },
+    "chaotic_entropy_peaks_near_t_star": {
+      "observed_max_time": 1.8406666666666667,
+      "paper_t_star": 1.79,
+      "passed": true
+    },
+    "chaotic_sff_minimum_near_t_star": {
+      "observed_min_time": 1.8406666666666667,
+      "paper_t_star": 1.79,
+      "passed": true
+    },
+    "chaotic_pr_exceeds_integrable_at_t_star": {
+      "chaotic_pr": 12.51362057211375,
+      "integrable_pr": 1.0467789415057747,
+      "passed": true
+    },
+    "chaotic_entropy_exceeds_integrable_at_t_star": {
+      "chaotic_entropy": 2.78717716561852,
+      "integrable_entropy": 0.1435194657114668,
+      "passed": true
+    },
+    "short_time_otoc_power_laws": {
+      "overlap_1_expected": 2.0,
+      "overlap_1_observed": 1.9989546692190632,
+      "overlap_0_expected": 4.0,
+      "overlap_0_observed": 3.999202483385064,
+      "passed": true
+    },
+    "chaotic_fft_pr_exceeds_integrable": {
+      "chaotic_mean_fft_pr": 146.12559231780293,
+      "integrable_mean_fft_pr": 9.07250944144654,
+      "passed": true
+    }
+  }
+}

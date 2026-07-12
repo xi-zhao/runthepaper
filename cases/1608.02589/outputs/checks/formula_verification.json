@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "numeric_closed": [],
+  "checks": {
+    "floquet_unitary": "U_f = exp(-i H_2) exp(-i H_1), with T1=T2=1",
+    "pulse_angle": "H_1=(pi/2-epsilon) sum_i sigma_i^x",
+    "h2_diagonal": "H_2=sum_i J_i^z sigma_i^z sigma_{i+1}^z + B_i^z sigma_i^z",
+    "autocorrelation": "R(n)=<sigma_i^z(n) sigma_i^z(0)> at stroboscopic periods",
+    "subharmonic_peak": "DTC response is accepted by peak locking near frequency 1/2",
+    "level_ratio": "r=min(delta_n,delta_{n+1})/max(delta_n,delta_{n+1}) from Floquet quasienergy spacings",
+    "endpoint_mutual_information": "Two-site reduced density matrix keeps axes as ket_left, ket_right, bra_left, bra_right before tracing"
+  },
+  "sanity_checks": {
+    "ghz_endpoint_mutual_information": 0.6931471805598763,
+    "expected_log_2": 0.6931471805599453
+  }
+}

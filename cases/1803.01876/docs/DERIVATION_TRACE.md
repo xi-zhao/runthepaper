@@ -83,19 +83,21 @@ near `+/- 1.20185`, not by the Bloch gap-closing points.
 
 ## D3: Evidence Boundary Status
 
-The public package contains generated code, generated data, generated figures,
-and feature-level checks that can be rerun without redistributing the original
-paper source assets.
+The initial derivation pass recorded that no digitized reference data had been
+extracted yet. That statement is now superseded by the current evidence files:
 
-Internal development also used digitized paper-figure references and pixel
-layout checks. Those source-derived reference assets are not redistributed in
-RunThePaper. The public evidence boundary is therefore:
+- internal digitized-curve checks (not redistributed)
+- internal pixel-evidence checks (not redistributed)
+- internal digitized-reference checks (not redistributed)
+
+The current boundary is narrower and more precise:
 
 - formula gates for the scored targets are verified;
 - generated objects are independent numerics or analytic references;
-- public validation uses rerunnable feature checks and generated artifacts;
+- digitized source curves and pixel-layout crops validate alignment to the
+  paper figures;
 - author plotting data is unavailable, so author-data equivalence and 100
   percent reproduction are not claimed.
 
-Public notes must state this boundary before using visual agreement as
-validation.
+Public notes must state this evidence boundary before using curve or pixel
+agreement as validation.

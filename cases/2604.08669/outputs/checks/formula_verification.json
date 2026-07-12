@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "paper_id": "2604.08669",
+  "status": "passed",
+  "checks": [
+    {
+      "check_id": "F001_ASSIGNMENT_DISTANCE",
+      "target_id": "T001",
+      "status": "passed",
+      "summary": "Average and maximum movement distances are computed from decoded and Hungarian assignments."
+    },
+    {
+      "check_id": "F002_P2WGS_CONTINUITY",
+      "target_id": "T002",
+      "status": "passed",
+      "summary": "Intensity and phase continuity metrics are encoded from the paper definitions."
+    },
+    {
+      "check_id": "F003_PIPELINE_TIMING",
+      "target_id": "T003",
+      "status": "passed",
+      "summary": "Pipeline timing uses path overhead plus per-frame max(generation, SLM refresh) plus transfer delay."
+    }
+  ],
+  "limitations": [
+    "Modified auction decoder not yet implemented.",
+    "Paper-scale stochastic and GPU timing campaigns not yet run.",
+    "Private Zhuifeng source is unavailable in the arXiv package."
+  ]
+}

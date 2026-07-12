@@ -1,0 +1,13 @@
+{
+  "status": "partial",
+  "scope": "paper-reported computational complexity tables are transcribed and consistency-checked; the 53-qubit GPU contraction is not rerun locally",
+  "table1": {
+    "T_head": "2^23 * 5.37e11 = 4.505e18, matching 4.51e18 after rounding",
+    "dominance": "T_tail/T_head = 2.87e15/4.51e18 ≈ 6.36e-4, so head contraction dominates"
+  },
+  "table2": {
+    "ours_batch_size": 2097152,
+    "ours_vs_alibaba_bitstrings": 32768.0,
+    "ours_time_complexity_vs_alibaba": 0.6771771771771772
+  }
+}

@@ -55,12 +55,12 @@
 
 | Candidate | Why it is reusable | Suggested destination |
 | --- | --- | --- |
-| formula gate runner | Most theory papers need formula-to-code traceability | `agent/harness/formula_gate` |
-| reference renderer | Case intro needs stable original-vs-generated comparison | internal harness backlog |
-| all-target reference checker | Scorecards need one evidence file covering every scored panel | internal harness backlog |
-| feature checker templates | Phase transitions, plateaus, spectra, localization recur across physics papers | `agent/harness/checks` |
-| non-normal eigensolver warning | Non-Hermitian models often need solver sanity checks | `agent/harness/numerics` |
-| generated-data provenance gate | Physics reproduction needs to separate independent generated data from source-derived references | `agent/harness/rr_harness/similarity_score.py` |
+| formula gate runner | Most theory papers need formula-to-code traceability | shared formula gate |
+| source figure renderer | Case intro needs stable internal visual comparison | internal source renderer |
+| all-target digitized curve checker | Scorecards need one evidence file covering every scored panel | internal reference checker |
+| feature checker templates | Phase transitions, plateaus, spectra, localization recur across physics papers | shared feature checks |
+| non-normal eigensolver warning | Non-Hermitian models often need solver sanity checks | shared numerical diagnostics |
+| generated-data provenance gate | Physics reproduction needs to separate independent generated data from source-derived references | shared provenance gate |
 
 ## Harness Backlog Items
 
@@ -68,7 +68,7 @@
 | --- | --- | --- | --- |
 | high | Add formula gate as a standard harness step | `outputs/checks/formula_verification.json`, `core_derivations.json` | copied_to_backlog |
 | high | Add feature-level checks before image comparison | all figure checks use physical features | copied_to_backlog |
-| medium | Add controlled reference rendering for internal validation | internal reference artifacts | copied_to_backlog |
+| medium | Add an internal original-figure renderer | internal source-rendering evidence (not redistributed) | copied_to_backlog |
 | medium | Add non-normal solver diagnostics | Fig. 2 direct eig instability | new |
 | high | Add generated-data provenance gate | Fig. 5 source-path trace risk | copied_to_backlog |
 | high | Add independent branch-regeneration requirement for source-traced spectrum lines | Fig. 5 spectrum | implemented_case_rule |

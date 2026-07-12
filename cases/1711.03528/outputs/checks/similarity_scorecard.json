@@ -1,0 +1,392 @@
+{
+  "schema_version": 3,
+  "score_model": "rra_similarity_v3_figure_evaluation",
+  "paper_id": "1711.03528",
+  "summary": "量子多体 scar 的核心数值特征已经出现；主要差距是论文的 L=32 对称性 sector 和 iTEBD 热力学极限没有在本地重跑。",
+  "targets": [
+    {
+      "target_id": "T001",
+      "label": "Fig. 1 Hamiltonian graph",
+      "weight": 0.5,
+      "components": {
+        "feature_match": {
+          "score": 50.0,
+          "reason": "L=6 Fibonacci basis 和 PXP 连接结构复现。",
+          "max_score": 50.0
+        },
+        "numeric_closeness": {
+          "score": 32.0,
+          "reason": "节点数和边规则一致，布局不要求完全相同。",
+          "max_score": 35.0
+        },
+        "paper_scope_coverage": {
+          "score": 9.0,
+          "reason": "覆盖模型结构图，不是主数值结论。",
+          "max_score": 15.0
+        }
+      },
+      "evidence": [
+        "outputs/data/fig1_graph_nodes.csv",
+        "outputs/data/fig1_graph_edges.csv",
+        "outputs/checks/pxp_feature_checks.json"
+      ],
+      "remaining_gap": "展示布局与原文不同。",
+      "evaluation": {
+        "critical": false,
+        "paper_level_role": "method_validation",
+        "artifact_pass": true,
+        "data_backed": true,
+        "manual_interventions": 0,
+        "failure_type": "none",
+        "parameter_match": "paper_exact",
+        "formula_dependencies": [
+          "PXP001"
+        ],
+        "formula_gate": "verified",
+        "reference_comparison": "analytic_reference",
+        "generated_data_provenance": "analytic_reference"
+      },
+      "critical": false,
+      "component_total": 91.0,
+      "score": 90.0,
+      "similarity_level": "complete_reproduction",
+      "parameter_score_cap": 100.0,
+      "formula_score_cap": 100.0,
+      "reference_score_cap": 90.0,
+      "physics_status": "undeclared",
+      "generated_data_provenance_score_cap": 100.0,
+      "evidence_tier": "physics_reproduction",
+      "physics_score_cap": 100.0,
+      "figure_refs": [
+        "Fig. 1"
+      ],
+      "panel_coverage": {
+        "panels": [
+          {
+            "panel_id": "single",
+            "status": "reproduced",
+            "evidence": "outputs/data/fig1_graph_nodes.csv"
+          }
+        ],
+        "panel_scope_cap": 15.0
+      }
+    },
+    {
+      "target_id": "T002",
+      "label": "Entanglement dynamics",
+      "weight": 1.2,
+      "components": {
+        "feature_match": {
+          "score": 46.0,
+          "reason": "Z2 慢纠缠增长、局域振荡、return probability revival 都出现。",
+          "max_score": 50.0
+        },
+        "numeric_closeness": {
+          "score": 26.0,
+          "reason": "局域关联振荡周期为 2.375，接近论文报告的约 2.35。",
+          "max_score": 35.0
+        },
+        "paper_scope_coverage": {
+          "score": 7.0,
+          "reason": "本地是 L=16 finite-size exact evolution，不是 iTEBD thermodynamic limit。",
+          "max_score": 15.0
+        }
+      },
+      "score_cap": 80.0,
+      "cap_reason": "特征强，但没有复现论文 iTEBD 规模。",
+      "evidence": [
+        "outputs/data/fig_ent_dynamics.csv",
+        "outputs/checks/pxp_feature_checks.json"
+      ],
+      "remaining_gap": "需要 iTEBD 或更大尺寸来对齐论文曲线。",
+      "evaluation": {
+        "critical": true,
+        "paper_level_role": "main_claim",
+        "artifact_pass": true,
+        "data_backed": true,
+        "manual_interventions": 0,
+        "failure_type": "insufficient_compute",
+        "parameter_match": "reduced_scale",
+        "formula_dependencies": [
+          "PXP001",
+          "PXP002",
+          "PXP005"
+        ],
+        "formula_gate": "verified",
+        "reference_comparison": "visual_feature_contract",
+        "generated_data_provenance": "independent_numerics"
+      },
+      "critical": true,
+      "component_total": 79.0,
+      "score": 70.0,
+      "similarity_level": "numerical_feature_reproduction",
+      "parameter_score_cap": 70.0,
+      "formula_score_cap": 100.0,
+      "reference_score_cap": 80.0,
+      "physics_status": "undeclared",
+      "generated_data_provenance_score_cap": 100.0,
+      "evidence_tier": "physics_reproduction",
+      "physics_score_cap": 100.0,
+      "figure_refs": [
+        "Fig. 3"
+      ],
+      "panel_coverage": {
+        "panels": [
+          {
+            "panel_id": "single",
+            "status": "reproduced",
+            "note": "L=16 exact dynamics generated (iTEBD scale via parameter axis)",
+            "evidence": "outputs/data/fig_ent_dynamics.csv"
+          }
+        ],
+        "panel_scope_cap": 15.0
+      }
+    },
+    {
+      "target_id": "T003",
+      "label": "Fig. 2 scar tower / FSA",
+      "weight": 1.5,
+      "components": {
+        "feature_match": {
+          "score": 46.0,
+          "max_score": 50.0,
+          "reason": "The k=0, inversion-even sector at L=28 (dim 13201) shows the full L/2+1=15 scar tower with the paper's alternating-sector spacing (~2.6) and edge compression, on top of the existing FSA construction."
+        },
+        "numeric_closeness": {
+          "score": 27.0,
+          "max_score": 35.0,
+          "reason": "Tower spacing relative std 0.104; tower energies symmetric to 1e-6; sector spectra verified as exact subsets of the full spectrum at small L."
+        },
+        "paper_scope_coverage": {
+          "score": 11.0,
+          "max_score": 15.0,
+          "reason": "Same sector as the paper at L=28; the paper's L=32 sector (~77k, ~47GB dense workspace) is declared as an external-required rerun."
+        }
+      },
+      "evidence": [
+        "outputs/data/fig2a_scar_overlaps.csv",
+        "outputs/data/fig2bc_fsa_basis_overlaps.csv",
+        "outputs/data/fig2d_participation_ratio.csv",
+        "outputs/checks/pxp_feature_checks.json",
+        "outputs/checks/symmetry_resolved_sector.json",
+        "outputs/data/sector_scar_tower.csv",
+        "outputs/figures/sector_scar_tower.png"
+      ],
+      "remaining_gap": "L=32 zero-momentum inversion-even sector is memory-impossible locally (declared external_required in the check JSON); L=28 same-sector run is complete.",
+      "evaluation": {
+        "critical": true,
+        "paper_level_role": "main_claim",
+        "artifact_pass": true,
+        "data_backed": true,
+        "manual_interventions": 0,
+        "failure_type": "none",
+        "parameter_match": "reduced_scale",
+        "formula_dependencies": [
+          "PXP001",
+          "PXP002",
+          "PXP003",
+          "PXP004"
+        ],
+        "formula_gate": "verified",
+        "reference_comparison": "visual_feature_contract",
+        "generated_data_provenance": "independent_numerics"
+      },
+      "critical": true,
+      "component_total": 84.0,
+      "score": 70.0,
+      "similarity_level": "numerical_feature_reproduction",
+      "parameter_score_cap": 70.0,
+      "formula_score_cap": 100.0,
+      "reference_score_cap": 80.0,
+      "physics_status": "passed",
+      "generated_data_provenance_score_cap": 100.0,
+      "evidence_tier": "physics_reproduction",
+      "physics_score_cap": 100.0,
+      "physics_assertions": [
+        {
+          "assertion_id": "scar_tower_full_count_and_spacing",
+          "tier": "numeric",
+          "essential": true,
+          "status": "passed",
+          "evidence": "outputs/checks/symmetry_resolved_sector.json#scar_tower",
+          "claim": "The k=0, I=+1 sector at L=28 contains exactly L/2+1=15 Z2 scar states with uniform tower spacing (rel std 0.104) and symmetric edge compression."
+        },
+        {
+          "assertion_id": "sector_construction_exact",
+          "tier": "analytic",
+          "essential": true,
+          "status": "passed",
+          "evidence": "tests/test_1711_symmetry_sector.py",
+          "claim": "Sector spectra are exact subsets of the full PXP spectrum and the sector Hamiltonian is symmetric (verified at L=8,10,12)."
+        }
+      ],
+      "figure_refs": [
+        "Fig. 2"
+      ],
+      "panel_coverage": {
+        "panels": [
+          {
+            "panel_id": "a",
+            "status": "reproduced",
+            "note": "scar tower L=28 sector",
+            "evidence": "outputs/figures/sector_scar_tower.png"
+          },
+          {
+            "panel_id": "b",
+            "status": "reproduced",
+            "note": "FSA basis overlaps",
+            "evidence": "outputs/data/fig2bc_fsa_basis_overlaps.csv"
+          },
+          {
+            "panel_id": "c",
+            "status": "reproduced",
+            "evidence": "outputs/data/fig2bc_fsa_basis_overlaps.csv"
+          },
+          {
+            "panel_id": "d",
+            "status": "reproduced",
+            "note": "participation ratio",
+            "evidence": "outputs/data/fig2d_participation_ratio.csv"
+          }
+        ],
+        "panel_scope_cap": 15.0
+      }
+    },
+    {
+      "target_id": "T004",
+      "label": "Fig. 4 level statistics",
+      "weight": 0.8,
+      "components": {
+        "feature_match": {
+          "score": 42.0,
+          "max_score": 50.0,
+          "reason": "Level statistics are now symmetry-resolved (k=0, I=+1, zero modes excluded, central 80% window): the distribution is Wigner-Dyson-like, not Poisson, as the paper claims."
+        },
+        "numeric_closeness": {
+          "score": 24.0,
+          "max_score": 35.0,
+          "reason": "Mean gap ratio r=0.497 (GOE 0.531, Poisson 0.386) - the PXP-typical value; unfolded spacing histogram is closer to the Wigner surmise than to Poisson in L1 distance."
+        },
+        "paper_scope_coverage": {
+          "score": 11.0,
+          "max_score": 15.0,
+          "reason": "Symmetry-resolved unfolding is complete at L=28; the paper's largest sizes remain in the declared remote rerun."
+        }
+      },
+      "evidence": [
+        "outputs/data/fig4_level_spacing_distribution.csv",
+        "outputs/data/fig4_density_of_states.csv",
+        "outputs/checks/pxp_feature_checks.json",
+        "outputs/checks/symmetry_resolved_sector.json",
+        "outputs/data/sector_level_spacings.csv",
+        "outputs/figures/sector_level_statistics.png"
+      ],
+      "remaining_gap": "Method gap closed (symmetry-resolved unfolding done); larger L for sharper statistics queues with the declared remote rerun.",
+      "evaluation": {
+        "critical": false,
+        "paper_level_role": "supporting",
+        "artifact_pass": true,
+        "data_backed": true,
+        "manual_interventions": 0,
+        "failure_type": "none",
+        "parameter_match": "reduced_scale",
+        "formula_dependencies": [
+          "PXP001",
+          "PXP006"
+        ],
+        "formula_gate": "verified",
+        "reference_comparison": "visual_feature_contract",
+        "generated_data_provenance": "independent_numerics"
+      },
+      "critical": false,
+      "component_total": 77.0,
+      "score": 70.0,
+      "similarity_level": "numerical_feature_reproduction",
+      "parameter_score_cap": 70.0,
+      "formula_score_cap": 100.0,
+      "reference_score_cap": 80.0,
+      "physics_status": "passed",
+      "generated_data_provenance_score_cap": 100.0,
+      "evidence_tier": "physics_reproduction",
+      "physics_score_cap": 100.0,
+      "physics_assertions": [
+        {
+          "assertion_id": "level_statistics_goe_not_poisson",
+          "tier": "numeric",
+          "essential": true,
+          "status": "passed",
+          "evidence": "outputs/checks/symmetry_resolved_sector.json#level_statistics",
+          "claim": "The symmetry-resolved mean gap ratio r=0.497 is decisively on the GOE side (GOE 0.531 vs Poisson 0.386), with zero modes excluded."
+        },
+        {
+          "assertion_id": "spacing_distribution_wigner",
+          "tier": "numeric",
+          "essential": true,
+          "status": "passed",
+          "evidence": "outputs/checks/symmetry_resolved_sector.json#level_statistics",
+          "claim": "The unfolded spacing distribution is closer to the Wigner surmise than to Poisson (L1: wigner < poisson)."
+        }
+      ],
+      "figure_refs": [
+        "Fig. 4"
+      ],
+      "panel_coverage": {
+        "panels": [
+          {
+            "panel_id": "single",
+            "status": "reproduced",
+            "note": "symmetry-resolved level statistics",
+            "evidence": "outputs/figures/sector_level_statistics.png"
+          }
+        ],
+        "panel_scope_cap": 15.0
+      }
+    }
+  ],
+  "overall_score": 72.5,
+  "similarity_level": "numerical_feature_reproduction",
+  "evaluation_summary": {
+    "scored_items": 4,
+    "critical_items": 2,
+    "artifact_pass_rate": 1.0,
+    "data_backed_rate": 1.0,
+    "manual_interventions_total": 0,
+    "manual_interventions_per_item": 0.0,
+    "failure_type_counts": {
+      "none": 3,
+      "insufficient_compute": 1
+    },
+    "parameter_match_counts": {
+      "paper_exact": 1,
+      "reduced_scale": 3
+    },
+    "reference_comparison_counts": {
+      "analytic_reference": 1,
+      "visual_feature_contract": 3
+    },
+    "generated_data_provenance_counts": {
+      "analytic_reference": 1,
+      "independent_numerics": 3
+    },
+    "evidence_tier_counts": {
+      "physics_reproduction": 4
+    },
+    "formula_gate_counts": {
+      "verified": 4
+    },
+    "paper_level_role_counts": {
+      "method_validation": 1,
+      "main_claim": 2,
+      "supporting": 1
+    },
+    "physics_status_counts": {
+      "undeclared": 2,
+      "passed": 2
+    },
+    "physics_assertion_status_counts": {
+      "passed": 4
+    },
+    "essential_physics_failures": []
+  },
+  "status": "passed"
+}

@@ -1,0 +1,121 @@
+{
+  "target": "T003",
+  "figure": "Fig. 3",
+  "status": "partial",
+  "protocol": "finite-size collapse x=(eps-eps_c)L^(1/nu), y=L^beta I_end; paper-parameter spread + own-data exponent re-fit",
+  "sizes_available": [
+    8,
+    10,
+    12
+  ],
+  "analytic_anchor": {
+    "ln2": 0.693147,
+    "mi_at_epsilon_zero": {
+      "Fig. 3b|L8": 0.693147,
+      "Fig. 3b|L10": 0.693147,
+      "Fig. 3b|L12": 0.693147,
+      "Fig. 3c|L8": 0.693147,
+      "Fig. 3c|L10": 0.693147,
+      "Fig. 3c|L12": 0.693147,
+      "Fig. 3d|L8": 0.693147,
+      "Fig. 3d|L10": 0.693147,
+      "Fig. 3d|L12": 0.693147
+    },
+    "deep_tail_max": {
+      "Fig. 3b|L8": 0.000703,
+      "Fig. 3b|L10": 7.4e-05,
+      "Fig. 3b|L12": 1e-05,
+      "Fig. 3c|L8": 0.003619,
+      "Fig. 3c|L10": 0.001195,
+      "Fig. 3c|L12": 0.00069,
+      "Fig. 3d|L8": 0.012584,
+      "Fig. 3d|L10": 0.004918,
+      "Fig. 3d|L12": 0.002571
+    },
+    "max_abs_error_vs_ln2": 0.0,
+    "deep_tail_max_over_all": 0.012584
+  },
+  "panels": {
+    "Fig. 3b": {
+      "sizes": [
+        8,
+        10,
+        12
+      ],
+      "paper_params": {
+        "epsilon_c": 0.043,
+        "beta": 0.42,
+        "nu": 1.21
+      },
+      "paper_collapse_relative_spread": 0.4496,
+      "fitted_params": {
+        "epsilon_c": 0.0,
+        "beta": -0.1772,
+        "nu": 2.287
+      },
+      "fitted_collapse_cost": 0.081908,
+      "exponent_abs_error": {
+        "epsilon_c": 0.043,
+        "beta": 0.5972,
+        "nu": 1.077
+      }
+    },
+    "Fig. 3c": {
+      "sizes": [
+        8,
+        10,
+        12
+      ],
+      "paper_params": {
+        "epsilon_c": 0.081,
+        "beta": 0.44,
+        "nu": 1.24
+      },
+      "paper_collapse_relative_spread": 0.1088,
+      "fitted_params": {
+        "epsilon_c": 0.0819,
+        "beta": 0.1963,
+        "nu": 1.5283
+      },
+      "fitted_collapse_cost": 0.001965,
+      "exponent_abs_error": {
+        "epsilon_c": 0.0009,
+        "beta": 0.2437,
+        "nu": 0.2883
+      }
+    },
+    "Fig. 3d": {
+      "sizes": [
+        8,
+        10,
+        12
+      ],
+      "paper_params": {
+        "epsilon_c": 0.13,
+        "beta": 0.47,
+        "nu": 1.35
+      },
+      "paper_collapse_relative_spread": 0.0636,
+      "fitted_params": {
+        "epsilon_c": 0.1009,
+        "beta": 0.1592,
+        "nu": 1.7426
+      },
+      "fitted_collapse_cost": 0.000634,
+      "exponent_abs_error": {
+        "epsilon_c": 0.0291,
+        "beta": 0.3108,
+        "nu": 0.3926
+      }
+    }
+  },
+  "gate_flags": {
+    "all_panels_generated": true,
+    "mi_ln2_anchor_holds": true,
+    "strong_couplings_collapse_tight": true,
+    "collapse_tight_all_panels": false,
+    "fitted_exponents_near_paper": false
+  },
+  "figure_path": "outputs/figures/fig3_scaling_collapse.png",
+  "data": "outputs/data/fig3_large_ed_campaign.csv"
+}

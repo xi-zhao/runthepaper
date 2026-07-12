@@ -4,7 +4,9 @@
 from __future__ import annotations
 
 import csv
+from concurrent.futures import ProcessPoolExecutor, as_completed
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -18,8 +20,7 @@ sys.path.insert(0, str(ROOT / "code/scripts"))
 from nonhermitian_ssh import (  # noqa: E402
     abs_ordered_squared_spectrum_rows,
     beta_roots_t3_from_energy,
-    open_chain_eigenvalues,
-    open_chain_squared_eigenvalues,
+    signed_complex_sqrt,
 )
 
 
@@ -27,12 +28,15 @@ def main() -> int:
     required_formula_cards = ["EQC001", "EQC009", "EQC010"]
     assert_formula_gate(required_formula_cards)
 
-    L = 100
+    paper_L = 100
+    spectrum_L = paper_L
+    cbeta_L = paper_L
+    spectrum_dps = 35
     t2 = 1.0
     gamma = 4.0 / 3.0
     t3 = 1.0 / 5.0
     n_beta = 200
-    t1_values = np.linspace(-3.0, 3.0, 301)
+    t1_values = np.linspace(-3.0, 3.0, 151)
     cbeta_t1 = 1.1
 
     winding_rows = []
@@ -51,14 +55,30 @@ def main() -> int:
                 "n_beta_caption": n_beta,
             }
         )
-    squared_spectrum_slices = [
-        open_chain_squared_eigenvalues(L=L, t1=float(t1), t2=t2, gamma=gamma, t3=t3)
-        for t1 in t1_values
-    ]
+    squared_spectrum_slices = high_precision_squared_spectrum_slices(
+        L=spectrum_L,
+        t1_values=t1_values,
+        dps=spectrum_dps,
+    )
     spectrum_rows = abs_ordered_squared_spectrum_rows(t1_values, squared_spectrum_slices)
 
     transition_points = estimate_transition_points(t2=t2, gamma=gamma, t3=t3)
-    cbeta_rows = build_cbeta_rows(L=L, t1=cbeta_t1, t2=t2, gamma=gamma, t3=t3)
+    cbeta_squared = high_precision_squared_spectrum_slices(
+        L=cbeta_L,
+        t1_values=np.asarray([cbeta_t1]),
+        dps=spectrum_dps,
+        max_workers=1,
+    )[0]
+    cbeta_branch = signed_complex_sqrt(cbeta_squared)
+    cbeta_energies = np.concatenate([cbeta_branch, -cbeta_branch])
+    cbeta_rows = build_cbeta_rows(
+        L=cbeta_L,
+        t1=cbeta_t1,
+        t2=t2,
+        gamma=gamma,
+        t3=t3,
+        energies=cbeta_energies,
+    )
 
     spectrum_path = ROOT / "outputs/data/fig5_t3_spectrum.csv"
     winding_path = ROOT / "outputs/data/fig5_t3_winding.csv"
@@ -125,7 +145,11 @@ def main() -> int:
         "comparison_mode": "feature_data_first",
         "visual_match_role": "secondary_reference",
         "required_formula_cards": required_formula_cards,
-        "L": L,
+        "L": spectrum_L,
+        "spectrum_L": spectrum_L,
+        "cbeta_L": cbeta_L,
+        "paper_L": paper_L,
+        "parameter_match": "paper_exact",
         "t2": t2,
         "gamma": gamma,
         "t3": t3,
@@ -146,8 +170,13 @@ def main() -> int:
         "left_panel_render": str(left_panel_path.relative_to(ROOT)),
         "spectrum_branch_count": len({row["branch_id"] for row in spectrum_rows}),
         "spectrum_t1_points": len({row["t1"] for row in spectrum_rows}),
+        "spectrum_solver": {
+            "method": "mpmath_high_precision_chiral_block_eigenspectrum",
+            "decimal_digits": spectrum_dps,
+            "reason": "The L=100 nonzero-t3 OBC matrix is too non-normal for double precision.",
+        },
         "cbeta_line_identity": "middle_beta_root_pair_locus",
-        "cbeta_connect_rule": "connect_within_root_branch_in_angle_order",
+        "cbeta_connect_rule": "connect_middle_pair_locus_in_angle_order",
         "feature_acceptance": {
             "transition_near_caption_value": abs(transition_abs - 1.56) < 0.02,
             "winding_plateau_matches_transition": len(mismatch_rows) == 0,
@@ -172,6 +201,7 @@ def main() -> int:
             "C_beta is reconstructed from open-chain energies by retaining the middle beta-root pair with nearly equal moduli.",
             "The visible spectrum is independently generated from open-chain |E| levels; rendered source EPS is only a visual reference comparator.",
             "For this |E| panel, branch_id labels the ordered open-chain absolute-energy level, avoiding artificial sign or phase swaps of complex E near degeneracies.",
+            "The visible spectrum and C_beta use the paper's L=100 with 35-decimal-digit eigenspectrum evaluation; source EPS is reference-only.",
         ],
     }
     checks["status"] = (
@@ -234,10 +264,18 @@ def estimate_transition_points(t2: float, gamma: float, t3: float) -> dict[str, 
     return transitions
 
 
-def build_cbeta_rows(L: int, t1: float, t2: float, gamma: float, t3: float) -> list[dict[str, float]]:
+def build_cbeta_rows(
+    L: int,
+    t1: float,
+    t2: float,
+    gamma: float,
+    t3: float,
+    energies: np.ndarray,
+) -> list[dict[str, float]]:
     rows = []
-    eig = open_chain_eigenvalues(L=L, t1=t1, t2=t2, gamma=gamma, t3=t3)
-    for energy in eig:
+    if len(energies) != 2 * L:
+        raise ValueError(f"expected {2 * L} open-chain energies, got {len(energies)}")
+    for energy in energies:
         roots = beta_roots_t3_from_energy(energy=energy, t1=t1, t2=t2, gamma=gamma, t3=t3)
         roots = roots[np.argsort(np.abs(roots))]
         relative_error = float(
@@ -271,6 +309,71 @@ def write_csv(path: Path, rows: list[dict[str, object]], fieldnames: list[str]) 
         writer.writerows(rows)
 
 
+def high_precision_squared_spectrum_slices(
+    L: int,
+    t1_values: np.ndarray,
+    dps: int,
+    max_workers: int | None = None,
+) -> list[np.ndarray]:
+    """Evaluate the paper-scale non-normal spectrum without double-precision drift."""
+
+    values = [float(value) for value in t1_values]
+    workers = max_workers or min(10, os.cpu_count() or 1)
+    # The paper sweep uses an exact 0.04 grid. Do not feed binary-float tails
+    # such as 1.2000000000000002 into this highly non-normal eigensystem.
+    tasks = [(index, f"{t1:.12g}", L, dps) for index, t1 in enumerate(values)]
+    results: list[np.ndarray | None] = [None] * len(tasks)
+
+    if workers == 1:
+        completed = [_high_precision_squared_spectrum_worker(task) for task in tasks]
+    else:
+        completed = []
+        with ProcessPoolExecutor(max_workers=workers) as executor:
+            futures = [executor.submit(_high_precision_squared_spectrum_worker, task) for task in tasks]
+            report_every = max(1, len(futures) // 10)
+            for completed_count, future in enumerate(as_completed(futures), start=1):
+                completed.append(future.result())
+                if completed_count % report_every == 0 or completed_count == len(futures):
+                    print(
+                        f"high-precision Fig. 5 spectrum: {completed_count}/{len(futures)} t1 slices",
+                        flush=True,
+                    )
+
+    for index, squared in completed:
+        results[index] = np.asarray(squared, dtype=np.complex128)
+    if any(result is None for result in results):
+        raise RuntimeError("high-precision spectrum returned incomplete slices")
+    return [result for result in results if result is not None]
+
+
+def _high_precision_squared_spectrum_worker(
+    task: tuple[int, str, int, int],
+) -> tuple[int, list[complex]]:
+    import mpmath as mp
+
+    index, t1_text, L, dps = task
+    mp.mp.dps = dps
+    t1 = mp.mpf(t1_text)
+    t2 = mp.mpf(1)
+    gamma = mp.mpf(4) / 3
+    t3 = mp.mpf(1) / 5
+
+    c_block = mp.matrix(L)
+    d_block = mp.matrix(L)
+    for site in range(L):
+        c_block[site, site] = t1 + gamma / 2
+        d_block[site, site] = t1 - gamma / 2
+        if site > 0:
+            c_block[site, site - 1] = t2
+            d_block[site, site - 1] = t3
+        if site < L - 1:
+            c_block[site, site + 1] = t3
+            d_block[site, site + 1] = t2
+
+    squared = mp.eig(c_block * d_block, left=False, right=False)
+    return index, [complex(float(mp.re(value)), float(mp.im(value))) for value in squared]
+
+
 def plot_figure(
     spectrum_rows: list[dict[str, float]],
     winding_rows: list[dict[str, float]],
@@ -293,6 +396,15 @@ def plot_figure(
     ax_spectrum.set_ylabel(r"$|E|$")
     ax_spectrum.set_ylim(-0.05, 2.25)
     ax_spectrum.grid(True, alpha=0.15)
+    ax_spectrum.text(
+        0.02,
+        0.95,
+        rf"$L={len({int(row['branch_id']) for row in spectrum_rows})}$ (35-digit eigenspectrum)",
+        transform=ax_spectrum.transAxes,
+        va="top",
+        fontsize=8,
+        color="0.25",
+    )
 
     ax_winding.plot(
         [row["t1"] for row in winding_rows],
@@ -320,10 +432,16 @@ def plot_figure(
     ax_winding.set_yticks([0, 1])
 
     ax_cbeta.plot(np.cos(np.linspace(0, 2 * np.pi, 400)), np.sin(np.linspace(0, 2 * np.pi, 400)), "--", color="0.6", linewidth=1.2)
-    for curve in cbeta_branch_curves(cbeta_rows):
-        beta = curve["beta"]
-        ax_cbeta.plot(np.real(beta), np.imag(beta), color="#c96555", linewidth=1.8)
-        ax_cbeta.scatter(np.real(beta[:-1]), np.imag(beta[:-1]), s=3.0, color="#c96555", alpha=0.22, linewidths=0)
+    beta = cbeta_contour_curve(cbeta_rows)
+    ax_cbeta.plot(np.real(beta), np.imag(beta), color="#c96555", linewidth=1.8)
+    ax_cbeta.scatter(
+        np.real(beta[:-1]),
+        np.imag(beta[:-1]),
+        s=3.0,
+        color="#c96555",
+        alpha=0.22,
+        linewidths=0,
+    )
     ax_cbeta.axhline(0, color="0.35", linewidth=0.7)
     ax_cbeta.axvline(0, color="0.35", linewidth=0.7)
     ax_cbeta.set_aspect("equal", adjustable="box")
@@ -369,6 +487,15 @@ def plot_left_panel(
     ax_spectrum.set_yticks([0.0, 2.0])
     ax_spectrum.set_yticklabels(["0", "2"])
     ax_spectrum.set_ylabel(r"$|E|$", fontsize=34, labelpad=-2)
+    ax_spectrum.text(
+        0.02,
+        0.93,
+        rf"$L={len({int(row['branch_id']) for row in spectrum_rows})}$",
+        transform=ax_spectrum.transAxes,
+        va="top",
+        fontsize=10,
+        color="0.25",
+    )
     ax_spectrum.text(-0.19, 0.93, r"(a)", transform=ax_spectrum.transAxes, fontsize=30, ha="left", va="center", clip_on=False)
     ax_spectrum.tick_params(axis="x", labelbottom=False)
     _style_left_panel_axis(ax_spectrum, labelsize=26)
@@ -412,16 +539,17 @@ def _style_left_panel_axis(ax: plt.Axes, labelsize: int) -> None:
     ax.tick_params(top=True, right=True)
 
 
-def cbeta_branch_curves(rows: list[dict[str, float]]) -> list[dict[str, object]]:
-    curves = []
-    for branch in sorted({int(row["root_branch"]) for row in rows}):
-        branch_rows = [row for row in rows if int(row["root_branch"]) == branch]
-        branch_rows.sort(key=lambda row: np.mod(row["angle_beta"], 2.0 * np.pi))
-        beta = np.array([row["beta_real"] + 1j * row["beta_imag"] for row in branch_rows], dtype=np.complex128)
-        if len(beta):
-            beta = np.concatenate([beta, beta[:1]])
-        curves.append({"root_branch": branch, "beta": beta})
-    return curves
+def cbeta_contour_curve(rows: list[dict[str, float]]) -> np.ndarray:
+    """Join both middle roots into their single closed GBZ locus."""
+
+    ordered = sorted(rows, key=lambda row: np.mod(row["angle_beta"], 2.0 * np.pi))
+    beta = np.array(
+        [row["beta_real"] + 1j * row["beta_imag"] for row in ordered],
+        dtype=np.complex128,
+    )
+    if len(beta):
+        beta = np.concatenate([beta, beta[:1]])
+    return beta
 
 
 def value_at(rows: list[dict[str, float]], target_t1: float) -> dict[str, object]:

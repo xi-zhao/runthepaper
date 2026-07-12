@@ -1,0 +1,65 @@
+{
+  "targets": [
+    "T003",
+    "T004"
+  ],
+  "status": "physically_consistent",
+  "sector": {
+    "L": 28,
+    "momentum": 0,
+    "inversion": "+1",
+    "dimension": 13201
+  },
+  "elapsed_seconds": 284.9,
+  "scar_tower": {
+    "expected_states": 15,
+    "min_tower_overlap_sq": 8.804123671606983e-08,
+    "tower_energies": [
+      -16.899697,
+      -14.931302,
+      -12.774513,
+      -10.415469,
+      -7.913924,
+      -5.321144,
+      -2.673749,
+      0.098752,
+      2.673749,
+      5.321144,
+      7.913924,
+      10.415469,
+      12.774513,
+      14.931302,
+      16.899697
+    ],
+    "mean_tower_spacing": 2.4142423723309525,
+    "tower_spacing_rel_std": 0.10373692356463762
+  },
+  "level_statistics": {
+    "window_levels": 10454,
+    "zero_modes_excluded": 133,
+    "mean_gap_ratio": 0.49695702172996914,
+    "goe_reference": 0.5307,
+    "poisson_reference": 0.3863,
+    "l1_distance_to_wigner": 0.3085273629892942,
+    "l1_distance_to_poisson": 0.3225114016348925
+  },
+  "gate_flags": {
+    "scar_tower_has_half_L_plus_one_states": true,
+    "scar_tower_spacing_uniform": true,
+    "level_statistics_goe_not_poisson": true,
+    "spacing_distribution_wigner_not_poisson": true
+  },
+  "remote_rerun": {
+    "L": 32,
+    "reason": "L=32 sector (~77k) needs ~47GB dense eigh workspace; local memory is 18GB.",
+    "constraint_class": "external_required"
+  },
+  "data": [
+    "outputs/data/sector_scar_tower.csv",
+    "outputs/data/sector_level_spacings.csv"
+  ],
+  "figures": [
+    "outputs/figures/sector_scar_tower.png",
+    "outputs/figures/sector_level_statistics.png"
+  ]
+}

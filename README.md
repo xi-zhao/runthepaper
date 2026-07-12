@@ -10,7 +10,7 @@ reproduced figures, and honest reproduction boundaries.
 This repository publishes the human-facing outputs of our paper reproduction
 work:
 
-- reproduction notes;
+- Chinese and English getting-started reproduction notes;
 - paper-derived numerical code;
 - generated data and figures;
 - validation checks and scorecards;
@@ -32,17 +32,16 @@ readers back to the official paper source.
 
 ## Current Cases
 
-| Paper ID | Topic | Status |
-| --- | --- | --- |
-| `1803.01876` | Non-Hermitian SSH model and non-Bloch bulk-boundary correspondence | Feature-level reproduction |
-| `1804.04672` | Non-Hermitian Chern bands and non-Bloch Chern physics | Feature-level reproduction |
+RunThePaper currently publishes 10 inspectable reproduction cases across
+non-Hermitian physics, many-body dynamics, quantum circuits, atom-array
+assembly, boson sampling, and localization.
 
 Start here:
 
-- [Case README](cases/1803.01876/README.md)
-- [Reproduction Note](cases/1803.01876/note/reproduction-note.md)
-- [Code README](cases/1803.01876/code/README.md)
-- [Second Case README](cases/1804.04672/README.md)
+- [Published case index](CASES.md)
+- [1803.01876 case](cases/1803.01876/README.md)
+- [1804.04672 case](cases/1804.04672/README.md)
+- [Chinese and English note entry](cases/1803.01876/note/reproduction-note.md)
 - [Roadmap](ROADMAP.md)
 
 ## Repository Structure
@@ -51,7 +50,7 @@ Start here:
 cases/
   <paper-id>/
     README.md              # public case overview
-    note/                  # human-readable reproduction note
+    note/                  # Chinese and English getting-started notes
     code/                  # runnable reproduction code
     docs/                  # derivation, methods, scorecards, lessons
     outputs/
@@ -71,6 +70,26 @@ Each case separates:
 - successful reproduction from remaining gaps.
 
 This is the core rule of RunThePaper: do not hide uncertainty.
+
+## Publication Contract
+
+A case is ready to publish when it has both Chinese and English notes, runnable
+public scripts, generated outputs, machine-readable checks, and an explicit
+limitation statement. The audit score is supporting evidence, not a publishing
+threshold.
+
+Final figures use the paper's parameters whenever local resources and public
+inputs make that possible. If a paper-scale run is not feasible, the case must
+be labeled as reduced-scale, subset, proxy, or blocked; a test-scale result must
+not be presented as a complete reproduction.
+
+Maintainers can verify the public package with:
+
+```bash
+python scripts/render_case_catalog.py --check
+python scripts/validate_public_cases.py
+python -m compileall -q scripts cases
+```
 
 ## License
 

@@ -1,0 +1,16 @@
+{
+  "status": "physically_consistent",
+  "scope": "small-size exact evolution, not full PRL-scale disorder averaging",
+  "checks": {
+    "interacting_peak_locked_near_half_frequency": true,
+    "noninteracting_peak_moves_with_epsilon": true,
+    "level_statistics_generated": true,
+    "variance_peak_data_generated": true,
+    "mutual_information_proxy_generated": true
+  },
+  "max_interacting_peak_locking_error": 0.0,
+  "notes": [
+    "The paper uses L=14 and about 10^2 disorder averages for Fig. 1, and larger exact diagonalization campaigns for Fig. 2 and Fig. 3.",
+    "This case uses L=6-8 exact calculations to reproduce the qualitative numerical signatures."
+  ]
+}

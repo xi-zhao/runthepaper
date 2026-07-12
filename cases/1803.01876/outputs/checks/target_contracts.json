@@ -5,6 +5,8 @@
     "generated_datasets_total": 13,
     "rendered_figures_total": 13,
     "evidence_comparisons_total": 5,
+    "final_reproduction_figures_total": 13,
+    "final_reproduction_figures_eligible": 13,
     "findings_total": 0,
     "finding_counts": {
       "error": 0,

@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "figures": [
+    "outputs/figures/fig1_infidelity_reproduction.png",
+    "outputs/figures/fig2_acceptance_reproduction.png",
+    "outputs/figures/fig3_runtime_reproduction.png",
+    "outputs/figures/fig4_sampling_precision_reproduction.png"
+  ]
+}

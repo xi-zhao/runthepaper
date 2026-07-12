@@ -1,0 +1,17 @@
+{
+  "target": "T001",
+  "source": "paper Fig. 3 and Problem Analysis text",
+  "hardware_compliant": true,
+  "original_two_qubit_gates": 6,
+  "inserted_swaps": 1,
+  "additional_cnot_equivalent_gates": 3,
+  "output_depth": 8,
+  "expected_inserted_swaps": 1,
+  "expected_additional_cnot_equivalent_gates": 3,
+  "expected_output_depth": 8,
+  "first_swap_logical_pair": [
+    0,
+    1
+  ],
+  "status": "passed"
+}

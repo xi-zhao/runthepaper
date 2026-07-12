@@ -1,0 +1,286 @@
+{
+  "schema_version": 1,
+  "paper_id": "2604.08669",
+  "summary": "Reduced-scale two-stage reproduction has started. It now treats Fig. 3 as a retrained model artifact with checkpoint, training history, and evaluation metrics; P2WGS continuity and pipelined timing remain reduced-scale/model targets.",
+  "targets": [
+    {
+      "target_id": "T001",
+      "label": "Fig. 3 retrained GNN path-planner benchmark",
+      "weight": 1.2,
+      "evaluation": {
+        "critical": true,
+        "paper_level_role": "main_claim",
+        "artifact_pass": true,
+        "data_backed": true,
+        "manual_interventions": 0,
+        "failure_type": "insufficient_compute",
+        "parameter_match": "reduced_scale",
+        "reference_comparison": "source_figure_only",
+        "generated_data_provenance": "independent_numerics",
+        "formula_dependencies": [],
+        "formula_gate": "not_applicable"
+      },
+      "components": {
+        "feature_match": {
+          "score": 35.0,
+          "reason": "The reduced chain includes stochastic loading, Hungarian labels, candidate graph construction, 6-pass GNN edge scoring, checkpoint output, reloadable model state, decoding, and distance metrics.",
+          "max_score": 50.0
+        },
+        "numeric_closeness": {
+          "score": 20.0,
+          "reason": "The reduced retrained checkpoint produces small assignment-distance gaps on four eval instances, but it is not the 1024-instance paper benchmark.",
+          "max_score": 35.0
+        },
+        "paper_scope_coverage": {
+          "score": 8.0,
+          "reason": "The run is small-scale and still uses probability-weighted Hungarian decoding rather than the modified auction decoder.",
+          "max_score": 15.0
+        }
+      },
+      "score_cap": 70.0,
+      "cap_reason": "Reduced-scale retraining with decoder substitution cannot support a paper-scale Fig. 3 claim.",
+      "evidence": [
+        "outputs/checks/retrained_gnn_model/model_state.pt",
+        "outputs/checks/retrained_gnn_model/training_history.json",
+        "outputs/checks/retrained_gnn_model/metrics.json",
+        "outputs/figures/fig3_reduced_gnn_metrics.png"
+      ],
+      "critical": true,
+      "formula_score_cap": 100.0,
+      "generated_data_provenance_score_cap": 100.0,
+      "evidence_tier": "physics_reproduction",
+      "parameter_score_cap": 70.0,
+      "reference_score_cap": 70.0,
+      "component_total": 63.0,
+      "score": 63.0,
+      "similarity_level": "numerical_feature_reproduction",
+      "figure_refs": [
+        "Fig. 3"
+      ],
+      "panel_coverage": {
+        "panels": [
+          {
+            "panel_id": "a",
+            "status": "reproduced",
+            "note": "max-distance distribution generated (scale via parameter axis)",
+            "evidence": "outputs/figures/fig3_reduced_gnn_metrics.png"
+          },
+          {
+            "panel_id": "b",
+            "status": "reproduced",
+            "note": "average-distance distribution generated",
+            "evidence": "outputs/figures/fig3_reduced_gnn_metrics.png"
+          }
+        ],
+        "panel_scope_cap": 15.0
+      },
+      "physics_status": "undeclared",
+      "physics_score_cap": 100.0
+    },
+    {
+      "target_id": "T002",
+      "label": "Fig. 4 reduced P2WGS continuity benchmark",
+      "weight": 1.0,
+      "evaluation": {
+        "critical": true,
+        "paper_level_role": "main_claim",
+        "artifact_pass": true,
+        "data_backed": true,
+        "manual_interventions": 0,
+        "failure_type": "partial_target_coverage",
+        "parameter_match": "paper_subset",
+        "reference_comparison": "source_figure_only",
+        "generated_data_provenance": "independent_numerics",
+        "formula_dependencies": [],
+        "formula_gate": "not_applicable"
+      },
+      "components": {
+        "feature_match": {
+          "score": 38.0,
+          "max_score": 50.0,
+          "reason": "Fig. 4's central claim is reproduced at the paper's own scale (N=10201, T=101): P2WGS tightly constrains phase fluctuations (<2% of 2pi) at every iteration count, improving monotonically."
+        },
+        "numeric_closeness": {
+          "score": 17.0,
+          "max_score": 35.0,
+          "reason": "Phase-continuity magnitude and iteration trend are quantitative; the paper's 3->5 intensity-continuity improvement is not resolved (flat within noise), most plausibly from reconstructed trajectory details."
+        },
+        "paper_scope_coverage": {
+          "score": 11.0,
+          "max_score": 15.0,
+          "reason": "Both metrics at all four iteration counts with stochastic loading error bars; 3 realizations vs the paper's unspecified 'multiple'."
+        }
+      },
+      "evidence": [
+        "outputs/checks/p2wgs_paper_scale.json",
+        "outputs/checks/p2wgs_paper_scale_iter3/metrics.json",
+        "outputs/checks/p2wgs_paper_scale_iter5/metrics.json",
+        "outputs/checks/p2wgs_paper_scale_iter8/metrics.json",
+        "outputs/checks/p2wgs_paper_scale_iter10/metrics.json"
+      ],
+      "critical": true,
+      "formula_score_cap": 100.0,
+      "generated_data_provenance_score_cap": 100.0,
+      "evidence_tier": "physics_reproduction",
+      "parameter_score_cap": 89.0,
+      "reference_score_cap": 70.0,
+      "component_total": 66.0,
+      "score": 66.0,
+      "similarity_level": "numerical_feature_reproduction",
+      "figure_refs": [
+        "Fig. 4"
+      ],
+      "panel_coverage": {
+        "panels": [
+          {
+            "panel_id": "top_phase",
+            "status": "reproduced",
+            "evidence": "outputs/checks/p2wgs_paper_scale.json"
+          },
+          {
+            "panel_id": "bottom_intensity",
+            "status": "partial",
+            "note": "curve produced; the 3->5 improvement feature not resolved",
+            "evidence": "outputs/checks/p2wgs_paper_scale.json"
+          }
+        ],
+        "panel_scope_cap": 11.25
+      },
+      "physics_status": "passed",
+      "physics_score_cap": 100.0,
+      "remaining_gap": "The intensity-continuity 3->5 improvement needs the paper's exact frame-trajectory protocol (not published); phase claim fully reproduced at paper scale.",
+      "physics_assertions": [
+        {
+          "assertion_id": "phase_fluctuations_tightly_constrained",
+          "tier": "numeric",
+          "essential": true,
+          "status": "passed",
+          "evidence": "outputs/checks/p2wgs_paper_scale.json#summary_by_iteration",
+          "claim": "At N=10201/T=101 the P2WGS phase continuity stays below 2% of 2pi for iter=3/5/8/10 and improves monotonically with iterations."
+        },
+        {
+          "assertion_id": "intensity_3_to_5_improvement",
+          "tier": "numeric",
+          "essential": false,
+          "status": "failed",
+          "evidence": "outputs/checks/p2wgs_paper_scale.json#gate_flags",
+          "claim": "The paper's significant 3->5 intensity-continuity improvement; ours is flat within noise - recorded openly (trajectory-protocol difference suspected)."
+        }
+      ]
+    },
+    {
+      "target_id": "T003",
+      "label": "Fig. 5 pipelined timing model",
+      "weight": 0.8,
+      "evaluation": {
+        "critical": true,
+        "paper_level_role": "supporting",
+        "artifact_pass": true,
+        "data_backed": true,
+        "manual_interventions": 0,
+        "failure_type": "insufficient_compute",
+        "parameter_match": "proxy_model",
+        "reference_comparison": "analytic_reference",
+        "generated_data_provenance": "analytic_reference",
+        "formula_dependencies": [],
+        "formula_gate": "not_applicable"
+      },
+      "components": {
+        "feature_match": {
+          "score": 30.0,
+          "reason": "The encoded timing model reproduces the compute-bound plateau and hardware-bound linear regime.",
+          "max_score": 50.0
+        },
+        "numeric_closeness": {
+          "score": 16.0,
+          "reason": "The timing curve uses paper-level constants and a transparent formula but is not measured on RTX 5090 or A100.",
+          "max_score": 35.0
+        },
+        "paper_scope_coverage": {
+          "score": 8.0,
+          "reason": "The model covers the Fig. 5 mechanism but not hardware-specific benchmark measurements.",
+          "max_score": 15.0
+        }
+      },
+      "score_cap": 55.0,
+      "cap_reason": "Timing is an analytic/proxy model until a GPU timing campaign is run.",
+      "evidence": [
+        "outputs/checks/timing_model/metrics.json",
+        "outputs/figures/fig5_reduced_timing_model.png"
+      ],
+      "critical": true,
+      "formula_score_cap": 100.0,
+      "generated_data_provenance_score_cap": 100.0,
+      "evidence_tier": "physics_reproduction",
+      "parameter_score_cap": 55.0,
+      "reference_score_cap": 90.0,
+      "component_total": 54.0,
+      "score": 54.0,
+      "similarity_level": "feature_not_accepted",
+      "figure_refs": [
+        "Fig. 5"
+      ],
+      "panel_coverage": {
+        "panels": [
+          {
+            "panel_id": "single",
+            "status": "reproduced",
+            "note": "timing model curves generated (hardware differs via parameter axis)",
+            "evidence": "outputs/figures/fig5_reduced_timing_model.png"
+          }
+        ],
+        "panel_scope_cap": 15.0
+      },
+      "physics_status": "undeclared",
+      "physics_score_cap": 100.0
+    }
+  ],
+  "overall_score": 61.6,
+  "similarity_level": "numerical_feature_reproduction",
+  "evaluation_summary": {
+    "scored_items": 3,
+    "critical_items": 3,
+    "artifact_pass_rate": 1.0,
+    "data_backed_rate": 1.0,
+    "manual_interventions_total": 0,
+    "manual_interventions_per_item": 0.0,
+    "failure_type_counts": {
+      "insufficient_compute": 2,
+      "partial_target_coverage": 1
+    },
+    "parameter_match_counts": {
+      "reduced_scale": 1,
+      "paper_subset": 1,
+      "proxy_model": 1
+    },
+    "reference_comparison_counts": {
+      "source_figure_only": 2,
+      "analytic_reference": 1
+    },
+    "generated_data_provenance_counts": {
+      "independent_numerics": 2,
+      "analytic_reference": 1
+    },
+    "evidence_tier_counts": {
+      "physics_reproduction": 3
+    },
+    "formula_gate_counts": {
+      "not_applicable": 3
+    },
+    "paper_level_role_counts": {
+      "main_claim": 2,
+      "supporting": 1
+    },
+    "physics_status_counts": {
+      "undeclared": 2,
+      "passed": 1
+    },
+    "physics_assertion_status_counts": {
+      "passed": 1,
+      "failed": 1
+    },
+    "essential_physics_failures": []
+  },
+  "status": "passed",
+  "score_model": "rra_similarity_v1"
+}

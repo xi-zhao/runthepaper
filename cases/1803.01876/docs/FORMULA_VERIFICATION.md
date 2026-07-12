@@ -42,7 +42,7 @@ Latest verification result:
 Run:
 
 ```bash
-python agent/harness/scripts/check_formula_gate.py case/1803.01876 --write
+cat cases/1803.01876/outputs/checks/formula_verification.json
 ```
 
 Current intended gates:

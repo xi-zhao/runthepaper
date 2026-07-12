@@ -1,0 +1,531 @@
+{
+  "schema_version": 3,
+  "score_model": "rra_similarity_v3_figure_evaluation",
+  "paper_id": "1803.01876",
+  "summary": "所有评分 target 已加入原文图源 digitization：Fig. 2、Fig. 3、Fig. 4、Fig. 5 和补充图均有 EPS/PNG reference CSV 与 generated data 对照。Fig. 2/Fig. 3 共用的开链实空间方程和补充图使用的开边界 bulk spectrum 均已升级为 source_and_symbolic 公式门禁；剩余边界是：这些仍不是作者原始 plotting data。",
+  "targets": [
+    {
+      "target_id": "T001",
+      "label": "Fig. 2 open-boundary spectrum",
+      "weight": 1.0,
+      "components": {
+        "feature_match": {
+          "score": 50.0,
+          "reason": "零能边界态、开边界谱和手征配对都出现，和论文主张一致。",
+          "max_score": 50.0
+        },
+        "numeric_closeness": {
+          "score": 34.0,
+          "reason": "从原始图源 digitize Fig. 2(a-c,d) 曲线/点云后，4 个 panel 目标级 mismatch count 为 0；中位最近邻误差均在各自容差内，p95 残余作为版式/分支密度差异保留。",
+          "max_score": 35.0
+        },
+        "paper_scope_coverage": {
+          "score": 13.0,
+          "reason": "Fig. 2(a-c,d) 均已有 EPS/PNG digitized reference CSV，并接入 all_digitized_curves.json；仍低于作者原始 plotting data。",
+          "max_score": 15.0
+        }
+      },
+      "score_cap": 95.0,
+      "cap_reason": "使用 digitized EPS/PNG curve/reference；仍非作者原始 plotting data。",
+      "evidence": [
+        "outputs/checks/fig2_open_spectrum.json",
+        "outputs/checks/fig2_boundary_perturbation.json",
+        "outputs/checks/all_digitized_curves.json",
+        "internal digitized source validation (not redistributed)",
+        "internal digitized source validation (not redistributed)",
+        "internal digitized source validation (not redistributed)",
+        "internal digitized source validation (not redistributed)"
+      ],
+      "remaining_gap": "已达到 digitized-curve 级对照；未达到 author-data 级对照。",
+      "component_total": 97.0,
+      "score": 95.0,
+      "similarity_level": "complete_reproduction",
+      "evaluation": {
+        "critical": true,
+        "paper_level_role": "main_claim",
+        "artifact_pass": true,
+        "data_backed": true,
+        "manual_interventions": 0,
+        "failure_type": "none",
+        "parameter_match": "paper_exact",
+        "artifact_stage": "final_reproduction",
+        "generated_data_provenance": "independent_numerics",
+        "formula_gate": "verified",
+        "formula_dependencies": [
+          "EQC001",
+          "EQC003",
+          "EQC005"
+        ],
+        "reference_comparison": "digitized_curve"
+      },
+      "critical": true,
+      "parameter_score_cap": 100.0,
+      "formula_score_cap": 100.0,
+      "reference_score_cap": 95.0,
+      "generated_data_provenance_score_cap": 100.0,
+      "evidence_tier": "physics_reproduction",
+      "physics_assertions": [
+        {
+          "assertion_id": "fig2d_exact_zero_crossing_at_first_bond_decoupling",
+          "tier": "analytic",
+          "essential": true,
+          "status": "passed",
+          "evidence": "outputs/checks/fig2_boundary_perturbation.json#physics_probes.exact_zero_crossing_min_abs_E",
+          "claim": "The boundary-perturbed mode crosses zero exactly at t1 = 0.8 + gamma/2 = 22/15, where the perturbed first bond decouples (chiral-block determinant zero)."
+        },
+        {
+          "assertion_id": "fig2d_black_wiggle_near_zero_without_touching",
+          "tier": "numeric",
+          "essential": true,
+          "status": "passed",
+          "evidence": "outputs/checks/fig2_boundary_perturbation.json#physics_probes.black_wiggle_min_abs_E_in_0p95_1p35",
+          "claim": "Near t1 = 1.025 the black wiggle dips to min|E| = 0.003 > 0; it never touches zero because the chiral-block determinant has no zero in [0.9, 1.3]."
+        },
+        {
+          "assertion_id": "fig2d_abs_crossings_rendered_as_crossings",
+          "tier": "line_contract",
+          "essential": true,
+          "status": "passed",
+          "evidence": "outputs/checks/fig2_boundary_perturbation.json#physics_probes.low_energy_abs_crossing_count_1p0_1p2",
+          "claim": "The genuine |E| crossings in t1 [1.0, 1.2] are rendered as crossings via eigenvalue-continuation branches, not as sorted-rank avoided crossings."
+        },
+        {
+          "assertion_id": "fig2d_source_panel_uses_sorted_line_rendering",
+          "tier": "alignment",
+          "essential": true,
+          "status": "source_figure_artifact",
+          "evidence": "outputs/figures/fig2_boundary_perturbation_sorted_artifact_zoom.png",
+          "claim": "The source Fig. 2(d) connects |E| samples by per-t1 sorted rank and draws the genuine crossings as bounces; reproducing that convention on our data recreates the source look."
+        }
+      ],
+      "physics_status": "passed",
+      "physics_score_cap": 100.0,
+      "figure_refs": [
+        "Fig. 2"
+      ],
+      "panel_coverage": {
+        "panels": [
+          {
+            "panel_id": "a",
+            "status": "reproduced",
+            "evidence": "outputs/figures/fig2_abs_panel.png"
+          },
+          {
+            "panel_id": "b",
+            "status": "reproduced",
+            "evidence": "outputs/figures/fig2_real_panel.png"
+          },
+          {
+            "panel_id": "c",
+            "status": "reproduced",
+            "evidence": "outputs/figures/fig2_imag_panel.png"
+          },
+          {
+            "panel_id": "d",
+            "status": "reproduced",
+            "note": "physical branch rendering; source sorted-line artifact recorded",
+            "evidence": "outputs/figures/fig2_boundary_perturbation.png"
+          }
+        ],
+        "panel_scope_cap": 15.0
+      },
+      "final_reproduction_eligible": true,
+      "final_reproduction_gate": "passed"
+    },
+    {
+      "target_id": "T002",
+      "label": "Fig. 3 GBZ and skin localization",
+      "weight": 1.0,
+      "components": {
+        "feature_match": {
+          "score": 49.0,
+          "reason": "广义布里渊区和 skin localization 的关键特征出现。",
+          "max_score": 50.0
+        },
+        "numeric_closeness": {
+          "score": 33.0,
+          "reason": "Fig. 3(a-c) 已加入 raster/EPS digitized reference：beta-root 面板、C_beta 曲线和 profile 面板目标级 mismatch count 为 0。",
+          "max_score": 35.0
+        },
+        "paper_scope_coverage": {
+          "score": 13.0,
+          "reason": "Fig. 3 三个 panel 均有 digitized reference CSV；仍不是作者原始 plotting data。",
+          "max_score": 15.0
+        }
+      },
+      "score_cap": 95.0,
+      "cap_reason": "使用 digitized EPS/PNG curve/reference；仍非作者原始 plotting data。",
+      "evidence": [
+        "outputs/checks/fig3_beta_skin.json",
+        "outputs/checks/all_digitized_curves.json",
+        "internal digitized source validation (not redistributed)",
+        "internal digitized source validation (not redistributed)",
+        "internal digitized source validation (not redistributed)"
+      ],
+      "remaining_gap": "已达到 digitized-curve 级对照；未达到 author-data 级对照。",
+      "component_total": 95.0,
+      "score": 95.0,
+      "similarity_level": "complete_reproduction",
+      "evaluation": {
+        "critical": true,
+        "paper_level_role": "main_claim",
+        "artifact_pass": true,
+        "data_backed": true,
+        "manual_interventions": 0,
+        "failure_type": "none",
+        "parameter_match": "paper_exact",
+        "artifact_stage": "final_reproduction",
+        "generated_data_provenance": "independent_numerics",
+        "formula_gate": "verified",
+        "formula_dependencies": [
+          "EQC003",
+          "EQC006",
+          "EQC007"
+        ],
+        "reference_comparison": "digitized_curve"
+      },
+      "critical": true,
+      "parameter_score_cap": 100.0,
+      "formula_score_cap": 100.0,
+      "reference_score_cap": 95.0,
+      "generated_data_provenance_score_cap": 100.0,
+      "evidence_tier": "physics_reproduction",
+      "physics_status": "undeclared",
+      "physics_score_cap": 100.0,
+      "figure_refs": [
+        "Fig. 3"
+      ],
+      "panel_coverage": {
+        "panels": [
+          {
+            "panel_id": "a",
+            "status": "reproduced",
+            "evidence": "outputs/figures/fig3_absbeta_panel.png"
+          },
+          {
+            "panel_id": "b",
+            "status": "reproduced",
+            "evidence": "outputs/figures/fig3_cbeta_panel.png"
+          },
+          {
+            "panel_id": "c",
+            "status": "reproduced",
+            "evidence": "outputs/figures/fig3_profile_panel.png"
+          }
+        ],
+        "panel_scope_cap": 15.0
+      },
+      "final_reproduction_eligible": true,
+      "final_reproduction_gate": "passed"
+    },
+    {
+      "target_id": "T003",
+      "label": "Fig. 4 non-Bloch winding number",
+      "weight": 1.0,
+      "components": {
+        "feature_match": {
+          "score": 50.0,
+          "reason": "non-Bloch winding number 平台和拓扑区间清楚出现。",
+          "max_score": 50.0
+        },
+        "numeric_closeness": {
+          "score": 34.0,
+          "reason": "从原始 EPS 矢量图提取的 23 个 marker 全部匹配 generated winding，阶跃转变点最大 t1 误差为 0.0082。",
+          "max_score": 35.0
+        },
+        "paper_scope_coverage": {
+          "score": 12.0,
+          "reason": "Fig. 4 的原文 marker 和阶跃曲线已从 EPS digitize，并和 generated CSV 建立点级对照；仍低于作者原始数据级别。",
+          "max_score": 15.0
+        }
+      },
+      "score_cap": 95.0,
+      "cap_reason": "使用 digitized EPS curve/reference；仍非作者原始 plotting data。",
+      "evidence": [
+        "outputs/checks/fig4_winding.json",
+        "outputs/checks/fig4_digitized_curve.json",
+        "outputs/checks/all_digitized_curves.json",
+        "internal digitized source validation (not redistributed)",
+        "internal digitized source validation (not redistributed)"
+      ],
+      "remaining_gap": "已达到 digitized-curve 级对照；未达到 author-data 级对照。",
+      "component_total": 96.0,
+      "score": 95.0,
+      "similarity_level": "complete_reproduction",
+      "evaluation": {
+        "critical": true,
+        "paper_level_role": "main_claim",
+        "artifact_pass": true,
+        "data_backed": true,
+        "manual_interventions": 0,
+        "failure_type": "none",
+        "parameter_match": "paper_exact",
+        "artifact_stage": "final_reproduction",
+        "generated_data_provenance": "analytic_reference",
+        "formula_gate": "verified",
+        "formula_dependencies": [
+          "EQC006",
+          "EQC007",
+          "EQC009"
+        ],
+        "reference_comparison": "digitized_curve"
+      },
+      "critical": true,
+      "parameter_score_cap": 100.0,
+      "formula_score_cap": 100.0,
+      "reference_score_cap": 95.0,
+      "generated_data_provenance_score_cap": 100.0,
+      "evidence_tier": "physics_reproduction",
+      "physics_status": "undeclared",
+      "physics_score_cap": 100.0,
+      "figure_refs": [
+        "Fig. 4"
+      ],
+      "panel_coverage": {
+        "panels": [
+          {
+            "panel_id": "single",
+            "status": "reproduced",
+            "evidence": "outputs/figures/fig4_winding.png"
+          }
+        ],
+        "panel_scope_cap": 15.0
+      },
+      "final_reproduction_eligible": true,
+      "final_reproduction_gate": "passed"
+    },
+    {
+      "target_id": "T004",
+      "label": "Fig. 5 nonzero t3 topology",
+      "weight": 1.0,
+      "components": {
+        "feature_match": {
+          "score": 47.0,
+          "reason": "非零 t3 情况下的拓扑区间和非圆形 C_beta 特征出现。",
+          "max_score": 50.0
+        },
+        "numeric_closeness": {
+          "score": 33.0,
+          "reason": "Fig. 5(a,b) 的 spectrum、winding 和 C_beta 均使用论文参数；L=100 OBC spectrum 与 C_beta 由 35 位高精度独立计算生成，3 个 panel 的 digitized reference mismatch count 为 0。",
+          "max_score": 35.0
+        },
+        "paper_scope_coverage": {
+          "score": 13.0,
+          "reason": "非零 t3 目标的两个主图 panel 均按论文参数生成并有 digitized reference CSV；仍不是作者原始 plotting data。",
+          "max_score": 15.0
+        }
+      },
+      "score_cap": 95.0,
+      "cap_reason": "使用 digitized EPS curve/reference；仍非作者原始 plotting data。",
+      "evidence": [
+        "outputs/checks/fig5_t3.json",
+        "outputs/checks/all_digitized_curves.json",
+        "internal digitized source validation (not redistributed)",
+        "internal digitized source validation (not redistributed)",
+        "internal digitized source validation (not redistributed)"
+      ],
+      "remaining_gap": "已达到 paper-parameter、high-precision、digitized-curve 级对照；未达到 author-data 级对照。",
+      "component_total": 93.0,
+      "score": 93.0,
+      "similarity_level": "complete_reproduction",
+      "evaluation": {
+        "critical": true,
+        "paper_level_role": "supporting",
+        "artifact_pass": true,
+        "data_backed": true,
+        "manual_interventions": 0,
+        "failure_type": "none",
+        "parameter_match": "paper_exact",
+        "artifact_stage": "final_reproduction",
+        "generated_data_provenance": "independent_numerics",
+        "formula_gate": "verified",
+        "formula_dependencies": [
+          "EQC001",
+          "EQC009",
+          "EQC010"
+        ],
+        "reference_comparison": "digitized_curve"
+      },
+      "critical": true,
+      "parameter_score_cap": 100.0,
+      "formula_score_cap": 100.0,
+      "reference_score_cap": 95.0,
+      "generated_data_provenance_score_cap": 100.0,
+      "evidence_tier": "physics_reproduction",
+      "physics_status": "undeclared",
+      "physics_score_cap": 100.0,
+      "figure_refs": [
+        "Fig. 5"
+      ],
+      "panel_coverage": {
+        "panels": [
+          {
+            "panel_id": "a",
+            "status": "reproduced",
+            "note": "L=100、35 位高精度 spectrum + paper-parameter winding",
+            "evidence": "outputs/figures/fig5_t3_left_panel.png"
+          },
+          {
+            "panel_id": "b",
+            "status": "reproduced",
+            "note": "non-circular GBZ",
+            "evidence": "outputs/figures/fig5_t3.png"
+          }
+        ],
+        "panel_scope_cap": 15.0
+      },
+      "final_reproduction_eligible": true,
+      "final_reproduction_gate": "passed"
+    },
+    {
+      "target_id": "T005",
+      "label": "Supplemental spectra",
+      "weight": 0.5,
+      "components": {
+        "feature_match": {
+          "score": 45.0,
+          "reason": "补充材料里的复谱和大 gamma 绕数特征出现。",
+          "max_score": 50.0
+        },
+        "numeric_closeness": {
+          "score": 32.0,
+          "reason": "补充 Fig. 1 复平面谱、补充 Fig. 2 spectrum 和 winding 已加入 digitized reference；4 个 panel 目标级 mismatch count 为 0。",
+          "max_score": 35.0
+        },
+        "paper_scope_coverage": {
+          "score": 13.0,
+          "reason": "补充目标已有 EPS/PNG digitized reference CSV；仍不是作者原始 plotting data，且部分复平面 panel 以图源点云对照为主。",
+          "max_score": 15.0
+        }
+      },
+      "score_cap": 95.0,
+      "cap_reason": "使用 digitized EPS/PNG curve/reference；仍非作者原始 plotting data。",
+      "evidence": [
+        "outputs/checks/supplemental_fig1_complex_spectra.json",
+        "outputs/checks/supplemental_fig2_gamma24.json",
+        "outputs/checks/all_digitized_curves.json",
+        "internal digitized source validation (not redistributed)",
+        "internal digitized source validation (not redistributed)",
+        "internal digitized source validation (not redistributed)",
+        "internal digitized source validation (not redistributed)"
+      ],
+      "remaining_gap": "已达到 digitized-curve 级对照；未达到 author-data 级对照。",
+      "component_total": 90.0,
+      "score": 90.0,
+      "similarity_level": "complete_reproduction",
+      "evaluation": {
+        "critical": false,
+        "paper_level_role": "auxiliary",
+        "artifact_pass": true,
+        "data_backed": true,
+        "manual_interventions": 0,
+        "failure_type": "none",
+        "parameter_match": "paper_exact",
+        "artifact_stage": "final_reproduction",
+        "generated_data_provenance": "independent_numerics",
+        "formula_gate": "verified",
+        "formula_dependencies": [
+          "EQC003",
+          "EQC005",
+          "EQC006",
+          "EQC007",
+          "EQC008",
+          "EQC009"
+        ],
+        "reference_comparison": "digitized_curve"
+      },
+      "critical": false,
+      "parameter_score_cap": 100.0,
+      "formula_score_cap": 100.0,
+      "reference_score_cap": 95.0,
+      "generated_data_provenance_score_cap": 100.0,
+      "evidence_tier": "physics_reproduction",
+      "physics_status": "undeclared",
+      "physics_score_cap": 100.0,
+      "figure_refs": [
+        "Supplemental Figs. 1-2"
+      ],
+      "panel_coverage": {
+        "panels": [
+          {
+            "panel_id": "S1a",
+            "status": "reproduced",
+            "evidence": "outputs/figures/supplemental_fig1_complex_spectra.png"
+          },
+          {
+            "panel_id": "S1b",
+            "status": "reproduced",
+            "evidence": "outputs/figures/supplemental_fig1_complex_spectra.png"
+          },
+          {
+            "panel_id": "S2a",
+            "status": "reproduced",
+            "evidence": "outputs/figures/supplemental_fig2_gamma24.png"
+          },
+          {
+            "panel_id": "S2b",
+            "status": "reproduced",
+            "evidence": "internal digitized source validation (not redistributed)"
+          }
+        ],
+        "panel_scope_cap": 15.0
+      },
+      "final_reproduction_eligible": true,
+      "final_reproduction_gate": "passed"
+    }
+  ],
+  "overall_score": 94.0,
+  "similarity_level": "complete_reproduction",
+  "evaluation_summary": {
+    "scored_items": 5,
+    "critical_items": 4,
+    "artifact_pass_rate": 1.0,
+    "data_backed_rate": 1.0,
+    "manual_interventions_total": 0,
+    "manual_interventions_per_item": 0.0,
+    "failure_type_counts": {
+      "none": 5
+    },
+    "parameter_match_counts": {
+      "paper_exact": 5
+    },
+    "reference_comparison_counts": {
+      "digitized_curve": 5
+    },
+    "generated_data_provenance_counts": {
+      "independent_numerics": 4,
+      "analytic_reference": 1
+    },
+    "evidence_tier_counts": {
+      "physics_reproduction": 5
+    },
+    "formula_gate_counts": {
+      "verified": 5
+    },
+    "paper_level_role_counts": {
+      "main_claim": 3,
+      "supporting": 1,
+      "auxiliary": 1
+    },
+    "physics_status_counts": {
+      "passed": 1,
+      "undeclared": 4
+    },
+    "physics_assertion_status_counts": {
+      "passed": 3,
+      "source_figure_artifact": 1
+    },
+    "essential_physics_failures": [],
+    "final_reproduction_ready": true,
+    "final_reproduction_target_ids": [
+      "T001",
+      "T002",
+      "T003",
+      "T004",
+      "T005"
+    ],
+    "final_reproduction_blocked_target_ids": [],
+    "exploratory_target_ids": []
+  },
+  "status": "passed"
+}

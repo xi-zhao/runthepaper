@@ -31,7 +31,13 @@ def main() -> int:
     gamma = 4.0 / 3.0
     left_bond_delta = -0.8
     transition = analytic_transition(t2=t2, gamma=gamma)
-    t1_values = np.linspace(-3.0, 3.0, 301)
+    # The dense grid plus exact feature points keeps the two physical V bottoms
+    # honest: the exact zero crossing at t1 = 0.8 + gamma/2 and the near-zero
+    # (but nonzero) wiggle minimum at t1 ~ 1.025.
+    t1_values = np.union1d(
+        np.linspace(-3.0, 3.0, 601),
+        [0.8 - gamma / 2.0, 0.8 + gamma / 2.0, 1.025],
+    )
 
     eigenvalue_slices = []
     summaries = []
@@ -54,16 +60,18 @@ def main() -> int:
                 "abs3": float(abs_sorted[3]),
             }
         )
-    physical_rows = branch_tracked_spectrum_rows(t1_values, eigenvalue_slices)
-    rows = abs_rank_spectrum_rows(t1_values, eigenvalue_slices)
+    rows = branch_tracked_spectrum_rows(t1_values, eigenvalue_slices)
+    sorted_artifact_rows = abs_rank_spectrum_rows(t1_values, eigenvalue_slices)
 
     data_path = ROOT / "outputs/data/fig2_boundary_perturbation.csv"
     figure_path = ROOT / "outputs/figures/fig2_boundary_perturbation.png"
     zoom_path = ROOT / "outputs/figures/fig2_boundary_perturbation_low_energy_zoom.png"
+    artifact_zoom_path = ROOT / "outputs/figures/fig2_boundary_perturbation_sorted_artifact_zoom.png"
     checks_path = ROOT / "outputs/checks/fig2_boundary_perturbation.json"
     write_csv(data_path, rows, ["t1", "branch_id", "band_index", "real_E", "imag_E", "abs_E"])
     plot_boundary_spectrum(rows, figure_path, transition)
     plot_low_energy_zoom(rows, zoom_path, transition)
+    plot_low_energy_zoom(sorted_artifact_rows, artifact_zoom_path, transition)
 
     probes = {
         "center": spectrum_at_t1(summaries, 0.0),
@@ -72,6 +80,36 @@ def main() -> int:
         "outside_positive": spectrum_at_t1(summaries, 1.4),
         "outside_negative": spectrum_at_t1(summaries, -1.4),
     }
+
+    # Off-grid physics probes for the low-energy black wiggle. The exact zero
+    # crossing sits at t1 = 0.8 + gamma/2 where the perturbed leftmost bond
+    # t1 - 0.8 equals gamma/2 and the first site decouples in one direction.
+    exact_zero_t1 = 0.8 + gamma / 2.0
+    exact_zero_min_abs_E = float(
+        np.min(
+            np.abs(
+                open_chain_eigenvalues(
+                    L=L, t1=exact_zero_t1, t2=t2, gamma=gamma, left_bond_delta=left_bond_delta
+                )
+            )
+        )
+    )
+    # The robust zero modes are a chiral +/-E pair, so the black wiggle is the
+    # third-smallest |E| level while |t1| stays below the transition.
+    wiggle_min_abs_E = min(
+        float(
+            np.sort(
+                np.abs(
+                    open_chain_eigenvalues(
+                        L=L, t1=float(t1), t2=t2, gamma=gamma, left_bond_delta=left_bond_delta
+                    )
+                )
+            )[2]
+        )
+        for t1 in np.linspace(0.95, 1.35, 801)
+    )
+    crossing_count = count_low_energy_abs_crossings(rows, t1_min=1.0, t1_max=1.2, abs_E_max=0.35)
+
     feature_acceptance = {
         "zero_modes_robust_inside": max(
             probes["center"]["abs1"],
@@ -87,6 +125,9 @@ def main() -> int:
         "boundary_perturbation_has_extra_nonzero_near_zero": any(
             row["abs2"] < 0.25 for row in summaries if abs(row["t1"]) < transition - 0.15
         ),
+        "exact_zero_crossing_at_first_bond_decoupling": exact_zero_min_abs_E < 1e-6,
+        "black_wiggle_near_zero_without_touching": 1e-3 < wiggle_min_abs_E < 1e-2,
+        "abs_crossings_rendered_as_crossings": crossing_count > 0,
     }
     checks = {
         "target": "T002",
@@ -100,12 +141,27 @@ def main() -> int:
         "analytic_transition_abs_t1": transition,
         "physical_line_identity": "eigenvalue_continuation_branch",
         "physical_connect_rule": "connect_within_branch_id_in_t1_order",
-        "spectrum_line_identity": "open_chain_abs_energy_level",
-        "spectrum_connect_rule": "connect_abs_energy_rank_in_t1_order",
-        "render_line_identity": "open_chain_abs_energy_level",
-        "render_connect_rule": "connect_abs_energy_rank_in_t1_order",
+        "spectrum_line_identity": "eigenvalue_continuation_branch",
+        "spectrum_connect_rule": "connect_within_branch_id_in_t1_order",
+        "render_line_identity": "eigenvalue_continuation_branch",
+        "render_connect_rule": "connect_within_branch_id_in_t1_order",
         "zero_mode_render_rule": "finite_chain_lowest_abs_energy_inside_transition",
         "low_energy_zoom_figure": "outputs/figures/fig2_boundary_perturbation_low_energy_zoom.png",
+        "physics_probes": {
+            "exact_zero_crossing_t1": exact_zero_t1,
+            "exact_zero_crossing_min_abs_E": exact_zero_min_abs_E,
+            "black_wiggle_min_abs_E_in_0p95_1p35": wiggle_min_abs_E,
+            "low_energy_abs_crossing_count_1p0_1p2": crossing_count,
+        },
+        "source_figure_artifact": {
+            "kind": "sorted_line_rendering",
+            "claim": (
+                "The source Fig. 2(d) connects |E| samples by per-t1 sorted rank, which renders the "
+                "genuine |E| crossings near t1 in [1.0, 1.2] as avoided crossings."
+            ),
+            "artifact_rule": "connect_abs_energy_rank_in_t1_order",
+            "evidence_figure": "outputs/figures/fig2_boundary_perturbation_sorted_artifact_zoom.png",
+        },
         "probe_spectra": probes,
         "feature_acceptance": feature_acceptance,
         "status": "physically_consistent" if all(feature_acceptance.values()) else "partial",
@@ -113,8 +169,8 @@ def main() -> int:
             "Formula gate is checked before running.",
             "Acceptance checks that the robust zero modes survive the left-edge perturbation.",
             "The extra nonzero modes are treated as a feature, not as a failure.",
-            "The visible |E| panel is rendered as ordered absolute-energy levels to match the source figure's line convention.",
-            f"Physical branch-tracked rows were also computed for diagnostics: {len(physical_rows)} samples.",
+            "The visible |E| panel is rendered from eigenvalue-continuation branches; genuine |E| crossings are drawn as crossings.",
+            "The source figure's sorted-rank line convention is reproduced separately as an artifact evidence figure, not as the published rendering.",
         ],
     }
     checks_path.parent.mkdir(parents=True, exist_ok=True)
@@ -250,6 +306,34 @@ def plot_spectrum_branches(
             linewidth=linewidth,
             alpha=alpha,
         )
+
+
+def count_low_energy_abs_crossings(
+    rows: list[dict[str, float]],
+    t1_min: float,
+    t1_max: float,
+    abs_E_max: float,
+) -> int:
+    """Count |E| order swaps between branch-tracked curves inside a t1 window."""
+
+    by_branch: dict[int, list[tuple[float, float]]] = {}
+    for row in rows:
+        if t1_min <= float(row["t1"]) <= t1_max:
+            by_branch.setdefault(int(row["branch_id"]), []).append(
+                (float(row["t1"]), float(row["abs_E"]))
+            )
+    curves = []
+    for points in by_branch.values():
+        points.sort()
+        values = [abs_E for _, abs_E in points]
+        if values and min(values) < abs_E_max:
+            curves.append(values)
+    count = 0
+    for index, first in enumerate(curves):
+        for second in curves[index + 1 :]:
+            diffs = [a - b for a, b in zip(first, second)]
+            count += sum(1 for d, e in zip(diffs, diffs[1:]) if d * e < 0)
+    return count
 
 
 def zero_mode_curve(rows: list[dict[str, float]], transition: float) -> list[tuple[float, float]]:

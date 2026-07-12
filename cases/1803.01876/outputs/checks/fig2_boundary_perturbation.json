@@ -13,12 +13,24 @@
   "analytic_transition_abs_t1": 1.2018504251546631,
   "physical_line_identity": "eigenvalue_continuation_branch",
   "physical_connect_rule": "connect_within_branch_id_in_t1_order",
-  "spectrum_line_identity": "open_chain_abs_energy_level",
-  "spectrum_connect_rule": "connect_abs_energy_rank_in_t1_order",
-  "render_line_identity": "open_chain_abs_energy_level",
-  "render_connect_rule": "connect_abs_energy_rank_in_t1_order",
+  "spectrum_line_identity": "eigenvalue_continuation_branch",
+  "spectrum_connect_rule": "connect_within_branch_id_in_t1_order",
+  "render_line_identity": "eigenvalue_continuation_branch",
+  "render_connect_rule": "connect_within_branch_id_in_t1_order",
   "zero_mode_render_rule": "finite_chain_lowest_abs_energy_inside_transition",
   "low_energy_zoom_figure": "outputs/figures/fig2_boundary_perturbation_low_energy_zoom.png",
+  "physics_probes": {
+    "exact_zero_crossing_t1": 1.4666666666666668,
+    "exact_zero_crossing_min_abs_E": 7.829020554933867e-09,
+    "black_wiggle_min_abs_E_in_0p95_1p35": 0.0029911907411765168,
+    "low_energy_abs_crossing_count_1p0_1p2": 12
+  },
+  "source_figure_artifact": {
+    "kind": "sorted_line_rendering",
+    "claim": "The source Fig. 2(d) connects |E| samples by per-t1 sorted rank, which renders the genuine |E| crossings near t1 in [1.0, 1.2] as avoided crossings.",
+    "artifact_rule": "connect_abs_energy_rank_in_t1_order",
+    "evidence_figure": "outputs/figures/fig2_boundary_perturbation_sorted_artifact_zoom.png"
+  },
   "probe_spectra": {
     "center": {
       "t1": 0.0,
@@ -59,14 +71,17 @@
   "feature_acceptance": {
     "zero_modes_robust_inside": true,
     "outside_zero_modes_absent": true,
-    "boundary_perturbation_has_extra_nonzero_near_zero": true
+    "boundary_perturbation_has_extra_nonzero_near_zero": true,
+    "exact_zero_crossing_at_first_bond_decoupling": true,
+    "black_wiggle_near_zero_without_touching": true,
+    "abs_crossings_rendered_as_crossings": true
   },
   "status": "physically_consistent",
   "notes": [
     "Formula gate is checked before running.",
     "Acceptance checks that the robust zero modes survive the left-edge perturbation.",
     "The extra nonzero modes are treated as a feature, not as a failure.",
-    "The visible |E| panel is rendered as ordered absolute-energy levels to match the source figure's line convention.",
-    "Physical branch-tracked rows were also computed for diagnostics: 24080 samples."
+    "The visible |E| panel is rendered from eigenvalue-continuation branches; genuine |E| crossings are drawn as crossings.",
+    "The source figure's sorted-rank line convention is reproduced separately as an artifact evidence figure, not as the published rendering."
   ]
 }

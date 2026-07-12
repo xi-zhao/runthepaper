@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "numeric_closed": [],
+  "checks": {
+    "big_batch_equals_direct_amplitude_max_abs_error": 0.0,
+    "joint_probability_identity": "P_U(s)=P_U(s1;s2)",
+    "conditional_normalization_depth20": 1.0,
+    "conditional_normalization_depth14": 1.0,
+    "xeb_formula": "F_XEB = mean(N*p_i)-1",
+    "porter_thomas_pdf": "Prob(p)=N exp(-N p); with x=Np, density exp(-x)"
+  }
+}

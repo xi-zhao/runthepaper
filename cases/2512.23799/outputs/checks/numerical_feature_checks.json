@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "benchmark_model": {
+    "error_locations": 42,
+    "undetected_probability": 0.22,
+    "logical_error_per_undetected_error": 0.08,
+    "shots": 400000,
+    "seed": 251223799
+  },
+  "acceptance_monotone_decreasing": true,
+  "infidelity_monotone_increasing": true,
+  "max_acceptance_abs_error": 0.0010603210692235188,
+  "max_infidelity_abs_error": 0.0008586948895057817,
+  "runtime_speedup_at_p_1e_minus_3": 18.236436751664364,
+  "sampling_loglog_slope": -0.49814326365138706,
+  "feature_gates": {
+    "acceptance_error_within_4sigma": true,
+    "infidelity_error_within_4sigma": true,
+    "runtime_speedup_over_10x_at_low_p": true,
+    "sampling_slope_close_to_minus_half": true
+  },
+  "limitations": [
+    "This is a feature-level model of the Steane magic-state-preparation benchmark; the arXiv source contains final PNGs but no CSV or author simulation code.",
+    "The curves check the numerical features claimed by the paper: propagated-error simulation agrees with a reference estimator, acceptance decreases with p, infidelity increases with p, and propagated Clifford sampling is much faster at low p."
+  ]
+}

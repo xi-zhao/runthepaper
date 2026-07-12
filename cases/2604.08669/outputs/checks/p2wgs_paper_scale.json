@@ -1,0 +1,55 @@
+{
+  "target": "T002",
+  "figure": "Fig. 4",
+  "status": "physically_consistent",
+  "parameters": {
+    "N": 10201,
+    "T": 101,
+    "initial_side": 127,
+    "grid": 1024,
+    "iterations": [
+      3,
+      5,
+      8,
+      10
+    ],
+    "samples": 3,
+    "frames": 8
+  },
+  "summary_by_iteration": {
+    "3": {
+      "phase_mean": 0.01698479613236682,
+      "phase_std": 0.0010416035763216828,
+      "intensity_mean": 0.5134449390974911,
+      "intensity_std": 0.010841600970934001
+    },
+    "5": {
+      "phase_mean": 0.014237631672338403,
+      "phase_std": 0.0007791863365975505,
+      "intensity_mean": 0.5237955791823249,
+      "intensity_std": 0.011820569647542124
+    },
+    "8": {
+      "phase_mean": 0.011198722817353438,
+      "phase_std": 0.0010002989404224334,
+      "intensity_mean": 0.5112373280869528,
+      "intensity_std": 0.013205833578353537
+    },
+    "10": {
+      "phase_mean": 0.01045648270085181,
+      "phase_std": 0.0007573883696653406,
+      "intensity_mean": 0.5217676051367789,
+      "intensity_std": 0.014952603483136321
+    }
+  },
+  "gate_flags": {
+    "phase_tightly_constrained_all_iterations": true,
+    "phase_improves_with_iterations": true,
+    "intensity_3_to_5_improvement_resolved": false
+  },
+  "notes": [
+    "Paper-parameter scale (N=10201, T=101) with three stochastic loading realizations, run locally in ~1.5h across four parallel processes.",
+    "The paper's phase-fluctuation claim is reproduced: phase continuity stays below 2% of 2pi at every iteration count and improves monotonically (1.70e-2 -> 1.05e-2).",
+    "The paper's 'significant intensity improvement from 3 to 5 iterations' is not resolved: our intensity continuity is flat within sampling noise - most plausibly a difference in the reconstructed frame-trajectory protocol, recorded openly."
+  ]
+}
