@@ -5,6 +5,33 @@ RunThePaper is an open research reproduction project.
 We turn papers into readable reproduction notes, runnable code, checkable data,
 reproduced figures, and honest reproduction boundaries.
 
+[Paper catalog](#paper-reproduction-catalog--论文复现目录) ·
+[How to participate](#how-to-participate) ·
+[Project roadmap](ROADMAP.md) ·
+[Contributing guide](CONTRIBUTING.md)
+
+## Paper Reproduction Catalog / 论文复现目录
+
+<!-- case-catalog:start -->
+**10 published cases.** Choose a paper below to open its case overview or go
+directly to the bilingual notes, runnable code, and generated figures.
+
+| Paper | Research topic | Reproduction status | Open resources |
+| --- | --- | --- | --- |
+| [Edge states and topological invariants of non-Hermitian systems](cases/1803.01876/README.md)<br>[Physical Review Letters 121, 086803 (2018)](https://doi.org/10.1103/PhysRevLett.121.086803) | Non-Hermitian SSH model and non-Bloch bulk-boundary correspondence | Paper-parameter complete reproduction | [中文 Note](cases/1803.01876/note/reproduction-note.zh-CN.md) · [English Note](cases/1803.01876/note/reproduction-note.en.md)<br>[Code](cases/1803.01876/code/README.md) · [Figures](cases/1803.01876/outputs/figures/) |
+| [Non-Hermitian Chern bands](cases/1804.04672/README.md)<br>[arXiv:1804.04672](https://arxiv.org/abs/1804.04672) | Non-Hermitian Chern bands and non-Bloch Chern physics | Feature-level reproduction | [中文 Note](cases/1804.04672/note/reproduction-note.zh-CN.md) · [English Note](cases/1804.04672/note/reproduction-note.en.md)<br>[Code](cases/1804.04672/code/README.md) · [Figures](cases/1804.04672/outputs/figures/) |
+| [Tackling the Qubit Mapping Problem for NISQ-Era Quantum Devices](cases/10.1145-3297858.3304023/README.md)<br>[DOI:10.1145-3297858.3304023](https://doi.org/10.1145/3297858.3304023) | SABRE qubit mapping and routing | Feature-level reproduction with partial benchmark coverage | [中文 Note](cases/10.1145-3297858.3304023/note/reproduction-note.zh-CN.md) · [English Note](cases/10.1145-3297858.3304023/note/reproduction-note.en.md)<br>[Code](cases/10.1145-3297858.3304023/code/README.md) · [Figures](cases/10.1145-3297858.3304023/outputs/figures/) |
+| [Discrete time crystals: rigidity, criticality, and realizations](cases/1608.02589/README.md)<br>[arXiv:1608.02589](https://arxiv.org/abs/1608.02589) | Floquet many-body dynamics and discrete time crystals | Reduced-scale feature reproduction | [中文 Note](cases/1608.02589/note/reproduction-note.zh-CN.md) · [English Note](cases/1608.02589/note/reproduction-note.en.md)<br>[Code](cases/1608.02589/code/README.md) · [Figures](cases/1608.02589/outputs/figures/) |
+| [Quantum many-body scars](cases/1711.03528/README.md)<br>[arXiv:1711.03528](https://arxiv.org/abs/1711.03528) | PXP dynamics and quantum many-body scars | Reduced-scale feature reproduction | [中文 Note](cases/1711.03528/note/reproduction-note.zh-CN.md) · [English Note](cases/1711.03528/note/reproduction-note.en.md)<br>[Code](cases/1711.03528/code/README.md) · [Figures](cases/1711.03528/outputs/figures/) |
+| [Simulating the Sycamore quantum supremacy circuits](cases/2103.03074/README.md)<br>[arXiv:2103.03074](https://arxiv.org/abs/2103.03074) | Sycamore random-circuit simulation | Reduced-scale feature reproduction | [中文 Note](cases/2103.03074/note/reproduction-note.zh-CN.md) · [English Note](cases/2103.03074/note/reproduction-note.en.md)<br>[Code](cases/2103.03074/code/README.md) · [Figures](cases/2103.03074/outputs/figures/) |
+| [Efficient simulation of logical magic state preparation protocols](cases/2512.23799/README.md)<br>[arXiv:2512.23799](https://arxiv.org/abs/2512.23799) | Logical magic-state preparation simulation | Partial feature reproduction | [中文 Note](cases/2512.23799/note/reproduction-note.zh-CN.md) · [English Note](cases/2512.23799/note/reproduction-note.en.md)<br>[Code](cases/2512.23799/code/README.md) · [Figures](cases/2512.23799/outputs/figures/) |
+| [An Algorithm for Fast Assembling Large-Scale Defect-Free Atom Arrays](cases/2604.08669/README.md)<br>[arXiv:2604.08669](https://arxiv.org/abs/2604.08669) | Defect-free atom-array assembly | Reduced-scale feature reproduction | [中文 Note](cases/2604.08669/note/reproduction-note.zh-CN.md) · [English Note](cases/2604.08669/note/reproduction-note.en.md)<br>[Code](cases/2604.08669/code/README.md) · [Figures](cases/2604.08669/outputs/figures/) |
+| [Boson Sampling as a Probe of Chaotic and Integrable Quantum Dynamics](cases/2605.25398/README.md)<br>[arXiv:2605.25398](https://arxiv.org/abs/2605.25398) | Boson sampling and quantum-chaos probes | Feature-level reproduction | [中文 Note](cases/2605.25398/note/reproduction-note.zh-CN.md) · [English Note](cases/2605.25398/note/reproduction-note.en.md)<br>[Code](cases/2605.25398/code/README.md) · [Figures](cases/2605.25398/outputs/figures/) |
+| [Sensitivity to perturbations in the three-dimensional Anderson model](cases/2605.25594/README.md)<br>[arXiv:2605.25594](https://arxiv.org/abs/2605.25594) | Three-dimensional Anderson localization | Reduced-scale feature reproduction | [中文 Note](cases/2605.25594/note/reproduction-note.zh-CN.md) · [English Note](cases/2605.25594/note/reproduction-note.en.md)<br>[Code](cases/2605.25594/code/README.md) · [Figures](cases/2605.25594/outputs/figures/) |
+
+For audit scores and reproduction boundaries, see the [detailed case index](CASES.md).
+<!-- case-catalog:end -->
+
 ## What This Repository Is
 
 This repository publishes the human-facing outputs of our paper reproduction
@@ -66,29 +93,6 @@ Original papers, publisher PDFs, arXiv source archives, and original figure
 assets are not redistributed here. When a case uses those materials for
 internal comparison, the public case records the evidence boundary and points
 readers back to the official paper source.
-
-## Start Here
-
-RunThePaper currently publishes 10 inspectable reproduction cases across
-non-Hermitian physics, many-body dynamics, quantum circuits, atom-array
-assembly, boson sampling, and localization.
-
-### Featured case: PRL 121, 086803 (2018)
-
-The `1803.01876` case reproduces the open-boundary spectrum, generalized
-Brillouin zone, skin profiles, non-Bloch winding, and the nonzero-`t3`
-extension with the paper's final parameters.
-
-- [Case overview and four main reproduced figures](cases/1803.01876/README.md)
-- [中文复现 Note](cases/1803.01876/note/reproduction-note.zh-CN.md)
-- [English reproduction note](cases/1803.01876/note/reproduction-note.en.md)
-- [Runnable code](cases/1803.01876/code/README.md)
-
-Browse the project:
-
-- [All published cases](CASES.md)
-- [Project roadmap](ROADMAP.md)
-- [How to contribute](CONTRIBUTING.md)
 
 ## Repository Structure
 

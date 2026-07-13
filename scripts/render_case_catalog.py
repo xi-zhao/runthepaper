@@ -8,6 +8,8 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG_PATH = ROOT / "cases" / "catalog.json"
+README_CATALOG_START = "<!-- case-catalog:start -->"
+README_CATALOG_END = "<!-- case-catalog:end -->"
 
 
 def load_catalog() -> list[dict[str, Any]]:
@@ -18,6 +20,56 @@ def load_catalog() -> list[dict[str, Any]]:
     if not isinstance(cases, list) or not cases:
         raise ValueError("catalog must contain cases")
     return [item for item in cases if isinstance(item, dict)]
+
+
+def paper_reference(case: dict[str, Any]) -> str:
+    if case.get("publication") and case.get("doi_url"):
+        return f"[{case['publication']}]({case['doi_url']})"
+    paper_id = str(case["paper_id"])
+    if paper_id.startswith("10."):
+        return f"[DOI:{paper_id}]({case['paper_url']})"
+    return f"[arXiv:{paper_id}]({case['paper_url']})"
+
+
+def render_readme_catalog(cases: list[dict[str, Any]]) -> str:
+    lines = [
+        f"**{len(cases)} published cases.** Choose a paper below to open its case overview or go",
+        "directly to the bilingual notes, runnable code, and generated figures.",
+        "",
+        "| Paper | Research topic | Reproduction status | Open resources |",
+        "| --- | --- | --- | --- |",
+    ]
+    for case in cases:
+        paper_id = str(case["paper_id"])
+        case_root = f"cases/{paper_id}"
+        paper = f"[{case['title']}]({case_root}/README.md)<br>{paper_reference(case)}"
+        resources = (
+            f"[中文 Note]({case_root}/note/reproduction-note.zh-CN.md) · "
+            f"[English Note]({case_root}/note/reproduction-note.en.md)<br>"
+            f"[Code]({case_root}/code/README.md) · "
+            f"[Figures]({case_root}/outputs/figures/)"
+        )
+        lines.append(
+            f"| {paper} | {case['topic']} | {case['status']} | {resources} |"
+        )
+    lines.extend(
+        [
+            "",
+            "For audit scores and reproduction boundaries, see the [detailed case index](CASES.md).",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def render_root_readme(cases: list[dict[str, Any]]) -> str:
+    path = ROOT / "README.md"
+    content = path.read_text(encoding="utf-8")
+    if content.count(README_CATALOG_START) != 1 or content.count(README_CATALOG_END) != 1:
+        raise ValueError("README.md must contain exactly one generated case-catalog block")
+    start = content.index(README_CATALOG_START) + len(README_CATALOG_START)
+    end = content.index(README_CATALOG_END, start)
+    generated = "\n" + render_readme_catalog(cases) + "\n"
+    return content[:start] + generated + content[end:]
 
 
 def render_cases_index(cases: list[dict[str, Any]]) -> str:
@@ -195,7 +247,10 @@ def render_note_index(case: dict[str, Any]) -> str:
 
 
 def expected_files(cases: list[dict[str, Any]]) -> dict[Path, str]:
-    rendered = {ROOT / "CASES.md": render_cases_index(cases)}
+    rendered = {
+        ROOT / "README.md": render_root_readme(cases),
+        ROOT / "CASES.md": render_cases_index(cases),
+    }
     for case in cases:
         case_dir = ROOT / "cases" / str(case["paper_id"])
         if not case_dir.exists():
