@@ -26,6 +26,26 @@ Reproduces the open-boundary spectrum, generalized Brillouin zone, skin profiles
 | Fig. 4 | Non-Bloch winding plateau | [PNG](outputs/figures/fig4_winding.png) | [JSON](outputs/checks/fig4_winding.json) |
 | Fig. 5 | Paper-parameter nonzero-t3 spectrum, winding, and noncircular GBZ | [PNG](outputs/figures/fig5_t3.png) | [JSON](outputs/checks/fig5_t3.json) |
 
+## Paper Reference vs Independent Reproduction
+
+The left column in each panel is a limited excerpt from Yao and Wang, [Physical Review Letters 121, 086803 (2018)](https://doi.org/10.1103/PhysRevLett.121.086803); the right column is generated independently from this case. These comparisons validate physical structure and key numerical features, not author-data-level or point-for-point equivalence.
+
+### Fig. 2 comparison
+
+![Fig. 2 paper reference versus independent reproduction](docs/comparisons/fig2_open_spectrum_comparison.png)
+
+### Fig. 3 comparison
+
+![Fig. 3 paper reference versus independent reproduction](docs/comparisons/fig3_beta_skin_comparison.png)
+
+### Fig. 4 comparison
+
+![Fig. 4 paper reference versus independent reproduction](docs/comparisons/fig4_winding_comparison.png)
+
+### Fig. 5 comparison
+
+![Fig. 5 paper reference versus independent reproduction](docs/comparisons/fig5_t3_comparison.png)
+
 ### Fig. 2: Open-boundary spectrum and zero-mode interval
 
 ![Fig. 2 reproduction](outputs/figures/fig2_open_spectrum.png)
@@ -60,7 +80,7 @@ Generated files are kept under [data](outputs/data/), [figures](outputs/figures/
 
 ## Reproduction Boundary
 
-This public case includes paper-derived code, generated data, generated figures, public validation checks, and explanatory notes. It does not redistribute the paper PDF, arXiv source archive, original figures, EPS paths, digitized source curves, source-derived point sets, or source-vs-generated composite panels.
+This public case includes paper-derived code, generated data, generated figures, public validation checks, explanatory notes, and four limited comparison panels. Those panels use the minimum paper excerpts needed for validation and clearly separate the paper reference from the independent result. The case does not redistribute the paper PDF, arXiv source archive, standalone original figures, EPS paths, digitized source curves, or source-derived point sets.
 
 Remaining limitation: Author plotting data are unavailable; digitized source references were used internally for validation but are not redistributed.
 

@@ -14,7 +14,36 @@ Quick links:
 - [中文复现 Note](reproduction-note.zh-CN.md)
 - [Run commands](../code/README.md)
 - [Numerical methods](../docs/NUMERICAL_METHODS.md)
+- [Paper reference versus independent reproduction](#first-look-paper-reference-vs-independent-reproduction)
 - [Machine-readable scorecard](../outputs/checks/similarity_scorecard.json)
+
+## First look: paper reference vs independent reproduction
+
+Each comparison below places the minimum paper panel needed for validation on the left and an independently generated result from the public code and paper parameters on the right. The paper reference is Yao and Wang, [Physical Review Letters 121, 086803 (2018)](https://doi.org/10.1103/PhysRevLett.121.086803). The reference excerpts are shown only for reproduction audit and remain copyrighted by the authors and publisher. Visual agreement does not imply access to the authors' plotting data or point-for-point array identity.
+
+### Fig. 2: open-boundary spectrum and zero-mode interval
+
+![Fig. 2 paper reference versus independent reproduction](../docs/comparisons/fig2_open_spectrum_comparison.png)
+
+The comparison tests the three open-chain spectral structures, the red zero-mode interval, and the open-boundary transition at `|t1|≈1.20185`. Line weight, typography, and local branch density are not part of the equivalence claim.
+
+### Fig. 3: beta roots, generalized Brillouin zone, and skin profile
+
+![Fig. 3 paper reference versus independent reproduction](../docs/comparisons/fig3_beta_skin_comparison.png)
+
+The reproduced result matches the `|beta1|=|beta2|` interval, the generalized Brillouin-zone radius near `0.4472`, and left-boundary localization of the open-chain profiles. All three are calculated from the same paper-parameter model rather than traced from the source image.
+
+### Fig. 4: non-Bloch winding
+
+![Fig. 4 paper reference versus independent reproduction](../docs/comparisons/fig4_winding_comparison.png)
+
+The integer plateau `W=1`, the exterior value `W=0`, and the jumps near `t1≈±1.20185` agree. The public reproduction preserves the discrete step and does not smooth the topological invariant.
+
+### Fig. 5: nonzero-t3 spectrum, winding, and noncircular GBZ
+
+![Fig. 5 paper reference versus independent reproduction](../docs/comparisons/fig5_t3_comparison.png)
+
+This comparison uses the paper parameters `L=100` and `t3=0.2`, with the open-chain spectrum evaluated at 35 decimal digits. The reproduced transitions near `t1=±1.562` agree with the paper's `±1.56`; the winding plateau and noncircular generalized Brillouin zone agree at the same time. Point-for-point identity with the authors' plotting arrays is not claimed.
 
 ## 1. What problem does the paper solve?
 
@@ -136,8 +165,8 @@ The remaining gap is author-data-level equivalence. The authors' original plotti
 
 ## 6. Public boundary
 
-The repository publishes the reproduction notes, paper-derived numerical code, generated CSV data, generated figures, and public checks.
+The repository publishes the reproduction notes, paper-derived numerical code, generated CSV data, generated figures, public checks, and four limited validation comparison panels.
 
-It does not redistribute the publisher PDF, arXiv source archive, original figures, EPS paths, digitized source curves, or source-versus-generated comparison panels. Those materials are either linked at their official source or retained only as non-redistributed internal validation evidence.
+The comparison panels contain only the minimum paper excerpts needed to audit agreement and clearly separate the paper reference from the independent reproduction. The repository does not redistribute the publisher PDF, arXiv source archive, standalone original figures, EPS paths, digitized source curves, or source-derived point sets. The paper excerpts remain under the original rights holders' terms and are not covered by this repository's open-content license.
 
 That distinction is intentional: the public case should be runnable and inspectable without becoming a mirror of copyrighted paper assets.

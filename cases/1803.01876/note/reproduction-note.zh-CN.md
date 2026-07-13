@@ -14,11 +14,40 @@
 - [English reproduction note](reproduction-note.en.md)
 - [运行命令](../code/README.md)
 - [数值方法](../docs/NUMERICAL_METHODS.md)
+- [论文参考图与独立复现对照](#先看结果论文参考图-vs-独立复现)
 - [机器可读评分卡](../outputs/checks/similarity_scorecard.json)
 
-这份笔记先讲物理，再讲数值，最后才讲图像验收。读的时候不要先看像素，也不要先看某条曲线像不像；先问一个更基本的问题：我们算出来的对象是不是论文里真正要讨论的物理对象。
+这份笔记先用四组对照图给出直观验收，再讲物理和数值。看图时不要只问某条曲线像不像；还要问一个更基本的问题：我们算出来的对象是不是论文里真正要讨论的物理对象。
 
 这篇文章的核心不是把几张图描出来，而是说明在非厄米系统里，普通 Bloch 体边对应会失效；要恢复体边对应，必须把 bulk 从单位圆上的 Bloch 波改成开边界条件下的非 Bloch 波。
+
+## 先看结果：论文参考图 vs 独立复现
+
+下面每张图左侧是论文中用于必要验证的参考 panel，右侧是使用本仓库代码和论文参数独立生成的结果。论文参考来自 Yao 与 Wang，[Physical Review Letters 121, 086803 (2018)](https://doi.org/10.1103/PhysRevLett.121.086803)。参考 panel 仅用于复现验收，版权归原作者及出版社所有；对照相似不等于获得了作者原始作图数据，也不代表逐点数据完全相同。
+
+### Fig. 2：开边界谱与零模区间
+
+![Fig. 2 paper reference versus independent reproduction](../docs/comparisons/fig2_open_spectrum_comparison.png)
+
+对齐的是三组开链谱的整体结构、红色零模区间，以及开边界转变点 `|t1|≈1.20185`。线宽、字体和个别分支的视觉密度不是等价声明的一部分。
+
+### Fig. 3：beta 根、广义布里渊区与 skin profile
+
+![Fig. 3 paper reference versus independent reproduction](../docs/comparisons/fig3_beta_skin_comparison.png)
+
+对齐的是 `|beta1|=|beta2|` 区间、半径约 `0.4472` 的广义布里渊区，以及开链本征态向左边界集聚的 profile。三者由同一组论文参数计算，而不是从原图描线得到。
+
+### Fig. 4：non-Bloch winding
+
+![Fig. 4 paper reference versus independent reproduction](../docs/comparisons/fig4_winding_comparison.png)
+
+对齐的是整数平台 `W=1`、区间外 `W=0`，以及在 `t1≈±1.20185` 附近的跳变。复现图保留离散拓扑量的台阶结构，没有做平滑插值。
+
+### Fig. 5：非零 t3 的谱、winding 与非圆 GBZ
+
+![Fig. 5 paper reference versus independent reproduction](../docs/comparisons/fig5_t3_comparison.png)
+
+这一组使用论文参数 `L=100`、`t3=0.2`，并以 35 位精度求解开链谱。复现得到的相变点约为 `t1=±1.562`，与论文标出的 `±1.56` 一致；winding plateau 和非圆形广义布里渊区也同时对齐。这里仍不声称与作者作图数组逐点相同。
 
 ## 1. 这篇文章到底在问什么
 
