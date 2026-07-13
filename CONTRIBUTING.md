@@ -22,3 +22,19 @@ For each case, keep the public boundary clear:
 - generated figures belong in `outputs/figures/`;
 - validation results belong in `outputs/checks/`;
 - paper/source references should be links or citations, not copied raw assets.
+
+## Before Opening a Pull Request
+
+Regenerate navigation after adding or changing a catalog entry:
+
+```bash
+python scripts/render_case_catalog.py
+```
+
+Then verify the public package:
+
+```bash
+python scripts/render_case_catalog.py --check
+python scripts/validate_public_cases.py
+python -m compileall -q scripts cases
+```
