@@ -33,29 +33,30 @@ def paper_reference(case: dict[str, Any]) -> str:
 
 def render_readme_catalog(cases: list[dict[str, Any]]) -> str:
     lines = [
-        f"**{len(cases)} published cases.** Choose a paper below to open its case overview or go",
-        "directly to the bilingual notes, runnable code, and generated figures.",
+        f"**{len(cases)} public cases.** Open a paper below, then choose the reading or",
+        "reproduction resource you need.",
         "",
-        "| Paper | Research topic | Reproduction status | Open resources |",
+        "| Paper | Publication / source | Reproduction status | Open package |",
         "| --- | --- | --- | --- |",
     ]
     for case in cases:
         paper_id = str(case["paper_id"])
         case_root = f"cases/{paper_id}"
-        paper = f"[{case['title']}]({case_root}/README.md)<br>{paper_reference(case)}"
+        paper = f"[{case['title']}]({case_root}/README.md)"
         resources = (
             f"[中文 Note]({case_root}/note/reproduction-note.zh-CN.md) · "
             f"[English Note]({case_root}/note/reproduction-note.en.md)<br>"
             f"[Code]({case_root}/code/README.md) · "
-            f"[Figures]({case_root}/outputs/figures/)"
+            f"[Figures]({case_root}/outputs/figures/) · "
+            f"[Checks]({case_root}/outputs/checks/)"
         )
         lines.append(
-            f"| {paper} | {case['topic']} | {case['status']} | {resources} |"
+            f"| {paper} | {paper_reference(case)} | {case['status']} | {resources} |"
         )
     lines.extend(
         [
             "",
-            "For audit scores and reproduction boundaries, see the [detailed case index](CASES.md).",
+            "Status describes reproduction scope, not rank. See [how to read reproduction quality](#how-to-read-reproduction-quality) and the [detailed case index](CASES.md) for audit scores and explicit boundaries.",
         ]
     )
     return "\n".join(lines)
