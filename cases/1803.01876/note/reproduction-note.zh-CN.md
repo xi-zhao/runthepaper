@@ -2,6 +2,20 @@
 
 面向对象：物理学新入学研究生
 
+论文：Shunyu Yao、Zhong Wang，*Edge States and Topological Invariants of Non-Hermitian Systems*，[Physical Review Letters 121, 086803 (2018)](https://doi.org/10.1103/PhysRevLett.121.086803)；[arXiv:1803.01876](https://arxiv.org/abs/1803.01876)。
+
+公开复现状态：**Paper-parameter complete reproduction**
+
+导出时审计分数：**94/100**
+
+快速入口：
+
+- [Case 总览](../README.md)
+- [English reproduction note](reproduction-note.en.md)
+- [运行命令](../code/README.md)
+- [数值方法](../docs/NUMERICAL_METHODS.md)
+- [机器可读评分卡](../outputs/checks/similarity_scorecard.json)
+
 这份笔记先讲物理，再讲数值，最后才讲图像验收。读的时候不要先看像素，也不要先看某条曲线像不像；先问一个更基本的问题：我们算出来的对象是不是论文里真正要讨论的物理对象。
 
 这篇文章的核心不是把几张图描出来，而是说明在非厄米系统里，普通 Bloch 体边对应会失效；要恢复体边对应，必须把 bulk 从单位圆上的 Bloch 波改成开边界条件下的非 Bloch 波。

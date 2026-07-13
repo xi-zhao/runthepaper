@@ -2,31 +2,18 @@
 
 Paper: [Non-Hermitian Chern bands](https://arxiv.org/abs/1804.04672)
 
-Public status: **Feature-level reproduction**
-
-Audit score at export: **80.18/100**
-
-Similarity level: `numerical_feature_reproduction`
+Public status: **Feature-level reproduction** · Audit score: **80.18/100**
 
 Reproduces open-boundary and cylinder phase structure, square dynamics, complex spectra, and finite-size checks.
 
-## Start Here / 上手讲义
+## Start Here / 从这里开始
 
-- [中文上手讲义](note/reproduction-note.zh-CN.md)
-- [English getting-started note](note/reproduction-note.en.md)
-- [Bilingual note index](note/reproduction-note.md)
+- [中文复现 Note](note/reproduction-note.zh-CN.md)
+- [English reproduction note](note/reproduction-note.en.md)
 - [Code and run commands](code/README.md)
 - [Machine-readable scorecard](outputs/checks/similarity_scorecard.json)
 - [Numerical methods](docs/NUMERICAL_METHODS.md)
 - [Lessons learned](docs/LESSONS_LEARNED.md)
-
-## Public Boundary
-
-This public case includes paper-derived code, generated data, generated figures, public validation checks, and explanatory notes. It does not redistribute the paper PDF, arXiv source archive, original figures, EPS paths, digitized source curves, source-derived point sets, or source-vs-generated composite panels.
-
-Remaining limitation: Some phase-boundary and panel-level comparisons remain paper-subset or source-table validations rather than full independent finite-size reruns.
-
-Final-parameter rule: final public figures use the paper parameters when feasible. Any reduced-scale, subset, proxy, or blocked target must be labeled explicitly and cannot be presented as a complete reproduction.
 
 ## Quick Run
 
@@ -42,6 +29,16 @@ python scripts/run_cylinder_phase_diagram.py
 python scripts/run_gap_scaling.py
 python scripts/run_disk_phase_diagram.py
 ```
+
+Generated files are kept under [data](outputs/data/), [figures](outputs/figures/), and [checks](outputs/checks/).
+
+## Reproduction Boundary
+
+This public case includes paper-derived code, generated data, generated figures, public validation checks, and explanatory notes. It does not redistribute the paper PDF, arXiv source archive, original figures, EPS paths, digitized source curves, source-derived point sets, or source-vs-generated composite panels.
+
+Remaining limitation: Some phase-boundary and panel-level comparisons remain paper-subset or source-table validations rather than full independent finite-size reruns.
+
+Final-parameter rule: final public figures use the paper parameters when feasible. Any reduced-scale, subset, proxy, or blocked target must be labeled explicitly and cannot be presented as a complete reproduction.
 
 ## Generated Figures
 

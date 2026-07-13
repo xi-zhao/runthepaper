@@ -67,19 +67,28 @@ assets are not redistributed here. When a case uses those materials for
 internal comparison, the public case records the evidence boundary and points
 readers back to the official paper source.
 
-## Current Cases
+## Start Here
 
 RunThePaper currently publishes 10 inspectable reproduction cases across
 non-Hermitian physics, many-body dynamics, quantum circuits, atom-array
 assembly, boson sampling, and localization.
 
-Start here:
+### Featured case: PRL 121, 086803 (2018)
 
-- [Published case index](CASES.md)
-- [1803.01876 case](cases/1803.01876/README.md)
-- [1804.04672 case](cases/1804.04672/README.md)
-- [Chinese and English note entry](cases/1803.01876/note/reproduction-note.md)
-- [Roadmap](ROADMAP.md)
+The `1803.01876` case reproduces the open-boundary spectrum, generalized
+Brillouin zone, skin profiles, non-Bloch winding, and the nonzero-`t3`
+extension with the paper's final parameters.
+
+- [Case overview and four main reproduced figures](cases/1803.01876/README.md)
+- [中文复现 Note](cases/1803.01876/note/reproduction-note.zh-CN.md)
+- [English reproduction note](cases/1803.01876/note/reproduction-note.en.md)
+- [Runnable code](cases/1803.01876/code/README.md)
+
+Browse the project:
+
+- [All published cases](CASES.md)
+- [Project roadmap](ROADMAP.md)
+- [How to contribute](CONTRIBUTING.md)
 
 ## Repository Structure
 

@@ -114,6 +114,19 @@ def validate_case(case: dict[str, Any], errors: list[str]) -> None:
         if not path.is_file():
             errors.append(f"catalog run script does not exist: {path.relative_to(ROOT)}")
 
+    for result in case.get("featured_results", []):
+        if not isinstance(result, dict):
+            errors.append(f"invalid featured result for {paper_id}: {result!r}")
+            continue
+        for field, directory in (("figure", "figures"), ("check", "checks")):
+            name = str(result.get(field, ""))
+            path = case_dir / "outputs" / directory / name
+            if not name or not path.is_file():
+                errors.append(
+                    f"featured result {field} does not exist for {paper_id}: "
+                    f"{path.relative_to(ROOT)}"
+                )
+
     scorecard_path = case_dir / "outputs" / "checks" / "similarity_scorecard.json"
     if scorecard_path.is_file():
         try:

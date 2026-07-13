@@ -21,7 +21,7 @@
         },
         "paper_scope_coverage": {
           "score": 13.0,
-          "reason": "Fig. 2(a-c,d) 均已有 EPS/PNG digitized reference CSV，并接入 all_digitized_curves.json；仍低于作者原始 plotting data。",
+          "reason": "Fig. 2(a-c,d) 均已完成内部 EPS/PNG digitized reference 检查；仍低于作者原始 plotting data。",
           "max_score": 15.0
         }
       },
@@ -30,10 +30,6 @@
       "evidence": [
         "outputs/checks/fig2_open_spectrum.json",
         "outputs/checks/fig2_boundary_perturbation.json",
-        "outputs/checks/all_digitized_curves.json",
-        "internal digitized source validation (not redistributed)",
-        "internal digitized source validation (not redistributed)",
-        "internal digitized source validation (not redistributed)",
         "internal digitized source validation (not redistributed)"
       ],
       "remaining_gap": "已达到 digitized-curve 级对照；未达到 author-data 级对照。",
@@ -157,9 +153,6 @@
       "cap_reason": "使用 digitized EPS/PNG curve/reference；仍非作者原始 plotting data。",
       "evidence": [
         "outputs/checks/fig3_beta_skin.json",
-        "outputs/checks/all_digitized_curves.json",
-        "internal digitized source validation (not redistributed)",
-        "internal digitized source validation (not redistributed)",
         "internal digitized source validation (not redistributed)"
       ],
       "remaining_gap": "已达到 digitized-curve 级对照；未达到 author-data 级对照。",
@@ -243,9 +236,6 @@
       "cap_reason": "使用 digitized EPS curve/reference；仍非作者原始 plotting data。",
       "evidence": [
         "outputs/checks/fig4_winding.json",
-        "outputs/checks/fig4_digitized_curve.json",
-        "outputs/checks/all_digitized_curves.json",
-        "internal digitized source validation (not redistributed)",
         "internal digitized source validation (not redistributed)"
       ],
       "remaining_gap": "已达到 digitized-curve 级对照；未达到 author-data 级对照。",
@@ -319,9 +309,6 @@
       "cap_reason": "使用 digitized EPS curve/reference；仍非作者原始 plotting data。",
       "evidence": [
         "outputs/checks/fig5_t3.json",
-        "outputs/checks/all_digitized_curves.json",
-        "internal digitized source validation (not redistributed)",
-        "internal digitized source validation (not redistributed)",
         "internal digitized source validation (not redistributed)"
       ],
       "remaining_gap": "已达到 paper-parameter、high-precision、digitized-curve 级对照；未达到 author-data 级对照。",
@@ -403,10 +390,6 @@
       "evidence": [
         "outputs/checks/supplemental_fig1_complex_spectra.json",
         "outputs/checks/supplemental_fig2_gamma24.json",
-        "outputs/checks/all_digitized_curves.json",
-        "internal digitized source validation (not redistributed)",
-        "internal digitized source validation (not redistributed)",
-        "internal digitized source validation (not redistributed)",
         "internal digitized source validation (not redistributed)"
       ],
       "remaining_gap": "已达到 digitized-curve 级对照；未达到 author-data 级对照。",

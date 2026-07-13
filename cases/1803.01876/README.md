@@ -2,31 +2,45 @@
 
 Paper: [Edge states and topological invariants of non-Hermitian systems](https://arxiv.org/abs/1803.01876)
 
-Public status: **Paper-parameter complete reproduction**
+Published as: [Physical Review Letters 121, 086803 (2018)](https://doi.org/10.1103/PhysRevLett.121.086803)
 
-Audit score at export: **94.00/100**
-
-Similarity level: `complete_reproduction`
+Public status: **Paper-parameter complete reproduction** · Audit score: **94.00/100**
 
 Reproduces the open-boundary spectrum, generalized Brillouin zone, skin profiles, non-Bloch winding, and the nonzero-t3 extension.
 
-## Start Here / 上手讲义
+## Start Here / 从这里开始
 
-- [中文上手讲义](note/reproduction-note.zh-CN.md)
-- [English getting-started note](note/reproduction-note.en.md)
-- [Bilingual note index](note/reproduction-note.md)
+- [中文复现 Note](note/reproduction-note.zh-CN.md)
+- [English reproduction note](note/reproduction-note.en.md)
 - [Code and run commands](code/README.md)
 - [Machine-readable scorecard](outputs/checks/similarity_scorecard.json)
 - [Numerical methods](docs/NUMERICAL_METHODS.md)
 - [Lessons learned](docs/LESSONS_LEARNED.md)
 
-## Public Boundary
+## Main Reproduced Results
 
-This public case includes paper-derived code, generated data, generated figures, public validation checks, and explanatory notes. It does not redistribute the paper PDF, arXiv source archive, original figures, EPS paths, digitized source curves, source-derived point sets, or source-vs-generated composite panels.
+| Paper item | Reproduced result | Figure | Check |
+| --- | --- | --- | --- |
+| Fig. 2 | Open-boundary spectrum and zero-mode interval | [PNG](outputs/figures/fig2_open_spectrum.png) | [JSON](outputs/checks/fig2_open_spectrum.json) |
+| Fig. 3 | Beta roots, generalized Brillouin zone, and skin profiles | [PNG](outputs/figures/fig3_beta_skin.png) | [JSON](outputs/checks/fig3_beta_skin.json) |
+| Fig. 4 | Non-Bloch winding plateau | [PNG](outputs/figures/fig4_winding.png) | [JSON](outputs/checks/fig4_winding.json) |
+| Fig. 5 | Paper-parameter nonzero-t3 spectrum, winding, and noncircular GBZ | [PNG](outputs/figures/fig5_t3.png) | [JSON](outputs/checks/fig5_t3.json) |
 
-Remaining limitation: Author plotting data are unavailable; digitized source references were used internally for validation but are not redistributed.
+### Fig. 2: Open-boundary spectrum and zero-mode interval
 
-Final-parameter rule: final public figures use the paper parameters when feasible. Any reduced-scale, subset, proxy, or blocked target must be labeled explicitly and cannot be presented as a complete reproduction.
+![Fig. 2 reproduction](outputs/figures/fig2_open_spectrum.png)
+
+### Fig. 3: Beta roots, generalized Brillouin zone, and skin profiles
+
+![Fig. 3 reproduction](outputs/figures/fig3_beta_skin.png)
+
+### Fig. 4: Non-Bloch winding plateau
+
+![Fig. 4 reproduction](outputs/figures/fig4_winding.png)
+
+### Fig. 5: Paper-parameter nonzero-t3 spectrum, winding, and noncircular GBZ
+
+![Fig. 5 reproduction](outputs/figures/fig5_t3.png)
 
 ## Quick Run
 
@@ -42,36 +56,12 @@ python scripts/run_fig4_winding.py
 python scripts/run_fig5_t3.py
 ```
 
-## Generated Figures
+Generated files are kept under [data](outputs/data/), [figures](outputs/figures/), and [checks](outputs/checks/).
 
-![fig2 abs panel](outputs/figures/fig2_abs_panel.png)
+## Reproduction Boundary
 
-![fig2 boundary perturbation](outputs/figures/fig2_boundary_perturbation.png)
+This public case includes paper-derived code, generated data, generated figures, public validation checks, and explanatory notes. It does not redistribute the paper PDF, arXiv source archive, original figures, EPS paths, digitized source curves, source-derived point sets, or source-vs-generated composite panels.
 
-![fig2 boundary perturbation low energy zoom](outputs/figures/fig2_boundary_perturbation_low_energy_zoom.png)
+Remaining limitation: Author plotting data are unavailable; digitized source references were used internally for validation but are not redistributed.
 
-![fig2 boundary perturbation sorted artifact zoom](outputs/figures/fig2_boundary_perturbation_sorted_artifact_zoom.png)
-
-![fig2 imag panel](outputs/figures/fig2_imag_panel.png)
-
-![fig2 open spectrum](outputs/figures/fig2_open_spectrum.png)
-
-![fig2 real panel](outputs/figures/fig2_real_panel.png)
-
-![fig3 absbeta panel](outputs/figures/fig3_absbeta_panel.png)
-
-![fig3 beta skin](outputs/figures/fig3_beta_skin.png)
-
-![fig3 cbeta panel](outputs/figures/fig3_cbeta_panel.png)
-
-![fig3 profile panel](outputs/figures/fig3_profile_panel.png)
-
-![fig4 winding](outputs/figures/fig4_winding.png)
-
-![fig5 t3](outputs/figures/fig5_t3.png)
-
-![fig5 t3 left panel](outputs/figures/fig5_t3_left_panel.png)
-
-![supplemental fig1 complex spectra](outputs/figures/supplemental_fig1_complex_spectra.png)
-
-![supplemental fig2 gamma24](outputs/figures/supplemental_fig2_gamma24.png)
+Final-parameter rule: final public figures use the paper parameters when feasible. Any reduced-scale, subset, proxy, or blocked target must be labeled explicitly and cannot be presented as a complete reproduction.

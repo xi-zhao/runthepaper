@@ -18,12 +18,11 @@
 ## What Worked
 
 - 公式 gate 非常有效。先做 source trace 和符号核验，再开放数值脚本，避免了从 PDF 直接跳到代码的风险。
-- `TARGET_LEDGER.md` 的 target 粒度合适。每个图都能独立记录公式、参数、输出数据和检查结果。
+- target ledger 的图级粒度合适。每个图都能独立记录公式、参数、输出数据和检查结果；内部 ledger 不在公开 case 中重新分发。
 - feature-level checks 比图片相似度更可靠。相变点、winding plateau、`C_beta` 半径、skin localization 这些特征能直接说明物理结果是否对齐。
 - TeX source 很有价值。公式、caption、EPS 原图都能被系统化提取，后续 case 应该优先获取 TeX/source。
 - all-target digitizer 比零散补图更稳。把 Fig. 2、Fig. 3、Fig. 4、Fig. 5
-  和 supplemental panels 统一输出到 `all_digitized_curves.json`，scorecard
-  才能明确区分“曲线参考已补齐”和“公式 gate 仍有限制”。
+  和 supplemental panels 统一检查后，scorecard 才能明确区分“曲线参考已补齐”和“公式 gate 仍有限制”。数字化曲线属于内部验证材料，不随公开 case 分发。
 
 ## What Was Difficult
 
@@ -66,7 +65,7 @@
 
 | Priority | Improvement | Evidence from this case | Status |
 | --- | --- | --- | --- |
-| high | Add formula gate as a standard harness step | `outputs/checks/formula_verification.json`, `core_derivations.json` | copied_to_backlog |
+| high | Add formula gate as a standard harness step | public formula and core-derivation checks | copied_to_backlog |
 | high | Add feature-level checks before image comparison | all figure checks use physical features | copied_to_backlog |
 | medium | Add an internal original-figure renderer | internal source-rendering evidence (not redistributed) | copied_to_backlog |
 | medium | Add non-normal solver diagnostics | Fig. 2 direct eig instability | new |

@@ -49,54 +49,101 @@ def render_cases_index(cases: list[dict[str, Any]]) -> str:
 def render_case_readme(case: dict[str, Any], case_dir: Path) -> str:
     paper_id = str(case["paper_id"])
     figures = sorted((case_dir / "outputs" / "figures").glob("*.png"))
+    featured_results = [item for item in case.get("featured_results", []) if isinstance(item, dict)]
     lines = [
         f"# {paper_id}: {case['title']}",
         "",
         f"Paper: [{case['title']}]({case['paper_url']})",
         "",
-        f"Public status: **{case['status']}**",
-        "",
-        f"Audit score at export: **{float(case['audit_score']):.2f}/100**",
-        "",
-        f"Similarity level: `{case['similarity_level']}`",
-        "",
-        str(case["summary"]),
-        "",
-        "## Start Here / 上手讲义",
-        "",
-        "- [中文上手讲义](note/reproduction-note.zh-CN.md)",
-        "- [English getting-started note](note/reproduction-note.en.md)",
-        "- [Bilingual note index](note/reproduction-note.md)",
-        "- [Code and run commands](code/README.md)",
-        "- [Machine-readable scorecard](outputs/checks/similarity_scorecard.json)",
-        "- [Numerical methods](docs/NUMERICAL_METHODS.md)",
-        "- [Lessons learned](docs/LESSONS_LEARNED.md)",
-        "",
-        "## Public Boundary",
-        "",
-        "This public case includes paper-derived code, generated data, generated figures, public validation checks, and explanatory notes. It does not redistribute the paper PDF, arXiv source archive, original figures, EPS paths, digitized source curves, source-derived point sets, or source-vs-generated composite panels.",
-        "",
-        f"Remaining limitation: {case['limitation']}",
-        "",
-        "Final-parameter rule: final public figures use the paper parameters when feasible. Any reduced-scale, subset, proxy, or blocked target must be labeled explicitly and cannot be presented as a complete reproduction.",
-        "",
-        "## Quick Run",
-        "",
-        "```bash",
-        "python -m venv .venv",
-        "source .venv/bin/activate",
-        "pip install -r requirements.txt",
     ]
+    if case.get("publication") and case.get("doi_url"):
+        lines.extend(
+            [
+                f"Published as: [{case['publication']}]({case['doi_url']})",
+                "",
+            ]
+        )
+    lines.extend(
+        [
+            f"Public status: **{case['status']}** · Audit score: **{float(case['audit_score']):.2f}/100**",
+            "",
+            str(case["summary"]),
+            "",
+            "## Start Here / 从这里开始",
+            "",
+            "- [中文复现 Note](note/reproduction-note.zh-CN.md)",
+            "- [English reproduction note](note/reproduction-note.en.md)",
+            "- [Code and run commands](code/README.md)",
+            "- [Machine-readable scorecard](outputs/checks/similarity_scorecard.json)",
+            "- [Numerical methods](docs/NUMERICAL_METHODS.md)",
+            "- [Lessons learned](docs/LESSONS_LEARNED.md)",
+            "",
+        ]
+    )
+    if featured_results:
+        lines.extend(
+            [
+                "## Main Reproduced Results",
+                "",
+                "| Paper item | Reproduced result | Figure | Check |",
+                "| --- | --- | --- | --- |",
+            ]
+        )
+        for item in featured_results:
+            figure = str(item["figure"])
+            check = str(item["check"])
+            lines.append(
+                f"| {item['paper_item']} | {item['result']} | "
+                f"[PNG](outputs/figures/{figure}) | [JSON](outputs/checks/{check}) |"
+            )
+        lines.append("")
+        for item in featured_results:
+            figure = str(item["figure"])
+            lines.extend(
+                [
+                    f"### {item['paper_item']}: {item['result']}",
+                    "",
+                    f"![{item['paper_item']} reproduction](outputs/figures/{figure})",
+                    "",
+                ]
+            )
+    lines.extend(
+        [
+            "## Quick Run",
+            "",
+            "```bash",
+            "python -m venv .venv",
+            "source .venv/bin/activate",
+            "pip install -r requirements.txt",
+        ]
+    )
     extras = [str(item) for item in case.get("extra_dependencies", [])]
     if extras:
         lines.append("pip install " + " ".join(extras))
     lines.append(f"cd cases/{paper_id}/code")
     for script in case.get("run_scripts", []):
         lines.append(f"python scripts/{script}")
-    lines.extend(["```", "", "## Generated Figures", ""])
-    for figure in figures:
-        label = figure.stem.replace("_", " ")
-        lines.extend([f"![{label}](outputs/figures/{figure.name})", ""])
+    lines.extend(
+        [
+            "```",
+            "",
+            "Generated files are kept under [data](outputs/data/), [figures](outputs/figures/), and [checks](outputs/checks/).",
+            "",
+            "## Reproduction Boundary",
+            "",
+            "This public case includes paper-derived code, generated data, generated figures, public validation checks, and explanatory notes. It does not redistribute the paper PDF, arXiv source archive, original figures, EPS paths, digitized source curves, source-derived point sets, or source-vs-generated composite panels.",
+            "",
+            f"Remaining limitation: {case['limitation']}",
+            "",
+            "Final-parameter rule: final public figures use the paper parameters when feasible. Any reduced-scale, subset, proxy, or blocked target must be labeled explicitly and cannot be presented as a complete reproduction.",
+            "",
+        ]
+    )
+    if not featured_results:
+        lines.extend(["## Generated Figures", ""])
+        for figure in figures:
+            label = figure.stem.replace("_", " ")
+            lines.extend([f"![{label}](outputs/figures/{figure.name})", ""])
     return "\n".join(lines).rstrip() + "\n"
 
 
