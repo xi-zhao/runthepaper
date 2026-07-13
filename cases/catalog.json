@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "paper_id": "1803.01876",
+      "title": "Edge states and topological invariants of non-Hermitian systems",
+      "topic": "Non-Hermitian SSH model and non-Bloch bulk-boundary correspondence",
+      "paper_url": "https://arxiv.org/abs/1803.01876",
+      "publication": "Physical Review Letters 121, 086803 (2018)",
+      "doi_url": "https://doi.org/10.1103/PhysRevLett.121.086803",
+      "status": "Paper-parameter complete reproduction",
+      "similarity_level": "complete_reproduction",
+      "audit_score": 94.0,
+      "summary": "Reproduces the open-boundary spectrum, generalized Brillouin zone, skin profiles, non-Bloch winding, and the nonzero-t3 extension.",
+      "limitation": "Author plotting data are unavailable; digitized source references were used internally for validation but are not redistributed.",
+      "run_scripts": [
+        "run_fig2_open_spectrum.py",
+        "run_fig3_beta_skin.py",
+        "run_fig4_winding.py",
+        "run_fig5_t3.py"
+      ],
+      "featured_results": [
+        {
+          "paper_item": "Fig. 2",
+          "result": "Open-boundary spectrum and zero-mode interval",
+          "figure": "fig2_open_spectrum.png",
+          "check": "fig2_open_spectrum.json"
+        },
+        {
+          "paper_item": "Fig. 3",
+          "result": "Beta roots, generalized Brillouin zone, and skin profiles",
+          "figure": "fig3_beta_skin.png",
+          "check": "fig3_beta_skin.json"
+        },
+        {
+          "paper_item": "Fig. 4",
+          "result": "Non-Bloch winding plateau",
+          "figure": "fig4_winding.png",
+          "check": "fig4_winding.json"
+        },
+        {
+          "paper_item": "Fig. 5",
+          "result": "Paper-parameter nonzero-t3 spectrum, winding, and noncircular GBZ",
+          "figure": "fig5_t3.png",
+          "check": "fig5_t3.json"
+        }
+      ],
+      "extra_dependencies": ["mpmath"]
+    },
+    {
+      "paper_id": "1804.04672",
+      "title": "Non-Hermitian Chern bands",
+      "topic": "Non-Hermitian Chern bands and non-Bloch Chern physics",
+      "paper_url": "https://arxiv.org/abs/1804.04672",
+      "status": "Feature-level reproduction",
+      "similarity_level": "numerical_feature_reproduction",
+      "audit_score": 80.18,
+      "summary": "Reproduces open-boundary and cylinder phase structure, square dynamics, complex spectra, and finite-size checks.",
+      "limitation": "Some phase-boundary and panel-level comparisons remain paper-subset or source-table validations rather than full independent finite-size reruns.",
+      "run_scripts": [
+        "run_first_target.py",
+        "run_open_boundary_phase_diagram.py",
+        "run_square_dynamics.py",
+        "run_cylinder_phase_diagram.py",
+        "run_gap_scaling.py",
+        "run_disk_phase_diagram.py"
+      ],
+      "extra_dependencies": []
+    },
+    {
+      "paper_id": "10.1145-3297858.3304023",
+      "title": "Tackling the Qubit Mapping Problem for NISQ-Era Quantum Devices",
+      "topic": "SABRE qubit mapping and routing",
+      "paper_url": "https://doi.org/10.1145/3297858.3304023",
+      "status": "Feature-level reproduction with partial benchmark coverage",
+      "similarity_level": "numerical_feature_reproduction",
+      "audit_score": 68.29,
+      "summary": "Reconstructs the SABRE routing pipeline, swap trace, reverse traversal, decay trade-off, and a partial Table II rerun.",
+      "limitation": "Several large benchmark rows lack complete public metadata and remain subset or proxy evaluations.",
+      "run_scripts": [
+        "run_paper_swap_example.py",
+        "run_core_benchmarks.py",
+        "run_decay_tradeoff.py"
+      ],
+      "extra_dependencies": ["networkx", "qiskit"]
+    },
+    {
+      "paper_id": "1608.02589",
+      "title": "Discrete time crystals: rigidity, criticality, and realizations",
+      "topic": "Floquet many-body dynamics and discrete time crystals",
+      "paper_url": "https://arxiv.org/abs/1608.02589",
+      "status": "Reduced-scale feature reproduction",
+      "similarity_level": "numerical_feature_reproduction",
+      "audit_score": 73.56,
+      "summary": "Reproduces subharmonic rigidity, level statistics, variance, long-range variance, and mutual-information features with exact local evolution.",
+      "limitation": "Paper-scale disorder statistics and the largest exact-diagonalization targets remain compute-limited.",
+      "run_scripts": [
+        "run_reproduction.py",
+        "plot_reproduction.py",
+        "run_reproduction_iteration2.py",
+        "plot_reproduction_iteration2.py"
+      ],
+      "extra_dependencies": []
+    },
+    {
+      "paper_id": "1711.03528",
+      "title": "Quantum many-body scars",
+      "topic": "PXP dynamics and quantum many-body scars",
+      "paper_url": "https://arxiv.org/abs/1711.03528",
+      "status": "Reduced-scale feature reproduction",
+      "similarity_level": "numerical_feature_reproduction",
+      "audit_score": 72.5,
+      "summary": "Reproduces constrained Hilbert-space structure, scar overlaps, revivals, participation ratios, and symmetry-resolved level statistics.",
+      "limitation": "The full L=32 symmetry sector and thermodynamic-limit iTEBD calculations are not rerun.",
+      "run_scripts": [
+        "run_reproduction.py",
+        "plot_reproduction.py",
+        "run_symmetry_resolved_sector.py"
+      ],
+      "extra_dependencies": []
+    },
+    {
+      "paper_id": "2103.03074",
+      "title": "Simulating the Sycamore quantum supremacy circuits",
+      "topic": "Sycamore random-circuit simulation",
+      "paper_url": "https://arxiv.org/abs/2103.03074",
+      "status": "Reduced-scale feature reproduction",
+      "similarity_level": "numerical_feature_reproduction",
+      "audit_score": 70.0,
+      "summary": "Reproduces batch-probability, post-selection XEB, conditional-probability, and complexity-table features.",
+      "limitation": "Exact 53-qubit tensor contractions and paper-scale amplitude recomputation require external compute.",
+      "run_scripts": ["run_reproduction.py", "plot_reproduction.py"],
+      "extra_dependencies": []
+    },
+    {
+      "paper_id": "2512.23799",
+      "title": "Efficient simulation of logical magic state preparation protocols",
+      "topic": "Logical magic-state preparation simulation",
+      "paper_url": "https://arxiv.org/abs/2512.23799",
+      "status": "Partial feature reproduction",
+      "similarity_level": "numerical_feature_reproduction",
+      "audit_score": 73.0,
+      "summary": "Implements local fidelity, acceptance, runtime, and sampling-precision models for logical magic-state preparation.",
+      "limitation": "The public package excludes digitized paper curves; several visible benchmark trends remain proxy or subset validations.",
+      "run_scripts": ["run_reproduction.py", "plot_reproduction.py"],
+      "extra_dependencies": []
+    },
+    {
+      "paper_id": "2604.08669",
+      "title": "An Algorithm for Fast Assembling Large-Scale Defect-Free Atom Arrays",
+      "topic": "Defect-free atom-array assembly",
+      "paper_url": "https://arxiv.org/abs/2604.08669",
+      "status": "Reduced-scale feature reproduction",
+      "similarity_level": "numerical_feature_reproduction",
+      "audit_score": 61.6,
+      "summary": "Reproduces reduced path-planning, P2WGS continuity, and pipelined timing objects for atom-array assembly.",
+      "limitation": "The paper-scale GNN training and GPU-parallel decoder are not included; the public code is a reduced reconstruction.",
+      "run_scripts": [
+        "run_reduced_pilot.py",
+        "run_reduced_p2wgs_pilot.py",
+        "plot_reduced_outputs.py"
+      ],
+      "extra_dependencies": ["torch"]
+    },
+    {
+      "paper_id": "2605.25398",
+      "title": "Boson Sampling as a Probe of Chaotic and Integrable Quantum Dynamics",
+      "topic": "Boson sampling and quantum-chaos probes",
+      "paper_url": "https://arxiv.org/abs/2605.25398",
+      "status": "Feature-level reproduction",
+      "similarity_level": "numerical_feature_reproduction",
+      "audit_score": 79.36,
+      "summary": "Reproduces Porter-Thomas distance, entropy, spectral-form-factor, OTOC, participation-ratio, and scaling features.",
+      "limitation": "Several figures use paper-parameter subsets or local random-matrix instances rather than the full experimental setting.",
+      "run_scripts": ["run_reproduction.py", "plot_reproduction.py"],
+      "extra_dependencies": []
+    },
+    {
+      "paper_id": "2605.25594",
+      "title": "Sensitivity to perturbations in the three-dimensional Anderson model",
+      "topic": "Three-dimensional Anderson localization",
+      "paper_url": "https://arxiv.org/abs/2605.25594",
+      "status": "Reduced-scale feature reproduction",
+      "similarity_level": "numerical_feature_reproduction",
+      "audit_score": 67.49,
+      "summary": "Reproduces disorder sensitivity, gap-ratio, IPR, susceptibility separation, and phenomenological strong-disorder trends.",
+      "limitation": "Several exponent-level and paper-size targets remain compute-limited or only partially reproduced.",
+      "run_scripts": [
+        "run_reproduction.py",
+        "plot_reproduction.py",
+        "run_fig11_phenomenological_model.py"
+      ],
+      "extra_dependencies": []
+    }
+  ]
+}

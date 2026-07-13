@@ -8,7 +8,8 @@ a reproduction case?
 
 Current focus:
 
-- keep `1803.01876` and `1804.04672` easy to read from their case READMEs;
+- keep every published case easy to read from its case README;
+- provide Chinese and English getting-started notes for every case;
 - keep the reproduction note, code, generated data, generated figures, and
   checks aligned;
 - make the public boundary explicit: no original paper PDFs, arXiv source
@@ -21,6 +22,8 @@ Exit criteria:
 - a new reader can understand what was reproduced without reading the internal
   harness repository;
 - a technical reader can rerun the scripts and regenerate the public outputs;
+- an international reader can enter through the English note without losing
+  the stated reproduction boundary;
 - the case states whether it is feature-level, author-data-level, or partial
   reproduction.
 

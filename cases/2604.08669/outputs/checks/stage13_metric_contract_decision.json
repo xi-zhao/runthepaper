@@ -1,0 +1,54 @@
+{
+  "allowed_next_experiment": {
+    "forbidden_until_passes": [
+      "train256",
+      "curriculum",
+      "larger_model",
+      "long_training"
+    ],
+    "gate": [
+      "val64 average below current best without worsening max tail",
+      "model-induced max-over-paper count decreases",
+      "no metric/reference drift"
+    ],
+    "kind": "eval_or_short_train_probe",
+    "single_variable": "distance_tiebreak_weight_or_lexicographic_score"
+  },
+  "current_best_val64": {
+    "candidate": "objective_pair_treatment_freshopt_src_tgt_topk",
+    "data_oracle_max_over_paper_count": 18,
+    "model_induced_max_over_paper_count": 11,
+    "optimal_average_over_paper_count": 56,
+    "optimal_label_average_distance": 0.5164263369515538,
+    "optimal_label_max_distance": 1.9065686669200659,
+    "predicted_average_distance": 0.5179771007969975,
+    "predicted_average_over_paper_count": 59,
+    "predicted_max_distance": 1.9430985357612371,
+    "predicted_max_over_paper_count": 29
+  },
+  "decision": {
+    "next_action": "design_small_multiobjective_distance_tiebreak_probe",
+    "reason": "Current squared-label objective is max-tail-safe but its label optimum misses paper average on val64; Euclidean labels improve average but fail max tail in the metric-contract probe.",
+    "status": "training_scale_blocked_by_metric_contract"
+  },
+  "metric_contract_probe_32": {
+    "euclidean_label_mean_average": 0.5122294537723064,
+    "euclidean_label_mean_max": 2.287072192877531,
+    "recommendation": "freeze_squared_distance_hungarian_labels_and_report_euclidean_avg_max",
+    "selected_label_cost": "squared_distance",
+    "squared_label_mean_average": 0.5161581709980965,
+    "squared_label_mean_max": 1.907858669757843,
+    "squared_minus_euclidean_average_regret_mean": 0.007666177761106279,
+    "squared_minus_euclidean_max_regret_mean": -0.15970946342937792
+  },
+  "paper_target": {
+    "gnn_average_distance": 0.512,
+    "gnn_max_distance": 1.93
+  },
+  "schema_version": 1,
+  "sources": {
+    "metric_contract_probe": "cases/2604.08669/outputs/checks/paper_gnn_target_stage13_metric_contract_probe/paper_hungarian_metric_contract.json",
+    "paper_metric_status": "cases/2604.08669/outputs/checks/repro_status.json"
+  },
+  "status": "ready"
+}

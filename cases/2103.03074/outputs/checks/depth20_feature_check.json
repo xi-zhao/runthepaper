@@ -1,0 +1,50 @@
+{
+  "status": "physically_consistent",
+  "scope": "small-scale independent feature reproduction, not 53-qubit exact contraction",
+  "n_qubits": 18,
+  "depth": 20,
+  "closed_qubits": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "open_qubits": [
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+  ],
+  "closed_bits": [
+    0,
+    1,
+    1,
+    1,
+    1,
+    0
+  ],
+  "batch_size": 4096,
+  "marginal_probability": 0.01570222277462153,
+  "expected_marginal_probability": 0.015625,
+  "all_bitstrings_xeb": 0.00494225757577782,
+  "scaled_probability_min": 2.723315284531881e-05,
+  "scaled_probability_max": 7.861783215969649,
+  "postselection_xeb_at_10_percent": 2.3888713151159537,
+  "postselection_xeb_at_100_percent": 0.00494225757577782,
+  "postselection_curve_mae_vs_minus_log_fraction": 0.025281239030329195,
+  "acceptance": {
+    "all_xeb_close_to_zero": true,
+    "conditional_distribution_normalizes": true,
+    "postselection_monotone_decreasing": true
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "status": "passed",
+  "numeric_closed": [],
+  "paper_equations_checked": [
+    "Eq.(1) PXP Hamiltonian",
+    "Eq.(2) Z2 product states",
+    "Eq.(3-5) FSA H+/H- and beta_n"
+  ],
+  "dimension_checks": [
+    {
+      "L": 4,
+      "pbc_dimension": 7,
+      "pbc_expected": 7,
+      "obc_dimension": 8,
+      "obc_expected": 8
+    },
+    {
+      "L": 5,
+      "pbc_dimension": 11,
+      "pbc_expected": 11,
+      "obc_dimension": 13,
+      "obc_expected": 13
+    },
+    {
+      "L": 6,
+      "pbc_dimension": 18,
+      "pbc_expected": 18,
+      "obc_dimension": 21,
+      "obc_expected": 21
+    },
+    {
+      "L": 7,
+      "pbc_dimension": 29,
+      "pbc_expected": 29,
+      "obc_dimension": 34,
+      "obc_expected": 34
+    },
+    {
+      "L": 8,
+      "pbc_dimension": 47,
+      "pbc_expected": 47,
+      "obc_dimension": 55,
+      "obc_expected": 55
+    },
+    {
+      "L": 9,
+      "pbc_dimension": 76,
+      "pbc_expected": 76,
+      "obc_dimension": 89,
+      "obc_expected": 89
+    },
+    {
+      "L": 10,
+      "pbc_dimension": 123,
+      "pbc_expected": 123,
+      "obc_dimension": 144,
+      "obc_expected": 144
+    },
+    {
+      "L": 11,
+      "pbc_dimension": 199,
+      "pbc_expected": 199,
+      "obc_dimension": 233,
+      "obc_expected": 233
+    },
+    {
+      "L": 12,
+      "pbc_dimension": 322,
+      "pbc_expected": 322,
+      "obc_dimension": 377,
+      "obc_expected": 377
+    }
+  ],
+  "particle_hole_anticommutator_max_abs": 0.0,
+  "h_equals_hplus_plus_hminus_frobenius_error": 0.0,
+  "fsa_projected_minus_tridiagonal_norm_L12": 6.5869074524510855e-15,
+  "fsa_max_backward_error_L12": 0.09933482942385718
+}

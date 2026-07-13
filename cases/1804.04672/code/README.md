@@ -1,27 +1,20 @@
-# Code
+# Runnable code for 1804.04672
 
-This folder contains the runnable numerical code for case `1804.04672`.
-
-The scripts assume the current working directory is this `code/` directory.
+Run commands from the repository root unless a command below changes directory.
 
 ```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+cd cases/1804.04672/code
 python scripts/run_first_target.py
 python scripts/run_open_boundary_phase_diagram.py
 python scripts/run_square_dynamics.py
 python scripts/run_cylinder_phase_diagram.py
 python scripts/run_gap_scaling.py
 python scripts/run_disk_phase_diagram.py
-python scripts/analyze_edge_branch_candidates.py
 ```
 
-Outputs are written one level up, under:
+Generated CSV files are written to `../outputs/data/`, figures to `../outputs/figures/`, and machine-readable checks to `../outputs/checks/`.
 
-```text
-../outputs/data/
-../outputs/figures/
-../outputs/checks/
-```
-
-The scripts use only generated numerical data. Original paper figures,
-source-extracted point sets, and side-by-side source-panel comparisons are not
-required for these public reproduction runs.
+Boundary: Some phase-boundary and panel-level comparisons remain paper-subset or source-table validations rather than full independent finite-size reruns.

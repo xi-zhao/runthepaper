@@ -1,0 +1,57 @@
+{
+  "status": "passed",
+  "numeric_closed": [],
+  "checks": [
+    {
+      "name": "H",
+      "dimension": 2,
+      "square_is_pauli": true,
+      "square_label": "I",
+      "unitarity_error": 3.1560822113208575e-16
+    },
+    {
+      "name": "S",
+      "dimension": 2,
+      "square_is_pauli": true,
+      "square_label": "Z",
+      "unitarity_error": 0.0
+    },
+    {
+      "name": "CZ",
+      "dimension": 4,
+      "square_is_pauli": true,
+      "square_label": "II",
+      "unitarity_error": 0.0
+    },
+    {
+      "name": "X_tensor_CZ",
+      "dimension": 8,
+      "square_is_pauli": true,
+      "square_label": "III",
+      "unitarity_error": 0.0
+    },
+    {
+      "name": "TST_dagger",
+      "dimension": 2,
+      "square_is_pauli": true,
+      "square_label": "Z",
+      "unitarity_error": 0.0
+    }
+  ],
+  "controlled_h_identity_error": 3.1560822113208575e-16,
+  "h_state_pauli_expectations": {
+    "X": 0.7071067811865476,
+    "Y": 0.0,
+    "Z": 0.7071067811865475
+  },
+  "h_state_nonzero_pauli_terms": [
+    "X",
+    "Z"
+  ],
+  "pauli_rank_reconstruction_error": 2.7755575615628914e-17,
+  "notes": [
+    "PSC examples square to Paulis, matching Definition 1 and Proposition 2.",
+    "The controlled-H error identity CH*(X⊗I)=(X⊗H)*CH verifies the simplest syndrome-qubit propagation identity.",
+    "The |H><H| density matrix is reconstructed from Pauli expectation values, matching the Pauli-rank fidelity logic."
+  ]
+}

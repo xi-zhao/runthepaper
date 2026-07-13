@@ -1,0 +1,51 @@
+{
+  "status": "physically_consistent",
+  "scope": "second-iteration local reproduction; still below original PRL disorder counts and maximum exact-diagonalization sizes",
+  "summary": {
+    "fig1": {
+      "peak_rows": 8,
+      "spectra_rows": 420,
+      "max_lock_error": 0.0
+    },
+    "fig2": {
+      "level_rows": 36,
+      "variance_rows": 80,
+      "phase_rows": 5
+    },
+    "fig3": {
+      "mi_rows": 81
+    },
+    "fig4": {
+      "long_range_rows": 64
+    }
+  },
+  "checks": {
+    "fig1_L14_interacting_peak_locked": true,
+    "fig2_L10_level_statistics_generated": true,
+    "fig2_variance_peak_generated": true,
+    "fig3_mutual_information_eps0_near_log2": true,
+    "fig3_mutual_information_high_epsilon_drops": true,
+    "fig4_long_range_variance_generated": true,
+    "observable_sanity_ghz_endpoint_mi": true
+  },
+  "feature_numbers": {
+    "ghz_endpoint_mutual_information": 0.6931471805598763,
+    "expected_log_2": 0.6931471805599453,
+    "fig3_eps0_min": 0.69314718056,
+    "fig3_eps0_max": 0.69314718056,
+    "fig3_epsilon_0.32_max": 0.142863787856,
+    "fig1_max_lock_error": 0.0,
+    "phase_proxy_epsilon_peaks": [
+      0.316903535403,
+      0.230311169782,
+      0.167379751252,
+      0.230311169782,
+      0.316903535403
+    ]
+  },
+  "notes": [
+    "The endpoint mutual information observable was rechecked against a GHZ limiting state before accepting Fig. 3 output.",
+    "The generated Fig. 3 now has the expected finite-size-flow feature: near log(2) at epsilon=0 and small mutual information at large epsilon.",
+    "The critical-exponent collapse in the paper still needs the original large ED campaign and is not claimed as exact."
+  ]
+}

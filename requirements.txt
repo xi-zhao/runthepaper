@@ -3,3 +3,5 @@ scipy
 matplotlib
 pillow
 sympy
+mpmath
+networkx

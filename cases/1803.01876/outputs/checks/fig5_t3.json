@@ -8,6 +8,10 @@
     "EQC010"
   ],
   "L": 100,
+  "spectrum_L": 100,
+  "cbeta_L": 100,
+  "paper_L": 100,
+  "parameter_match": "paper_exact",
   "t2": 1.0,
   "gamma": 1.3333333333333333,
   "t3": 0.2,
@@ -19,20 +23,25 @@
   "source_caption_transition_abs_t1": 1.56,
   "mismatch_count_away_from_transition": 0,
   "cbeta_t1": 1.1,
-  "cbeta_point_count": 384,
-  "cbeta_radius_min": 0.49141975903696633,
-  "cbeta_radius_max": 0.7757707381394987,
-  "cbeta_radius_range": 0.2843509791025324,
-  "cbeta_max_middle_pair_relative_error": 0.025336977140972543,
+  "cbeta_point_count": 396,
+  "cbeta_radius_min": 0.4937176482572164,
+  "cbeta_radius_max": 0.7757707375727145,
+  "cbeta_radius_range": 0.2820530893154981,
+  "cbeta_max_middle_pair_relative_error": 0.013382827497112653,
   "spectrum_line_identity": "open_chain_abs_energy_level",
   "spectrum_connect_rule": "connect_within_branch_id_in_t1_order",
   "spectrum_render_source": "independent_open_chain_numerics",
   "spectrum_reference_source": "official paper figure, not redistributed in this public repository",
   "left_panel_render": "outputs/figures/fig5_t3_left_panel.png",
   "spectrum_branch_count": 100,
-  "spectrum_t1_points": 301,
+  "spectrum_t1_points": 151,
+  "spectrum_solver": {
+    "method": "mpmath_high_precision_chiral_block_eigenspectrum",
+    "decimal_digits": 35,
+    "reason": "The L=100 nonzero-t3 OBC matrix is too non-normal for double precision."
+  },
   "cbeta_line_identity": "middle_beta_root_pair_locus",
-  "cbeta_connect_rule": "connect_within_root_branch_in_angle_order",
+  "cbeta_connect_rule": "connect_middle_pair_locus_in_angle_order",
   "feature_acceptance": {
     "transition_near_caption_value": true,
     "winding_plateau_matches_transition": true,
@@ -52,10 +61,10 @@
       "middle_modulus_gap": 1.7281624077930053
     },
     "-1.5": {
-      "t1": -1.5,
+      "t1": -1.52,
       "W": 1,
       "root_labels": "aabb",
-      "middle_modulus_gap": 0.16601730312541108
+      "middle_modulus_gap": 0.1450484320848333
     },
     "0.0": {
       "t1": 0.0,
@@ -64,10 +73,10 @@
       "middle_modulus_gap": 1.7888543819998317
     },
     "1.5": {
-      "t1": 1.5,
+      "t1": 1.4800000000000004,
       "W": 1,
       "root_labels": "aabb",
-      "middle_modulus_gap": 0.035866365961480684
+      "middle_modulus_gap": 0.04081482764925043
     },
     "2.0": {
       "t1": 2.0,
@@ -81,7 +90,8 @@
     "The criterion is that the two smallest beta roots at E=0 come from the same off-diagonal factor; the change occurs when the middle two moduli meet.",
     "C_beta is reconstructed from open-chain energies by retaining the middle beta-root pair with nearly equal moduli.",
     "The visible spectrum is independently generated from open-chain |E| levels; rendered source EPS is only a visual reference comparator.",
-    "For this |E| panel, branch_id labels the ordered open-chain absolute-energy level, avoiding artificial sign or phase swaps of complex E near degeneracies."
+    "For this |E| panel, branch_id labels the ordered open-chain absolute-energy level, avoiding artificial sign or phase swaps of complex E near degeneracies.",
+    "The visible spectrum and C_beta use the paper's L=100 with 35-decimal-digit eigenspectrum evaluation; source EPS is reference-only."
   ],
   "status": "physically_consistent"
 }

@@ -1,0 +1,5 @@
+method,bitstrings,time_complexity,space_complexity,computational_time,hardware
+Google,1e6,,,10000 years,Summit supercomputer
+Cotengra,1,3.10e22,2^27,3088 years,One NVIDIA Quadro P2000
+Alibaba,64,6.66e18,2^29,267 days,One V100 GPU
+Ours,2097152,4.51e18,2^30,149 days,One A100 GPU

@@ -1,0 +1,414 @@
+{
+  "schema_version": 3,
+  "score_model": "rra_similarity_v3_figure_evaluation",
+  "paper_id": "1608.02589",
+  "summary": "离散时间晶体的核心数值特征已经出现；主要短板是 Fig. 3b-d 的 scaling collapse 和 critical exponents 还没有达到原论文的大规模统计精度。",
+  "targets": [
+    {
+      "target_id": "T001",
+      "label": "Fig. 1 subharmonic rigidity",
+      "weight": 1.0,
+      "components": {
+        "feature_match": {
+          "score": 50.0,
+          "reason": "相互作用系统半频峰锁定，自由自旋峰随 pulse error 漂移，核心现象清楚出现。",
+          "max_score": 50.0
+        },
+        "numeric_closeness": {
+          "score": 28.0,
+          "reason": "峰位置锁定误差为 0，但没有原文 disorder-averaged 曲线逐点比较。",
+          "max_score": 35.0
+        },
+        "paper_scope_coverage": {
+          "score": 9.0,
+          "reason": "Fig. 1 主要目标已覆盖，统计规模仍不是完整论文级。",
+          "max_score": 15.0
+        }
+      },
+      "score_cap": 87.0,
+      "cap_reason": "半频锁定很强，但没有逐点复刻原文 disorder 平均曲线。",
+      "evidence": [
+        "outputs/checks/iteration2_dtc_feature_checks.json"
+      ],
+      "remaining_gap": "半频锁定很强，但没有逐点复刻原文 disorder 平均曲线。",
+      "component_total": 87.0,
+      "score": 87.0,
+      "similarity_level": "numerical_feature_reproduction",
+      "evaluation": {
+        "critical": true,
+        "paper_level_role": "main_claim",
+        "artifact_pass": true,
+        "data_backed": true,
+        "manual_interventions": 0,
+        "failure_type": "missing_reference_curve",
+        "parameter_match": "paper_subset",
+        "formula_dependencies": [
+          "DTC001",
+          "DTC002",
+          "DTC003",
+          "DTC004"
+        ],
+        "formula_gate": "verified",
+        "reference_comparison": "analytic_reference",
+        "generated_data_provenance": "independent_numerics"
+      },
+      "critical": true,
+      "parameter_score_cap": 89.0,
+      "formula_score_cap": 100.0,
+      "reference_score_cap": 90.0,
+      "generated_data_provenance_score_cap": 100.0,
+      "evidence_tier": "physics_reproduction",
+      "figure_refs": [
+        "Fig. 1"
+      ],
+      "panel_coverage": {
+        "panels": [
+          {
+            "panel_id": "a",
+            "status": "partial",
+            "note": "phase-diagram proxy, not the paper's full sketch detail",
+            "evidence": "outputs/figures/iteration2_fig1_phase_boundary_proxy.png"
+          },
+          {
+            "panel_id": "b",
+            "status": "reproduced",
+            "evidence": "outputs/figures/iteration2_fig1_L14_subharmonic_rigidity.png"
+          },
+          {
+            "panel_id": "c",
+            "status": "reproduced",
+            "evidence": "outputs/figures/iteration2_fig1_phase_boundary_proxy.png"
+          },
+          {
+            "panel_id": "d",
+            "status": "reproduced",
+            "evidence": "outputs/figures/iteration2_fig1_L14_subharmonic_rigidity.png"
+          }
+        ],
+        "panel_scope_cap": 13.12
+      },
+      "physics_status": "undeclared",
+      "physics_score_cap": 100.0
+    },
+    {
+      "target_id": "T002",
+      "label": "Fig. 2 level statistics / variance peak",
+      "weight": 1.0,
+      "components": {
+        "feature_match": {
+          "score": 43.0,
+          "reason": "level statistics 和 variance peak 的转变信号出现。",
+          "max_score": 50.0
+        },
+        "numeric_closeness": {
+          "score": 18.0,
+          "reason": "趋势可见，但小规模样本噪声较大。",
+          "max_score": 35.0
+        },
+        "paper_scope_coverage": {
+          "score": 9.0,
+          "reason": "覆盖了本地图，但没有达到原文大样本 campaign。",
+          "max_score": 15.0
+        }
+      },
+      "score_cap": 70.0,
+      "cap_reason": "转变特征出现，但统计规模较小。",
+      "evidence": [
+        "outputs/checks/iteration2_dtc_feature_checks.json"
+      ],
+      "remaining_gap": "转变特征出现，但统计规模较小。",
+      "component_total": 70.0,
+      "score": 70.0,
+      "similarity_level": "numerical_feature_reproduction",
+      "evaluation": {
+        "critical": true,
+        "paper_level_role": "supporting",
+        "artifact_pass": true,
+        "data_backed": true,
+        "manual_interventions": 0,
+        "failure_type": "insufficient_compute",
+        "parameter_match": "reduced_scale",
+        "formula_dependencies": [
+          "DTC001",
+          "DTC002",
+          "DTC003",
+          "DTC005",
+          "DTC007"
+        ],
+        "formula_gate": "verified",
+        "reference_comparison": "visual_feature_contract",
+        "generated_data_provenance": "independent_numerics"
+      },
+      "critical": true,
+      "parameter_score_cap": 70.0,
+      "formula_score_cap": 100.0,
+      "reference_score_cap": 80.0,
+      "generated_data_provenance_score_cap": 100.0,
+      "evidence_tier": "physics_reproduction",
+      "figure_refs": [
+        "Fig. 2"
+      ],
+      "panel_coverage": {
+        "panels": [
+          {
+            "panel_id": "a",
+            "status": "reproduced",
+            "note": "level statistics generated (scale via parameter axis)",
+            "evidence": "outputs/figures/iteration2_fig2_level_statistics_variance_L10.png"
+          },
+          {
+            "panel_id": "b",
+            "status": "reproduced",
+            "note": "variance peak generated",
+            "evidence": "outputs/checks/iteration2_dtc_feature_checks.json"
+          }
+        ],
+        "panel_scope_cap": 15.0
+      },
+      "physics_status": "undeclared",
+      "physics_score_cap": 100.0
+    },
+    {
+      "target_id": "T003",
+      "label": "Fig. 3 endpoint mutual information / scaling",
+      "weight": 1.5,
+      "components": {
+        "feature_match": {
+          "score": 40.0,
+          "reason": "endpoint mutual information 在 epsilon=0 接近 log 2，大 detuning 下降。",
+          "max_score": 50.0
+        },
+        "numeric_closeness": {
+          "score": 24.0,
+          "reason": "GPU L=8/10/12 campaign (55 paper points, 1000 samples/point). 以论文自身 (eps_c,beta,nu) 塌缩:强耦合 3c/3d 三尺寸并到一条普适曲线 (relative spread 0.109/0.064);I_end(eps=0)=ln2 精确命中(误差 0);深尾→0。自数据反解临界指数复原 eps_c(3c/3d 差<0.03)与 nu 量级,beta 因 L<=12 系统低估;弱耦合 3b 峰区仍松(spread 0.45)。",
+          "max_score": 35.0
+        },
+        "paper_scope_coverage": {
+          "score": 13.0,
+          "reason": "Panel ledger: Fig. 3(a) MI flow + collapse panels (c,d) reproduced, (b) partial (weak-coupling peak marginal at L<=12) -> 3.5/4 panel credit.",
+          "max_score": 15.0
+        }
+      },
+      "score_cap": 80.0,
+      "cap_reason": "Scaling collapse 复现:强耦合 3c/3d 用论文自身指数并到普适曲线,I(eps=0)=ln2 精确;弱耦合 3b 边际、beta 在 L<=12 被低估。系统尺寸低于论文(未含 L=16/18),reduced_scale 参数上限 70 为诚实天花板。",
+      "evidence": [
+        "outputs/checks/iteration2_dtc_feature_checks.json",
+        "outputs/checks/fig3_scaling_collapse.json",
+        "outputs/checks/paper_exact_campaign_result.json"
+      ],
+      "remaining_gap": "弱耦合 3b 峰区塌缩不紧、beta 低估,均源于 L<=12;需 L>=16 才能收紧(受稠密 Floquet 求解器内存限制)。",
+      "component_total": 77.0,
+      "score": 70.0,
+      "similarity_level": "numerical_feature_reproduction",
+      "evaluation": {
+        "critical": true,
+        "paper_level_role": "main_claim",
+        "artifact_pass": true,
+        "data_backed": true,
+        "manual_interventions": 0,
+        "failure_type": "insufficient_compute",
+        "parameter_match": "reduced_scale",
+        "formula_dependencies": [
+          "DTC001",
+          "DTC002",
+          "DTC003",
+          "DTC006"
+        ],
+        "formula_gate": "verified",
+        "reference_comparison": "visual_feature_contract",
+        "generated_data_provenance": "independent_numerics"
+      },
+      "critical": true,
+      "parameter_score_cap": 70.0,
+      "formula_score_cap": 100.0,
+      "reference_score_cap": 80.0,
+      "generated_data_provenance_score_cap": 100.0,
+      "evidence_tier": "physics_reproduction",
+      "figure_refs": [
+        "Fig. 3"
+      ],
+      "panel_coverage": {
+        "panels": [
+          {
+            "panel_id": "a",
+            "status": "reproduced",
+            "note": "MI finite-size flow generated",
+            "evidence": "outputs/figures/iteration2_fig3_mutual_information_corrected.png"
+          },
+          {
+            "panel_id": "b",
+            "status": "partial",
+            "note": "collapse Jz=0.05 generated; near-critical peak marginal at L<=12 (spread 0.45)",
+            "evidence": "outputs/checks/fig3_scaling_collapse.json#panels"
+          },
+          {
+            "panel_id": "c",
+            "status": "reproduced",
+            "note": "collapse Jz=0.10 tight (spread 0.109) with paper exponents",
+            "evidence": "outputs/checks/fig3_scaling_collapse.json#panels"
+          },
+          {
+            "panel_id": "d",
+            "status": "reproduced",
+            "note": "collapse Jz=0.15 tight (spread 0.064) + own-data exponent extraction",
+            "evidence": "outputs/checks/fig3_scaling_collapse.json#panels"
+          }
+        ],
+        "panel_scope_cap": 13.12
+      },
+      "physics_status": "passed",
+      "physics_score_cap": 100.0,
+      "physics_assertions": [
+        {
+          "assertion_id": "fig3_mi_ln2_at_epsilon_zero",
+          "tier": "analytic",
+          "essential": true,
+          "status": "passed",
+          "evidence": "outputs/checks/fig3_scaling_collapse.json#analytic_anchor.max_abs_error_vs_ln2",
+          "claim": "eps=0 端点对为纯 Bell 对,I_end=ln2 对所有 L 与耦合精确成立(max|MI(0)-ln2|=0)。"
+        },
+        {
+          "assertion_id": "fig3_deep_paramagnet_mi_vanishes",
+          "tier": "numeric",
+          "essential": true,
+          "status": "passed",
+          "evidence": "outputs/checks/fig3_scaling_collapse.json#analytic_anchor.deep_tail_max_over_all",
+          "claim": "深顺磁区 (eps>=0.4) 端点 MI 全部趋零(所有 L/耦合 max=0.013)。"
+        },
+        {
+          "assertion_id": "fig3cd_strong_couplings_collapse",
+          "tier": "alignment",
+          "essential": true,
+          "status": "passed",
+          "evidence": "outputs/checks/fig3_scaling_collapse.json#gate_flags.strong_couplings_collapse_tight",
+          "claim": "用论文自身 (eps_c,beta,nu),J_z=0.10/0.15 的 L=8/10/12 曲线塌缩到单条普适曲线(relative spread<0.15)。"
+        },
+        {
+          "assertion_id": "fig3b_weak_coupling_collapse_marginal",
+          "tier": "alignment",
+          "essential": false,
+          "status": "failed",
+          "evidence": "outputs/checks/fig3_scaling_collapse.json#panels",
+          "claim": "弱耦合 J_z=0.05 仅在深尾塌缩,近临界峰区在 L<=12 不紧(spread 0.45);诚实残差,需更大尺寸。"
+        }
+      ]
+    },
+    {
+      "target_id": "T004",
+      "label": "Fig. 4 long-range diagnostic",
+      "weight": 1.0,
+      "components": {
+        "feature_match": {
+          "score": 42.0,
+          "reason": "长程相互作用版本也出现方差峰。",
+          "max_score": 50.0
+        },
+        "numeric_closeness": {
+          "score": 18.0,
+          "reason": "趋势出现，但数值稳定性和统计精度还不够。",
+          "max_score": 35.0
+        },
+        "paper_scope_coverage": {
+          "score": 9.0,
+          "reason": "本地复现覆盖核心诊断，没有完成大规模 disorder 平均。",
+          "max_score": 15.0
+        }
+      },
+      "score_cap": 69.0,
+      "cap_reason": "长程相互作用特征出现，但不是原文级 disorder campaign。",
+      "evidence": [
+        "outputs/checks/iteration2_dtc_feature_checks.json"
+      ],
+      "remaining_gap": "长程相互作用特征出现，但不是原文级 disorder campaign。",
+      "component_total": 69.0,
+      "score": 69.0,
+      "similarity_level": "numerical_feature_reproduction",
+      "evaluation": {
+        "critical": false,
+        "paper_level_role": "supporting",
+        "artifact_pass": true,
+        "data_backed": true,
+        "manual_interventions": 0,
+        "failure_type": "insufficient_compute",
+        "parameter_match": "reduced_scale",
+        "formula_dependencies": [
+          "DTC001",
+          "DTC002",
+          "DTC003",
+          "DTC004",
+          "DTC007"
+        ],
+        "formula_gate": "verified",
+        "reference_comparison": "visual_feature_contract",
+        "generated_data_provenance": "independent_numerics"
+      },
+      "critical": false,
+      "parameter_score_cap": 70.0,
+      "formula_score_cap": 100.0,
+      "reference_score_cap": 80.0,
+      "generated_data_provenance_score_cap": 100.0,
+      "evidence_tier": "physics_reproduction",
+      "figure_refs": [
+        "Fig. 4"
+      ],
+      "panel_coverage": {
+        "panels": [
+          {
+            "panel_id": "single",
+            "status": "reproduced",
+            "note": "long-range variance peak generated",
+            "evidence": "outputs/figures/iteration2_fig4_long_range_variance_L10.png"
+          }
+        ],
+        "panel_scope_cap": 15.0
+      },
+      "physics_status": "undeclared",
+      "physics_score_cap": 100.0
+    }
+  ],
+  "overall_score": 73.56,
+  "similarity_level": "numerical_feature_reproduction",
+  "evaluation_summary": {
+    "scored_items": 4,
+    "critical_items": 3,
+    "artifact_pass_rate": 1.0,
+    "data_backed_rate": 1.0,
+    "manual_interventions_total": 0,
+    "manual_interventions_per_item": 0.0,
+    "failure_type_counts": {
+      "missing_reference_curve": 1,
+      "insufficient_compute": 3
+    },
+    "parameter_match_counts": {
+      "paper_subset": 1,
+      "reduced_scale": 3
+    },
+    "reference_comparison_counts": {
+      "analytic_reference": 1,
+      "visual_feature_contract": 3
+    },
+    "generated_data_provenance_counts": {
+      "independent_numerics": 4
+    },
+    "evidence_tier_counts": {
+      "physics_reproduction": 4
+    },
+    "formula_gate_counts": {
+      "verified": 4
+    },
+    "paper_level_role_counts": {
+      "main_claim": 2,
+      "supporting": 2
+    },
+    "physics_status_counts": {
+      "undeclared": 3,
+      "passed": 1
+    },
+    "physics_assertion_status_counts": {
+      "passed": 3,
+      "failed": 1
+    },
+    "essential_physics_failures": []
+  },
+  "status": "passed"
+}

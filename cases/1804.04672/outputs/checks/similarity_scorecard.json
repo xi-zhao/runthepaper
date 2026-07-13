@@ -1,0 +1,599 @@
+{
+  "schema_version": 1,
+  "paper_id": "1804.04672",
+  "score_model": "rra_similarity_v1",
+  "targets": [
+    {
+      "target_id": "T001",
+      "label": "Fig. 3(b) cylinder complex spectrum",
+      "weight": 1.0,
+      "components": {
+        "feature_match": {
+          "score": 45.0,
+          "reason": "The paper-parameter complex spectrum is generated and the red subset now uses a chiral edge-trace rule instead of boundary localization alone.",
+          "max_score": 50.0
+        },
+        "numeric_closeness": {
+          "score": 27.0,
+          "reason": "The EPS red branch point-match gate passes (mean distance 0.0098, max distance 0.0263); full pixel/layout scoring is still not a required gate.",
+          "max_score": 35.0
+        },
+        "paper_scope_coverage": {
+          "score": 12.0,
+          "reason": "The first target uses the paper's Ly=40 and 180 kx grid and renders Fig. 3(b); the cylinder phase diagram remains outside this target.",
+          "max_score": 15.0
+        }
+      },
+      "score_cap": 86.0,
+      "cap_reason": "The red branch is validated against EPS points, but complete pixel-layout scoring is still missing.",
+      "evidence": [
+        "outputs/data/first_target.csv",
+        "outputs/checks/first_target.json",
+        "outputs/checks/first_target_render.json",
+        "outputs/figures/first_target.png",
+        "internal visual validation (not redistributed)",
+        "outputs/checks/eps_point_match.json",
+        "outputs/data/eps_point_match_pairs.csv",
+        "internal EPS-point validation (not redistributed)",
+        "internal EPS-point validation (not redistributed)",
+        "internal official-figure validation (not redistributed)"
+      ],
+      "remaining_gap": "pixel_layout_validation: the analytic chiral edge trace now passes EPS red-branch point matching, but full panel layout, marker style, and blue point-cloud distance are not yet gates.",
+      "evaluation": {
+        "critical": true,
+        "paper_level_role": "supporting",
+        "artifact_pass": true,
+        "data_backed": true,
+        "manual_interventions": 0,
+        "failure_type": "partial_target_coverage",
+        "parameter_match": "paper_exact",
+        "reference_comparison": "digitized_curve",
+        "generated_data_provenance": "independent_numerics",
+        "formula_gate": "source_only",
+        "formula_dependencies": [
+          "EQC001",
+          "EQC002",
+          "EQC004"
+        ]
+      },
+      "critical": true,
+      "formula_score_cap": 89.0,
+      "generated_data_provenance_score_cap": 100.0,
+      "evidence_tier": "physics_reproduction",
+      "parameter_score_cap": 100.0,
+      "reference_score_cap": 95.0,
+      "component_total": 84.0,
+      "score": 84.0,
+      "similarity_level": "numerical_feature_reproduction",
+      "physics_status": "undeclared",
+      "physics_score_cap": 100.0,
+      "figure_refs": [
+        "Fig. 3(b)"
+      ],
+      "panel_coverage": {
+        "panels": [
+          {
+            "panel_id": "single",
+            "status": "reproduced",
+            "note": "spectrum generated; pixel-layout validation is the reference axis",
+            "evidence": "outputs/figures/first_target.png"
+          }
+        ],
+        "panel_scope_cap": 15.0
+      }
+    },
+    {
+      "target_id": "T002",
+      "label": "Fig. 3(a) cylinder phase diagram",
+      "weight": 0.8,
+      "components": {
+        "feature_match": {
+          "score": 44.0,
+          "reason": "The generated phase diagram contains the C_y=1, gapless, and C_y=0 regions, red non-Bloch boundary, Bloch dotted lines, and the paper star point.",
+          "max_score": 50.0
+        },
+        "numeric_closeness": {
+          "score": 27.0,
+          "reason": "The star point is classified as chern_one and the boundary comes from the non-Bloch cylinder band-touching formula with digitized source-curve validation retained in the check JSON.",
+          "max_score": 35.0
+        },
+        "paper_scope_coverage": {
+          "score": 13.0,
+          "reason": "The panel covers the Fig. 3(a) cylinder phase-diagram scope; Fig. 1 is tracked separately as the open-boundary story-line target.",
+          "max_score": 15.0
+        }
+      },
+      "score_cap": 88.0,
+      "cap_reason": "Source-curve validation is digitized from the PDF panel.",
+      "evidence": [
+        "outputs/data/fig3a_cylinder_phase.csv",
+        "outputs/figures/fig3a_cylinder_phase.png",
+        "internal visual validation (not redistributed)",
+        "internal official-figure validation (not redistributed)",
+        "outputs/checks/fig3a_cylinder_phase.json",
+        "outputs/checks/fig3a_direct_cy_integration.json",
+        "outputs/data/fig3a_direct_cy_integration.csv"
+      ],
+      "remaining_gap": "direct_cy_integration_gate closed: C_y is now integrated directly (biorthogonal FHS) and the strip gaplessness is independently confirmed; the analytic boundary is a validated curve.",
+      "evaluation": {
+        "critical": false,
+        "paper_level_role": "supporting",
+        "artifact_pass": true,
+        "data_backed": true,
+        "manual_interventions": 0,
+        "failure_type": "none",
+        "parameter_match": "paper_subset",
+        "reference_comparison": "digitized_curve",
+        "generated_data_provenance": "analytic_reference",
+        "formula_gate": "source_only",
+        "formula_dependencies": [
+          "EQC001",
+          "EQC003",
+          "EQC004"
+        ]
+      },
+      "physics_assertions": [
+        {
+          "assertion_id": "fig3a_cy_one_left_of_strip",
+          "tier": "numeric",
+          "essential": true,
+          "status": "passed",
+          "evidence": "outputs/checks/fig3a_direct_cy_integration.json#gamma_checks[].left_pure_chern_one",
+          "claim": "Direct biorthogonal FHS integration gives C_y=1 everywhere left of the band-touching strip in the Fig. 3(a) domain."
+        },
+        {
+          "assertion_id": "fig3a_cy_zero_right_of_strip",
+          "tier": "numeric",
+          "essential": true,
+          "status": "passed",
+          "evidence": "outputs/checks/fig3a_direct_cy_integration.json#gamma_checks[].right_pure_chern_zero",
+          "claim": "Direct integration gives C_y=0 everywhere right of the strip; the single C_y jump falls inside the strip for every gamma slice."
+        },
+        {
+          "assertion_id": "fig3a_strip_is_gapless",
+          "tier": "numeric",
+          "essential": true,
+          "status": "passed",
+          "evidence": "outputs/checks/fig3a_direct_cy_integration.json#gamma_checks[].strip_midpoint_min_abs_E",
+          "claim": "A dense closed-form min|E| search confirms the strip between the two non-Bloch boundaries is gapless, independently of the boundary formula."
+        },
+        {
+          "assertion_id": "fig3a_star_point_chern_one",
+          "tier": "numeric",
+          "essential": true,
+          "status": "passed",
+          "evidence": "outputs/checks/fig3a_direct_cy_integration.json#star_point",
+          "claim": "The paper's star point (m=1.717, gamma=0.2) carries non-Bloch Chern number 1."
+        }
+      ],
+      "critical": false,
+      "physics_status": "passed",
+      "formula_score_cap": 89.0,
+      "generated_data_provenance_score_cap": 100.0,
+      "evidence_tier": "physics_reproduction",
+      "physics_score_cap": 100.0,
+      "parameter_score_cap": 89.0,
+      "reference_score_cap": 95.0,
+      "component_total": 84.0,
+      "score": 84.0,
+      "similarity_level": "numerical_feature_reproduction",
+      "figure_refs": [
+        "Fig. 3(a)"
+      ],
+      "panel_coverage": {
+        "panels": [
+          {
+            "panel_id": "single",
+            "status": "reproduced",
+            "note": "direct biorthogonal FHS C_y integration",
+            "evidence": "outputs/checks/fig3a_direct_cy_integration.json"
+          }
+        ],
+        "panel_scope_cap": 15.0
+      }
+    },
+    {
+      "target_id": "T004",
+      "label": "Fig. 2 square spectra and wave-packet dynamics",
+      "weight": 1.0,
+      "components": {
+        "feature_match": {
+          "score": 38.0,
+          "reason": "The generated panel includes both square-geometry low-energy spectra and normalized wave-packet intensity snapshots at the Fig. 2 times.",
+          "max_score": 50.0
+        },
+        "numeric_closeness": {
+          "score": 18.0,
+          "reason": "The computation uses the paper Hamiltonian and caption parameters, but source-point or pixel-level dynamics matching is not yet a gate.",
+          "max_score": 35.0
+        },
+        "paper_scope_coverage": {
+          "score": 14.0,
+          "reason": "Both Fig. 2 rows and the three displayed time snapshots are covered.",
+          "max_score": 15.0
+        }
+      },
+      "score_cap": 70.0,
+      "cap_reason": "Reference comparison is source-figure visual only and dynamics pixel matching is not implemented.",
+      "evidence": [
+        "outputs/data/fig2_square_spectrum.csv",
+        "outputs/data/fig2_wavepacket.csv",
+        "outputs/figures/fig2_square_dynamics.png",
+        "internal visual validation (not redistributed)",
+        "internal official-figure validation (not redistributed)",
+        "outputs/checks/fig2_square_dynamics.json"
+      ],
+      "remaining_gap": "pixel_dynamics_validation: source wave-packet intensity maps and low-energy spectra have not yet been digitized into quantitative comparison gates.",
+      "evaluation": {
+        "critical": true,
+        "paper_level_role": "main_claim",
+        "artifact_pass": true,
+        "data_backed": true,
+        "manual_interventions": 0,
+        "failure_type": "partial_target_coverage",
+        "parameter_match": "paper_exact",
+        "reference_comparison": "source_figure_only",
+        "generated_data_provenance": "independent_numerics",
+        "formula_gate": "source_only",
+        "formula_dependencies": [
+          "EQC001",
+          "EQC006"
+        ]
+      },
+      "critical": true,
+      "formula_score_cap": 89.0,
+      "generated_data_provenance_score_cap": 100.0,
+      "evidence_tier": "physics_reproduction",
+      "parameter_score_cap": 100.0,
+      "reference_score_cap": 70.0,
+      "component_total": 70.0,
+      "score": 70.0,
+      "similarity_level": "numerical_feature_reproduction",
+      "physics_status": "undeclared",
+      "physics_score_cap": 100.0,
+      "figure_refs": [
+        "Fig. 2"
+      ],
+      "panel_coverage": {
+        "panels": [
+          {
+            "panel_id": "spectrum",
+            "status": "reproduced",
+            "note": "low-energy square spectrum generated",
+            "evidence": "outputs/data/fig2_square_spectrum.csv"
+          },
+          {
+            "panel_id": "a",
+            "status": "reproduced",
+            "note": "trivial-phase wave packet generated",
+            "evidence": "outputs/figures/fig2_square_dynamics.png"
+          },
+          {
+            "panel_id": "b",
+            "status": "reproduced",
+            "note": "topological-phase chiral wave packet generated",
+            "evidence": "outputs/figures/fig2_square_dynamics.png"
+          }
+        ],
+        "panel_scope_cap": 15.0
+      }
+    },
+    {
+      "target_id": "T003",
+      "label": "Fig. 1 open-boundary phase diagram",
+      "weight": 1.0,
+      "components": {
+        "feature_match": {
+          "score": 46.0,
+          "reason": "The generated panel separates the shaded C=1 region, C=0 region, red open-boundary transition curve, blue non-Bloch theory curve, Bloch dotted fan, and Fig. 2 markers.",
+          "max_score": 50.0
+        },
+        "numeric_closeness": {
+          "score": 28.0,
+          "reason": "The red curve now comes from independent square finite-size gap-square extrapolation; it matches both the analytic non-Bloch boundary m=2+gamma^2 and the supplemental table within 0.035 in m across all sampled gamma.",
+          "max_score": 35.0
+        },
+        "paper_scope_coverage": {
+          "score": 14.0,
+          "reason": "The central Fig. 1 phase-diagram scope is rendered with all line objects; author plotting data remains unavailable.",
+          "max_score": 15.0
+        }
+      },
+      "evidence": [
+        "outputs/data/fig1_open_boundary_phase.csv",
+        "outputs/figures/fig1_open_boundary_phase.png",
+        "internal visual validation (not redistributed)",
+        "internal official-figure validation (not redistributed)",
+        "outputs/checks/fig1_open_boundary_phase.json",
+        "outputs/checks/independent_obc_boundary.json",
+        "outputs/data/independent_obc_boundary.csv"
+      ],
+      "remaining_gap": "finite_size_extrapolation closed: the red boundary is computed from square spectra at L=12-24 and validated against the analytic and supplement-table references; author plotting data is still absent.",
+      "physics_assertions": [
+        {
+          "assertion_id": "fig1_boundary_from_independent_finite_size_scan",
+          "tier": "numeric",
+          "essential": true,
+          "status": "passed",
+          "evidence": "outputs/checks/independent_obc_boundary.json#boundaries[geometry=square]",
+          "claim": "The open-boundary transition m*(gamma) extracted from independent square finite-size spectra matches the analytic non-Bloch boundary m=2+gamma^2 within 0.05 for all gamma."
+        },
+        {
+          "assertion_id": "fig1_single_non_bloch_curve_not_bloch_fan",
+          "tier": "numeric",
+          "essential": true,
+          "status": "passed",
+          "evidence": "outputs/checks/independent_obc_boundary.json#boundaries[geometry=square].references",
+          "claim": "The independently computed transition is a single curve on the non-Bloch line, far from the two-line Bloch fan m=2±sqrt(2)gamma — the paper's central bulk-boundary claim."
+        }
+      ],
+      "evaluation": {
+        "critical": true,
+        "paper_level_role": "main_claim",
+        "artifact_pass": true,
+        "data_backed": true,
+        "manual_interventions": 0,
+        "failure_type": "none",
+        "parameter_match": "paper_subset",
+        "reference_comparison": "table_exact",
+        "generated_data_provenance": "independent_numerics",
+        "formula_gate": "source_only",
+        "formula_dependencies": [
+          "EQC001",
+          "EQC003",
+          "EQC005"
+        ]
+      },
+      "critical": true,
+      "physics_status": "passed",
+      "formula_score_cap": 89.0,
+      "generated_data_provenance_score_cap": 100.0,
+      "evidence_tier": "physics_reproduction",
+      "physics_score_cap": 100.0,
+      "parameter_score_cap": 89.0,
+      "reference_score_cap": 100.0,
+      "component_total": 88.0,
+      "score": 88.0,
+      "similarity_level": "numerical_feature_reproduction",
+      "figure_refs": [
+        "Fig. 1"
+      ],
+      "panel_coverage": {
+        "panels": [
+          {
+            "panel_id": "single",
+            "status": "reproduced",
+            "note": "independent finite-size red boundary",
+            "evidence": "outputs/checks/independent_obc_boundary.json"
+          }
+        ],
+        "panel_scope_cap": 15.0
+      }
+    },
+    {
+      "target_id": "T006",
+      "label": "Supplemental Fig. S3 disk phase diagram",
+      "weight": 0.7,
+      "components": {
+        "feature_match": {
+          "score": 44.0,
+          "reason": "The disk phase diagram renders the red transition boundary, blue non-Bloch theory curve, Bloch dotted lines, and C=1/C=0 regions.",
+          "max_score": 50.0
+        },
+        "numeric_closeness": {
+          "score": 27.0,
+          "reason": "The red curve now comes from independent disk finite-size gap-square extrapolation (R=20-32); it matches the supplement numerical table and the analytic boundary within 0.023 in m.",
+          "max_score": 35.0
+        },
+        "paper_scope_coverage": {
+          "score": 14.0,
+          "reason": "The Supplemental Fig. S3 phase-diagram panel is covered.",
+          "max_score": 15.0
+        }
+      },
+      "evidence": [
+        "outputs/data/figs3_disk_phase.csv",
+        "outputs/figures/figs3_disk_phase.png",
+        "internal visual validation (not redistributed)",
+        "internal official-figure validation (not redistributed)",
+        "outputs/checks/figs3_disk_phase.json",
+        "outputs/checks/independent_obc_boundary.json",
+        "outputs/data/independent_obc_boundary.csv"
+      ],
+      "remaining_gap": "independent_disk_phase_scan closed: the red boundary is computed from disk spectra at R=20-32 and validated against the supplement table; author plotting data is still absent.",
+      "physics_assertions": [
+        {
+          "assertion_id": "figs3_disk_boundary_from_independent_scan",
+          "tier": "numeric",
+          "essential": true,
+          "status": "passed",
+          "evidence": "outputs/checks/independent_obc_boundary.json#boundaries[geometry=disk]",
+          "claim": "The disk-geometry transition m*(gamma) extracted from independent finite-size spectra matches the supplement numerical table and the analytic non-Bloch boundary within 0.05 for all gamma."
+        },
+        {
+          "assertion_id": "figs3_geometry_insensitivity",
+          "tier": "numeric",
+          "essential": true,
+          "status": "passed",
+          "evidence": "outputs/checks/independent_obc_boundary.json#boundaries",
+          "claim": "Square and disk geometries give the same open-boundary transition curve within tolerance, supporting the topological character of the non-Bloch boundary (paper claim CLM005)."
+        }
+      ],
+      "evaluation": {
+        "critical": false,
+        "paper_level_role": "method_validation",
+        "artifact_pass": true,
+        "data_backed": true,
+        "manual_interventions": 0,
+        "failure_type": "none",
+        "parameter_match": "paper_subset",
+        "reference_comparison": "table_exact",
+        "generated_data_provenance": "independent_numerics",
+        "formula_gate": "source_only",
+        "formula_dependencies": [
+          "EQC001",
+          "EQC005",
+          "EQC007"
+        ]
+      },
+      "critical": false,
+      "physics_status": "passed",
+      "formula_score_cap": 89.0,
+      "generated_data_provenance_score_cap": 100.0,
+      "evidence_tier": "physics_reproduction",
+      "physics_score_cap": 100.0,
+      "parameter_score_cap": 89.0,
+      "reference_score_cap": 100.0,
+      "component_total": 85.0,
+      "score": 85.0,
+      "similarity_level": "numerical_feature_reproduction",
+      "figure_refs": [
+        "Fig. S3"
+      ],
+      "panel_coverage": {
+        "panels": [
+          {
+            "panel_id": "single",
+            "status": "reproduced",
+            "note": "independent disk red boundary",
+            "evidence": "outputs/checks/independent_obc_boundary.json"
+          }
+        ],
+        "panel_scope_cap": 15.0
+      }
+    },
+    {
+      "target_id": "T005",
+      "label": "Supplemental Fig. S2 disk gap-square finite-size fitting",
+      "weight": 0.6,
+      "components": {
+        "feature_match": {
+          "score": 38.0,
+          "reason": "The generated panel reproduces the three disk gap-square finite-size fits for m=2.2000, 2.0800, and 2.0400 with radii extended to R=40.",
+          "max_score": 50.0
+        },
+        "numeric_closeness": {
+          "score": 16.0,
+          "reason": "The data are independently generated from the disk Hamiltonian, but source curve digitization is not yet a quantitative gate.",
+          "max_score": 35.0
+        },
+        "paper_scope_coverage": {
+          "score": 13.0,
+          "reason": "All three Supplemental Fig. S2 panels are represented.",
+          "max_score": 15.0
+        }
+      },
+      "score_cap": 70.0,
+      "cap_reason": "Reference comparison is source-figure visual only and the radius set is a tractable reproduction subset.",
+      "evidence": [
+        "outputs/data/figs2_gap_scaling.csv",
+        "outputs/data/figs2_gap_scaling_fit.csv",
+        "outputs/figures/figs2_gap_scaling.png",
+        "internal visual validation (not redistributed)",
+        "internal official-figure validation (not redistributed)",
+        "outputs/checks/figs2_gap_scaling.json"
+      ],
+      "remaining_gap": "finite_size_scale partially closed: radii extended to R=20-40; digitized source-curve validation for the three fit panels is still missing.",
+      "evaluation": {
+        "critical": false,
+        "paper_level_role": "method_validation",
+        "artifact_pass": true,
+        "data_backed": true,
+        "manual_interventions": 0,
+        "failure_type": "partial_target_coverage",
+        "parameter_match": "paper_subset",
+        "reference_comparison": "source_figure_only",
+        "generated_data_provenance": "independent_numerics",
+        "formula_gate": "source_only",
+        "formula_dependencies": [
+          "EQC001",
+          "EQC007"
+        ]
+      },
+      "critical": false,
+      "physics_status": "undeclared",
+      "formula_score_cap": 89.0,
+      "generated_data_provenance_score_cap": 100.0,
+      "evidence_tier": "physics_reproduction",
+      "physics_score_cap": 100.0,
+      "parameter_score_cap": 89.0,
+      "reference_score_cap": 70.0,
+      "component_total": 67.0,
+      "score": 67.0,
+      "similarity_level": "numerical_feature_reproduction",
+      "figure_refs": [
+        "Fig. S2"
+      ],
+      "panel_coverage": {
+        "panels": [
+          {
+            "panel_id": "a",
+            "status": "reproduced",
+            "note": "m=2.20 fit, R=20-40",
+            "evidence": "outputs/data/figs2_gap_scaling_fit.csv"
+          },
+          {
+            "panel_id": "b",
+            "status": "reproduced",
+            "note": "m=2.08 fit",
+            "evidence": "outputs/data/figs2_gap_scaling_fit.csv"
+          },
+          {
+            "panel_id": "c",
+            "status": "reproduced",
+            "note": "m=2.04 fit",
+            "evidence": "outputs/data/figs2_gap_scaling_fit.csv"
+          }
+        ],
+        "panel_scope_cap": 15.0
+      }
+    }
+  ],
+  "overall_score": 80.18,
+  "similarity_level": "numerical_feature_reproduction",
+  "evaluation_summary": {
+    "scored_items": 6,
+    "critical_items": 3,
+    "artifact_pass_rate": 1.0,
+    "data_backed_rate": 1.0,
+    "manual_interventions_total": 0,
+    "manual_interventions_per_item": 0.0,
+    "failure_type_counts": {
+      "partial_target_coverage": 3,
+      "none": 3
+    },
+    "parameter_match_counts": {
+      "paper_exact": 2,
+      "paper_subset": 4
+    },
+    "reference_comparison_counts": {
+      "digitized_curve": 2,
+      "source_figure_only": 2,
+      "table_exact": 2
+    },
+    "generated_data_provenance_counts": {
+      "independent_numerics": 5,
+      "analytic_reference": 1
+    },
+    "evidence_tier_counts": {
+      "physics_reproduction": 6
+    },
+    "formula_gate_counts": {
+      "source_only": 6
+    },
+    "paper_level_role_counts": {
+      "supporting": 2,
+      "main_claim": 2,
+      "method_validation": 2
+    },
+    "physics_status_counts": {
+      "undeclared": 3,
+      "passed": 3
+    },
+    "physics_assertion_status_counts": {
+      "passed": 8
+    },
+    "essential_physics_failures": []
+  },
+  "status": "passed"
+}

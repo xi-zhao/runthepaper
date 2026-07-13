@@ -1,0 +1,34 @@
+{
+  "target": "T004",
+  "types": [
+    "large",
+    "qft",
+    "sim",
+    "small"
+  ],
+  "attempts": 1000,
+  "seed": 0,
+  "use_decay": false,
+  "workers": 16,
+  "rows_total": 26,
+  "rows_ran": 26,
+  "qasm_g_ori_matches": 26,
+  "qasm_n_matches": 24,
+  "hardware_compliant_rows": 26,
+  "g_la_exact_matches": 0,
+  "g_op_exact_matches": 7,
+  "mismatched_n": [
+    {
+      "name": "sym6_145",
+      "paper_n": "14",
+      "qasm_n": 7
+    },
+    {
+      "name": "sym9_193",
+      "paper_n": "10",
+      "qasm_n": 11
+    }
+  ],
+  "skipped": [],
+  "status": "partial"
+}

@@ -1,0 +1,16 @@
+{
+  "target": "T003",
+  "source": "decay heuristic section and Fig. 9 operating-point idea",
+  "benchmark_note": "Seeded local random-interaction circuit, not the paper's hidden benchmark corpus.",
+  "logical_qubits": 14,
+  "two_qubit_gates": 100,
+  "original_depth": 39,
+  "all_hardware_compliant": true,
+  "unique_operating_points": 3,
+  "baseline_additional_cnot": 195,
+  "baseline_depth": 160,
+  "best_depth": 142,
+  "has_decay_depth_improvement": true,
+  "has_gate_depth_tradeoff": true,
+  "status": "passed"
+}

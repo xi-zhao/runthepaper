@@ -1,56 +1,54 @@
-# 1803.01876: Non-Hermitian SSH Reproduction
+# 1803.01876: Edge states and topological invariants of non-Hermitian systems
 
-Paper: *Edge states and topological invariants of non-Hermitian systems*
+Paper: [Edge states and topological invariants of non-Hermitian systems](https://arxiv.org/abs/1803.01876)
 
-This case reproduces the main numerical structure behind the non-Hermitian SSH
-model: open-boundary spectra, generalized Brillouin zone, skin-effect profiles,
-non-Bloch winding number, and the nonzero-`t3` extension.
+Published as: [Physical Review Letters 121, 086803 (2018)](https://doi.org/10.1103/PhysRevLett.121.086803)
 
-## Public Boundary
+Public status: **Paper-parameter complete reproduction** · Audit score: **94.00/100**
 
-This public case includes:
+Reproduces the open-boundary spectrum, generalized Brillouin zone, skin profiles, non-Bloch winding, and the nonzero-t3 extension.
 
-- a reproduction note;
-- paper-derived numerical code;
-- generated CSV data;
-- generated figures;
-- JSON validation checks;
-- derivation and method notes.
+## Start Here / 从这里开始
 
-It does not include the original paper PDF, arXiv source archive, original EPS
-figures, digitized source curves, or side-by-side source-panel comparison
-assets. Those were used internally as reference material, but they are not
-redistributed here.
+- [中文复现 Note](note/reproduction-note.zh-CN.md)
+- [English reproduction note](note/reproduction-note.en.md)
+- [Code and run commands](code/README.md)
+- [Machine-readable scorecard](outputs/checks/similarity_scorecard.json)
+- [Numerical methods](docs/NUMERICAL_METHODS.md)
+- [Lessons learned](docs/LESSONS_LEARNED.md)
 
-## Result
+## Main Reproduced Results
 
-The case reaches feature-level reproduction for the main numerical targets. The
-generated results reproduce the key physical claims:
+| Paper item | Reproduced result | Figure | Check |
+| --- | --- | --- | --- |
+| Fig. 2 | Open-boundary spectrum and zero-mode interval | [PNG](outputs/figures/fig2_open_spectrum.png) | [JSON](outputs/checks/fig2_open_spectrum.json) |
+| Fig. 3 | Beta roots, generalized Brillouin zone, and skin profiles | [PNG](outputs/figures/fig3_beta_skin.png) | [JSON](outputs/checks/fig3_beta_skin.json) |
+| Fig. 4 | Non-Bloch winding plateau | [PNG](outputs/figures/fig4_winding.png) | [JSON](outputs/checks/fig4_winding.json) |
+| Fig. 5 | Paper-parameter nonzero-t3 spectrum, winding, and noncircular GBZ | [PNG](outputs/figures/fig5_t3.png) | [JSON](outputs/checks/fig5_t3.json) |
 
-- open-boundary zero modes appear in the non-Bloch topological interval;
-- the generalized Brillouin zone differs from the unit circle;
-- right eigenstates show non-Hermitian skin localization;
-- the non-Bloch winding number matches the open-boundary transition;
-- the nonzero-`t3` model produces the expected shifted topological interval and
-  non-circular beta curve.
+### Fig. 2: Open-boundary spectrum and zero-mode interval
 
-The public scorecard is in [docs/SIMILARITY_SCORECARD.md](docs/SIMILARITY_SCORECARD.md).
-The most important limitation is that author plotting data is not available in
-this public package, so this is not an author-data-level reproduction claim.
+![Fig. 2 reproduction](outputs/figures/fig2_open_spectrum.png)
 
-## Read
+### Fig. 3: Beta roots, generalized Brillouin zone, and skin profiles
 
-- [Reproduction Note](note/reproduction-note.md)
-- [Derivation Trace](docs/DERIVATION_TRACE.md)
-- [Numerical Methods](docs/NUMERICAL_METHODS.md)
-- [Lessons Learned](docs/LESSONS_LEARNED.md)
+![Fig. 3 reproduction](outputs/figures/fig3_beta_skin.png)
 
-## Run
+### Fig. 4: Non-Bloch winding plateau
+
+![Fig. 4 reproduction](outputs/figures/fig4_winding.png)
+
+### Fig. 5: Paper-parameter nonzero-t3 spectrum, winding, and noncircular GBZ
+
+![Fig. 5 reproduction](outputs/figures/fig5_t3.png)
+
+## Quick Run
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+pip install mpmath
 cd cases/1803.01876/code
 python scripts/run_fig2_open_spectrum.py
 python scripts/run_fig3_beta_skin.py
@@ -58,16 +56,12 @@ python scripts/run_fig4_winding.py
 python scripts/run_fig5_t3.py
 ```
 
-The scripts write generated data to `cases/1803.01876/outputs/data/`, figures to
-`cases/1803.01876/outputs/figures/`, and checks to
-`cases/1803.01876/outputs/checks/`.
+Generated files are kept under [data](outputs/data/), [figures](outputs/figures/), and [checks](outputs/checks/).
 
-## Generated Figures
+## Reproduction Boundary
 
-![Fig. 2 open spectrum](outputs/figures/fig2_open_spectrum.png)
+This public case includes paper-derived code, generated data, generated figures, public validation checks, and explanatory notes. It does not redistribute the paper PDF, arXiv source archive, original figures, EPS paths, digitized source curves, source-derived point sets, or source-vs-generated composite panels.
 
-![Fig. 3 beta skin](outputs/figures/fig3_beta_skin.png)
+Remaining limitation: Author plotting data are unavailable; digitized source references were used internally for validation but are not redistributed.
 
-![Fig. 4 winding](outputs/figures/fig4_winding.png)
-
-![Fig. 5 t3](outputs/figures/fig5_t3.png)
+Final-parameter rule: final public figures use the paper parameters when feasible. Any reduced-scale, subset, proxy, or blocked target must be labeled explicitly and cannot be presented as a complete reproduction.

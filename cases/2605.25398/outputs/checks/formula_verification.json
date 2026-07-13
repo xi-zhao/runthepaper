@@ -1,0 +1,134 @@
+{
+  "status": "passed",
+  "schema_version": 1,
+  "paper_id": "2605.25398",
+  "summary": {
+    "cards_total": 9,
+    "numeric_open": 9,
+    "numeric_closed": 0,
+    "blocked_cards": []
+  },
+  "formulas": {
+    "F001": {
+      "title": "Lambda to lambda conversion",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/boson_sampling_chaos.py::lambda_from_Lambda"
+      ],
+      "open_questions": []
+    },
+    "F002": {
+      "title": "Random-matrix Hamiltonian normalization",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/boson_sampling_chaos.py::sample_hamiltonian",
+        "code/src/boson_sampling_chaos.py::sample_goe"
+      ],
+      "open_questions": []
+    },
+    "F003": {
+      "title": "Two-photon permanent probability",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/boson_sampling_chaos.py::conditional_two_photon_distribution"
+      ],
+      "open_questions": []
+    },
+    "F004": {
+      "title": "Collision-free conditional normalization",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/boson_sampling_chaos.py::conditional_two_photon_distribution"
+      ],
+      "open_questions": []
+    },
+    "F005": {
+      "title": "Porter-Thomas dimension and reference distribution",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/boson_sampling_chaos.py::collision_free_pairs",
+        "code/src/boson_sampling_chaos.py::porter_thomas_w1"
+      ],
+      "open_questions": []
+    },
+    "F006": {
+      "title": "Shannon entropy and Haar reference",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/boson_sampling_chaos.py::shannon_entropy"
+      ],
+      "open_questions": []
+    },
+    "F007": {
+      "title": "OTOC short-time scaling",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/boson_sampling_chaos.py::overlap_count",
+        "code/src/boson_sampling_chaos.py::ensemble_metrics"
+      ],
+      "open_questions": []
+    },
+    "F008": {
+      "title": "Participation ratio",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/boson_sampling_chaos.py::participation_ratio"
+      ],
+      "open_questions": []
+    },
+    "F009": {
+      "title": "Fourth-order spectral form factor proxy",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/boson_sampling_chaos.py::spectral_form_factor_4"
+      ],
+      "open_questions": []
+    }
+  },
+  "findings": []
+}
