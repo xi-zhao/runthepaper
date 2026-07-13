@@ -20,8 +20,16 @@ ready to share:
 
 Do not treat RunThePaper as the harness repository. Do not move internal
 PRAgent/RRAgent runtime code, checkpoints, prompts, private diagnostics, raw
-paper sources, original figures, or source-derived comparison assets into this
-repository.
+paper sources, standalone original figures, digitized source curves, or
+source-derived point sets into this repository.
+
+A public case may include a limited source-versus-reproduction comparison panel
+when that panel is necessary to let readers audit reproduction quality. Such a
+panel must use only the minimum paper excerpt needed for validation, identify
+the paper reference and independent reproduction unambiguously, cite the
+official paper, remain outside this repository's open-content license, and
+state that it does not establish author-data-level equivalence. Do not publish
+the underlying standalone source panels alongside the comparison.
 
 RunThePaper is also not a model training-pack repository. Our service object is
 the human reader: researchers, builders, students, and reviewers who want to

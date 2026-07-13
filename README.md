@@ -73,9 +73,12 @@ percentage of physical correctness, a visual similarity rating, a cross-paper
 ranking, or a publication threshold. Read the status and limitation statement
 together with the score.
 
-Original paper PDFs, source archives, figures, and extracted plotting data are
-not redistributed here. Each case links to the official paper and states its
-remaining reproduction boundary.
+Original paper PDFs, source archives, standalone original figures, and extracted
+plotting data are not redistributed here. A case may include a limited,
+source-attributed comparison panel when it is necessary to audit reproduction
+quality; the underlying source panel and digitized data remain unpublished.
+Each case links to the official paper and states its remaining reproduction
+boundary.
 
 ## Request or Contribute
 
@@ -103,3 +106,5 @@ data are licensed under CC BY 4.0 unless a case states otherwise.
 
 Third-party papers, source files, and original figures remain under their
 original rights holders' terms and are not covered by this repository's license.
+The same exclusion applies to any limited paper excerpts shown inside validation
+comparison panels.
