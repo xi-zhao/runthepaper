@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "dual_pulse_conditional_phase_over_pi": 0.9998807678122915,
+  "single_pulse_return_pop": {
+    "00": 0.9999996738252386,
+    "01": 0.9999919659741203,
+    "11": 0.9999885494622665
+  },
+  "doppler_mhz": 0.025,
+  "end_phase_dev_dual_flipped_rad": {
+    "00": 1.0687939665743329e-05,
+    "01": -8.866201589796674e-06,
+    "11": -1.8021945997759303e-06
+  },
+  "end_phase_dev_single_direction_rad": {
+    "00": -0.028482076673999046,
+    "01": -0.034001216687741476,
+    "11": -0.05839590324302435
+  },
+  "cancellation_ratio_dual_over_single": {
+    "00": 0.00037525141821908827,
+    "01": 0.00026076130366808203,
+    "11": 3.086166151546221e-05
+  },
+  "note": "dual-pulse conditional phase ~ pi (CZ); the flipped dual pulse suppresses the end-of-gate Doppler phase deviation by ~100x vs a single-direction pulse -> first-order Doppler cancellation."
+}

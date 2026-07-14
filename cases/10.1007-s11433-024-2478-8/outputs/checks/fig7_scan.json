@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "grid_points": 81,
+  "ratio_range": [
+    0.99,
+    1.01
+  ],
+  "error_min": 6.263182087073993e-06,
+  "error_min_at": {
+    "r_buffer": 1.0,
+    "r_qubit": 0.999
+  },
+  "error_max": 8.998882966460009e-05,
+  "error_center_1_1": 6.4784806721451815e-06,
+  "corners": {
+    "top_left_0.99_1.01": 8.998882966460009e-05,
+    "top_right_1.01_1.01": 4.487694478760851e-05,
+    "bottom_left_0.99_0.99": 4.307907632372654e-05,
+    "bottom_right_1.01_0.99": 8.269054022191913e-05
+  },
+  "paper_colorbar_max": 0.00012,
+  "paper_claim": "control precision exceeding 1% seems necessary (error stays < ~1e-4 within +/-1%)"
+}

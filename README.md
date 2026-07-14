@@ -16,7 +16,7 @@ explicit reproduction boundary.
 ## Reproduction Catalog / 论文复现目录
 
 <!-- case-catalog:start -->
-**11 public cases.** Open a paper below, then choose the reading or
+**12 public cases.** Open a paper below, then choose the reading or
 reproduction resource you need.
 
 | Paper | Preprint / formal publication | Reproduction status | Open package |
@@ -32,6 +32,7 @@ reproduction resource you need.
 | [Boson Sampling as a Probe of Chaotic and Integrable Quantum Dynamics](cases/2605.25398/README.md) | [arXiv:2605.25398](https://arxiv.org/abs/2605.25398)<br>Not recorded / 未检索到正式发表（checked 2026-07-14） | Feature-level reproduction | [中文 Note](cases/2605.25398/note/reproduction-note.zh-CN.md) · [English Note](cases/2605.25398/note/reproduction-note.en.md)<br>[Code](cases/2605.25398/code/README.md) · [Figures](cases/2605.25398/outputs/figures/) · [Checks](cases/2605.25398/outputs/checks/) |
 | [Sensitivity to perturbations in the three-dimensional Anderson model](cases/2605.25594/README.md) | [arXiv:2605.25594](https://arxiv.org/abs/2605.25594)<br>Not recorded / 未检索到正式发表（checked 2026-07-14） | Reduced-scale feature reproduction | [中文 Note](cases/2605.25594/note/reproduction-note.zh-CN.md) · [English Note](cases/2605.25594/note/reproduction-note.en.md)<br>[Code](cases/2605.25594/code/README.md) · [Figures](cases/2605.25594/outputs/figures/) · [Checks](cases/2605.25594/outputs/checks/) |
 | [Lyapunov formulation of band theory for disordered non-Hermitian systems](cases/2507.09447/README.md) | [arXiv:2507.09447](https://arxiv.org/abs/2507.09447)<br>[Science Bulletin (2026), online ahead of print](https://doi.org/10.1016/j.scib.2026.05.055) · DOI `10.1016/j.scib.2026.05.055` | Paper-scale feature reproduction | [中文 Note](cases/2507.09447/note/reproduction-note.zh-CN.md) · [English Note](cases/2507.09447/note/reproduction-note.en.md)<br>[Code](cases/2507.09447/code/README.md) · [Figures](cases/2507.09447/outputs/figures/) · [Checks](cases/2507.09447/outputs/checks/) |
+| [Buffer-atom-mediated quantum logic gates with off-resonant modulated driving](cases/10.1007-s11433-024-2478-8/README.md) | No preprint recorded / 未检索到预印本（checked 2026-07-14）<br>[Sci. China-Phys. Mech. Astron. 67, 120311 (2024)](https://doi.org/10.1007/s11433-024-2478-8) · DOI `10.1007/s11433-024-2478-8` | Mixed: Fig. 3 complete, Fig. 4/5/7 feature-level | [中文 Note](cases/10.1007-s11433-024-2478-8/note/reproduction-note.zh-CN.md) · [English Note](cases/10.1007-s11433-024-2478-8/note/reproduction-note.en.md)<br>[Code](cases/10.1007-s11433-024-2478-8/code/README.md) · [Figures](cases/10.1007-s11433-024-2478-8/outputs/figures/) · [Checks](cases/10.1007-s11433-024-2478-8/outputs/checks/) |
 
 Status describes reproduction scope, not rank. See [how to read reproduction quality](#how-to-read-reproduction-quality) and the [detailed case index](CASES.md) for audit scores and explicit boundaries.
 <!-- case-catalog:end -->

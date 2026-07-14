@@ -1,0 +1,20 @@
+{
+  "protocol": "fig3_amplitude",
+  "source": "Sun2024 main text p.4, Fig. 3(d-f)",
+  "B_MHz": 50.0,
+  "tau_us": 0.25,
+  "conditional_phase_rad": -3.1411261048813035,
+  "conditional_phase_over_pi": -0.9998514929337015,
+  "leakage": {
+    "00": 1.0071119194154932e-07,
+    "01": 6.072978837334819e-05,
+    "11": 0.00010122794103273325
+  },
+  "max_leakage": 0.00010122794103273325,
+  "max_dark_population_11": 7.703719777548941e-32,
+  "max_norm_drift": 4.39648317751562e-14,
+  "f_avg": 0.9999442917992324,
+  "gate_error": 5.5708200767612404e-05,
+  "tr_overlap": 3.9998885764748024,
+  "tr_uu": 3.9997772117710286
+}

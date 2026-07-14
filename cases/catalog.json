@@ -75,7 +75,9 @@
           "figure": "fig5_t3_comparison.png"
         }
       ],
-      "extra_dependencies": ["mpmath"]
+      "extra_dependencies": [
+        "mpmath"
+      ]
     },
     {
       "paper_id": "1804.04672",
@@ -138,7 +140,10 @@
         "run_core_benchmarks.py",
         "run_decay_tradeoff.py"
       ],
-      "extra_dependencies": ["networkx", "qiskit"]
+      "extra_dependencies": [
+        "networkx",
+        "qiskit"
+      ]
     },
     {
       "paper_id": "1608.02589",
@@ -224,7 +229,10 @@
       "audit_score": 70.0,
       "summary": "Reproduces batch-probability, post-selection XEB, conditional-probability, and complexity-table features.",
       "limitation": "Exact 53-qubit tensor contractions and paper-scale amplitude recomputation require external compute.",
-      "run_scripts": ["run_reproduction.py", "plot_reproduction.py"],
+      "run_scripts": [
+        "run_reproduction.py",
+        "plot_reproduction.py"
+      ],
       "extra_dependencies": []
     },
     {
@@ -250,7 +258,10 @@
       "audit_score": 73.0,
       "summary": "Implements local fidelity, acceptance, runtime, and sampling-precision models for logical magic-state preparation.",
       "limitation": "The public package excludes digitized paper curves; several visible benchmark trends remain proxy or subset validations.",
-      "run_scripts": ["run_reproduction.py", "plot_reproduction.py"],
+      "run_scripts": [
+        "run_reproduction.py",
+        "plot_reproduction.py"
+      ],
       "extra_dependencies": []
     },
     {
@@ -276,7 +287,9 @@
         "run_reduced_p2wgs_pilot.py",
         "plot_reduced_outputs.py"
       ],
-      "extra_dependencies": ["torch"]
+      "extra_dependencies": [
+        "torch"
+      ]
     },
     {
       "paper_id": "2605.25398",
@@ -296,7 +309,10 @@
       "audit_score": 79.36,
       "summary": "Reproduces Porter-Thomas distance, entropy, spectral-form-factor, OTOC, participation-ratio, and scaling features.",
       "limitation": "Several figures use paper-parameter subsets or local random-matrix instances rather than the full experimental setting.",
-      "run_scripts": ["run_reproduction.py", "plot_reproduction.py"],
+      "run_scripts": [
+        "run_reproduction.py",
+        "plot_reproduction.py"
+      ],
       "extra_dependencies": []
     },
     {
@@ -376,6 +392,37 @@
         }
       ],
       "extra_dependencies": []
+    },
+    {
+      "paper_id": "10.1007-s11433-024-2478-8",
+      "title": "Buffer-atom-mediated quantum logic gates with off-resonant modulated driving",
+      "topic": "Buffer-atom-mediated Rydberg CZ, dual-pulse Doppler upgrade, and amplitude-ratio robustness via off-resonant modulated driving",
+      "preprint": {
+        "status": "not_recorded",
+        "checked_at": "2026-07-14"
+      },
+      "publication": {
+        "status": "published",
+        "title": "Buffer-atom-mediated quantum logic gates with off-resonant modulated driving",
+        "venue": "Science China Physics, Mechanics & Astronomy",
+        "citation": "Sci. China-Phys. Mech. Astron. 67, 120311 (2024)",
+        "doi": "10.1007/s11433-024-2478-8",
+        "doi_url": "https://doi.org/10.1007/s11433-024-2478-8",
+        "locator": "Article 120311"
+      },
+      "status": "Mixed: Fig. 3 complete, Fig. 4/5/7 feature-level",
+      "similarity_level": "numerical_feature_reproduction",
+      "audit_score": 84.6,
+      "summary": "Reproduces the buffer-atom-mediated CZ gate from an independent three-body Rydberg Hamiltonian: single-photon waveforms, populations, and phases (Fig. 3, complete, gate error < 1e-4), the two-photon protocol (Fig. 4), the Doppler-insensitive dual-pulse upgrade (Fig. 5), and the amplitude-ratio robustness map (Fig. 7).",
+      "limitation": "The two-photon full three-level model gives gate error ~1e-3 vs the paper's <1e-4 (its waveforms were likely optimised in a reduced/effective model); Fig. 7 peak ~25% below the paper; Fig. 6 three-qubit Toffoli geometry is underspecified and not reproduced; Figs. a6-a8 have no published coefficients.",
+      "run_scripts": [
+        "run_fig3.py",
+        "run_fig4.py",
+        "run_fig5.py",
+        "run_fig7.py"
+      ],
+      "full_run_scripts": [],
+      "full_run_note": "All figures run on a laptop CPU (Fig. 3 in seconds; Fig. 4/5 ~1 min; Fig. 7 a few min across cores). No GPU or cluster needed."
     }
   ]
 }
