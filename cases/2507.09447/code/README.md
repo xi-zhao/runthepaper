@@ -22,4 +22,4 @@ python scripts/run_paper_exact.py
 
 Generated data files are written to `../outputs/data/`, figures to `../outputs/figures/`, and machine-readable checks to `../outputs/checks/`.
 
-Boundary: Author seeds, state-selection windows, transfer/grid details, and final artwork are unavailable; all scientific gates pass, but source-pixel identity is not claimed.
+Boundary: Author seeds, state-selection windows, transfer/grid details, and final artwork are unavailable; all scientific gates pass, but source-pixel identity is not claimed. The remaining gap is an author-protocol boundary, so increasing compute alone is not a valid completion strategy.

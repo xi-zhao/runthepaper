@@ -28,9 +28,15 @@ Lyapunov 指数替代动量空间能带。两个中心指数 `gamma_2` 和 `gamm
 
 ![Fig. 3 independent reproduction](../outputs/figures/fig3_paper_exact.png)
 
+**差距原因：** 作者未公开无序种子和本征态筛选窗口；复现使用独立确定性系综，因此谱微结构与态轮廓不可能逐像素相同。
+
 ![Fig. 4 independent reproduction](../outputs/figures/fig4_paper_exact.png)
 
+**差距原因：** 作者未公开转移长度、QR 间隔和最终画图工程；绕数扇区与谱支撑一致，但局部密度纹理和排版有差异。
+
 ![Fig. 5 independent reproduction](../outputs/figures/fig5_paper_exact.png)
+
+**差距原因：** 作者未公开 Fig. 5 的积分网格细节和 Illustrator 工程；相变点 `W_c=2.1` 一致，差距主要来自网格插值与制图后处理。
 
 ## 如何运行
 
@@ -54,4 +60,5 @@ python scripts/qa_paper_exact.py
 作者没有公开随机种子、态筛选窗口、转移长度、QR 间隔、Fig. 5 积分细节和最终
 Illustrator 工程。因此我们能够复现论文尺度、物理结构、画布几何和相变点，但不声称
 逐像素同一。导出审计的 full-image SSIM 为 Fig. 3 `0.7721`、Fig. 4 `0.7735`、
-Fig. 5 `0.8521`。这些数值说明视觉差距，不替代科学验收。
+Fig. 5 `0.8521`。这些数值说明视觉差距，不替代科学验收。完整 paper-scale 数据已经
+生成，剩余差距属于作者协议和制图源文件不可得，不属于算力不足，因此不再追加大规模计算。

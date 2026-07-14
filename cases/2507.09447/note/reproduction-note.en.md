@@ -35,9 +35,21 @@ transition.
 
 ![Fig. 3 independent reproduction](../outputs/figures/fig3_paper_exact.png)
 
+**Difference reason:** the authors did not publish disorder seeds or eigenstate
+selection windows. The reproduction uses an independent deterministic ensemble,
+so spectral microstructure and profile pixels are not uniquely recoverable.
+
 ![Fig. 4 independent reproduction](../outputs/figures/fig4_paper_exact.png)
 
+**Difference reason:** transfer length, QR interval, and final artwork are
+unpublished. Winding sectors and spectral support agree, while local density
+texture and layout differ.
+
 ![Fig. 5 independent reproduction](../outputs/figures/fig5_paper_exact.png)
+
+**Difference reason:** the Fig. 5 quadrature grid details and Illustrator source
+are unpublished. The transition `W_c=2.1` agrees; remaining differences come
+from grid interpolation and plotting post-processing.
 
 ## Run the public package
 
@@ -64,4 +76,6 @@ length, QR interval, Fig. 5 quadrature details, or the final Illustrator project
 We therefore claim paper-scale scientific and geometric reproduction, not pixel
 identity. Export-time full-image SSIM values are `0.7721`, `0.7735`, and `0.8521`
 for Figs. 3, 4, and 5. These values document the visual gap; they are not the
-scientific acceptance criterion.
+scientific acceptance criterion. The paper-scale data are complete; the residual
+is an author-protocol and artwork boundary rather than a compute shortage, so no
+additional large campaign is scheduled.
