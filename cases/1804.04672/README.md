@@ -20,6 +20,34 @@ Reproduces open-boundary and cylinder phase structure, square dynamics, complex 
 - [Numerical methods](docs/NUMERICAL_METHODS.md)
 - [Lessons learned](docs/LESSONS_LEARNED.md)
 
+## Paper Reference vs Independent Reproduction
+
+The left column in each panel is a limited excerpt from Yao et al., [Physical Review Letters 121, 136802 (2018)](https://doi.org/10.1103/PhysRevLett.121.136802); the right column is generated independently from this case. These comparisons validate physical structure and key numerical features, not author-data-level or point-for-point equivalence.
+
+### Fig. 1 comparison
+
+![Fig. 1 paper reference versus independent reproduction](docs/comparisons/fig1_open_boundary_phase_comparison.png)
+
+### Fig. 2 comparison
+
+![Fig. 2 paper reference versus independent reproduction](docs/comparisons/fig2_square_dynamics_comparison.png)
+
+### Fig. 3(a) comparison
+
+![Fig. 3(a) paper reference versus independent reproduction](docs/comparisons/fig3a_cylinder_phase_comparison.png)
+
+### Fig. 3(b) comparison
+
+![Fig. 3(b) paper reference versus independent reproduction](docs/comparisons/fig3b_complex_spectrum_comparison.png)
+
+### Fig. S2 comparison
+
+![Fig. S2 paper reference versus independent reproduction](docs/comparisons/figs2_gap_scaling_comparison.png)
+
+### Fig. S3 comparison
+
+![Fig. S3 paper reference versus independent reproduction](docs/comparisons/figs3_disk_phase_comparison.png)
+
 ## Quick Run
 
 ```bash
@@ -39,7 +67,7 @@ Generated files are kept under [data](outputs/data/), [figures](outputs/figures/
 
 ## Reproduction Boundary
 
-This public case includes paper-derived code, generated data, generated figures, public validation checks, and explanatory notes. It does not redistribute the paper PDF, arXiv source archive, original figures, EPS paths, digitized source curves, source-derived point sets, or source-vs-generated composite panels.
+This public case includes paper-derived code, generated data, generated figures, public validation checks, explanatory notes, and 6 limited comparison panels. Those panels use the minimum paper excerpts needed for validation and clearly separate the paper reference from the independent result. The case does not redistribute the paper PDF, arXiv source archive, standalone original figures, EPS paths, digitized source curves, or source-derived point sets.
 
 Remaining limitation: Some phase-boundary and panel-level comparisons remain paper-subset or source-table validations rather than full independent finite-size reruns.
 

@@ -21,6 +21,30 @@ Reproduces subharmonic rigidity, level statistics, variance, long-range variance
 - [Numerical methods](docs/NUMERICAL_METHODS.md)
 - [Lessons learned](docs/LESSONS_LEARNED.md)
 
+## Paper Reference vs Independent Reproduction
+
+The left column in each panel is a limited excerpt from Yao et al., [Physical Review Letters 118, 030401 (2017)](https://doi.org/10.1103/PhysRevLett.118.030401); the right column is generated independently from this case. These comparisons validate physical structure and key numerical features, not author-data-level or point-for-point equivalence.
+
+### Fig. 1 comparison
+
+![Fig. 1 paper reference versus independent reproduction](docs/comparisons/fig1_subharmonic_rigidity_comparison.png)
+
+### Fig. 2 comparison
+
+![Fig. 2 paper reference versus independent reproduction](docs/comparisons/fig2_level_statistics_comparison.png)
+
+### Fig. 3(a) comparison
+
+![Fig. 3(a) paper reference versus independent reproduction](docs/comparisons/fig3_mutual_information_comparison.png)
+
+### Fig. 3(b-d) comparison
+
+![Fig. 3(b-d) paper reference versus independent reproduction](docs/comparisons/fig3_scaling_collapse_comparison.png)
+
+### Fig. 4 comparison
+
+![Fig. 4 paper reference versus independent reproduction](docs/comparisons/fig4_long_range_variance_comparison.png)
+
 ## Quick Run
 
 ```bash
@@ -39,7 +63,7 @@ Generated files are kept under [data](outputs/data/), [figures](outputs/figures/
 
 ## Reproduction Boundary
 
-This public case includes paper-derived code, generated data, generated figures, public validation checks, and explanatory notes. It does not redistribute the paper PDF, arXiv source archive, original figures, EPS paths, digitized source curves, source-derived point sets, or source-vs-generated composite panels.
+This public case includes paper-derived code, generated data, generated figures, public validation checks, explanatory notes, and 5 limited comparison panels. Those panels use the minimum paper excerpts needed for validation and clearly separate the paper reference from the independent result. The case does not redistribute the paper PDF, arXiv source archive, standalone original figures, EPS paths, digitized source curves, or source-derived point sets.
 
 Remaining limitation: The published medium campaign aggregates 168 jobs into 55 paper-parameter points at L=8,10,12. The final L=8,10,12,14 high-statistics campaign was not launched; optional L=16,18 also require a memory-aware eigensolver.
 

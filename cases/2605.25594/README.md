@@ -19,6 +19,30 @@ Reproduces disorder sensitivity, gap-ratio, IPR, susceptibility separation, and 
 - [Numerical methods](docs/NUMERICAL_METHODS.md)
 - [Lessons learned](docs/LESSONS_LEARNED.md)
 
+## Paper Reference vs Independent Reproduction
+
+The left column in each panel is a limited excerpt from Tokarczyk et al., [arXiv:2605.25594](https://arxiv.org/abs/2605.25594); the right column is generated independently from this case. These comparisons validate physical structure and key numerical features, not author-data-level or point-for-point equivalence.
+
+### Fig. 1 comparison
+
+![Fig. 1 paper reference versus independent reproduction](docs/comparisons/fig1_fidelity_vs_disorder_comparison.png)
+
+### Fig. 2 comparison
+
+![Fig. 2 paper reference versus independent reproduction](docs/comparisons/fig2_weak_crossover_scaling_comparison.png)
+
+### Fig. 3 comparison
+
+![Fig. 3 paper reference versus independent reproduction](docs/comparisons/fig3_spectral_function_comparison.png)
+
+### Fig. 8 comparison
+
+![Fig. 8 paper reference versus independent reproduction](docs/comparisons/fig8_typical_average_comparison.png)
+
+### Fig. 9 comparison
+
+![Fig. 9 paper reference versus independent reproduction](docs/comparisons/fig9_chi_typ_comparison.png)
+
 ## Quick Run
 
 ```bash
@@ -35,7 +59,7 @@ Generated files are kept under [data](outputs/data/), [figures](outputs/figures/
 
 ## Reproduction Boundary
 
-This public case includes paper-derived code, generated data, generated figures, public validation checks, and explanatory notes. It does not redistribute the paper PDF, arXiv source archive, original figures, EPS paths, digitized source curves, source-derived point sets, or source-vs-generated composite panels.
+This public case includes paper-derived code, generated data, generated figures, public validation checks, explanatory notes, and 5 limited comparison panels. Those panels use the minimum paper excerpts needed for validation and clearly separate the paper reference from the independent result. The case does not redistribute the paper PDF, arXiv source archive, standalone original figures, EPS paths, digitized source curves, or source-derived point sets.
 
 Remaining limitation: The paper's L=32-38 targets were not forced through the current dense eigensolver: L=32 hit a 32-bit workspace failure and L=38 exceeds the practical single-A100 memory path. The T and randomized-site n operator panels remain outside the completed subset and are not replaced by proxy data.
 

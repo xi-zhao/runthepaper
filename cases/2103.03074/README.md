@@ -21,6 +21,22 @@ Reproduces batch-probability, post-selection XEB, conditional-probability, and c
 - [Numerical methods](docs/NUMERICAL_METHODS.md)
 - [Lessons learned](docs/LESSONS_LEARNED.md)
 
+## Paper Reference vs Independent Reproduction
+
+The left column in each panel is a limited excerpt from Pan and Zhang, [Physical Review Letters 128, 030501 (2022)](https://doi.org/10.1103/PhysRevLett.128.030501); the right column is generated independently from this case. These comparisons validate physical structure and key numerical features, not author-data-level or point-for-point equivalence.
+
+### Fig. 2 comparison
+
+![Fig. 2 paper reference versus independent reproduction](docs/comparisons/fig2_depth20_porter_thomas_comparison.png)
+
+### Fig. 5 comparison
+
+![Fig. 5 paper reference versus independent reproduction](docs/comparisons/fig5_depth14_porter_thomas_comparison.png)
+
+### Fig. 6 comparison
+
+![Fig. 6 paper reference versus independent reproduction](docs/comparisons/fig6_conditional_probability_comparison.png)
+
 ## Quick Run
 
 ```bash
@@ -36,7 +52,7 @@ Generated files are kept under [data](outputs/data/), [figures](outputs/figures/
 
 ## Reproduction Boundary
 
-This public case includes paper-derived code, generated data, generated figures, public validation checks, and explanatory notes. It does not redistribute the paper PDF, arXiv source archive, original figures, EPS paths, digitized source curves, source-derived point sets, or source-vs-generated composite panels.
+This public case includes paper-derived code, generated data, generated figures, public validation checks, explanatory notes, and 3 limited comparison panels. Those panels use the minimum paper excerpts needed for validation and clearly separate the paper reference from the independent result. The case does not redistribute the paper PDF, arXiv source archive, standalone original figures, EPS paths, digitized source curves, or source-derived point sets.
 
 Remaining limitation: The exact 53-qubit contraction is not launched: the paper reports 4.51e18 head-contraction operations and 149 days on one A100, while a direct complex128 statevector would require 128 PiB. The public case also lacks the original circuit, contraction path, slicing configuration, and validation-amplitude bundle.
 

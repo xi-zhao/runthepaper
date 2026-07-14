@@ -189,11 +189,15 @@ def render_case_readme(case: dict[str, Any], case_dir: Path) -> str:
             )
         lines.append("")
     if comparison_results:
+        if publication.get("status") == "published":
+            cite = f"[{publication['citation']}]({publication['doi_url']})"
+        else:
+            cite = preprint_reference(case)
         lines.extend(
             [
                 "## Paper Reference vs Independent Reproduction",
                 "",
-                f"The left column in each panel is a limited excerpt from {case['comparison_attribution']}, [{publication['citation']}]({publication['doi_url']}); the right column is generated independently from this case. These comparisons validate physical structure and key numerical features, not author-data-level or point-for-point equivalence.",
+                f"The left column in each panel is a limited excerpt from {case['comparison_attribution']}, {cite}; the right column is generated independently from this case. These comparisons validate physical structure and key numerical features, not author-data-level or point-for-point equivalence.",
                 "",
             ]
         )
