@@ -91,7 +91,7 @@ The conditional logical infidelity is:
 I(p) = 1 - (1 - p + p u (1-l))^M / A(p)
 ```
 
-This model is not the exact Steane simulator. It is a feature-level executable check for the benchmark behavior: the two estimators agree, acceptance decreases with `p`, infidelity increases with `p`, and the propagated-error route is cheaper at low `p`.
+The original lightweight model remains a feature-level executable check, but it no longer supplies the main benchmark evidence. T001/T002 now use the reconstructed exact Steane circuit in `code/src/steane_h_prep.py`; its public 790,000-shot data are recorded in `outputs/data/steane_exact_benchmark.csv`.
 
 ## Verification
 

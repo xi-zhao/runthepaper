@@ -21,20 +21,21 @@ This case implements:
 - PSC formula checks;
 - a controlled-H propagation identity check;
 - Pauli-rank reconstruction for `|H><H|`;
-- a Monte Carlo feature model for infidelity and acceptance;
+- the complete reconstructed Steane `|Hbar>` preparation circuit for exact-circuit infidelity and acceptance Monte Carlo;
+- a legacy Monte Carlo feature model retained only as a lightweight supporting check;
 - a local calibrated runtime proxy for state-vector-like versus propagated-error simulation;
 - a sampling-precision check with slope close to `-1/2`.
 
-The case does not implement the full Steane flag-gadget circuit from scratch. That is the remaining work needed for exact paper-scale reproduction.
+The full reconstructed flag-gadget circuit is implemented. The remaining scientific gap is the unpublished panel-(c) gate/idle schedule that controls second-order damaging-pair counts; runtime equality also requires the authors' hardware/software environment.
 
 ## M003: Acceptance Gates
 
-The numerical run is accepted at feature level only if:
+The exact-circuit numerical run is accepted only if:
 
-- `A(p)` is monotone decreasing;
-- infidelity is monotone increasing;
-- Monte Carlo estimates agree with the reference curve within sampling error;
+- all 12 acceptance points pass the declared internal validation tolerance;
+- infidelity agrees in the edge regimes and any mid-range residual is recorded explicitly;
+- circuit structure and ideal decoding tests pass;
 - runtime proxy shows a low-`p` speedup above `10x`;
 - sampling standard deviation scales close to `1/sqrt(N)`.
 
-All gates passed in `outputs/checks/numerical_feature_checks.json`.
+The exact-circuit record is `outputs/checks/steane_exact_benchmark.json`; legacy feature and sampling gates remain in `outputs/checks/numerical_feature_checks.json`.

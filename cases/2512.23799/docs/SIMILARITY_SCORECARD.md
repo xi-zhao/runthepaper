@@ -3,30 +3,25 @@
 ## Overall
 
 - Overall score: `73.00/100`
-- Level: `feature_not_accepted`
+- Level: `numerical_feature_reproduction`
+- Public status: `exact_circuit_partial_reproduction`
 - Check status: `passed`
 
-The result is not accepted as paper-figure reproduction under the original-parameter gate. Formula and method checks are useful, but the benchmark curves come from a proxy model rather than the paper's exact Steane circuit and benchmark parameters.
+T001/T002 are now backed by the reconstructed exact Steane circuit rather than the earlier proxy model. The score remains limited by the declared mid-range infidelity residual and by proxy-only runtime evidence.
 
 ## Figure-Level Scores
 
 | Target | Score | Level | Main reason |
 | --- | ---: | --- | --- |
-| T001 Infidelity benchmark | 55 | feature not reproduced | Proxy-model trend appears, but the exact Steane benchmark was not run. |
-| T002 Acceptance benchmark | 35 | feature not reproduced | Only monotone decrease is retained. The original curve drops much faster, especially near `p=1e-2`. |
-| T003 Runtime benchmark | 55 | feature not reproduced | Low-`p` speedup is only proxy timing, not author Stim/Cirq benchmark timing. |
-| T004 Formula and sampling gate | 84 | numerical feature reproduction | Formula checks pass and sampling error scales correctly. |
+| T001 Infidelity benchmark | 75 | numerical feature reproduction | Exact protocol matches the trend and edge regimes; the mid-range remains `0.42-0.68x` of the paper curve. |
+| T002 Acceptance benchmark | 80 | numerical feature reproduction | All 12 internally digitized validation points pass. |
+| T003 Runtime benchmark | 55 | feature not accepted | Local proxy timing cannot reproduce author wall-clock values. |
+| T004 Formula and sampling gate | 84 | numerical feature reproduction | Formula, stabilizer, decoding, and sampling checks pass. |
 
-## Why It Is Not Complete
+## Remaining Boundary
 
-Complete reproduction would require one of these:
+- The paper does not publish the exact panel-(c) gate/idle schedule or simulation code needed to resolve the second-order infidelity coefficient.
+- Author wall-clock timing depends on unavailable hardware and software metadata.
+- Digitized source point sets are not redistributed.
 
-- author benchmark CSV/code;
-- faithful Steane flag-gadget implementation with the paper's Stim/Cirq settings;
-- digitized curves plus a stated digitization tolerance.
-
-None of those are present in the current arXiv source package.
-
-## Machine-Readable Record
-
-See `outputs/checks/similarity_scorecard.json`.
+See `outputs/checks/similarity_scorecard.json` and `outputs/checks/completion_assessment.json`.

@@ -10,7 +10,7 @@ Every case provides a public overview, Chinese and English getting-started notes
 | [`1608.02589`](cases/1608.02589/README.md) | Floquet many-body dynamics and discrete time crystals | Reduced-scale feature reproduction | 73.56 |
 | [`1711.03528`](cases/1711.03528/README.md) | PXP dynamics and quantum many-body scars | Reduced-scale feature reproduction | 72.50 |
 | [`2103.03074`](cases/2103.03074/README.md) | Sycamore random-circuit simulation | Reduced-scale feature reproduction | 70.00 |
-| [`2512.23799`](cases/2512.23799/README.md) | Logical magic-state preparation simulation | Partial feature reproduction | 73.00 |
+| [`2512.23799`](cases/2512.23799/README.md) | Logical magic-state preparation simulation | Exact-circuit partial reproduction | 73.00 |
 | [`2604.08669`](cases/2604.08669/README.md) | Defect-free atom-array assembly | Reduced-scale feature reproduction | 61.60 |
 | [`2605.25398`](cases/2605.25398/README.md) | Boson sampling and quantum-chaos probes | Feature-level reproduction | 79.36 |
 | [`2605.25594`](cases/2605.25594/README.md) | Three-dimensional Anderson localization | Paper-scale subset reproduction | 67.49 |

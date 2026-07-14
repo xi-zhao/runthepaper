@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "paper_id": "2512.23799",
+  "assessment_date": "2026-07-14",
+  "status": "exact_circuit_partial_reproduction",
+  "completed_scope": {
+    "protocol": "Steane [[7,1,3]] logical H-state preparation",
+    "shots": 790000,
+    "p_points": 12,
+    "acceptance": "12/12 internal validation points passed",
+    "infidelity": "correct trend and matching edge regimes"
+  },
+  "remaining_targets": [
+    {
+      "target": "Mid-range infidelity coefficient",
+      "status": "author_implementation_detail_required",
+      "reason": "The reconstructed schedule gives 0.42-0.68x of the paper curve. Acceptance agreement rules out a first-order noise-scale error; the residual is in second-order damaging-pair combinatorics controlled by unpublished gate/idle ordering."
+    },
+    {
+      "target": "Author Stim/Cirq wall-clock values",
+      "status": "author_environment_required",
+      "reason": "Exact wall-clock equality depends on the authors' code versions, hardware, compiler/runtime, and benchmark harness."
+    }
+  ],
+  "compute_assessment": "No additional large compute is required to establish the current scientific result. More shots would reduce Monte Carlo error but would not identify the unpublished schedule detail.",
+  "proxy_policy": "The exact-circuit acceptance and infidelity data supersede the earlier proxy curves for T001/T002; runtime remains explicitly labeled as proxy timing."
+}

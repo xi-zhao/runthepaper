@@ -6,9 +6,9 @@ Published as: [Efficient Simulation of Logical Magic State Preparation Protocols
 
 Formal citation: PRX Quantum 7, 020329 (2026) · DOI `10.1103/fby6-xjbm` · Locator `020329`
 
-Public status: **Partial feature reproduction** · Audit score: **73.00/100**
+Public status: **Exact-circuit partial reproduction** · Audit score: **73.00/100**
 
-Implements local fidelity, acceptance, runtime, and sampling-precision models for logical magic-state preparation.
+Implements the complete reconstructed Steane `[[7,1,3]]` logical-H preparation benchmark. The public exact-circuit campaign contains 790,000 state-vector Monte Carlo shots across the paper's 12 error-rate points.
 
 ## Start Here / 从这里开始
 
@@ -28,6 +28,8 @@ pip install -r requirements.txt
 cd cases/2512.23799/code
 python scripts/run_reproduction.py
 python scripts/plot_reproduction.py
+python scripts/run_steane_exact_benchmark.py --profile smoke
+python scripts/plot_steane_exact_comparison.py
 ```
 
 Generated files are kept under [data](outputs/data/), [figures](outputs/figures/), and [checks](outputs/checks/).
@@ -36,11 +38,15 @@ Generated files are kept under [data](outputs/data/), [figures](outputs/figures/
 
 This public case includes paper-derived code, generated data, generated figures, public validation checks, and explanatory notes. It does not redistribute the paper PDF, arXiv source archive, original figures, EPS paths, digitized source curves, source-derived point sets, or source-vs-generated composite panels.
 
-Remaining limitation: The public package excludes digitized paper curves; several visible benchmark trends remain proxy or subset validations.
+Remaining limitation: exact-circuit acceptance matches all 12 internally validated points, while mid-range logical infidelity remains `0.42-0.68x` of the paper curve because panel-(c) gate/idle scheduling is reconstructed and the author implementation is not public. Runtime remains proxy timing because author hardware and software metadata are unavailable. Digitized source point sets are not redistributed.
 
 Final-parameter rule: final public figures use the paper parameters when feasible. Any reduced-scale, subset, proxy, or blocked target must be labeled explicitly and cannot be presented as a complete reproduction.
 
 ## Generated Figures
+
+![exact Steane acceptance reproduction](outputs/figures/steane_exact_acceptance_reproduction.png)
+
+![exact Steane infidelity reproduction](outputs/figures/steane_exact_infidelity_reproduction.png)
 
 ![fig1 infidelity reproduction](outputs/figures/fig1_infidelity_reproduction.png)
 
