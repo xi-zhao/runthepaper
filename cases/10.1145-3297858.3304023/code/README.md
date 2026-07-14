@@ -15,4 +15,4 @@ python scripts/run_decay_tradeoff.py
 
 Generated data files are written to `../outputs/data/`, figures to `../outputs/figures/`, and machine-readable checks to `../outputs/checks/`.
 
-Boundary: Several large benchmark rows lack complete public metadata and remain subset or proxy evaluations.
+Boundary: the stored Table II campaign covers all 26 rows. Row-exact optimized values remain blocked by unpublished random seeds, tie-breaking order, and BKA post-processing inputs; increasing compute alone does not resolve that boundary.
