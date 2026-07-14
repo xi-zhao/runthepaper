@@ -644,6 +644,81 @@
           "figure": "fig7_robustness_comparison.png"
         }
       ]
+    },
+    {
+      "paper_id": "10.1103-PhysRevB.91.085420",
+      "title": "Interband coherence induced correction to adiabatic pumping in periodically driven systems",
+      "topic": "Interband-coherence correction to adiabatic pumping in the continuously driven Harper model",
+      "preprint": {
+        "status": "not_recorded",
+        "checked_at": "2026-07-14"
+      },
+      "publication": {
+        "status": "published",
+        "title": "Interband coherence induced correction to adiabatic pumping in periodically driven systems",
+        "venue": "Physical Review B",
+        "citation": "Physical Review B 91, 085420 (2015)",
+        "doi": "10.1103/PhysRevB.91.085420",
+        "doi_url": "https://doi.org/10.1103/PhysRevB.91.085420",
+        "locator": "085420"
+      },
+      "status": "Feature-level reproduction",
+      "similarity_level": "numerical_feature_reproduction",
+      "audit_score": 79.54,
+      "summary": "Independently reproduces all four figures of the continuously driven Harper model pumping study: the Floquet spectrum and initial populations, the one-cycle population change from exact dynamics versus Eq. (8), the T-independent wave-packet displacement, and the topological-transition probe -- confirming that the Berry-only term is wrong and the interband-coherence correction of Eq. (13) is essential.",
+      "limitation": "Comparison is a source-vs-reproduction feature contract against the paper's raster figures (no author data or tables); Fig. 2 is feature-level due to the intrinsic ~10^2-rad phase sensitivity of Eq. (8) at T=1024, and the Fig. 4 actual peak sits below the paper value in the narrow band-touching window where the dynamics is genuinely T-sensitive.",
+      "run_scripts": [
+        "run_fig1.py",
+        "run_fig2.py",
+        "run_fig3.py",
+        "run_fig4.py"
+      ],
+      "extra_dependencies": [],
+      "featured_results": [
+        {
+          "paper_item": "Fig. 1",
+          "result": "Floquet spectrum omega(k,beta) and initial band populations, J=K=3",
+          "figure": "fig1_reproduction.png",
+          "check": "fig1.json"
+        },
+        {
+          "paper_item": "Fig. 2",
+          "result": "One-cycle population change Delta rho: exact dynamics vs Eq. (8), J=K=3, T=1024",
+          "figure": "fig2_reproduction.png",
+          "check": "fig2.json"
+        },
+        {
+          "paper_item": "Fig. 3",
+          "result": "T-independent wave-packet displacement <x>(t); Eq. (13) total vs Berry-only, J=K=4",
+          "figure": "fig3_reproduction.png",
+          "check": "fig3.json"
+        },
+        {
+          "paper_item": "Fig. 4",
+          "result": "Delta<x> vs J across the Floquet-Chern transition; actual vs Eq. (13) vs Berry-only",
+          "figure": "fig4_reproduction.png",
+          "check": "fig4.json"
+        }
+      ],
+      "comparison_attribution": "Wang, Zhou, and Gong",
+      "comparison_results": [
+        {
+          "paper_item": "Fig. 1",
+          "figure": "fig1_spectrum_populations_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 2",
+          "figure": "fig2_delta_rho_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 3",
+          "figure": "fig3_displacement_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 4",
+          "figure": "fig4_transition_probe_comparison.png"
+        }
+      ]
     }
   ]
 }

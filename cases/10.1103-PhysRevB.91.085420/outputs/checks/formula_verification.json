@@ -1,0 +1,130 @@
+{
+  "status": "passed",
+  "schema_version": 1,
+  "paper_id": "10.1103-PhysRevB.91.085420",
+  "summary": {
+    "cards_total": 8,
+    "numeric_open": 8,
+    "numeric_closed": 0,
+    "blocked_cards": []
+  },
+  "formulas": {
+    "cdhm_hamiltonian": {
+      "title": "Continuously driven Harper model H(k,t;beta) (Eq. 14)",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "src/cdhm.py::CDHM.hamiltonian",
+        "src/cdhm.py::CDHM.h_hop",
+        "src/cdhm.py::CDHM.floquet_operator"
+      ],
+      "open_questions": [
+        "Overall orientation sign of the (k,beta) torus is a gauge choice: my Chern numbers are the paper's (4,-8,4)->(-8,16,-8) up to a global sign; the physical Delta<x> comes out with the paper's positive sign, fixed against the exact dynamics."
+      ]
+    },
+    "floquet_eigenphases": {
+      "title": "Floquet operator eigen-equation and eigenphases omega_{n,k}(beta) (Eqs. 1, A1)",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "src/cdhm.py::floquet_bands",
+        "src/theory.py::_floquet_eig"
+      ],
+      "open_questions": []
+    },
+    "initial_populations": {
+      "title": "Initial band populations rho_{n,k}(0)=|C_{n,k}(0)|^2 (Fig. 1b)",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "src/cdhm.py::initial_populations",
+        "src/theory.py::initial_amplitudes"
+      ],
+      "open_questions": []
+    },
+    "transition_amplitude_W": {
+      "title": "First-order amplitude C_{n,k}(1) and kernel W_{nm,k}(s) (Eqs. 4-6, A4-A11)",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "src/theory.py::W0_kernel"
+      ],
+      "open_questions": []
+    },
+    "population_change_delta_rho": {
+      "title": "Population change Delta rho_{n,k} after one cycle (Eq. 8, Fig. 2)",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "src/theory.py::delta_rho_theory",
+        "src/theory.py::accumulated_Omega",
+        "src/theory.py::berry_phase"
+      ],
+      "open_questions": [
+        "Omega-sign convention: Phi uses -(Omega_n-Omega_m) matching this code's exp(-i omega) eigenphase convention (fixed against exact dynamics); an equivalent exp(+i omega) convention would flip it."
+      ]
+    },
+    "berry_curvature": {
+      "title": "Berry curvature B_n(beta,k) and dgamma/dk (Eq. 11)",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "src/theory.py::berry_flux_strips"
+      ],
+      "open_questions": []
+    },
+    "avg_quasienergy": {
+      "title": "Average quasienergy E_{n,k} along the pumping cycle (Eq. 12)",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "src/theory.py::avg_quasienergy"
+      ],
+      "open_questions": []
+    },
+    "displacement_delta_x": {
+      "title": "One-cycle displacement Delta<x> = Berry integral + IBC correction (Eqs. 9-13, A26)",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "src/theory.py::delta_x_theory",
+        "src/observables.py::x_expectation",
+        "src/observables.py::evolve_fast"
+      ],
+      "open_questions": []
+    }
+  },
+  "findings": []
+}
