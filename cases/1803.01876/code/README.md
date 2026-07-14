@@ -14,6 +14,6 @@ python scripts/run_fig4_winding.py
 python scripts/run_fig5_t3.py
 ```
 
-Generated CSV files are written to `../outputs/data/`, figures to `../outputs/figures/`, and machine-readable checks to `../outputs/checks/`.
+Generated data files are written to `../outputs/data/`, figures to `../outputs/figures/`, and machine-readable checks to `../outputs/checks/`.
 
 Boundary: Author plotting data are unavailable; digitized source references were used internally for validation but are not redistributed.

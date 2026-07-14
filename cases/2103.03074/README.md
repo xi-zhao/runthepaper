@@ -1,6 +1,10 @@
 # 2103.03074: Simulating the Sycamore quantum supremacy circuits
 
-Paper: [Simulating the Sycamore quantum supremacy circuits](https://arxiv.org/abs/2103.03074)
+Preprint: [arXiv:2103.03074 — Simulating the Sycamore quantum supremacy circuits](https://arxiv.org/abs/2103.03074)
+
+Published as: [Simulation of Quantum Circuits Using the Big-Batch Tensor Network Method](https://doi.org/10.1103/PhysRevLett.128.030501)
+
+Formal citation: Physical Review Letters 128, 030501 (2022) · DOI `10.1103/PhysRevLett.128.030501` · Locator `030501`
 
 Public status: **Reduced-scale feature reproduction** · Audit score: **70.00/100**
 

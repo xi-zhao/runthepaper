@@ -1,13 +1,24 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "cases": [
     {
       "paper_id": "1803.01876",
       "title": "Edge states and topological invariants of non-Hermitian systems",
       "topic": "Non-Hermitian SSH model and non-Bloch bulk-boundary correspondence",
-      "paper_url": "https://arxiv.org/abs/1803.01876",
-      "publication": "Physical Review Letters 121, 086803 (2018)",
-      "doi_url": "https://doi.org/10.1103/PhysRevLett.121.086803",
+      "preprint": {
+        "identifier": "arXiv:1803.01876",
+        "title": "Edge states and topological invariants of non-Hermitian systems",
+        "url": "https://arxiv.org/abs/1803.01876"
+      },
+      "publication": {
+        "status": "published",
+        "title": "Edge States and Topological Invariants of Non-Hermitian Systems",
+        "venue": "Physical Review Letters",
+        "citation": "Physical Review Letters 121, 086803 (2018)",
+        "doi": "10.1103/PhysRevLett.121.086803",
+        "doi_url": "https://doi.org/10.1103/PhysRevLett.121.086803",
+        "locator": "086803"
+      },
       "status": "Paper-parameter complete reproduction",
       "similarity_level": "complete_reproduction",
       "audit_score": 94.0,
@@ -45,13 +56,45 @@
           "check": "fig5_t3.json"
         }
       ],
+      "comparison_attribution": "Yao and Wang",
+      "comparison_results": [
+        {
+          "paper_item": "Fig. 2",
+          "figure": "fig2_open_spectrum_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 3",
+          "figure": "fig3_beta_skin_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 4",
+          "figure": "fig4_winding_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 5",
+          "figure": "fig5_t3_comparison.png"
+        }
+      ],
       "extra_dependencies": ["mpmath"]
     },
     {
       "paper_id": "1804.04672",
       "title": "Non-Hermitian Chern bands",
       "topic": "Non-Hermitian Chern bands and non-Bloch Chern physics",
-      "paper_url": "https://arxiv.org/abs/1804.04672",
+      "preprint": {
+        "identifier": "arXiv:1804.04672",
+        "title": "Non-Hermitian Chern bands",
+        "url": "https://arxiv.org/abs/1804.04672"
+      },
+      "publication": {
+        "status": "published",
+        "title": "Non-Hermitian Chern Bands",
+        "venue": "Physical Review Letters",
+        "citation": "Physical Review Letters 121, 136802 (2018)",
+        "doi": "10.1103/PhysRevLett.121.136802",
+        "doi_url": "https://doi.org/10.1103/PhysRevLett.121.136802",
+        "locator": "136802"
+      },
       "status": "Feature-level reproduction",
       "similarity_level": "numerical_feature_reproduction",
       "audit_score": 80.18,
@@ -71,7 +114,20 @@
       "paper_id": "10.1145-3297858.3304023",
       "title": "Tackling the Qubit Mapping Problem for NISQ-Era Quantum Devices",
       "topic": "SABRE qubit mapping and routing",
-      "paper_url": "https://doi.org/10.1145/3297858.3304023",
+      "preprint": {
+        "identifier": "arXiv:1809.02573",
+        "title": "Tackling the Qubit Mapping Problem for NISQ-Era Quantum Devices",
+        "url": "https://arxiv.org/abs/1809.02573"
+      },
+      "publication": {
+        "status": "published",
+        "title": "Tackling the Qubit Mapping Problem for NISQ-Era Quantum Devices",
+        "venue": "ASPLOS '19",
+        "citation": "ASPLOS '19, pp. 1001–1014",
+        "doi": "10.1145/3297858.3304023",
+        "doi_url": "https://doi.org/10.1145/3297858.3304023",
+        "locator": "1001–1014"
+      },
       "status": "Feature-level reproduction with partial benchmark coverage",
       "similarity_level": "numerical_feature_reproduction",
       "audit_score": 68.29,
@@ -88,7 +144,20 @@
       "paper_id": "1608.02589",
       "title": "Discrete time crystals: rigidity, criticality, and realizations",
       "topic": "Floquet many-body dynamics and discrete time crystals",
-      "paper_url": "https://arxiv.org/abs/1608.02589",
+      "preprint": {
+        "identifier": "arXiv:1608.02589",
+        "title": "Discrete time crystals: rigidity, criticality, and realizations",
+        "url": "https://arxiv.org/abs/1608.02589"
+      },
+      "publication": {
+        "status": "published",
+        "title": "Discrete Time Crystals: Rigidity, Criticality, and Realizations",
+        "venue": "Physical Review Letters",
+        "citation": "Physical Review Letters 118, 030401 (2017)",
+        "doi": "10.1103/PhysRevLett.118.030401",
+        "doi_url": "https://doi.org/10.1103/PhysRevLett.118.030401",
+        "locator": "030401"
+      },
       "status": "Reduced-scale feature reproduction",
       "similarity_level": "numerical_feature_reproduction",
       "audit_score": 73.56,
@@ -106,7 +175,20 @@
       "paper_id": "1711.03528",
       "title": "Quantum many-body scars",
       "topic": "PXP dynamics and quantum many-body scars",
-      "paper_url": "https://arxiv.org/abs/1711.03528",
+      "preprint": {
+        "identifier": "arXiv:1711.03528",
+        "title": "Quantum many-body scars",
+        "url": "https://arxiv.org/abs/1711.03528"
+      },
+      "publication": {
+        "status": "published",
+        "title": "Weak ergodicity breaking from quantum many-body scars",
+        "venue": "Nature Physics",
+        "citation": "Nature Physics 14, 745–749 (2018)",
+        "doi": "10.1038/s41567-018-0137-5",
+        "doi_url": "https://doi.org/10.1038/s41567-018-0137-5",
+        "locator": "745–749"
+      },
       "status": "Reduced-scale feature reproduction",
       "similarity_level": "numerical_feature_reproduction",
       "audit_score": 72.5,
@@ -123,7 +205,20 @@
       "paper_id": "2103.03074",
       "title": "Simulating the Sycamore quantum supremacy circuits",
       "topic": "Sycamore random-circuit simulation",
-      "paper_url": "https://arxiv.org/abs/2103.03074",
+      "preprint": {
+        "identifier": "arXiv:2103.03074",
+        "title": "Simulating the Sycamore quantum supremacy circuits",
+        "url": "https://arxiv.org/abs/2103.03074"
+      },
+      "publication": {
+        "status": "published",
+        "title": "Simulation of Quantum Circuits Using the Big-Batch Tensor Network Method",
+        "venue": "Physical Review Letters",
+        "citation": "Physical Review Letters 128, 030501 (2022)",
+        "doi": "10.1103/PhysRevLett.128.030501",
+        "doi_url": "https://doi.org/10.1103/PhysRevLett.128.030501",
+        "locator": "030501"
+      },
       "status": "Reduced-scale feature reproduction",
       "similarity_level": "numerical_feature_reproduction",
       "audit_score": 70.0,
@@ -136,7 +231,20 @@
       "paper_id": "2512.23799",
       "title": "Efficient simulation of logical magic state preparation protocols",
       "topic": "Logical magic-state preparation simulation",
-      "paper_url": "https://arxiv.org/abs/2512.23799",
+      "preprint": {
+        "identifier": "arXiv:2512.23799",
+        "title": "Efficient simulation of logical magic state preparation protocols",
+        "url": "https://arxiv.org/abs/2512.23799"
+      },
+      "publication": {
+        "status": "published",
+        "title": "Efficient Simulation of Logical Magic State Preparation Protocols",
+        "venue": "PRX Quantum",
+        "citation": "PRX Quantum 7, 020329 (2026)",
+        "doi": "10.1103/fby6-xjbm",
+        "doi_url": "https://doi.org/10.1103/fby6-xjbm",
+        "locator": "020329"
+      },
       "status": "Partial feature reproduction",
       "similarity_level": "numerical_feature_reproduction",
       "audit_score": 73.0,
@@ -149,7 +257,15 @@
       "paper_id": "2604.08669",
       "title": "An Algorithm for Fast Assembling Large-Scale Defect-Free Atom Arrays",
       "topic": "Defect-free atom-array assembly",
-      "paper_url": "https://arxiv.org/abs/2604.08669",
+      "preprint": {
+        "identifier": "arXiv:2604.08669",
+        "title": "An Algorithm for Fast Assembling Large-Scale Defect-Free Atom Arrays",
+        "url": "https://arxiv.org/abs/2604.08669"
+      },
+      "publication": {
+        "status": "not_recorded",
+        "checked_at": "2026-07-14"
+      },
       "status": "Reduced-scale feature reproduction",
       "similarity_level": "numerical_feature_reproduction",
       "audit_score": 61.6,
@@ -166,7 +282,15 @@
       "paper_id": "2605.25398",
       "title": "Boson Sampling as a Probe of Chaotic and Integrable Quantum Dynamics",
       "topic": "Boson sampling and quantum-chaos probes",
-      "paper_url": "https://arxiv.org/abs/2605.25398",
+      "preprint": {
+        "identifier": "arXiv:2605.25398",
+        "title": "Boson Sampling as a Probe of Chaotic and Integrable Quantum Dynamics in a Photonic Chip",
+        "url": "https://arxiv.org/abs/2605.25398"
+      },
+      "publication": {
+        "status": "not_recorded",
+        "checked_at": "2026-07-14"
+      },
       "status": "Feature-level reproduction",
       "similarity_level": "numerical_feature_reproduction",
       "audit_score": 79.36,
@@ -179,7 +303,15 @@
       "paper_id": "2605.25594",
       "title": "Sensitivity to perturbations in the three-dimensional Anderson model",
       "topic": "Three-dimensional Anderson localization",
-      "paper_url": "https://arxiv.org/abs/2605.25594",
+      "preprint": {
+        "identifier": "arXiv:2605.25594",
+        "title": "Sensitivity to perturbations in the three-dimensional Anderson model",
+        "url": "https://arxiv.org/abs/2605.25594"
+      },
+      "publication": {
+        "status": "not_recorded",
+        "checked_at": "2026-07-14"
+      },
       "status": "Reduced-scale feature reproduction",
       "similarity_level": "numerical_feature_reproduction",
       "audit_score": 67.49,
@@ -189,6 +321,59 @@
         "run_reproduction.py",
         "plot_reproduction.py",
         "run_fig11_phenomenological_model.py"
+      ],
+      "extra_dependencies": []
+    },
+    {
+      "paper_id": "2507.09447",
+      "title": "Lyapunov formulation of band theory for disordered non-Hermitian systems",
+      "topic": "Lyapunov band theory and the non-Hermitian skin–Anderson transition",
+      "preprint": {
+        "identifier": "arXiv:2507.09447",
+        "title": "Lyapunov formulation of band theory for disordered non-Hermitian systems",
+        "url": "https://arxiv.org/abs/2507.09447"
+      },
+      "publication": {
+        "status": "published",
+        "title": "Universal Thouless relations for disordered non–Hermitian systems in one dimension",
+        "venue": "Science Bulletin",
+        "citation": "Science Bulletin (2026), online ahead of print",
+        "doi": "10.1016/j.scib.2026.05.055",
+        "doi_url": "https://doi.org/10.1016/j.scib.2026.05.055",
+        "locator": "PII S2095-9273(26)00583-9"
+      },
+      "status": "Paper-scale feature reproduction",
+      "similarity_level": "numerical_feature_reproduction",
+      "audit_score": 89.0,
+      "summary": "Reproduces Figs. 3–5 with an L=1000, 3200-realization spectral ensemble, Lyapunov grids, state profiles, winding sectors, and the W_c=2.1 transition.",
+      "limitation": "Author seeds, state-selection windows, transfer/grid details, and final artwork are unavailable; all scientific gates pass, but source-pixel identity is not claimed.",
+      "run_scripts": [
+        "plot_paper_exact.py",
+        "qa_paper_exact.py"
+      ],
+      "full_run_scripts": [
+        "run_paper_exact.py"
+      ],
+      "full_run_note": "The full L=1000, 3200-realization rerun is resumable but computationally expensive; the quick commands regenerate figures and scientific checks from the published generated data.",
+      "featured_results": [
+        {
+          "paper_item": "Fig. 3",
+          "result": "OBC spectral density, state profiles, mobility edge, and scaling",
+          "figure": "fig3_paper_exact.png",
+          "check": "paper_scientific_similarity.json"
+        },
+        {
+          "paper_item": "Fig. 4",
+          "result": "PBC spectral density and winding sectors",
+          "figure": "fig4_paper_exact.png",
+          "check": "paper_scientific_similarity.json"
+        },
+        {
+          "paper_item": "Fig. 5",
+          "result": "Mobility-contour shrinkage and the skin–Anderson transition",
+          "figure": "fig5_paper_exact.png",
+          "check": "paper_scientific_similarity.json"
+        }
       ],
       "extra_dependencies": []
     }

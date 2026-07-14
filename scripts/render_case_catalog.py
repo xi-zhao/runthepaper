@@ -14,7 +14,7 @@ README_CATALOG_END = "<!-- case-catalog:end -->"
 
 def load_catalog() -> list[dict[str, Any]]:
     payload = json.loads(CATALOG_PATH.read_text(encoding="utf-8"))
-    if payload.get("schema_version") != 1:
+    if payload.get("schema_version") != 2:
         raise ValueError("unsupported catalog schema")
     cases = payload.get("cases")
     if not isinstance(cases, list) or not cases:
@@ -22,13 +22,23 @@ def load_catalog() -> list[dict[str, Any]]:
     return [item for item in cases if isinstance(item, dict)]
 
 
+def preprint_reference(case: dict[str, Any]) -> str:
+    preprint = case["preprint"]
+    return f"[{preprint['identifier']}]({preprint['url']})"
+
+
+def publication_reference(case: dict[str, Any]) -> str:
+    publication = case["publication"]
+    if publication["status"] == "published":
+        return (
+            f"[{publication['citation']}]({publication['doi_url']}) · "
+            f"DOI `{publication['doi']}`"
+        )
+    return f"Not recorded / 未检索到正式发表（checked {publication['checked_at']}）"
+
+
 def paper_reference(case: dict[str, Any]) -> str:
-    if case.get("publication") and case.get("doi_url"):
-        return f"[{case['publication']}]({case['doi_url']})"
-    paper_id = str(case["paper_id"])
-    if paper_id.startswith("10."):
-        return f"[DOI:{paper_id}]({case['paper_url']})"
-    return f"[arXiv:{paper_id}]({case['paper_url']})"
+    return f"{preprint_reference(case)}<br>{publication_reference(case)}"
 
 
 def render_readme_catalog(cases: list[dict[str, Any]]) -> str:
@@ -36,7 +46,7 @@ def render_readme_catalog(cases: list[dict[str, Any]]) -> str:
         f"**{len(cases)} public cases.** Open a paper below, then choose the reading or",
         "reproduction resource you need.",
         "",
-        "| Paper | Publication / source | Reproduction status | Open package |",
+        "| Paper | Preprint / formal publication | Reproduction status | Open package |",
         "| --- | --- | --- | --- |",
     ]
     for case in cases:
@@ -101,18 +111,30 @@ def render_cases_index(cases: list[dict[str, Any]]) -> str:
 
 def render_case_readme(case: dict[str, Any], case_dir: Path) -> str:
     paper_id = str(case["paper_id"])
+    preprint = case["preprint"]
+    publication = case["publication"]
     figures = sorted((case_dir / "outputs" / "figures").glob("*.png"))
     featured_results = [item for item in case.get("featured_results", []) if isinstance(item, dict)]
+    comparison_results = [item for item in case.get("comparison_results", []) if isinstance(item, dict)]
     lines = [
         f"# {paper_id}: {case['title']}",
         "",
-        f"Paper: [{case['title']}]({case['paper_url']})",
+        f"Preprint: [{preprint['identifier']} — {preprint['title']}]({preprint['url']})",
         "",
     ]
-    if case.get("publication") and case.get("doi_url"):
+    if publication["status"] == "published":
         lines.extend(
             [
-                f"Published as: [{case['publication']}]({case['doi_url']})",
+                f"Published as: [{publication['title']}]({publication['doi_url']})",
+                "",
+                f"Formal citation: {publication['citation']} · DOI `{publication['doi']}` · Locator `{publication['locator']}`",
+                "",
+            ]
+        )
+    else:
+        lines.extend(
+            [
+                f"Formal publication: **Not recorded as of {publication['checked_at']}**",
                 "",
             ]
         )
@@ -150,6 +172,25 @@ def render_case_readme(case: dict[str, Any], case_dir: Path) -> str:
                 f"[PNG](outputs/figures/{figure}) | [JSON](outputs/checks/{check}) |"
             )
         lines.append("")
+    if comparison_results:
+        lines.extend(
+            [
+                "## Paper Reference vs Independent Reproduction",
+                "",
+                f"The left column in each panel is a limited excerpt from {case['comparison_attribution']}, [{publication['citation']}]({publication['doi_url']}); the right column is generated independently from this case. These comparisons validate physical structure and key numerical features, not author-data-level or point-for-point equivalence.",
+                "",
+            ]
+        )
+        for item in comparison_results:
+            lines.extend(
+                [
+                    f"### {item['paper_item']} comparison",
+                    "",
+                    f"![{item['paper_item']} paper reference versus independent reproduction](docs/comparisons/{item['figure']})",
+                    "",
+                ]
+            )
+    if featured_results:
         for item in featured_results:
             figure = str(item["figure"])
             lines.extend(
@@ -176,16 +217,46 @@ def render_case_readme(case: dict[str, Any], case_dir: Path) -> str:
     lines.append(f"cd cases/{paper_id}/code")
     for script in case.get("run_scripts", []):
         lines.append(f"python scripts/{script}")
+    lines.extend(["```", ""])
+    full_run_scripts = [str(item) for item in case.get("full_run_scripts", [])]
+    if full_run_scripts:
+        lines.extend(
+            [
+                "### Full paper-scale rerun",
+                "",
+                str(case["full_run_note"]),
+                "",
+                "```bash",
+                f"cd cases/{paper_id}/code",
+                *[f"python scripts/{script}" for script in full_run_scripts],
+                "```",
+                "",
+            ]
+        )
     lines.extend(
         [
-            "```",
-            "",
             "Generated files are kept under [data](outputs/data/), [figures](outputs/figures/), and [checks](outputs/checks/).",
             "",
             "## Reproduction Boundary",
             "",
-            "This public case includes paper-derived code, generated data, generated figures, public validation checks, and explanatory notes. It does not redistribute the paper PDF, arXiv source archive, original figures, EPS paths, digitized source curves, source-derived point sets, or source-vs-generated composite panels.",
-            "",
+        ]
+    )
+    if comparison_results:
+        lines.extend(
+            [
+                f"This public case includes paper-derived code, generated data, generated figures, public validation checks, explanatory notes, and {len(comparison_results)} limited comparison panels. Those panels use the minimum paper excerpts needed for validation and clearly separate the paper reference from the independent result. The case does not redistribute the paper PDF, arXiv source archive, standalone original figures, EPS paths, digitized source curves, or source-derived point sets.",
+                "",
+            ]
+        )
+    else:
+        lines.extend(
+            [
+                "This public case includes paper-derived code, generated data, generated figures, public validation checks, and explanatory notes. It does not redistribute the paper PDF, arXiv source archive, original figures, EPS paths, digitized source curves, source-derived point sets, or source-vs-generated composite panels.",
+                "",
+            ]
+        )
+    lines.extend(
+        [
             f"Remaining limitation: {case['limitation']}",
             "",
             "Final-parameter rule: final public figures use the paper parameters when feasible. Any reduced-scale, subset, proxy, or blocked target must be labeled explicitly and cannot be presented as a complete reproduction.",
@@ -218,11 +289,25 @@ def render_code_readme(case: dict[str, Any]) -> str:
     lines.extend([f"cd cases/{paper_id}/code"])
     for script in case.get("run_scripts", []):
         lines.append(f"python scripts/{script}")
+    lines.extend(["```", ""])
+    full_run_scripts = [str(item) for item in case.get("full_run_scripts", [])]
+    if full_run_scripts:
+        lines.extend(
+            [
+                "## Full paper-scale rerun",
+                "",
+                str(case["full_run_note"]),
+                "",
+                "```bash",
+                f"cd cases/{paper_id}/code",
+                *[f"python scripts/{script}" for script in full_run_scripts],
+                "```",
+                "",
+            ]
+        )
     lines.extend(
         [
-            "```",
-            "",
-            "Generated CSV files are written to `../outputs/data/`, figures to `../outputs/figures/`, and machine-readable checks to `../outputs/checks/`.",
+            "Generated data files are written to `../outputs/data/`, figures to `../outputs/figures/`, and machine-readable checks to `../outputs/checks/`.",
             "",
             f"Boundary: {case['limitation']}",
             "",

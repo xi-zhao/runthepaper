@@ -12,6 +12,6 @@ python scripts/plot_reproduction.py
 python scripts/run_fig11_phenomenological_model.py
 ```
 
-Generated CSV files are written to `../outputs/data/`, figures to `../outputs/figures/`, and machine-readable checks to `../outputs/checks/`.
+Generated data files are written to `../outputs/data/`, figures to `../outputs/figures/`, and machine-readable checks to `../outputs/checks/`.
 
 Boundary: Several exponent-level and paper-size targets remain compute-limited or only partially reproduced.

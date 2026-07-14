@@ -27,6 +27,7 @@ references/original_figures/
 outputs/source_figures/
 outputs/reference_curves/
 outputs/comparisons/
+outputs/checkpoints/
 *.tar
 *.tar.gz
 *.zip

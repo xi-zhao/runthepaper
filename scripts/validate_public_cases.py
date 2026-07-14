@@ -47,13 +47,15 @@ SECRET_PATTERNS = {
     "private key": re.compile(r"BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY"),
 }
 MARKDOWN_LINK = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
+DOI = re.compile(r"^10\.\d{4,9}/\S+$", re.IGNORECASE)
+DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 
 def load_catalog() -> list[dict[str, Any]]:
     payload = json.loads(CATALOG_PATH.read_text(encoding="utf-8"))
     cases = payload.get("cases")
-    if payload.get("schema_version") != 1 or not isinstance(cases, list):
-        raise ValueError("cases/catalog.json does not match schema version 1")
+    if payload.get("schema_version") != 2 or not isinstance(cases, list):
+        raise ValueError("cases/catalog.json does not match schema version 2")
     return cases
 
 
@@ -78,6 +80,38 @@ def validate_markdown_links(path: Path, errors: list[str]) -> None:
             continue
         if not (path.parent / target).resolve().exists():
             errors.append(f"broken Markdown link in {path.relative_to(ROOT)}: {raw_target}")
+
+
+def validate_paper_identity(case: dict[str, Any], errors: list[str]) -> None:
+    paper_id = str(case.get("paper_id", "<missing>"))
+    preprint = case.get("preprint")
+    if not isinstance(preprint, dict):
+        errors.append(f"{paper_id} has no preprint identity")
+    else:
+        for field in ("identifier", "title", "url"):
+            if not isinstance(preprint.get(field), str) or not preprint[field].strip():
+                errors.append(f"{paper_id} has no preprint.{field}")
+
+    publication = case.get("publication")
+    if not isinstance(publication, dict):
+        errors.append(f"{paper_id} has no formal publication status")
+        return
+    status = publication.get("status")
+    if status == "published":
+        for field in ("title", "venue", "citation", "doi", "doi_url", "locator"):
+            if not isinstance(publication.get(field), str) or not publication[field].strip():
+                errors.append(f"{paper_id} has no publication.{field}")
+        doi = publication.get("doi", "")
+        if isinstance(doi, str) and doi and not DOI.match(doi):
+            errors.append(f"{paper_id} has invalid publication DOI: {doi}")
+        if publication.get("doi_url") != f"https://doi.org/{doi}":
+            errors.append(f"{paper_id} DOI URL does not match publication DOI")
+    elif status == "not_recorded":
+        checked_at = publication.get("checked_at")
+        if not isinstance(checked_at, str) or not DATE.match(checked_at):
+            errors.append(f"{paper_id} not_recorded status requires checked_at YYYY-MM-DD")
+    else:
+        errors.append(f"{paper_id} has invalid publication status: {status!r}")
 
 
 def validate_case(case: dict[str, Any], errors: list[str]) -> None:
@@ -109,7 +143,7 @@ def validate_case(case: dict[str, Any], errors: list[str]) -> None:
         if not paths:
             errors.append(f"{paper_id} has no {label}")
 
-    for script in case.get("run_scripts", []):
+    for script in [*case.get("run_scripts", []), *case.get("full_run_scripts", [])]:
         path = case_dir / "code" / "scripts" / str(script)
         if not path.is_file():
             errors.append(f"catalog run script does not exist: {path.relative_to(ROOT)}")
@@ -177,7 +211,15 @@ def main() -> int:
         if not paper_id or paper_id in seen:
             errors.append(f"missing or duplicate paper_id: {paper_id!r}")
         seen.add(paper_id)
+        validate_paper_identity(case, errors)
         validate_case(case, errors)
+    case_dirs = {path.name for path in (ROOT / "cases").iterdir() if path.is_dir()}
+    missing_catalog_entries = sorted(case_dirs - seen)
+    stale_catalog_entries = sorted(seen - case_dirs)
+    if missing_catalog_entries:
+        errors.append(f"case folders missing from catalog: {', '.join(missing_catalog_entries)}")
+    if stale_catalog_entries:
+        errors.append(f"catalog entries without case folders: {', '.join(stale_catalog_entries)}")
     for root_doc in (ROOT / "README.md", ROOT / "CASES.md", ROOT / "ROADMAP.md"):
         if root_doc.is_file():
             validate_markdown_links(root_doc, errors)

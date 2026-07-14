@@ -1,6 +1,8 @@
 # 2605.25594: Sensitivity to perturbations in the three-dimensional Anderson model
 
-Paper: [Sensitivity to perturbations in the three-dimensional Anderson model](https://arxiv.org/abs/2605.25594)
+Preprint: [arXiv:2605.25594 — Sensitivity to perturbations in the three-dimensional Anderson model](https://arxiv.org/abs/2605.25594)
+
+Formal publication: **Not recorded as of 2026-07-14**
 
 Public status: **Reduced-scale feature reproduction** · Audit score: **67.49/100**
 

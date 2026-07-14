@@ -1,6 +1,8 @@
 # 2605.25398: Boson Sampling as a Probe of Chaotic and Integrable Quantum Dynamics
 
-Paper: [Boson Sampling as a Probe of Chaotic and Integrable Quantum Dynamics](https://arxiv.org/abs/2605.25398)
+Preprint: [arXiv:2605.25398 — Boson Sampling as a Probe of Chaotic and Integrable Quantum Dynamics in a Photonic Chip](https://arxiv.org/abs/2605.25398)
+
+Formal publication: **Not recorded as of 2026-07-14**
 
 Public status: **Feature-level reproduction** · Audit score: **79.36/100**
 

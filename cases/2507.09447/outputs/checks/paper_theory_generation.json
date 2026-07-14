@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "artifact_stage": "paper_matched_reproduction",
+  "generated_data_provenance": "independent_numerics",
+  "fig34_grid_shape": [
+    181,
+    281
+  ],
+  "fig34_transfer_length": 12000,
+  "contour_grid_shape": [
+    181,
+    281
+  ],
+  "contour_transfer_length": 12000,
+  "alpha_points": 31,
+  "estimated_Wc_alpha_ge_0_98": 2.1,
+  "paper_Wc": 2.1,
+  "runtime_seconds": 127.66574116700212
+}

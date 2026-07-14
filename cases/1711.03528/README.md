@@ -1,6 +1,10 @@
 # 1711.03528: Quantum many-body scars
 
-Paper: [Quantum many-body scars](https://arxiv.org/abs/1711.03528)
+Preprint: [arXiv:1711.03528 — Quantum many-body scars](https://arxiv.org/abs/1711.03528)
+
+Published as: [Weak ergodicity breaking from quantum many-body scars](https://doi.org/10.1038/s41567-018-0137-5)
+
+Formal citation: Nature Physics 14, 745–749 (2018) · DOI `10.1038/s41567-018-0137-5` · Locator `745–749`
 
 Public status: **Reduced-scale feature reproduction** · Audit score: **72.50/100**
 

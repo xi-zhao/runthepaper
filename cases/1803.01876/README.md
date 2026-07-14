@@ -1,8 +1,10 @@
 # 1803.01876: Edge states and topological invariants of non-Hermitian systems
 
-Paper: [Edge states and topological invariants of non-Hermitian systems](https://arxiv.org/abs/1803.01876)
+Preprint: [arXiv:1803.01876 — Edge states and topological invariants of non-Hermitian systems](https://arxiv.org/abs/1803.01876)
 
-Published as: [Physical Review Letters 121, 086803 (2018)](https://doi.org/10.1103/PhysRevLett.121.086803)
+Published as: [Edge States and Topological Invariants of Non-Hermitian Systems](https://doi.org/10.1103/PhysRevLett.121.086803)
+
+Formal citation: Physical Review Letters 121, 086803 (2018) · DOI `10.1103/PhysRevLett.121.086803` · Locator `086803`
 
 Public status: **Paper-parameter complete reproduction** · Audit score: **94.00/100**
 
@@ -80,7 +82,7 @@ Generated files are kept under [data](outputs/data/), [figures](outputs/figures/
 
 ## Reproduction Boundary
 
-This public case includes paper-derived code, generated data, generated figures, public validation checks, explanatory notes, and four limited comparison panels. Those panels use the minimum paper excerpts needed for validation and clearly separate the paper reference from the independent result. The case does not redistribute the paper PDF, arXiv source archive, standalone original figures, EPS paths, digitized source curves, or source-derived point sets.
+This public case includes paper-derived code, generated data, generated figures, public validation checks, explanatory notes, and 4 limited comparison panels. Those panels use the minimum paper excerpts needed for validation and clearly separate the paper reference from the independent result. The case does not redistribute the paper PDF, arXiv source archive, standalone original figures, EPS paths, digitized source curves, or source-derived point sets.
 
 Remaining limitation: Author plotting data are unavailable; digitized source references were used internally for validation but are not redistributed.
 

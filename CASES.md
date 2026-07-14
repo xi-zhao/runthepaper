@@ -14,6 +14,7 @@ Every case provides a public overview, Chinese and English getting-started notes
 | [`2604.08669`](cases/2604.08669/README.md) | Defect-free atom-array assembly | Reduced-scale feature reproduction | 61.60 |
 | [`2605.25398`](cases/2605.25398/README.md) | Boson sampling and quantum-chaos probes | Feature-level reproduction | 79.36 |
 | [`2605.25594`](cases/2605.25594/README.md) | Three-dimensional Anderson localization | Reduced-scale feature reproduction | 67.49 |
+| [`2507.09447`](cases/2507.09447/README.md) | Lyapunov band theory and the non-Hermitian skin–Anderson transition | Paper-scale feature reproduction | 89.00 |
 
 The audit score records evidence strength at export time. It is not a visual-style rating, and it does not erase the limitation stated by each case.
 It is also not a cross-paper ranking or a publishing threshold: publication readiness comes from satisfying the public case contract and stating the remaining boundary honestly.

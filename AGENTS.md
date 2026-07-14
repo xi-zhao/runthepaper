@@ -51,3 +51,13 @@ Each public case should make five things easy to inspect:
 Never hide uncertainty. Separate scientific agreement from visual similarity,
 generated data from reference data, and feature-level reproduction from
 author-data-level reproduction.
+
+## Paper identity rule
+
+Every catalog entry and generated case README must distinguish the preprint
+identity from the formal publication identity. A published paper records its
+formal title, venue, citation, DOI, and applicable locator such as an article
+number, page range, or PII. If no formal publication is recorded, use an
+explicit `not_recorded` status and the date on which it was checked. Do not
+silently leave publication fields empty, and preserve both titles when the
+published title differs from the preprint.

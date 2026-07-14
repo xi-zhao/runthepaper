@@ -1,6 +1,10 @@
 # 1804.04672: Non-Hermitian Chern bands
 
-Paper: [Non-Hermitian Chern bands](https://arxiv.org/abs/1804.04672)
+Preprint: [arXiv:1804.04672 — Non-Hermitian Chern bands](https://arxiv.org/abs/1804.04672)
+
+Published as: [Non-Hermitian Chern Bands](https://doi.org/10.1103/PhysRevLett.121.136802)
+
+Formal citation: Physical Review Letters 121, 136802 (2018) · DOI `10.1103/PhysRevLett.121.136802` · Locator `136802`
 
 Public status: **Feature-level reproduction** · Audit score: **80.18/100**
 

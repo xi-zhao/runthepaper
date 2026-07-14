@@ -12,6 +12,6 @@ python scripts/plot_reproduction.py
 python scripts/run_symmetry_resolved_sector.py
 ```
 
-Generated CSV files are written to `../outputs/data/`, figures to `../outputs/figures/`, and machine-readable checks to `../outputs/checks/`.
+Generated data files are written to `../outputs/data/`, figures to `../outputs/figures/`, and machine-readable checks to `../outputs/checks/`.
 
 Boundary: The full L=32 symmetry sector and thermodynamic-limit iTEBD calculations are not rerun.

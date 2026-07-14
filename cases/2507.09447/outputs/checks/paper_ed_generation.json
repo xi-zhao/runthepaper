@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "artifact_stage": "paper_matched_reproduction",
+  "parameter_match": "paper_reported",
+  "generated_data_provenance": "independent_numerics",
+  "completed_realizations": 3200,
+  "target_realizations": 3200,
+  "L": 1000,
+  "W": 0.8,
+  "histogram_coverage": {
+    "obc": 0.99998125,
+    "pbc": 0.99998125
+  },
+  "scaling_fits": {
+    "skin": {
+      "fit_min_length": 400,
+      "fit_exponent_L": -1.0552305449087425,
+      "fit_intercept": 0.013023997299669968,
+      "paper_exponent_L": -1.104,
+      "paper_intercept": 0.617
+    },
+    "alm": {
+      "fit_min_length": 400,
+      "fit_exponent_L": -1.0433188865761498,
+      "fit_intercept": -0.8283114946505636,
+      "paper_exponent_L": -1.008,
+      "paper_intercept": -0.635
+    }
+  },
+  "scaling_theory": {
+    "transfer_length_per_realization": 1000000,
+    "realizations": 32,
+    "potential_standard_error": [
+      3.28078463874598e-05,
+      3.011684757381153e-05
+    ]
+  },
+  "runtime_seconds_this_invocation": 0.008573375002015382
+}

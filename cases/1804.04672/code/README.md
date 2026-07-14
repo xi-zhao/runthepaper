@@ -15,6 +15,6 @@ python scripts/run_gap_scaling.py
 python scripts/run_disk_phase_diagram.py
 ```
 
-Generated CSV files are written to `../outputs/data/`, figures to `../outputs/figures/`, and machine-readable checks to `../outputs/checks/`.
+Generated data files are written to `../outputs/data/`, figures to `../outputs/figures/`, and machine-readable checks to `../outputs/checks/`.
 
 Boundary: Some phase-boundary and panel-level comparisons remain paper-subset or source-table validations rather than full independent finite-size reruns.
