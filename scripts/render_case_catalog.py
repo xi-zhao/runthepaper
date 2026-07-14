@@ -24,6 +24,8 @@ def load_catalog() -> list[dict[str, Any]]:
 
 def preprint_reference(case: dict[str, Any]) -> str:
     preprint = case["preprint"]
+    if preprint.get("status") == "not_recorded":
+        return f"No preprint recorded / 未检索到预印本（checked {preprint['checked_at']}）"
     return f"[{preprint['identifier']}]({preprint['url']})"
 
 
@@ -116,10 +118,14 @@ def render_case_readme(case: dict[str, Any], case_dir: Path) -> str:
     figures = sorted((case_dir / "outputs" / "figures").glob("*.png"))
     featured_results = [item for item in case.get("featured_results", []) if isinstance(item, dict)]
     comparison_results = [item for item in case.get("comparison_results", []) if isinstance(item, dict)]
+    if preprint.get("status") == "not_recorded":
+        preprint_line = f"Preprint: **No preprint recorded as of {preprint['checked_at']}**"
+    else:
+        preprint_line = f"Preprint: [{preprint['identifier']} — {preprint['title']}]({preprint['url']})"
     lines = [
         f"# {paper_id}: {case['title']}",
         "",
-        f"Preprint: [{preprint['identifier']} — {preprint['title']}]({preprint['url']})",
+        preprint_line,
         "",
     ]
     if publication["status"] == "published":

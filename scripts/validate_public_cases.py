@@ -87,6 +87,10 @@ def validate_paper_identity(case: dict[str, Any], errors: list[str]) -> None:
     preprint = case.get("preprint")
     if not isinstance(preprint, dict):
         errors.append(f"{paper_id} has no preprint identity")
+    elif preprint.get("status") == "not_recorded":
+        checked_at = preprint.get("checked_at")
+        if not isinstance(checked_at, str) or not DATE.match(checked_at):
+            errors.append(f"{paper_id} not_recorded preprint requires checked_at YYYY-MM-DD")
     else:
         for field in ("identifier", "title", "url"):
             if not isinstance(preprint.get(field), str) or not preprint[field].strip():
