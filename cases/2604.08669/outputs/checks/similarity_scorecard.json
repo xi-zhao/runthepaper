@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "paper_id": "2604.08669",
-  "summary": "Reduced-scale two-stage reproduction has started. It now treats Fig. 3 as a retrained model artifact with checkpoint, training history, and evaluation metrics; P2WGS continuity and pipelined timing remain reduced-scale/model targets.",
+  "summary": "The case now includes an A100 paper-geometry GNN short probe and paper-scale P2WGS. Full million-sample training, the GPU-parallel decoder, and measured hardware timing remain outside the completed scope.",
   "targets": [
     {
       "target_id": "T001",
@@ -14,7 +14,7 @@
         "data_backed": true,
         "manual_interventions": 0,
         "failure_type": "insufficient_compute",
-        "parameter_match": "reduced_scale",
+        "parameter_match": "paper_subset",
         "reference_comparison": "source_figure_only",
         "generated_data_provenance": "independent_numerics",
         "formula_dependencies": [],
@@ -23,27 +23,30 @@
       "components": {
         "feature_match": {
           "score": 35.0,
-          "reason": "The reduced chain includes stochastic loading, Hungarian labels, candidate graph construction, 6-pass GNN edge scoring, checkpoint output, reloadable model state, decoding, and distance metrics.",
+          "reason": "The chain includes a reloadable reduced checkpoint plus A100-SXM4-80GB data generation and short training probes at the paper's 127x127 to 101x101 geometry.",
           "max_score": 50.0
         },
         "numeric_closeness": {
           "score": 20.0,
-          "reason": "The reduced retrained checkpoint produces small assignment-distance gaps on four eval instances, but it is not the 1024-instance paper benchmark.",
+          "reason": "On 64 paper-geometry validation instances, the best probe reaches average/max distances 0.51798/1.94310 versus paper references 0.512/1.93; the strict gate is close but not passed.",
           "max_score": 35.0
         },
         "paper_scope_coverage": {
           "score": 8.0,
-          "reason": "The run is small-scale and still uses probability-weighted Hungarian decoding rather than the modified auction decoder.",
+          "reason": "Paper geometry is covered, but million-sample training, the 1024-instance final evaluation, and the author's GPU-parallel modified-auction decoder are not.",
           "max_score": 15.0
         }
       },
       "score_cap": 70.0,
-      "cap_reason": "Reduced-scale retraining with decoder substitution cannot support a paper-scale Fig. 3 claim.",
+      "cap_reason": "A paper-geometry short probe with a CPU decoder cannot support a full-training or GPU-decoder Fig. 3 claim.",
       "evidence": [
         "outputs/checks/retrained_gnn_model/model_state.pt",
         "outputs/checks/retrained_gnn_model/training_history.json",
         "outputs/checks/retrained_gnn_model/metrics.json",
-        "outputs/figures/fig3_reduced_gnn_metrics.png"
+        "outputs/checks/a100_paper_geometry_campaign.json",
+        "outputs/checks/stage13_metric_contract_decision.json",
+        "outputs/data/fig3_a100_paper_geometry_summary.csv",
+        "outputs/figures/fig3_a100_paper_geometry_gap.png"
       ],
       "critical": true,
       "formula_score_cap": 100.0,
@@ -62,14 +65,14 @@
           {
             "panel_id": "a",
             "status": "reproduced",
-            "note": "max-distance distribution generated (scale via parameter axis)",
-            "evidence": "outputs/figures/fig3_reduced_gnn_metrics.png"
+            "note": "paper-geometry max-distance aggregate generated from the val64 A100 probe",
+            "evidence": "outputs/figures/fig3_a100_paper_geometry_gap.png"
           },
           {
             "panel_id": "b",
             "status": "reproduced",
-            "note": "average-distance distribution generated",
-            "evidence": "outputs/figures/fig3_reduced_gnn_metrics.png"
+            "note": "paper-geometry average-distance aggregate generated from the val64 A100 probe",
+            "evidence": "outputs/figures/fig3_a100_paper_geometry_gap.png"
           }
         ],
         "panel_scope_cap": 15.0
@@ -79,7 +82,7 @@
     },
     {
       "target_id": "T002",
-      "label": "Fig. 4 reduced P2WGS continuity benchmark",
+      "label": "Fig. 4 paper-scale P2WGS continuity benchmark",
       "weight": 1.0,
       "evaluation": {
         "critical": true,
@@ -113,10 +116,7 @@
       },
       "evidence": [
         "outputs/checks/p2wgs_paper_scale.json",
-        "outputs/checks/p2wgs_paper_scale_iter3/metrics.json",
-        "outputs/checks/p2wgs_paper_scale_iter5/metrics.json",
-        "outputs/checks/p2wgs_paper_scale_iter8/metrics.json",
-        "outputs/checks/p2wgs_paper_scale_iter10/metrics.json"
+        "outputs/figures/fig4_paper_scale_p2wgs_summary.png"
       ],
       "critical": true,
       "formula_score_cap": 100.0,
