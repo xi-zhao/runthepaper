@@ -2,13 +2,13 @@
 
 ## One-Sentence Result
 
-这个 case 跟随 arXiv:2605.25594，复现了三维 Anderson 模型里 fidelity susceptibility 的本地特征版本：弱无序区的敏感性增强、从 chaos window 到局域化的谱统计变化、强无序下 IPR 增大，以及局域相里 average 和 typical susceptibility 的分离。
+这个 case 跟随 arXiv:2605.25594，完成了本地精确对角化基线，并在 A100 上对 `L=24/28/31` 共 605 个无序样本进行了论文尺寸子集复现。结果重现了弱无序敏感性增强、`W_c≈16.5` 附近的谱统计转变、强无序 IPR 增大，以及局域相里 average 和 typical susceptibility 的分离。
 
 ## Similarity Level
 
-- Current level: `numerical_feature_reproduction`
+- Current level: `paper_scale_subset_reproduction`
 - Similarity score: `67.49/100`
-- Meaning: 已经跑通公式到数值再到图的链条，也看到了几个关键物理特征；但原文主图依赖 `L=20-38` 和多样本平均，本地 `L<=7` 还不能达到完整复现。
+- Meaning: 已经跑通公式、数值和绘图链条，并覆盖三个论文尺度附近的系统尺寸。A100 子集把 gap-ratio 中点定位在 `W=16.56-16.60`，但没有覆盖论文最大的 `L=32-38` 完整 scaling ladder。
 - Important note: 我们验收的是物理特征和数值对象，不把颜色、线宽、排版差异当成科学误差。
 
 ## Paper And Goal
@@ -17,7 +17,7 @@
 - PaperID: `2605.25594`
 - Case type: 理论/数值凝聚态物理论文复现
 - Reproduction scope: Anderson Hamiltonian、fidelity susceptibility、gap ratio、IPR、spectral function、average/typical separation、strong-disorder perturbative trend
-- Out of scope: sublattice 示意图；没有在本机跑论文级 `L=38` 全尺寸拟合
+- Out of scope: sublattice 示意图；`L=32-38` 全尺寸拟合；`T` 和随机占据算符 `n` 的完整远程 panel
 
 ## Intuitive Derivation
 
@@ -53,32 +53,36 @@ H_A = - sum_<i,j> c_i^\dag c_j + sum_i epsilon_i c_i^\dag c_i
 epsilon_i in [-W/2, W/2]
 ```
 
-运行方式：
+运行分为两层：
 
-1. 对 `L=4,5,6,7` 做精确对角化。
-2. 取谱中心 `20%` 的本征态。
-3. 用 `T_s` 作为扰动算符计算 fidelity susceptibility。
-4. 先输出 CSV，再画图。
-5. 用 JSON 检查记录哪些物理特征出现了，哪些还没到论文级精度。
+1. 本地 `L=4,5,6,7` 精确对角化用于公式和流程正确性检查。
+2. A100 对 `L=24,28,31` 使用双精度完整对角化，共完成 605 个无序样本。
+3. 两层计算都取谱中心 `20%` 的本征态，并以 `T_s` 作为主要扰动算符。
+4. 原始数值写入 CSV/JSONL，再由独立聚合检查生成图和 scorecard。
+5. `L=32` 的 GPU 求解触发底层 32-bit workspace 失败；`L=38` 超出当前单卡 A100 稠密求解路径的实用内存范围，因此没有用 proxy 冒充完成结果。
 
-## Original vs Reproduced
+## Paper Targets vs Reproduced
+
+下面每张对比图都单独给出“差异原因”。原因用于解释复现边界，不会被包装成已经完成的结果。
 
 ### T001: Fig. 1 Fidelity Susceptibility
 
 ![Generated](../outputs/figures/fig1_fidelity_vs_disorder_reproduction.png)
 
-**Consistency:** `partial_feature_match`
+![A100 paper-size subset](../outputs/figures/fig1_a100_subset_reproduction.png)
 
-**Similarity level:** `feature_not_reproduced` for the full paper-level Fig. 1 claim
+**Consistency:** `numerical_feature_reproduction`
 
-**Similarity score:** `59/100`
+**Similarity level:** `numerical_feature_reproduction`
+
+**Similarity score:** `79/100`
 
 Explanation:
 
 - Feature being checked: fidelity susceptibility should show sensitivity structures as disorder changes.
-- What matches: local data shows weak-disorder enhancement, a moderate-disorder chaos window, and strong-disorder localization through gap ratio/IPR.
-- What remains different: the two clean paper peaks, especially the Anderson-transition fidelity peak near `W=16.5`, are not quantitatively resolved at `L<=7`.
-- Evidence: `../outputs/data/fidelity_vs_disorder_summary.csv`, `../outputs/checks/anderson_feature_checks.json`
+- What matches: A100 数据在 `L=24/28/31` 上给出从 GOE 到 Poisson 的完整转变，gap-ratio 中点为 `16.588/16.599/16.564`；fidelity peak 随尺寸向 `W_c=16.5` 移动并变尖。
+- Difference reason / 差异原因: 图中本地曲线仍是 `L<=7` 的可重跑基线；完整论文拟合还缺 `L=32-38`。原因是当前单卡 A100 的双精度稠密对角化在 `L=32` 触发 workspace 限制，`L=38` 的矩阵和求解工作区超出实用显存，而不是公式或物理模型不一致。
+- Evidence: `../outputs/data/remote_campaign_summary.csv`, `../outputs/checks/remote_campaign_summary.json`
 
 ### T002: Fig. 2 Weak-Disorder Crossover
 
@@ -88,31 +92,31 @@ Explanation:
 
 **Similarity level:** `numerical_feature_reproduction`
 
-**Similarity score:** `61/100`
+**Similarity score:** `62/100`
 
 Explanation:
 
 - Feature being checked: weak-disorder sensitivity should be tied to finite-size scale.
-- What matches: the largest local system has a clear low-W enhancement; the code extracts peak positions and compares them with the paper's `41/sqrt(V)` law.
-- What remains different: strict monotonic finite-size scaling is not stable for `L<=7`; the paper fit uses much larger `V>=18^3`.
-- Evidence: `../outputs/figures/fig2_weak_crossover_scaling_reproduction.png`
+- What matches: 本地数据重现低无序增强；远程 `L=24/28/31` spectral campaign 的 `W_1^*sqrt(V)` 落在论文给出的 crossover band 内。
+- Difference reason / 差异原因: `L=31` 的弱无序峰受到当前最小 `W` 网格边界影响，且没有 `L=38` 端点，因此不能重新声明论文的渐近系数 `41`。
+- Evidence: `../outputs/figures/fig2_weak_crossover_scaling_reproduction.png`, `../outputs/data/remote/results_weakW.jsonl`
 
 ### T003: Fig. 3 Spectral-Function Mechanism
 
-![Generated](../outputs/figures/fig3_spectral_function_reproduction.png)
+![Generated from A100 subset](../outputs/figures/fig3_spectral_remote_reproduction.png)
 
-**Consistency:** `proxy_only`
+**Consistency:** `numerical_feature_reproduction`
 
-**Similarity level:** `feature_not_reproduced`
+**Similarity level:** `numerical_feature_reproduction`
 
-**Similarity score:** `55/100`
+**Similarity score:** `65/100`
 
 Explanation:
 
 - Feature being checked: the spectral function `|f(omega)|^2` is the mechanism behind the susceptibility peaks.
-- What matches: the same binned spectral-function object is implemented and plotted.
-- What remains different: the fitted Lorentzian width and exponent `a≈0.52` need `L=28-38` and many realizations. The local result is too small and noisy for that claim.
-- Evidence: `../outputs/data/spectral_function_summary.csv`
+- What matches: A100 子集按论文协议重现了 Lorentzian spectral function；临界点幂指数约为 `a=0.48`，接近论文 `L=38` 的 `0.52`。
+- Difference reason / 差异原因: 指数差异主要来自最大尺寸停在 `L=31`，没有论文的 `L=38` 低频窗口；弱无序 Lorentzian 宽度也仍有明显有限尺寸效应。
+- Evidence: `../outputs/data/remote/results_spectral.jsonl`, `../outputs/figures/fig3_spectral_remote_reproduction.png`
 
 ### T004: Fig. 8-11 Localized-Regime Behavior
 
@@ -122,14 +126,14 @@ Explanation:
 
 **Similarity level:** `numerical_feature_reproduction`
 
-**Similarity score:** `66/100`
+**Similarity score:** `72/100`
 
 Explanation:
 
 - Feature being checked: in the localized regime, typical and average fidelity susceptibility separate.
-- What matches: `chi_av^r / chi_typ^r` grows at large `W`; IPR also grows strongly, showing real-space localization.
-- What remains different: `W_3^*≈27.92` is not extracted quantitatively because that needs large `L` and dense `mu` grids.
-- Evidence: `../outputs/data/mu_sweep_summary.csv`
+- What matches: `chi_av^r / chi_typ^r` 和 IPR 都在局域区增长；A100 数据给出 `W_3^*` bracket 从 `L=24` 的约 `22.0` 漂移到 `L=28` 的约 `23.6`，方向与论文一致。
+- Difference reason / 差异原因: 当前 `W` 网格步长较粗且缺 `L=32-38`，所以不能把论文的 `W_3^*` 数值重新拟合到相同精度。
+- Evidence: `../outputs/data/fig9_chi_typ_curves.csv`, `../outputs/checks/remote_campaign_summary.json`
 
 ### T005: Fig. 10 Perturbative Strong-Disorder Trend
 
@@ -141,26 +145,26 @@ Explanation:
 
 - Feature being checked: deep in the localized regime, perturbation theory predicts a strong-disorder decay trend.
 - What matches: the numerical and perturbative curves move toward the same trend at large `W`.
-- What remains different: small `L` gives noisy unregularized values, so this is a mechanism check rather than a full Fig. 10 reproduction.
+- Difference reason / 差异原因: 这张图仍以小尺寸数值和解析微扰趋势做机制核验；完整 panel 需要未完成的大尺寸算符数据，因此不声明逐点一致。
 - Evidence: `../outputs/data/perturbation_theory_summary.csv`
 
 ## What Still Differs From The Paper
 
-- The paper's clean `W_1^* ~ 41/sqrt(V)` fit is not recovered at `L<=7`.
-- The Anderson-transition fidelity peak near `W_2^*=16.5` is not sharply resolved in the local susceptibility curve.
-- Spectral-function exponent `a≈0.52` is not fitted reliably.
-- `W_3^*≈27.92` is not quantitatively extracted.
-- Operators `T` and `n` are not fully rerun in this local version.
+- `L=24/28/31` 已完成，但论文最大的 `L=32-38` scaling ladder 未完成。
+- `W_2^*=16.5` 已由三个尺寸的 gap-ratio crossing 数值支持；最大尺寸 fidelity scaling 仍缺。
+- spectral-function 指数得到 `a≈0.48`，尚未达到论文 `L=38` 的 `a≈0.52`。
+- `W_3^*` 的有限尺寸漂移方向已重现，但没有用粗网格强行报告论文精度。
+- 算符 `T` 和 `n` 尚未完成远程全 panel。
 
-## Recommended Compute For Complete Reproduction
+## Stop Decision And Compute Boundary
 
-To move from feature-level to complete reproduction:
+我们已经评估过继续扩算，而不是把“没跑”笼统归因于困难：
 
-- Use `L=18,20,24,28,32,38`.
-- Use 20 disorder realizations for `L<=28`, 5 for `L>28`, and 40 for gap-ratio appendices.
-- Use sparse shift-invert or block eigensolvers around the spectrum center.
-- Recommended machine: 32+ CPU cores, 128GB+ RAM for `L<=28`, and 256GB+ or cluster queue for `L=38`.
-- Expected runtime: multi-day batch workflow for the full figure set.
+- 已完成：单卡 A100 上的 `L=24/28/31`，605 个无序样本。
+- 实测停止点：`L=32` 的双精度 GPU 求解触发底层 workspace 限制；CPU 回退约为每样本小时级。
+- 内存判断：`L=38` 的 Hamiltonian 和 eigenvector 两个双精度稠密矩阵本身合计约 48 GB，尚未计入 eigensolver workspace，当前单卡路径不具备完成条件。
+- 结论：`L=32-38` 标记为 `compute_limited_current_resource`，本轮停止，不用 proxy 数据替代。
+- 若未来有 256 GB+ 内存节点、分布式 eigensolver 或多卡大显存资源，再重新打开该目标。
 
 Machine-readable plan: `config/paper_scale_run_plan.json`.
 
@@ -175,4 +179,4 @@ Machine-readable plan: `config/paper_scale_run_plan.json`.
 
 ## Final Takeaway
 
-这个 case 说明 Agent 已经能把一篇新的理论物理论文转成公式、代码、数据和图，并能诚实地区分“本地特征复现”和“完整论文级复现”。这篇文章最有价值的结果需要大规模数值计算；当前版本把公式链和本地物理特征跑通了，也给出了下一轮完整复现的具体算力和参数方案。
+这个 case 已经超过本地 feature demo：A100 论文尺寸子集支持了主要物理结论，但完整 `L=32-38` scaling ladder 受当前资源限制。公开结论因此是“论文尺寸子集复现”，而不是完整论文级复现；每张图的剩余差异都明确标注了原因。

@@ -10,12 +10,13 @@ H_A = - nearest-neighbor hopping + random onsite disorder
 
 - Boundary condition: open boundary.
 - Disorder: iid uniform `[-W/2, W/2]`.
-- Local sizes: `L=4,5,6,7`.
+- Local correctness sizes: `L=4,5,6,7`.
+- A100 campaign sizes: `L=24,28,31`, totaling 605 disorder realizations.
 - Paper sizes: up to `L=38`.
 
 ## Observable
 
-The local run focuses on the sublattice kinetic-energy perturbation `T_s`. This is the operator that most clearly shows the weak-disorder crossover in the paper.
+The completed local and A100 runs focus on the sublattice kinetic-energy perturbation `T_s`. This is the operator that most clearly shows the weak-disorder crossover in the paper.
 
 The code also keeps the model structure explicit enough to add `T` and randomized site occupation `n` in a larger rerun.
 
@@ -40,6 +41,10 @@ mu = 0.02, 0.05, 0.1, 0.2, 0.5
 - `outputs/data/spectral_function_summary.csv`
 - `outputs/data/mu_sweep_summary.csv`
 - `outputs/data/perturbation_theory_summary.csv`
+- `outputs/data/remote/results_L24.jsonl`
+- `outputs/data/remote/results_L28.jsonl`
+- `outputs/data/remote/results_L31.jsonl`
+- `outputs/data/remote_campaign_summary.csv`
 
 ## Acceptance Features
 
@@ -50,4 +55,4 @@ The case checks whether:
 - IPR is much larger at high disorder;
 - `chi_av^r / chi_typ^r` grows in the localized regime.
 
-Strict extraction of `W_1^*`, `W_2^*`, `W_3^*`, and fitted exponents is left for the planned large-scale run.
+The A100 subset pins the gap-ratio crossing to `W=16.56-16.60`, resolves the GOE-to-Poisson crossover, and gives a transition spectral exponent near `0.48` versus the paper's `0.52`. The full `L=32-38` scaling ladder remains compute-limited on the available single-A100 dense-eigensolver path.

@@ -66,6 +66,73 @@ def plot_fidelity_vs_disorder() -> None:
     plt.close(fig)
 
 
+def plot_a100_paper_subset() -> None:
+    rows = read_rows(DATA / "remote_campaign_summary.csv")
+    fig, axes = plt.subplots(1, 3, figsize=(15.2, 5.3))
+    fig.subplots_adjust(left=0.06, right=0.985, top=0.82, bottom=0.21, wspace=0.27)
+    colors = plt.cm.viridis(np.linspace(0.12, 0.88, len(group_by(rows, "L"))))
+    for color, (L, group) in zip(
+        colors,
+        sorted(group_by(rows, "L").items(), key=lambda item: int(item[0])),
+    ):
+        group = sorted(group, key=lambda row: f(row, "W"))
+        W = [f(row, "W") for row in group]
+        label = f"L={L}"
+        axes[0].plot(
+            W,
+            [f(row, "tilde_chi_typ_r_mu0.001") for row in group],
+            "o-",
+            color=color,
+            label=label,
+            markersize=3,
+        )
+        axes[1].errorbar(
+            W,
+            [f(row, "gap_ratio_mean") for row in group],
+            yerr=[f(row, "gap_ratio_sem") for row in group],
+            fmt="o-",
+            color=color,
+            label=label,
+            markersize=3,
+            capsize=2,
+        )
+        axes[2].plot(
+            W,
+            [f(row, "ipr_mean") for row in group],
+            "o-",
+            color=color,
+            label=label,
+            markersize=3,
+        )
+
+    for ax in axes:
+        ax.axvline(16.5, color="crimson", linestyle="--", linewidth=1.1, label="paper Wc=16.5")
+        ax.set_xlabel("disorder W")
+        ax.grid(alpha=0.25)
+    axes[0].set_title("Fidelity susceptibility (mu=0.001)")
+    axes[0].set_ylabel("mu chi_typ^r")
+    axes[1].axhline(0.5307, color="0.3", linestyle=":", linewidth=1.0, label="GOE")
+    axes[1].axhline(0.386, color="0.3", linestyle="-.", linewidth=1.0, label="Poisson")
+    axes[1].set_title("GOE-to-Poisson crossover")
+    axes[1].set_ylabel("mean gap ratio")
+    axes[2].set_title("Real-space localization")
+    axes[2].set_ylabel("mean IPR")
+    for ax in axes:
+        ax.legend(frameon=False, fontsize=8)
+    fig.suptitle("A100 paper-size subset: L=24/28/31, 605 disorder realizations")
+    fig.text(
+        0.5,
+        0.035,
+        "Difference reason: L=32-38 are absent because the available single-A100 dense eigensolver is memory/workspace limited.",
+        ha="center",
+        va="bottom",
+        fontsize=9,
+        color="0.25",
+    )
+    fig.savefig(FIGURES / "fig1_a100_subset_reproduction.png", dpi=230, bbox_inches="tight")
+    plt.close(fig)
+
+
 def plot_weak_crossover() -> None:
     rows = read_rows(DATA / "fidelity_vs_disorder_summary.csv")
     peak_rows = []
@@ -163,6 +230,7 @@ def plot_perturbation() -> None:
 def main() -> None:
     FIGURES.mkdir(parents=True, exist_ok=True)
     plot_fidelity_vs_disorder()
+    plot_a100_paper_subset()
     plot_weak_crossover()
     plot_spectral_function()
     plot_typical_average()
