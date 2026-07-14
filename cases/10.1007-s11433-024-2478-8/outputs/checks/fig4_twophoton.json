@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "hybrid": {
+    "name": "fig4_hybrid",
+    "conditional_phase_over_pi": 0.984665256772268,
+    "gate_error": 0.001314436546304698,
+    "P00_return": 0.9999999937199016,
+    "P01_return": 0.9998813072614972,
+    "P11_return": 0.995446254560568
+  },
+  "amplitude": {
+    "name": "fig4_amplitude",
+    "conditional_phase_over_pi": -0.9756509319246831,
+    "gate_error": 0.0036907811964640436,
+    "P00_return": 0.9999999907901334,
+    "P01_return": 0.999714339166736,
+    "P11_return": 0.9869991579260974
+  },
+  "note": "Full three-level (a5/a6) model; gate error is the honest full-physics value."
+}
