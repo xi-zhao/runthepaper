@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "metrics": {
+    "basis_dimension": 11,
+    "max_norm_error": 1.7763568394002505e-15,
+    "max_density_sum_error": 1.7763568394002505e-15,
+    "max_initial_density_error": 1.3322676295501878e-15
+  },
+  "rules": {
+    "basis_dimension_is_11": true,
+    "state_norm_preserved": true,
+    "density_sums_to_one": true,
+    "initial_conditions_exact": true
+  }
+}

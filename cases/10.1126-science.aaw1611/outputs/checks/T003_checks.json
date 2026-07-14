@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "metrics": {
+    "boson_basis_dimension": 78,
+    "hardcore_basis_dimension": 66,
+    "max_norm_error": 1.3322676295501878e-15,
+    "max_density_sum_error": 2.6645352591003757e-15,
+    "max_correlator_sum_error": 8.881784197001252e-16,
+    "mean_strong_to_hardcore_distance": 0.01955403002331638,
+    "mean_strong_to_free_distance": 1.1772468690782245
+  },
+  "rules": {
+    "boson_basis_dimension_is_78": true,
+    "hardcore_basis_dimension_is_66": true,
+    "state_norm_preserved": true,
+    "density_sums_to_two": true,
+    "correlator_sums_to_two": true,
+    "strong_pattern_closer_to_hardcore_than_free": true
+  }
+}

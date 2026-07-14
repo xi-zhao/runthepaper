@@ -756,6 +756,59 @@
           "check": "fig2.json"
         }
       ]
+    },
+    {
+      "paper_id": "10.1126-science.aaw1611",
+      "title": "Strongly correlated quantum walks with a 12-qubit superconducting processor",
+      "topic": "Strongly interacting one- and two-photon quantum walks on a calibrated superconducting-qubit chain",
+      "preprint": {
+        "status": "not_recorded",
+        "checked_at": "2026-07-15"
+      },
+      "publication": {
+        "status": "published",
+        "title": "Strongly correlated quantum walks with a 12-qubit superconducting processor",
+        "venue": "Science",
+        "citation": "Science 364, 753–756 (2019)",
+        "doi": "10.1126/science.aaw1611",
+        "doi_url": "https://doi.org/10.1126/science.aaw1611",
+        "locator": "753–756"
+      },
+      "status": "Pixel-audited numerical feature reproduction",
+      "similarity_level": "numerical_feature_reproduction",
+      "audit_score": 80.0,
+      "summary": "Independently reproduces the calibrated one- and two-photon Bose–Hubbard dynamics, information-spreading observables, interaction-induced antibunching, and double-occupancy suppression. A supplemental scalar-field pixel audit covers the theoretical interiors of Figs. S14–S20.",
+      "limitation": "Author theory tables, experimental shots, and tomography arrays are unavailable. Publisher rasters are used only for internal validation and are not redistributed; the S20 correlator audit remains visibly weaker than the density panels.",
+      "run_scripts": [
+        "run_reproduction.py"
+      ],
+      "extra_dependencies": [],
+      "featured_results": [
+        {
+          "paper_item": "Fig. 2D–F / Figs. S14–S16",
+          "result": "Calibrated one-photon density from Q6, Q1, and Q11 launches",
+          "figure": "S14_density_Q6.png",
+          "check": "T001_checks.json"
+        },
+        {
+          "paper_item": "Fig. 3B–E / Fig. S17",
+          "result": "One-site entropy and information spreading from a Q6 launch",
+          "figure": "S17_entropy_Q6.png",
+          "check": "T002_checks.json"
+        },
+        {
+          "paper_item": "Fig. 4 / Figs. S19–S20",
+          "result": "Two-photon density and correlator fermionization against free and hard-core controls",
+          "figure": "S20_two_particle_correlator_theory.png",
+          "check": "T003_checks.json"
+        },
+        {
+          "paper_item": "Fig. S8",
+          "result": "Site-resolved suppression of double occupancy",
+          "figure": "S8_double_occupancy.png",
+          "check": "T004_checks.json"
+        }
+      ]
     }
   ]
 }

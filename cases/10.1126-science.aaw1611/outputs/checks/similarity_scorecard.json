@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "score_model": "rra_similarity_v1",
+  "paper_id": "10.1126-science.aaw1611",
+  "status": "passed",
+  "targets": [
+    {
+      "target_id": "T001",
+      "label": "Fig. 2D-F and Figs. S14-S16 one-photon densities",
+      "weight": 1.0,
+      "score": 80.0,
+      "similarity_level": "numerical_feature_reproduction",
+      "evidence": [
+        "outputs/data/one_particle_density.csv",
+        "outputs/checks/T001_checks.json",
+        "outputs/figures/S14_density_Q6.png"
+      ],
+      "remaining_gap": "Author theory arrays are unavailable for pointwise validation."
+    },
+    {
+      "target_id": "T002",
+      "label": "Fig. 3B-E and Fig. S17 information spreading",
+      "weight": 1.0,
+      "score": 80.0,
+      "similarity_level": "numerical_feature_reproduction",
+      "evidence": [
+        "outputs/data/one_particle_observables.csv",
+        "outputs/checks/T002_checks.json",
+        "outputs/figures/S17_entropy_Q6.png"
+      ],
+      "remaining_gap": "The complete published Lieb-Robinson envelope fit is outside this case."
+    },
+    {
+      "target_id": "T003",
+      "label": "Fig. 4 and Figs. S19-S20 two-photon fermionization",
+      "weight": 1.0,
+      "score": 80.0,
+      "similarity_level": "numerical_feature_reproduction",
+      "evidence": [
+        "outputs/data/two_particle_correlators.csv",
+        "outputs/checks/T003_checks.json",
+        "outputs/figures/S20_two_particle_correlator_theory.png"
+      ],
+      "remaining_gap": "Experimental tomography and author correlator arrays are unavailable."
+    },
+    {
+      "target_id": "T004",
+      "label": "Fig. S8 double-occupancy suppression",
+      "weight": 1.0,
+      "score": 80.0,
+      "similarity_level": "numerical_feature_reproduction",
+      "evidence": [
+        "outputs/data/double_occupancy.csv",
+        "outputs/checks/T004_checks.json",
+        "outputs/figures/S8_double_occupancy.png"
+      ],
+      "remaining_gap": "The publisher panel has no downloadable source table."
+    }
+  ],
+  "overall_score": 80.0,
+  "similarity_level": "numerical_feature_reproduction",
+  "evaluation_summary": {
+    "scored_items": 4,
+    "artifact_pass_rate": 1.0,
+    "data_backed_rate": 1.0,
+    "manual_interventions_total": 0,
+    "parameter_match": "paper_exact",
+    "generated_data_provenance": "independent_numerics",
+    "author_array_cap": 80.0
+  }
+}

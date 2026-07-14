@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "targets": {
+    "T001": true,
+    "T002": true,
+    "T003": true,
+    "T004": true
+  },
+  "backend": "numpy",
+  "accelerator": "CPU"
+}

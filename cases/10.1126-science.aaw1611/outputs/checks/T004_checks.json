@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "metrics": {
+    "max_site_resolved_double_occupancy": 0.02910035665525242,
+    "paper_threshold": 0.03,
+    "time_window_ns": [
+      0.0,
+      120.0
+    ]
+  },
+  "rules": {
+    "double_occupancy_below_paper_threshold": true
+  }
+}

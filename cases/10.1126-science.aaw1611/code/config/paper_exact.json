@@ -1,0 +1,30 @@
+{
+  "paper_id": "10.1126-science.aaw1611",
+  "couplings_mhz": [12.1, 12.2, 12.3, 12.4, 12.5, 12.6, 12.6, 12.6, 12.6, 12.5, 12.4],
+  "interactions_mhz": [-246, -204, -246, -200, -248, -196, -248, -196, -246, -214, -244, -200],
+  "one_particle": {
+    "site_count": 11,
+    "launches": {"Q6": [5], "Q1": [0], "Q11": [10]},
+    "time_start_ns": 0.0,
+    "time_stop_ns": 250.0,
+    "time_step_ns": 0.5,
+    "observable_snapshot_ns": 55.5
+  },
+  "two_particle": {
+    "site_count": 12,
+    "launches": {"Q1_Q12": [0, 11], "Q6_Q7": [5, 6]},
+    "time_start_ns": 0.0,
+    "time_stop_ns": 250.0,
+    "time_step_ns": 0.5,
+    "correlator_snapshots_ns": [10.5, 19.5, 28.5, 37.5, 46.5, 55.5]
+  },
+  "double_occupancy_stop_ns": 120.0,
+  "reported_group_velocity_sites_per_us": 153.99,
+  "acceptance": {
+    "normalization_atol": 1e-10,
+    "double_occupancy_max": 0.03,
+    "group_velocity_relative_tolerance": 0.03,
+    "backend_parity_atol": 1e-9,
+    "backend_parity_rtol": 1e-9
+  }
+}

@@ -18,6 +18,7 @@ Every case provides a public overview, Chinese and English getting-started notes
 | [`10.1007-s11433-024-2478-8`](cases/10.1007-s11433-024-2478-8/README.md) | Buffer-atom-mediated Rydberg CZ, dual-pulse Doppler upgrade, and amplitude-ratio robustness via off-resonant modulated driving | Mixed: Fig. 3 complete, Fig. 4/5/7 feature-level | 84.60 |
 | [`10.1103-PhysRevB.91.085420`](cases/10.1103-PhysRevB.91.085420/README.md) | Interband-coherence correction to adiabatic pumping in the continuously driven Harper model | Feature-level reproduction | 79.54 |
 | [`10.1038-s41586-024-08262-7`](cases/10.1038-s41586-024-08262-7/README.md) | Paraparticle exclusion statistics, thermodynamics, and exactly solvable spin models | Complete reproduction | 90.00 |
+| [`10.1126-science.aaw1611`](cases/10.1126-science.aaw1611/README.md) | Strongly interacting one- and two-photon quantum walks on a calibrated superconducting-qubit chain | Pixel-audited numerical feature reproduction | 80.00 |
 
 The audit score records evidence strength at export time. It is not a visual-style rating, and it does not erase the limitation stated by each case.
 It is also not a cross-paper ranking or a publishing threshold: publication readiness comes from satisfying the public case contract and stating the remaining boundary honestly.

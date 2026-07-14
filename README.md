@@ -16,7 +16,7 @@ explicit reproduction boundary.
 ## Reproduction Catalog / 论文复现目录
 
 <!-- case-catalog:start -->
-**14 public cases.** Open a paper below, then choose the reading or
+**15 public cases.** Open a paper below, then choose the reading or
 reproduction resource you need.
 
 | Paper | Preprint / formal publication | Reproduction status | Open package |
@@ -35,6 +35,7 @@ reproduction resource you need.
 | [Buffer-atom-mediated quantum logic gates with off-resonant modulated driving](cases/10.1007-s11433-024-2478-8/README.md) | No preprint recorded / 未检索到预印本（checked 2026-07-14）<br>[Sci. China-Phys. Mech. Astron. 67, 120311 (2024)](https://doi.org/10.1007/s11433-024-2478-8) · DOI `10.1007/s11433-024-2478-8` | Mixed: Fig. 3 complete, Fig. 4/5/7 feature-level | [中文 Note](cases/10.1007-s11433-024-2478-8/note/reproduction-note.zh-CN.md) · [English Note](cases/10.1007-s11433-024-2478-8/note/reproduction-note.en.md)<br>[Code](cases/10.1007-s11433-024-2478-8/code/README.md) · [Figures](cases/10.1007-s11433-024-2478-8/outputs/figures/) · [Checks](cases/10.1007-s11433-024-2478-8/outputs/checks/) |
 | [Interband coherence induced correction to adiabatic pumping in periodically driven systems](cases/10.1103-PhysRevB.91.085420/README.md) | No preprint recorded / 未检索到预印本（checked 2026-07-14）<br>[Physical Review B 91, 085420 (2015)](https://doi.org/10.1103/PhysRevB.91.085420) · DOI `10.1103/PhysRevB.91.085420` | Feature-level reproduction | [中文 Note](cases/10.1103-PhysRevB.91.085420/note/reproduction-note.zh-CN.md) · [English Note](cases/10.1103-PhysRevB.91.085420/note/reproduction-note.en.md)<br>[Code](cases/10.1103-PhysRevB.91.085420/code/README.md) · [Figures](cases/10.1103-PhysRevB.91.085420/outputs/figures/) · [Checks](cases/10.1103-PhysRevB.91.085420/outputs/checks/) |
 | [Particle exchange statistics beyond fermions and bosons](cases/10.1038-s41586-024-08262-7/README.md) | [arXiv:2308.05203](https://arxiv.org/abs/2308.05203)<br>[Nature 637, 314–318 (2025)](https://doi.org/10.1038/s41586-024-08262-7) · DOI `10.1038/s41586-024-08262-7` | Complete reproduction | [中文 Note](cases/10.1038-s41586-024-08262-7/note/reproduction-note.zh-CN.md) · [English Note](cases/10.1038-s41586-024-08262-7/note/reproduction-note.en.md)<br>[Code](cases/10.1038-s41586-024-08262-7/code/README.md) · [Figures](cases/10.1038-s41586-024-08262-7/outputs/figures/) · [Checks](cases/10.1038-s41586-024-08262-7/outputs/checks/) |
+| [Strongly correlated quantum walks with a 12-qubit superconducting processor](cases/10.1126-science.aaw1611/README.md) | No preprint recorded / 未检索到预印本（checked 2026-07-15）<br>[Science 364, 753–756 (2019)](https://doi.org/10.1126/science.aaw1611) · DOI `10.1126/science.aaw1611` | Pixel-audited numerical feature reproduction | [中文 Note](cases/10.1126-science.aaw1611/note/reproduction-note.zh-CN.md) · [English Note](cases/10.1126-science.aaw1611/note/reproduction-note.en.md)<br>[Code](cases/10.1126-science.aaw1611/code/README.md) · [Figures](cases/10.1126-science.aaw1611/outputs/figures/) · [Checks](cases/10.1126-science.aaw1611/outputs/checks/) |
 
 Status describes reproduction scope, not rank. See [how to read reproduction quality](#how-to-read-reproduction-quality) and the [detailed case index](CASES.md) for audit scores and explicit boundaries.
 <!-- case-catalog:end -->
