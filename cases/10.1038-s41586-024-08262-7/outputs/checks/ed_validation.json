@@ -1,0 +1,58 @@
+{
+  "target": "ed_validation_1d_solvable_model",
+  "claim": "1D spin model (Ex.3) spectrum == free-paraparticle spectrum sum_{k in S} eps_k with multiplicity m^{|S|}; verifies z_R(x)=1+m x.",
+  "tol_spectrum": 1e-09,
+  "cases": [
+    {
+      "N": 4,
+      "m": 2,
+      "seed": 1,
+      "hilbert_dim": 81,
+      "single_particle_levels": [
+        -2.03521781,
+        -0.20795598,
+        0.4844573,
+        1.81459722
+      ],
+      "commutator_H_n_maxabs": 0.0,
+      "spectrum_dim_match": true,
+      "max_spectrum_deviation": 3.552713678800501e-15,
+      "passed": true
+    },
+    {
+      "N": 5,
+      "m": 2,
+      "seed": 7,
+      "hilbert_dim": 243,
+      "single_particle_levels": [
+        -2.40402336,
+        -1.24236713,
+        -0.27318064,
+        0.72535681,
+        2.26411121
+      ],
+      "commutator_H_n_maxabs": 0.0,
+      "spectrum_dim_match": true,
+      "max_spectrum_deviation": 9.769962616701378e-15,
+      "passed": true
+    },
+    {
+      "N": 4,
+      "m": 3,
+      "seed": 3,
+      "hilbert_dim": 256,
+      "single_particle_levels": [
+        -1.26694225,
+        -0.03459032,
+        1.10727457,
+        1.86216641
+      ],
+      "commutator_H_n_maxabs": 0.0,
+      "spectrum_dim_match": true,
+      "max_spectrum_deviation": 7.993605777301127e-15,
+      "passed": true
+    }
+  ],
+  "all_passed": true,
+  "status": "passed"
+}

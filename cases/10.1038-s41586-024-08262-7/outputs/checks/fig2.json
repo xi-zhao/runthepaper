@@ -1,0 +1,110 @@
+{
+  "target": "fig2_exclusion_and_thermodynamics",
+  "parameters": {
+    "ex2_m": 2,
+    "ex3_m": 2,
+    "ex4_m": 3,
+    "source": "Fig. 2 legend"
+  },
+  "degeneracies": {
+    "fermion": {
+      "d_n": [
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "match": true
+    },
+    "boson": {
+      "d_n": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "expected": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "match": true
+    },
+    "ex2": {
+      "d_n": [
+        1,
+        2,
+        1,
+        0,
+        0
+      ],
+      "expected": [
+        1,
+        2,
+        1,
+        0,
+        0
+      ],
+      "match": true
+    },
+    "ex3": {
+      "d_n": [
+        1,
+        2,
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        1,
+        2,
+        0,
+        0,
+        0
+      ],
+      "match": true
+    },
+    "ex4": {
+      "d_n": [
+        1,
+        3,
+        1,
+        0,
+        0
+      ],
+      "expected": [
+        1,
+        3,
+        1,
+        0,
+        0
+      ],
+      "match": true
+    }
+  },
+  "degeneracies_all_match": true,
+  "limit_checks": {
+    "fermion_at_0_is_0.5": true,
+    "ex2_at_0_is_1.0": true,
+    "ex3_at_0_is_2/3": true,
+    "ex4_at_0_is_1.0": true,
+    "fermion_saturates_to_1": true,
+    "ex3_saturates_to_1": true,
+    "ex2_saturates_to_2": true,
+    "ex4_saturates_to_2": true
+  },
+  "limit_checks_all_pass": true,
+  "passed": true,
+  "status": "passed"
+}

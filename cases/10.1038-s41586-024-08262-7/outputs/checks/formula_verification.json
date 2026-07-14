@@ -1,0 +1,58 @@
+{
+  "status": "passed",
+  "schema_version": 1,
+  "paper_id": "10.1038-s41586-024-08262-7",
+  "summary": {
+    "cards_total": 3,
+    "numeric_open": 3,
+    "numeric_closed": 0,
+    "blocked_cards": []
+  },
+  "formulas": {
+    "single_mode_partition_z_R": {
+      "title": "Single-mode partition function / Hilbert series z_R(x) = sum_n d_n x^n (Eq. single_mode_Z)",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "src/paraparticles.py::Species.degeneracies",
+        "src/paraparticles.py::species_table"
+      ],
+      "open_questions": [
+        "Main-text prose (source line 603) says the right panel uses m=5 for Ex.3/Ex.4, but the published Fig. 2 legend uses Ex.3 (m=2) and Ex.4 (m=3). We reproduce the FIGURE (m=2, m=3); the m=5 prose is an internal text/figure inconsistency, flagged in FIGURE_CLASSIFICATION.md."
+      ]
+    },
+    "thermal_occupation_n_beta": {
+      "title": "Free-paraparticle thermal occupation <n_k>_beta = x z'_R(x)/z_R(x) (Eq. n_k_expectation)",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "src/paraparticles.py::Species.occupation",
+        "scripts/gen_fig2.py"
+      ],
+      "open_questions": []
+    },
+    "solvable_1d_spin_model_free_paraparticles": {
+      "title": "1D solvable spin model maps to free paraparticles (Eq. Hamil1Dspin)",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "src/spin_model_1d.py",
+        "scripts/run_ed_validation.py"
+      ],
+      "open_questions": []
+    }
+  },
+  "findings": []
+}

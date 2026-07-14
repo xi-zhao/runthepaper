@@ -719,6 +719,43 @@
           "figure": "fig4_transition_probe_comparison.png"
         }
       ]
+    },
+    {
+      "paper_id": "10.1038-s41586-024-08262-7",
+      "title": "Particle exchange statistics beyond fermions and bosons",
+      "topic": "Paraparticle exclusion statistics, thermodynamics, and exactly solvable spin models",
+      "preprint": {
+        "identifier": "arXiv:2308.05203",
+        "title": "Particle exchange statistics beyond fermions and bosons",
+        "url": "https://arxiv.org/abs/2308.05203"
+      },
+      "publication": {
+        "status": "published",
+        "title": "Particle exchange statistics beyond fermions and bosons",
+        "venue": "Nature",
+        "citation": "Nature 637, 314–318 (2025)",
+        "doi": "10.1038/s41586-024-08262-7",
+        "doi_url": "https://doi.org/10.1038/s41586-024-08262-7",
+        "locator": "314–318"
+      },
+      "status": "Complete reproduction",
+      "similarity_level": "complete_reproduction",
+      "audit_score": 90.0,
+      "summary": "Reproduces the numerical main figure from the paper's closed-form single-mode statistics at the published legend parameters, and independently validates the free-paraparticle spectrum of the one-dimensional solvable spin model by exact diagonalization.",
+      "limitation": "The Nature figure is raster-only and no author plotting-data table is available, so the comparison tier is analytic-reference rather than author-data pointwise. The two-dimensional KDH model, eight-body plaquette terms, and braiding demonstration are outside this case's scope.",
+      "run_scripts": [
+        "gen_fig2.py",
+        "run_ed_validation.py"
+      ],
+      "extra_dependencies": [],
+      "featured_results": [
+        {
+          "paper_item": "Numerical main figure",
+          "result": "Generalized exclusion statistics and free-paraparticle thermodynamics",
+          "figure": "fig2_reproduction.png",
+          "check": "fig2.json"
+        }
+      ]
     }
   ]
 }
