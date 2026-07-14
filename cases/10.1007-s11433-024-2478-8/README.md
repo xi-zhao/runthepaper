@@ -19,6 +19,26 @@ Reproduces the buffer-atom-mediated CZ gate from an independent three-body Rydbe
 - [Numerical methods](docs/NUMERICAL_METHODS.md)
 - [Lessons learned](docs/LESSONS_LEARNED.md)
 
+## Paper Reference vs Independent Reproduction
+
+The left column in each panel is a limited excerpt from Y. Sun, [Sci. China-Phys. Mech. Astron. 67, 120311 (2024)](https://doi.org/10.1007/s11433-024-2478-8); the right column is generated independently from this case. These comparisons validate physical structure and key numerical features, not author-data-level or point-for-point equivalence.
+
+### Fig. 3 (single-photon CZ) comparison
+
+![Fig. 3 (single-photon CZ) paper reference versus independent reproduction](docs/comparisons/fig3_singlephoton_comparison.png)
+
+### Fig. 4 (two-photon CZ) comparison
+
+![Fig. 4 (two-photon CZ) paper reference versus independent reproduction](docs/comparisons/fig4_twophoton_comparison.png)
+
+### Fig. 5 (dual-pulse Doppler) comparison
+
+![Fig. 5 (dual-pulse Doppler) paper reference versus independent reproduction](docs/comparisons/fig5_dualpulse_comparison.png)
+
+### Fig. 7 (robustness colormap) comparison
+
+![Fig. 7 (robustness colormap) paper reference versus independent reproduction](docs/comparisons/fig7_robustness_comparison.png)
+
 ## Quick Run
 
 ```bash
@@ -36,7 +56,7 @@ Generated files are kept under [data](outputs/data/), [figures](outputs/figures/
 
 ## Reproduction Boundary
 
-This public case includes paper-derived code, generated data, generated figures, public validation checks, and explanatory notes. It does not redistribute the paper PDF, arXiv source archive, original figures, EPS paths, digitized source curves, source-derived point sets, or source-vs-generated composite panels.
+This public case includes paper-derived code, generated data, generated figures, public validation checks, explanatory notes, and 4 limited comparison panels. Those panels use the minimum paper excerpts needed for validation and clearly separate the paper reference from the independent result. The case does not redistribute the paper PDF, arXiv source archive, standalone original figures, EPS paths, digitized source curves, or source-derived point sets.
 
 Remaining limitation: The two-photon full three-level model gives gate error ~1e-3 vs the paper's <1e-4 (its waveforms were likely optimised in a reduced/effective model); Fig. 7 peak ~25% below the paper; Fig. 6 three-qubit Toffoli geometry is underspecified and not reproduced; Figs. a6-a8 have no published coefficients.
 
