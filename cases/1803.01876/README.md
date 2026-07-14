@@ -37,6 +37,10 @@ The left column in each panel is a limited excerpt from Yao and Wang, [Physical 
 
 ![Fig. 2 paper reference versus independent reproduction](docs/comparisons/fig2_open_spectrum_comparison.png)
 
+### Fig. 2(d) comparison
+
+![Fig. 2(d) paper reference versus independent reproduction](docs/comparisons/fig2d_boundary_perturbation_comparison.png)
+
 ### Fig. 3 comparison
 
 ![Fig. 3 paper reference versus independent reproduction](docs/comparisons/fig3_beta_skin_comparison.png)
@@ -48,6 +52,14 @@ The left column in each panel is a limited excerpt from Yao and Wang, [Physical 
 ### Fig. 5 comparison
 
 ![Fig. 5 paper reference versus independent reproduction](docs/comparisons/fig5_t3_comparison.png)
+
+### Supplemental Fig. 1 comparison
+
+![Supplemental Fig. 1 paper reference versus independent reproduction](docs/comparisons/figs1_complex_spectra_comparison.png)
+
+### Supplemental Fig. 2 comparison
+
+![Supplemental Fig. 2 paper reference versus independent reproduction](docs/comparisons/figs2_gamma24_comparison.png)
 
 ### Fig. 2: Open-boundary spectrum and zero-mode interval
 
@@ -83,7 +95,7 @@ Generated files are kept under [data](outputs/data/), [figures](outputs/figures/
 
 ## Reproduction Boundary
 
-This public case includes paper-derived code, generated data, generated figures, public validation checks, explanatory notes, and 4 limited comparison panels. Those panels use the minimum paper excerpts needed for validation and clearly separate the paper reference from the independent result. The case does not redistribute the paper PDF, arXiv source archive, standalone original figures, EPS paths, digitized source curves, or source-derived point sets.
+This public case includes paper-derived code, generated data, generated figures, public validation checks, explanatory notes, and 7 limited comparison panels. Those panels use the minimum paper excerpts needed for validation and clearly separate the paper reference from the independent result. The case does not redistribute the paper PDF, arXiv source archive, standalone original figures, EPS paths, digitized source curves, or source-derived point sets.
 
 Remaining limitation: Author plotting data are unavailable; digitized source references were used internally for validation but are not redistributed.
 

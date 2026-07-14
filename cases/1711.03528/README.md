@@ -21,6 +21,26 @@ Reproduces constrained Hilbert-space structure, scar overlaps, revivals, partici
 - [Numerical methods](docs/NUMERICAL_METHODS.md)
 - [Lessons learned](docs/LESSONS_LEARNED.md)
 
+## Paper Reference vs Independent Reproduction
+
+The left column in each panel is a limited excerpt from Turner et al., [Nature Physics 14, 745–749 (2018)](https://doi.org/10.1038/s41567-018-0137-5); the right column is generated independently from this case. These comparisons validate physical structure and key numerical features, not author-data-level or point-for-point equivalence.
+
+### Fig. 1 comparison
+
+![Fig. 1 paper reference versus independent reproduction](docs/comparisons/fig1_pxp_hilbert_graph_comparison.png)
+
+### Fig. 2 comparison
+
+![Fig. 2 paper reference versus independent reproduction](docs/comparisons/fig2_scar_special_states_comparison.png)
+
+### Fig. 3 comparison
+
+![Fig. 3 paper reference versus independent reproduction](docs/comparisons/fig3_quench_entanglement_dynamics_comparison.png)
+
+### Fig. 4 comparison
+
+![Fig. 4 paper reference versus independent reproduction](docs/comparisons/fig4_level_statistics_comparison.png)
+
 ## Quick Run
 
 ```bash
@@ -38,7 +58,7 @@ Generated files are kept under [data](outputs/data/), [figures](outputs/figures/
 
 ## Reproduction Boundary
 
-This public case includes paper-derived code, generated data, generated figures, public validation checks, and explanatory notes. It does not redistribute the paper PDF, arXiv source archive, original figures, EPS paths, digitized source curves, source-derived point sets, or source-vs-generated composite panels.
+This public case includes paper-derived code, generated data, generated figures, public validation checks, explanatory notes, and 4 limited comparison panels. Those panels use the minimum paper excerpts needed for validation and clearly separate the paper reference from the independent result. The case does not redistribute the paper PDF, arXiv source archive, standalone original figures, EPS paths, digitized source curves, or source-derived point sets.
 
 Remaining limitation: The paper's k=0, I=+1 sector is reproduced at L=28 (dimension 13201), including the 15-state scar tower. L=32 is not launched because one float64 dense matrix is already about 47 GB before eigensolver workspace on the current 40 GB A100 path; thermodynamic-limit iTEBD also remains unimplemented.
 

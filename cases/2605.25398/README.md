@@ -18,6 +18,38 @@ Reproduces Porter-Thomas distance, entropy, spectral-form-factor, OTOC, particip
 - [Numerical methods](docs/NUMERICAL_METHODS.md)
 - [Lessons learned](docs/LESSONS_LEARNED.md)
 
+## Paper Reference vs Independent Reproduction
+
+The left column in each panel is a limited excerpt from Zhan et al., [arXiv:2605.25398](https://arxiv.org/abs/2605.25398); the right column is generated independently from this case. These comparisons validate physical structure and key numerical features, not author-data-level or point-for-point equivalence.
+
+### Fig. 2 (g,h) comparison
+
+![Fig. 2 (g,h) paper reference versus independent reproduction](docs/comparisons/fig2_output_distribution_comparison.png)
+
+### Fig. 3 comparison
+
+![Fig. 3 paper reference versus independent reproduction](docs/comparisons/fig3_chaos_probes_comparison.png)
+
+### Fig. 4 comparison
+
+![Fig. 4 paper reference versus independent reproduction](docs/comparisons/fig4_otoc_participation_comparison.png)
+
+### Fig. S1 comparison
+
+![Fig. S1 paper reference versus independent reproduction](docs/comparisons/figS1_conditional_pt_comparison.png)
+
+### Fig. S4 comparison
+
+![Fig. S4 paper reference versus independent reproduction](docs/comparisons/figS4_mode_scaling_comparison.png)
+
+### Fig. S5 comparison
+
+![Fig. S5 paper reference versus independent reproduction](docs/comparisons/figS5_ideal_otocs_comparison.png)
+
+### Fig. S6 comparison
+
+![Fig. S6 paper reference versus independent reproduction](docs/comparisons/figS6_otoc_spectrum_comparison.png)
+
 ## Quick Run
 
 ```bash
@@ -33,7 +65,7 @@ Generated files are kept under [data](outputs/data/), [figures](outputs/figures/
 
 ## Reproduction Boundary
 
-This public case includes paper-derived code, generated data, generated figures, public validation checks, and explanatory notes. It does not redistribute the paper PDF, arXiv source archive, original figures, EPS paths, digitized source curves, source-derived point sets, or source-vs-generated composite panels.
+This public case includes paper-derived code, generated data, generated figures, public validation checks, explanatory notes, and 7 limited comparison panels. Those panels use the minimum paper excerpts needed for validation and clearly separate the paper reference from the independent result. The case does not redistribute the paper PDF, arXiv source archive, standalone original figures, EPS paths, digitized source curves, or source-derived point sets.
 
 Remaining limitation: Several figures use paper-parameter subsets or local random-matrix instances rather than the full experimental setting.
 

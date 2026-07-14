@@ -21,6 +21,22 @@ Reconstructs the exact Steane [[7,1,3]] logical-H circuit and evaluates acceptan
 - [Numerical methods](docs/NUMERICAL_METHODS.md)
 - [Lessons learned](docs/LESSONS_LEARNED.md)
 
+## Paper Reference vs Independent Reproduction
+
+The left column in each panel is a limited excerpt from Surti, Daguerre, and Kim, [PRX Quantum 7, 020329 (2026)](https://doi.org/10.1103/fby6-xjbm); the right column is generated independently from this case. These comparisons validate physical structure and key numerical features, not author-data-level or point-for-point equivalence.
+
+### Fig. 1 (logical infidelity) comparison
+
+![Fig. 1 (logical infidelity) paper reference versus independent reproduction](docs/comparisons/fig1_infidelity_comparison.png)
+
+### Fig. 2 (acceptance rate) comparison
+
+![Fig. 2 (acceptance rate) paper reference versus independent reproduction](docs/comparisons/fig2_acceptance_comparison.png)
+
+### Fig. 3 (runtime) comparison
+
+![Fig. 3 (runtime) paper reference versus independent reproduction](docs/comparisons/fig3_runtime_comparison.png)
+
 ## Quick Run
 
 ```bash
@@ -47,7 +63,7 @@ Generated files are kept under [data](outputs/data/), [figures](outputs/figures/
 
 ## Reproduction Boundary
 
-This public case includes paper-derived code, generated data, generated figures, public validation checks, and explanatory notes. It does not redistribute the paper PDF, arXiv source archive, original figures, EPS paths, digitized source curves, source-derived point sets, or source-vs-generated composite panels.
+This public case includes paper-derived code, generated data, generated figures, public validation checks, explanatory notes, and 3 limited comparison panels. Those panels use the minimum paper excerpts needed for validation and clearly separate the paper reference from the independent result. The case does not redistribute the paper PDF, arXiv source archive, standalone original figures, EPS paths, digitized source curves, or source-derived point sets.
 
 Remaining limitation: Exact-circuit acceptance matches all 12 validated points, while mid-range logical infidelity remains 0.42-0.68x of the paper curve because the panel-(c) gate/idle schedule is reconstructed and the author implementation is unavailable. Runtime remains proxy timing; digitized source point sets are not redistributed.
 

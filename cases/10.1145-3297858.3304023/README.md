@@ -20,6 +20,14 @@ Reconstructs the SABRE routing pipeline, swap trace, reverse traversal, decay tr
 - [Numerical methods](docs/NUMERICAL_METHODS.md)
 - [Lessons learned](docs/LESSONS_LEARNED.md)
 
+## Paper Reference vs Independent Reproduction
+
+The left column in each panel is a limited excerpt from Li et al., [ASPLOS '19, pp. 1001–1014](https://doi.org/10.1145/3297858.3304023); the right column is generated independently from this case. These comparisons validate physical structure and key numerical features, not author-data-level or point-for-point equivalence.
+
+### Table 2 comparison
+
+![Table 2 paper reference versus independent reproduction](docs/comparisons/table2_gop_comparison.png)
+
 ## Quick Run
 
 ```bash
@@ -37,7 +45,7 @@ Generated files are kept under [data](outputs/data/), [figures](outputs/figures/
 
 ## Reproduction Boundary
 
-This public case includes paper-derived code, generated data, generated figures, public validation checks, and explanatory notes. It does not redistribute the paper PDF, arXiv source archive, original figures, EPS paths, digitized source curves, source-derived point sets, or source-vs-generated composite panels.
+This public case includes paper-derived code, generated data, generated figures, public validation checks, explanatory notes, and 1 limited comparison panels. Those panels use the minimum paper excerpts needed for validation and clearly separate the paper reference from the independent result. The case does not redistribute the paper PDF, arXiv source archive, standalone original figures, EPS paths, digitized source curves, or source-derived point sets.
 
 Remaining limitation: All 26 Table II rows run and produce hardware-compliant routes, but row-exact optimized values require the paper's unpublished random seeds, tie-breaking order, and BKA post-processing inputs. This is a metadata boundary, not a compute boundary.
 

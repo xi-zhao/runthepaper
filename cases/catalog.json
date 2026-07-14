@@ -63,6 +63,10 @@
           "figure": "fig2_open_spectrum_comparison.png"
         },
         {
+          "paper_item": "Fig. 2(d)",
+          "figure": "fig2d_boundary_perturbation_comparison.png"
+        },
+        {
           "paper_item": "Fig. 3",
           "figure": "fig3_beta_skin_comparison.png"
         },
@@ -73,6 +77,14 @@
         {
           "paper_item": "Fig. 5",
           "figure": "fig5_t3_comparison.png"
+        },
+        {
+          "paper_item": "Supplemental Fig. 1",
+          "figure": "figs1_complex_spectra_comparison.png"
+        },
+        {
+          "paper_item": "Supplemental Fig. 2",
+          "figure": "figs2_gamma24_comparison.png"
         }
       ],
       "extra_dependencies": [
@@ -110,7 +122,34 @@
         "run_gap_scaling.py",
         "run_disk_phase_diagram.py"
       ],
-      "extra_dependencies": []
+      "extra_dependencies": [],
+      "comparison_attribution": "Yao et al.",
+      "comparison_results": [
+        {
+          "paper_item": "Fig. 1",
+          "figure": "fig1_open_boundary_phase_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 2",
+          "figure": "fig2_square_dynamics_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 3(a)",
+          "figure": "fig3a_cylinder_phase_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 3(b)",
+          "figure": "fig3b_complex_spectrum_comparison.png"
+        },
+        {
+          "paper_item": "Fig. S2",
+          "figure": "figs2_gap_scaling_comparison.png"
+        },
+        {
+          "paper_item": "Fig. S3",
+          "figure": "figs3_disk_phase_comparison.png"
+        }
+      ]
     },
     {
       "paper_id": "10.1145-3297858.3304023",
@@ -143,6 +182,13 @@
       "extra_dependencies": [
         "networkx",
         "qiskit"
+      ],
+      "comparison_attribution": "Li et al.",
+      "comparison_results": [
+        {
+          "paper_item": "Table 2",
+          "figure": "table2_gop_comparison.png"
+        }
       ]
     },
     {
@@ -175,7 +221,30 @@
         "plot_reproduction_iteration2.py",
         "extract_fig3_scaling_collapse.py"
       ],
-      "extra_dependencies": []
+      "extra_dependencies": [],
+      "comparison_attribution": "Yao et al.",
+      "comparison_results": [
+        {
+          "paper_item": "Fig. 1",
+          "figure": "fig1_subharmonic_rigidity_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 2",
+          "figure": "fig2_level_statistics_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 3(a)",
+          "figure": "fig3_mutual_information_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 3(b-d)",
+          "figure": "fig3_scaling_collapse_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 4",
+          "figure": "fig4_long_range_variance_comparison.png"
+        }
+      ]
     },
     {
       "paper_id": "1711.03528",
@@ -206,7 +275,26 @@
         "run_symmetry_resolved_sector.py",
         "plot_symmetry_resolved_sector.py"
       ],
-      "extra_dependencies": []
+      "extra_dependencies": [],
+      "comparison_attribution": "Turner et al.",
+      "comparison_results": [
+        {
+          "paper_item": "Fig. 1",
+          "figure": "fig1_pxp_hilbert_graph_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 2",
+          "figure": "fig2_scar_special_states_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 3",
+          "figure": "fig3_quench_entanglement_dynamics_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 4",
+          "figure": "fig4_level_statistics_comparison.png"
+        }
+      ]
     },
     {
       "paper_id": "2103.03074",
@@ -235,7 +323,22 @@
         "run_reproduction.py",
         "plot_reproduction.py"
       ],
-      "extra_dependencies": []
+      "extra_dependencies": [],
+      "comparison_attribution": "Pan and Zhang",
+      "comparison_results": [
+        {
+          "paper_item": "Fig. 2",
+          "figure": "fig2_depth20_porter_thomas_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 5",
+          "figure": "fig5_depth14_porter_thomas_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 6",
+          "figure": "fig6_conditional_probability_comparison.png"
+        }
+      ]
     },
     {
       "paper_id": "2512.23799",
@@ -276,7 +379,22 @@
         "run_steane_exact_benchmark.py": "--profile paper"
       },
       "full_run_note": "The paper profile evaluates all 12 physical-error points with the larger Monte Carlo shot budget used by the published case output.",
-      "extra_dependencies": []
+      "extra_dependencies": [],
+      "comparison_attribution": "Surti, Daguerre, and Kim",
+      "comparison_results": [
+        {
+          "paper_item": "Fig. 1 (logical infidelity)",
+          "figure": "fig1_infidelity_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 2 (acceptance rate)",
+          "figure": "fig2_acceptance_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 3 (runtime)",
+          "figure": "fig3_runtime_comparison.png"
+        }
+      ]
     },
     {
       "paper_id": "2604.08669",
@@ -328,7 +446,38 @@
         "run_reproduction.py",
         "plot_reproduction.py"
       ],
-      "extra_dependencies": []
+      "extra_dependencies": [],
+      "comparison_attribution": "Zhan et al.",
+      "comparison_results": [
+        {
+          "paper_item": "Fig. 2 (g,h)",
+          "figure": "fig2_output_distribution_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 3",
+          "figure": "fig3_chaos_probes_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 4",
+          "figure": "fig4_otoc_participation_comparison.png"
+        },
+        {
+          "paper_item": "Fig. S1",
+          "figure": "figS1_conditional_pt_comparison.png"
+        },
+        {
+          "paper_item": "Fig. S4",
+          "figure": "figS4_mode_scaling_comparison.png"
+        },
+        {
+          "paper_item": "Fig. S5",
+          "figure": "figS5_ideal_otocs_comparison.png"
+        },
+        {
+          "paper_item": "Fig. S6",
+          "figure": "figS6_otoc_spectrum_comparison.png"
+        }
+      ]
     },
     {
       "paper_id": "2605.25594",
@@ -353,7 +502,30 @@
         "plot_reproduction.py",
         "run_fig11_phenomenological_model.py"
       ],
-      "extra_dependencies": []
+      "extra_dependencies": [],
+      "comparison_attribution": "Tokarczyk et al.",
+      "comparison_results": [
+        {
+          "paper_item": "Fig. 1",
+          "figure": "fig1_fidelity_vs_disorder_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 2",
+          "figure": "fig2_weak_crossover_scaling_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 3",
+          "figure": "fig3_spectral_function_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 8",
+          "figure": "fig8_typical_average_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 9",
+          "figure": "fig9_chi_typ_comparison.png"
+        }
+      ]
     },
     {
       "paper_id": "2507.09447",
@@ -406,7 +578,22 @@
           "check": "paper_scientific_similarity.json"
         }
       ],
-      "extra_dependencies": []
+      "extra_dependencies": [],
+      "comparison_attribution": "Sun and Hu",
+      "comparison_results": [
+        {
+          "paper_item": "Fig. 3",
+          "figure": "fig3_obc_spectrum_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 4",
+          "figure": "fig4_pbc_winding_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 5",
+          "figure": "fig5_skin_anderson_comparison.png"
+        }
+      ]
     },
     {
       "paper_id": "10.1007-s11433-024-2478-8",
