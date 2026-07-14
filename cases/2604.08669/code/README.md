@@ -13,6 +13,6 @@ python scripts/run_reduced_p2wgs_pilot.py
 python scripts/plot_reduced_outputs.py
 ```
 
-Generated CSV files are written to `../outputs/data/`, figures to `../outputs/figures/`, and machine-readable checks to `../outputs/checks/`.
+Generated data files are written to `../outputs/data/`, figures to `../outputs/figures/`, and machine-readable checks to `../outputs/checks/`.
 
 Boundary: The paper-scale GNN training and GPU-parallel decoder are not included; the public code is a reduced reconstruction.

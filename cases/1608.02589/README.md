@@ -1,6 +1,10 @@
 # 1608.02589: Discrete time crystals: rigidity, criticality, and realizations
 
-Paper: [Discrete time crystals: rigidity, criticality, and realizations](https://arxiv.org/abs/1608.02589)
+Preprint: [arXiv:1608.02589 — Discrete time crystals: rigidity, criticality, and realizations](https://arxiv.org/abs/1608.02589)
+
+Published as: [Discrete Time Crystals: Rigidity, Criticality, and Realizations](https://doi.org/10.1103/PhysRevLett.118.030401)
+
+Formal citation: Physical Review Letters 118, 030401 (2017) · DOI `10.1103/PhysRevLett.118.030401` · Locator `030401`
 
 Public status: **Reduced-scale feature reproduction** · Audit score: **73.56/100**
 

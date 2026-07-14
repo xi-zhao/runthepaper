@@ -1,6 +1,8 @@
 # 2604.08669: An Algorithm for Fast Assembling Large-Scale Defect-Free Atom Arrays
 
-Paper: [An Algorithm for Fast Assembling Large-Scale Defect-Free Atom Arrays](https://arxiv.org/abs/2604.08669)
+Preprint: [arXiv:2604.08669 — An Algorithm for Fast Assembling Large-Scale Defect-Free Atom Arrays](https://arxiv.org/abs/2604.08669)
+
+Formal publication: **Not recorded as of 2026-07-14**
 
 Public status: **Reduced-scale feature reproduction** · Audit score: **61.60/100**
 

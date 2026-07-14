@@ -1,0 +1,57 @@
+{
+  "status": "passed",
+  "artifact_stage": "paper_matched_reproduction",
+  "parameter_match": "paper_reported_plus_documented_inference",
+  "figures": {
+    "fig3": {
+      "png": "outputs/figures/fig3_paper_exact.png",
+      "svg": "outputs/figures/fig3_paper_exact.svg"
+    },
+    "fig4": {
+      "png": "outputs/figures/fig4_paper_exact.png",
+      "svg": "outputs/figures/fig4_paper_exact.svg"
+    },
+    "fig5": {
+      "png": "outputs/figures/fig5_paper_exact.png",
+      "svg": "outputs/figures/fig5_paper_exact.svg"
+    }
+  },
+  "geometry_qa": {
+    "geometry_all_exact": true,
+    "figures": {
+      "fig3": {
+        "dimensions_exact": true,
+        "expected_pixels": [
+          662,
+          513
+        ],
+        "generated_pixels": [
+          662,
+          513
+        ]
+      },
+      "fig4": {
+        "dimensions_exact": true,
+        "expected_pixels": [
+          685,
+          248
+        ],
+        "generated_pixels": [
+          685,
+          248
+        ]
+      },
+      "fig5": {
+        "dimensions_exact": true,
+        "expected_pixels": [
+          561,
+          247
+        ],
+        "generated_pixels": [
+          561,
+          247
+        ]
+      }
+    }
+  }
+}

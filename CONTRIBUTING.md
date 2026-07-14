@@ -29,6 +29,12 @@ For each case, keep the public boundary clear:
 - validation results belong in `outputs/checks/`;
 - paper/source references should be links or citations, not copied raw assets.
 
+In `cases/catalog.json`, record the preprint and formal publication as separate
+objects. A published entry needs its formal title, venue, full citation, DOI,
+and article/page/PII locator. If no formal publication can be found, use
+`publication.status: "not_recorded"` together with `checked_at`; do not use an
+empty DOI as an implicit status.
+
 ## Before Opening a Pull Request
 
 Regenerate navigation after adding or changing a catalog entry:

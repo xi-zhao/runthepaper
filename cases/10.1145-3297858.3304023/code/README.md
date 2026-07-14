@@ -13,6 +13,6 @@ python scripts/run_core_benchmarks.py
 python scripts/run_decay_tradeoff.py
 ```
 
-Generated CSV files are written to `../outputs/data/`, figures to `../outputs/figures/`, and machine-readable checks to `../outputs/checks/`.
+Generated data files are written to `../outputs/data/`, figures to `../outputs/figures/`, and machine-readable checks to `../outputs/checks/`.
 
 Boundary: Several large benchmark rows lack complete public metadata and remain subset or proxy evaluations.

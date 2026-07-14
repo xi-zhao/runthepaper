@@ -1,6 +1,10 @@
 # 2512.23799: Efficient simulation of logical magic state preparation protocols
 
-Paper: [Efficient simulation of logical magic state preparation protocols](https://arxiv.org/abs/2512.23799)
+Preprint: [arXiv:2512.23799 — Efficient simulation of logical magic state preparation protocols](https://arxiv.org/abs/2512.23799)
+
+Published as: [Efficient Simulation of Logical Magic State Preparation Protocols](https://doi.org/10.1103/fby6-xjbm)
+
+Formal citation: PRX Quantum 7, 020329 (2026) · DOI `10.1103/fby6-xjbm` · Locator `020329`
 
 Public status: **Partial feature reproduction** · Audit score: **73.00/100**
 

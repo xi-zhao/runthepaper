@@ -11,6 +11,6 @@ python scripts/run_reproduction.py
 python scripts/plot_reproduction.py
 ```
 
-Generated CSV files are written to `../outputs/data/`, figures to `../outputs/figures/`, and machine-readable checks to `../outputs/checks/`.
+Generated data files are written to `../outputs/data/`, figures to `../outputs/figures/`, and machine-readable checks to `../outputs/checks/`.
 
 Boundary: Exact 53-qubit tensor contractions and paper-scale amplitude recomputation require external compute.

@@ -11,6 +11,6 @@ python scripts/run_reproduction.py
 python scripts/plot_reproduction.py
 ```
 
-Generated CSV files are written to `../outputs/data/`, figures to `../outputs/figures/`, and machine-readable checks to `../outputs/checks/`.
+Generated data files are written to `../outputs/data/`, figures to `../outputs/figures/`, and machine-readable checks to `../outputs/checks/`.
 
 Boundary: The public package excludes digitized paper curves; several visible benchmark trends remain proxy or subset validations.

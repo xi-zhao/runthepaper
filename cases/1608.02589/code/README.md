@@ -13,6 +13,6 @@ python scripts/run_reproduction_iteration2.py
 python scripts/plot_reproduction_iteration2.py
 ```
 
-Generated CSV files are written to `../outputs/data/`, figures to `../outputs/figures/`, and machine-readable checks to `../outputs/checks/`.
+Generated data files are written to `../outputs/data/`, figures to `../outputs/figures/`, and machine-readable checks to `../outputs/checks/`.
 
 Boundary: Paper-scale disorder statistics and the largest exact-diagonalization targets remain compute-limited.

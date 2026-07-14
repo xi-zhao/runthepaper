@@ -1,0 +1,61 @@
+{
+  "status": "paper_scale_feature_match",
+  "artifact_stage": "paper_matched_reproduction",
+  "parameter_match": "paper_reported_plus_documented_inference",
+  "gate_flags": {
+    "ed_ensemble_complete": true,
+    "obc_finite_tdl_density_overlap": true,
+    "pbc_finite_tdl_density_overlap": true,
+    "scaling_exponents_match": true,
+    "alm_profiles_classified": true,
+    "critical_profile_near_zero_le": true,
+    "skin_profile_classified": true,
+    "mobility_contours_shrink": true,
+    "transition_matches_paper": true
+  },
+  "acceptance_thresholds": {
+    "finite_tdl_density_overlap_min": 0.8,
+    "scaling_exponent_gap_max": 0.1,
+    "critical_lyapunov_abs_max": 0.005,
+    "mobility_area_spearman_max": -0.9,
+    "transition_W_tolerance": 0.1
+  },
+  "density_metrics": {
+    "obc_overlap": 0.8069172759693359,
+    "pbc_overlap": 0.8497650520237052
+  },
+  "scaling_metrics": {
+    "skin": {
+      "fit_exponent_L": -1.0552305449087425,
+      "fit_intercept": 0.013023997299669968,
+      "paper_exponent_L": -1.104,
+      "paper_intercept": 0.617,
+      "fit_min_length": 400,
+      "absolute_exponent_gap": 0.04876945509125763
+    },
+    "alm": {
+      "fit_exponent_L": -1.0433188865761498,
+      "fit_intercept": -0.8283114946505636,
+      "paper_exponent_L": -1.008,
+      "paper_intercept": -0.635,
+      "fit_min_length": 400,
+      "absolute_exponent_gap": 0.03531888657614979
+    }
+  },
+  "profile_metrics": {
+    "all_alm_central_exponents_straddle_zero": true,
+    "critical_min_abs_central_exponent": 0.002161867438612017,
+    "skin_central_exponents_have_same_sign": true
+  },
+  "fig5_metrics": {
+    "skin_area_spearman": -0.9999999999999999,
+    "estimated_Wc_alpha_ge_0_98": 2.1,
+    "paper_Wc": 2.1,
+    "alpha_at_W_3": 1.0
+  },
+  "limitations": [
+    "author random seeds and eigenstate selection windows are unavailable",
+    "author transfer length, QR interval, and Fig. 5 quadrature details are unavailable",
+    "the source PDFs were manually assembled in Adobe Illustrator"
+  ]
+}
