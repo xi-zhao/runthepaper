@@ -14,6 +14,8 @@ Reproduces the numerical main figure from the paper's closed-form single-mode st
 
 - [中文复现 Note](note/reproduction-note.zh-CN.md)
 - [English reproduction note](note/reproduction-note.en.md)
+- [中文逐步推导](docs/DERIVATION_WALKTHROUGH.zh-CN.md)
+- [中文推导讲义 PDF](docs/DERIVATION_WALKTHROUGH.zh-CN.pdf)
 - [Code and run commands](code/README.md)
 - [Machine-readable scorecard](outputs/checks/similarity_scorecard.json)
 - [Derivation (equations)](docs/DERIVATION.md)
