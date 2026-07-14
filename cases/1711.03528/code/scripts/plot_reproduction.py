@@ -11,6 +11,10 @@ import numpy as np
 WORKSPACE = Path(__file__).resolve().parents[2]
 DATA = WORKSPACE / "outputs" / "data"
 FIGURES = WORKSPACE / "outputs" / "figures"
+DYNAMICS_DIFFERENCE_REASON = (
+    "Difference reason: finite-size exact evolution at L=16; the paper uses "
+    "thermodynamic-limit iTEBD with bond dimension around 400."
+)
 
 
 def read_rows(path: Path) -> list[dict]:
@@ -57,7 +61,7 @@ def plot_fig1_graph() -> None:
 
 def plot_dynamics() -> None:
     rows = read_rows(DATA / "fig_ent_dynamics.csv")
-    fig, axes = plt.subplots(1, 3, figsize=(14.2, 4.2), constrained_layout=True)
+    fig, axes = plt.subplots(1, 3, figsize=(14.2, 4.6))
     palette = {"z2": "black", "z3": "#1f77b4", "z4": "#2ca02c", "vacuum": "#d62728"}
     for name, group in groups(rows, "initial_state").items():
         group = sorted(group, key=lambda row: float(row["time"]))
@@ -78,6 +82,8 @@ def plot_dynamics() -> None:
         ax.set_xlabel("time")
         ax.grid(alpha=0.2)
         ax.legend(frameon=False, fontsize=8)
+    fig.tight_layout(rect=(0, 0.13, 1, 1))
+    fig.text(0.5, 0.025, DYNAMICS_DIFFERENCE_REASON, ha="center", va="bottom", fontsize=8.5)
     fig.savefig(FIGURES / "fig_ent_dynamics_reproduction.png", dpi=220)
     plt.close(fig)
 

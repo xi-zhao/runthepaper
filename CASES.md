@@ -8,7 +8,7 @@ Every case provides a public overview, Chinese and English getting-started notes
 | [`1804.04672`](cases/1804.04672/README.md) | Non-Hermitian Chern bands and non-Bloch Chern physics | Feature-level reproduction | 80.18 |
 | [`10.1145-3297858.3304023`](cases/10.1145-3297858.3304023/README.md) | SABRE qubit mapping and routing | Feature-level reproduction with partial benchmark coverage | 68.29 |
 | [`1608.02589`](cases/1608.02589/README.md) | Floquet many-body dynamics and discrete time crystals | Medium-scale partial reproduction | 73.56 |
-| [`1711.03528`](cases/1711.03528/README.md) | PXP dynamics and quantum many-body scars | Reduced-scale feature reproduction | 72.50 |
+| [`1711.03528`](cases/1711.03528/README.md) | PXP dynamics and quantum many-body scars | Symmetry-resolved partial reproduction | 72.50 |
 | [`2103.03074`](cases/2103.03074/README.md) | Sycamore random-circuit simulation | Reduced-scale feature reproduction | 70.00 |
 | [`2512.23799`](cases/2512.23799/README.md) | Logical magic-state preparation simulation | Exact-circuit partial reproduction | 73.00 |
 | [`2604.08669`](cases/2604.08669/README.md) | Defect-free atom-array assembly | Reduced-scale feature reproduction | 61.60 |

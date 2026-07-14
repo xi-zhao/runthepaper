@@ -2,8 +2,8 @@
 """Symmetry-resolved PXP sector run for T003 (scar tower) and T004 (level stats).
 
 Diagonalizes the k=0, inversion-even PXP sector at the largest locally
-feasible size (L=28, sector dimension 13201; the paper's L=32 sector needs
-~47GB dense workspace and is recorded as a remote rerun) and extracts:
+feasible size (L=28, sector dimension 13201; one dense float64 matrix for the
+paper's L=32 sector is about 47GB before eigensolver workspace) and extracts:
 
 - T003: the |<Z2|E>|^2 scar tower - the paper's L/2+1 special states with
   approximately equal energy spacing;
@@ -20,11 +20,6 @@ import sys
 import time
 from pathlib import Path
 
-import matplotlib
-
-matplotlib.use("Agg")
-
-import matplotlib.pyplot as plt
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -38,6 +33,7 @@ from pxp_scars import (  # noqa: E402
     symmetrized_state_vector,
     unfolded_spacings,
 )
+from plot_symmetry_resolved_sector import plot_sector_outputs  # noqa: E402
 
 L = 28
 GOE_R = 0.5307
@@ -129,8 +125,12 @@ def main() -> int:
         "gate_flags": gate_flags,
         "remote_rerun": {
             "L": 32,
-            "reason": "L=32 sector (~77k) needs ~47GB dense eigh workspace; local memory is 18GB.",
+            "reason": "The L=32 sector (~77k) needs about 47GB for one dense float64 matrix before eigensolver workspace, beyond the current single 40GB A100 path.",
             "constraint_class": "external_required",
+        },
+        "difference_reasons": {
+            "sector_figures": "Same k=0, I=+1 sector at L=28; the paper uses L=32, whose dense matrix alone is about 47GB before eigensolver workspace.",
+            "entanglement_dynamics": "Finite-size exact evolution at L=16; the paper uses thermodynamic-limit iTEBD with bond dimension around 400."
         },
         "data": ["outputs/data/sector_scar_tower.csv", "outputs/data/sector_level_spacings.csv"],
         "figures": ["outputs/figures/sector_scar_tower.png", "outputs/figures/sector_level_statistics.png"],
@@ -138,32 +138,7 @@ def main() -> int:
     (ROOT / "outputs/checks/symmetry_resolved_sector.json").write_text(
         json.dumps(checks, indent=2) + "\n"
     )
-
-    fig_dir = ROOT / "outputs/figures"
-    fig, ax = plt.subplots(figsize=(6.4, 4.4))
-    ax.semilogy(energies, np.maximum(overlaps, 1e-16), ".", markersize=2, color="0.6")
-    ax.semilogy(energies[top], overlaps[top], "o", markersize=5, color="tab:red",
-                label=f"top {tower_count} tower states")
-    ax.set_xlabel("E")
-    ax.set_ylabel(r"$|\langle Z_2|E\rangle|^2$")
-    ax.set_ylim(1e-10, 1.0)
-    ax.set_title(f"PXP L={L}, k=0, I=+1 sector (dim {dim})", fontsize=10)
-    ax.legend(fontsize=8)
-    fig.tight_layout()
-    fig.savefig(fig_dir / "sector_scar_tower.png", dpi=150)
-    plt.close(fig)
-
-    fig, ax = plt.subplots(figsize=(6.0, 4.2))
-    ax.bar(centers, hist, width=centers[1] - centers[0], color="#9fc5e8", label="unfolded spacings")
-    ax.plot(centers, wigner, "-", color="tab:red", label="Wigner surmise (GOE)")
-    ax.plot(centers, poisson, "--", color="0.4", label="Poisson")
-    ax.set_xlabel("s")
-    ax.set_ylabel("P(s)")
-    ax.set_title(f"<r> = {r_mean:.4f}  (GOE {GOE_R}, Poisson {POISSON_R})", fontsize=10)
-    ax.legend(fontsize=8)
-    fig.tight_layout()
-    fig.savefig(fig_dir / "sector_level_statistics.png", dpi=150)
-    plt.close(fig)
+    plot_sector_outputs(ROOT)
 
     print(json.dumps({"status": checks["status"], "gate_flags": gate_flags,
                       "r_mean": r_mean, "dim": dim,

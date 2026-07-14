@@ -160,7 +160,7 @@
         "paper_scope_coverage": {
           "score": 11.0,
           "max_score": 15.0,
-          "reason": "Same sector as the paper at L=28; the paper's L=32 sector (~77k, ~47GB dense workspace) is declared as an external-required rerun."
+          "reason": "Same sector as the paper at L=28; one dense float64 matrix for the paper's L=32 sector (~77k) is about 47GB before eigensolver workspace, beyond the current 40GB A100 path."
         }
       },
       "evidence": [
@@ -172,7 +172,7 @@
         "outputs/data/sector_scar_tower.csv",
         "outputs/figures/sector_scar_tower.png"
       ],
-      "remaining_gap": "L=32 zero-momentum inversion-even sector is memory-impossible locally (declared external_required in the check JSON); L=28 same-sector run is complete.",
+      "remaining_gap": "The L=28 same-sector run is complete. L=32 is not launched because one dense matrix alone is about 47GB before eigensolver workspace, beyond the current 40GB A100 path.",
       "evaluation": {
         "critical": true,
         "paper_level_role": "main_claim",
@@ -216,7 +216,7 @@
           "tier": "analytic",
           "essential": true,
           "status": "passed",
-          "evidence": "tests/test_1711_symmetry_sector.py",
+          "evidence": "tests/test_symmetry_sector.py",
           "claim": "Sector spectra are exact subsets of the full PXP spectrum and the sector Hamiltonian is symmetric (verified at L=8,10,12)."
         }
       ],
@@ -281,7 +281,7 @@
         "outputs/data/sector_level_spacings.csv",
         "outputs/figures/sector_level_statistics.png"
       ],
-      "remaining_gap": "Method gap closed (symmetry-resolved unfolding done); larger L for sharper statistics queues with the declared remote rerun.",
+      "remaining_gap": "Method gap closed at L=28 (symmetry-resolved unfolding done); L=32 remains outside the current 40GB A100 dense-memory boundary.",
       "evaluation": {
         "critical": false,
         "paper_level_role": "supporting",
