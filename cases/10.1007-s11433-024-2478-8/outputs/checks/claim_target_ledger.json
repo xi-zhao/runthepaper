@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "status": "passed_with_warnings",
+  "summary": {
+    "claims_total": 0,
+    "numeric_claims_total": 0,
+    "numeric_claims_without_targets": 0,
+    "targets_total": 2,
+    "targets_without_claim_refs": 2,
+    "claims_by_coverage_status": {},
+    "findings_total": 2,
+    "finding_counts": {
+      "error": 0,
+      "warning": 2,
+      "info": 0
+    }
+  },
+  "claims": [],
+  "targets": [
+    {
+      "target_id": "T001",
+      "figure_id": "FIG003",
+      "target_kind": "time_dynamics",
+      "status": "reproduced",
+      "claim_refs": [],
+      "formula_refs": [
+        "fourier_waveform",
+        "h_sector00",
+        "h_sector01",
+        "h_sector11",
+        "cz_gate_metric"
+      ],
+      "method_refs": [],
+      "parameter_match": "paper_exact",
+      "evidence_fields": [],
+      "acceptance_metrics": {},
+      "required_artifacts": [],
+      "dataset_count": 1,
+      "rendered_figure_count": 1,
+      "evidence_comparison_count": 1
+    },
+    {
+      "target_id": "T002",
+      "figure_id": "FIG003",
+      "target_kind": "time_dynamics",
+      "status": "reproduced",
+      "claim_refs": [],
+      "formula_refs": [
+        "fourier_waveform",
+        "h_sector00",
+        "h_sector01",
+        "h_sector11",
+        "cz_gate_metric"
+      ],
+      "method_refs": [],
+      "parameter_match": "paper_exact",
+      "evidence_fields": [],
+      "acceptance_metrics": {},
+      "required_artifacts": [],
+      "dataset_count": 1,
+      "rendered_figure_count": 1,
+      "evidence_comparison_count": 1
+    }
+  ],
+  "findings": [
+    {
+      "severity": "warning",
+      "code": "target_without_claim_ref",
+      "message": "Reproduction target is not linked to a paper claim.",
+      "claim_id": null,
+      "target_id": "T001"
+    },
+    {
+      "severity": "warning",
+      "code": "target_without_claim_ref",
+      "message": "Reproduction target is not linked to a paper claim.",
+      "claim_id": null,
+      "target_id": "T002"
+    }
+  ]
+}
