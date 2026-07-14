@@ -14,6 +14,7 @@ Reproduces Porter-Thomas distance, entropy, spectral-form-factor, OTOC, particip
 - [English reproduction note](note/reproduction-note.en.md)
 - [Code and run commands](code/README.md)
 - [Machine-readable scorecard](outputs/checks/similarity_scorecard.json)
+- [Derivation (equations)](docs/DERIVATION.md)
 - [Numerical methods](docs/NUMERICAL_METHODS.md)
 - [Lessons learned](docs/LESSONS_LEARNED.md)
 

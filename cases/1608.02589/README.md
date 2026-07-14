@@ -17,6 +17,7 @@ Reproduces subharmonic rigidity, level statistics, variance, long-range variance
 - [Code and run commands](code/README.md)
 - [Machine-readable scorecard](outputs/checks/similarity_scorecard.json)
 - [Machine-readable completion boundary](outputs/checks/completion_assessment.json)
+- [Derivation (equations)](docs/DERIVATION.md)
 - [Numerical methods](docs/NUMERICAL_METHODS.md)
 - [Lessons learned](docs/LESSONS_LEARNED.md)
 
