@@ -22,24 +22,45 @@ Y. Sun, *Sci. China-Phys. Mech. Astron.* **67**, 120311 (2024). DOI
   做了交叉验证（一致到 < 1e-8）。
 - **图 4（双光子 CZ）。** 建立 eq.(a5)/(a6) 的完整三能级阶梯模型（`|1>,|e>,|r>`）。
   hybrid 协议布居吻合到 < 0.4% RMS。诚实说明：全模型门误差为 `1.3e-3`，高于论文的
-  < 1e-4（见 §5）。
+  < 1e-4（见 §6）。
 - **图 5（多普勒不敏感双脉冲）。** 单个脉冲给 π/2，双脉冲合成完整 CZ（条件相位
   `0.99988π`）。第二个脉冲把多普勒频移符号翻转后，门末端的多普勒相位偏差被压制
   **~2600 倍（|00>）到 ~32000 倍（|11>）**——即论文的一阶抵消。
 - **图 7（鲁棒性）。** 在 ±1% 缓冲/qubit 幅度比例上的二维门误差色标图，重现了论文的
   结构（主对角暗谷、反对角亮角）及"需要 ~1% 控制精度"的结论。
 
-## 3. 直觉与方法
+## 3. 原图 vs 复现
 
-每个被驱动的原子是二能级（单光子）或三能级阶梯（双光子）；缓冲-qubit 的 Rydberg 对
-通过强度 `B = 2π·50 MHz` 的 Förster 共振 `|r r'> <-> |q q'>` 相互作用，且只有相邻对
-（控制-缓冲、缓冲-目标）相互作用。我们对每个扇区用 SciPy `DOP853` 积分含时薛定谔方程
-（高精度容差，模守恒到 ~1e-14），计算 CZ 条件相位与 Pedersen 平均门误差（对单比特 Z
-优化）。波形就是论文自己的截断 Fourier 级数与公开系数。
+左列 = 论文图的**最小引用**（Y. Sun, Sci. China-Phys. Mech. Astron. **67**, 120311
+(2024), [DOI](https://doi.org/10.1007/s11433-024-2478-8)）；右列 = 本案例独立生成。
+这些面板验证的是**物理结构与关键数值特征**，**不是**作者数据级或逐点等价。
 
-复现是**自证伪**的：错误的哈密顿量不可能用论文自己的系数凑出 < 1e-4 的门误差。
+![Fig. 3 单光子 CZ：论文 vs 复现](../docs/comparisons/fig3_singlephoton_comparison.png)
 
-## 4. 如何运行
+![Fig. 4 双光子 CZ：论文 vs 复现](../docs/comparisons/fig4_twophoton_comparison.png)
+
+![Fig. 5 双脉冲多普勒：论文 vs 复现](../docs/comparisons/fig5_dualpulse_comparison.png)
+
+![Fig. 7 鲁棒性色标图：论文 vs 复现](../docs/comparisons/fig7_robustness_comparison.png)
+
+## 4. 推导（关键方程）
+
+完整逐步推导（含每个矩阵）见 **[docs/DERIVATION_TRACE.md](../docs/DERIVATION_TRACE.md)**。
+核心（$\hbar=1$，旋转坐标系，$\tau=0.25\,\mu s$，$B=2\pi\cdot50$ MHz）：
+
+- **波形** — 每个 Rabi/失谐都是截断 Fourier 级数
+  $f(t)=\frac{2\pi}{2N+1}\big(a_0+2\sum_{n\ge1}a_n\cos\frac{2\pi n t}{\tau}\big)$ MHz。
+- **单原子驱动** — $H=\frac{\Omega}{2}(|1\rangle\langle r|+\mathrm{h.c.})+\Delta|r\rangle\langle r|$。
+- **Förster 相互作用** — 每个相邻（缓冲,qubit）对上 $H_{\rm int}=B(|rr'\rangle\langle qq'|+\mathrm{h.c.})+\delta_q|qq'\rangle\langle qq'|$。
+- **扇区** — $|00\rangle$：$2\times2$（a1）；$|01\rangle$：$5\times5$（a3）；$|11\rangle$：$9\times9$ 乘积基（a4），并与论文逐字的 Morris–Shore 6 态形式（$\langle111|H|B_1\rangle=\frac{\sqrt2}{2}\Omega_2$ 等）交叉验证到 $<10^{-8}$。
+- **CZ 度量** — 条件相位 $\Phi=\varphi_{11}+\varphi_{00}-2\varphi_{01}$；Pedersen 平均门误差 $1-F_{\rm avg}$，对单比特 $Z$ 优化。
+- **双光子（a5/a6）** — 把每个 $|1\rangle\!\leftrightarrow\!|r\rangle$ 换成阶梯 $\frac{\Omega_p}{2}|1\rangle\langle e|+\frac{\Omega_S}{2}|e\rangle\langle r|+\mathrm{h.c.}+\Delta_0|e\rangle\langle e|+\delta|r\rangle\langle r|$，$\Delta_0=2\pi\cdot5$ GHz。
+- **双脉冲** — 两个脉冲 $\pm kv$ 符号翻转，$\varphi(+kv)+\varphi(-kv)=2\varphi(0)+\mathcal{O}(v^2)$：一阶多普勒抵消。
+
+每个扇区用 SciPy `DOP853` 积分 $i\dot\psi=H(t)\psi$（模守恒 ~1e-14）。复现是**自证伪**的：
+错误的哈密顿量不可能用论文自己的系数凑出 < 1e-4 的门误差。
+
+## 5. 如何运行
 
 见 [../code/README.md](../code/README.md)。案例根目录下：
 
@@ -53,7 +74,7 @@ python -m pytest code/tests/ -q
 
 全部在笔记本 CPU 上数秒到几分钟完成，无需 GPU 或集群。
 
-## 5. 复现边界——请务必阅读
+## 6. 复现边界——请务必阅读
 
 - 我们得到的**双光子**门误差（`1.3e-3` hybrid、`3.7e-3` amplitude）是**忠实的完整
   三能级模型**在论文波形下的诚实值。我们验证了绝热消除的有效模型更差（`1.9e-2`），

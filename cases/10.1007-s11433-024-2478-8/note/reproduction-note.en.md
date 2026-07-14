@@ -29,7 +29,7 @@ reconstructed three-body Hamiltonian:
 - **Fig. 4 (two-photon CZ).** Built the full three-level (`|1>,|e>,|r>`) ladder
   model of eqs. (a5)/(a6). The hybrid protocol's populations match to < 0.4%
   RMS. Reported honestly: the full-model gate error is `1.3e-3`, above the
-  paper's < 1e-4 (see §5).
+  paper's < 1e-4 (see §6).
 - **Fig. 5 (Doppler-insensitive dual pulse).** Each pulse imparts π/2, so the
   dual pulse composes a full CZ (conditional phase `0.99988π`). Applying the
   second pulse with the Doppler shift sign flipped suppresses the end-of-gate
@@ -40,21 +40,41 @@ reconstructed three-body Hamiltonian:
   diagonal, bright anti-diagonal corners) and its conclusion that ~1% control
   precision is needed.
 
-## 3. Intuition and method
+## 3. Original vs reproduction
 
-Each driven atom is a two-level (single-photon) or three-level ladder
-(two-photon) system; the buffer–qubit Rydberg pair interacts by a Förster
-resonance `|r r'> <-> |q q'>` of strength `B = 2π·50 MHz`, and only adjacent
-(control–buffer, buffer–target) pairs interact. We integrate the time-dependent
-Schrödinger equation for each sector with SciPy `DOP853` (tight tolerances; norm
-conserved to ~1e-14) and evaluate the CZ conditional phase and Pedersen average
-gate error, optimised over single-qubit Z. The waveforms are the paper's own
-truncated Fourier series with the published coefficients.
+Left column = a limited excerpt of the paper figure (Y. Sun, Sci. China-Phys.
+Mech. Astron. **67**, 120311 (2024), [DOI](https://doi.org/10.1007/s11433-024-2478-8));
+right column = generated independently by this case. These panels validate
+physical structure and key numerical features, **not** author-data-level or
+point-for-point equivalence.
 
-The reproduction is **self-validating**: an incorrect Hamiltonian could not hit
-the paper's < 1e-4 gate error from the paper's own coefficients.
+![Fig. 3 single-photon CZ: paper vs reproduction](../docs/comparisons/fig3_singlephoton_comparison.png)
 
-## 4. How to run
+![Fig. 4 two-photon CZ: paper vs reproduction](../docs/comparisons/fig4_twophoton_comparison.png)
+
+![Fig. 5 dual-pulse Doppler: paper vs reproduction](../docs/comparisons/fig5_dualpulse_comparison.png)
+
+![Fig. 7 robustness colormap: paper vs reproduction](../docs/comparisons/fig7_robustness_comparison.png)
+
+## 4. Derivation (key equations)
+
+Full step-by-step derivation with every matrix: **[docs/DERIVATION_TRACE.md](../docs/DERIVATION_TRACE.md)**.
+The essentials ($\hbar=1$, rotating frame, $\tau=0.25\,\mu s$, $B=2\pi\cdot50$ MHz):
+
+- **Waveforms** — every Rabi/detuning is a truncated Fourier series
+  $f(t)=\frac{2\pi}{2N+1}\big(a_0+2\sum_{n\ge1}a_n\cos\frac{2\pi n t}{\tau}\big)$ MHz.
+- **Single-atom drive** — $H=\frac{\Omega}{2}(|1\rangle\langle r|+\mathrm{h.c.})+\Delta|r\rangle\langle r|$.
+- **Förster interaction** — $H_{\rm int}=B(|rr'\rangle\langle qq'|+\mathrm{h.c.})+\delta_q|qq'\rangle\langle qq'|$ on each adjacent (buffer, qubit) pair.
+- **Sectors** — $|00\rangle$: $2\times2$ (a1); $|01\rangle$: $5\times5$ (a3); $|11\rangle$: $9\times9$ product basis (a4), cross-checked against the paper's verbatim Morris–Shore 6-state form ($\langle111|H|B_1\rangle=\frac{\sqrt2}{2}\Omega_2$, …) to $<10^{-8}$.
+- **CZ metric** — conditional phase $\Phi=\varphi_{11}+\varphi_{00}-2\varphi_{01}$; Pedersen average gate error $1-F_{\rm avg}$ optimised over single-qubit $Z$.
+- **Two-photon (a5/a6)** — replace each $|1\rangle\!\leftrightarrow\!|r\rangle$ by a ladder $\frac{\Omega_p}{2}|1\rangle\langle e|+\frac{\Omega_S}{2}|e\rangle\langle r|+\mathrm{h.c.}+\Delta_0|e\rangle\langle e|+\delta|r\rangle\langle r|$, $\Delta_0=2\pi\cdot5$ GHz.
+- **Dual pulse** — two pulses with $\pm kv$ flipped give $\varphi(+kv)+\varphi(-kv)=2\varphi(0)+\mathcal{O}(v^2)$: first-order Doppler cancels.
+
+We integrate $i\dot\psi=H(t)\psi$ per sector with SciPy `DOP853` (norm conserved
+to ~1e-14). The reproduction is **self-validating**: a wrong Hamiltonian could not
+hit the paper's < 1e-4 gate error from the paper's own coefficients.
+
+## 5. How to run
 
 See [../code/README.md](../code/README.md). In short, from the case root:
 
@@ -69,7 +89,7 @@ python -m pytest code/tests/ -q
 Everything runs on a laptop CPU in seconds to a few minutes. No GPU or cluster is
 needed.
 
-## 5. Reproduction boundary — read this
+## 6. Reproduction boundary — read this
 
 - The **two-photon** gate error we obtain (`1.3e-3` hybrid, `3.7e-3` amplitude)
   is the honest value of the *faithful full three-level model* with the paper's

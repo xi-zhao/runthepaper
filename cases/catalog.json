@@ -437,7 +437,26 @@
         "run_fig7.py"
       ],
       "full_run_scripts": [],
-      "full_run_note": "All figures run on a laptop CPU (Fig. 3 in seconds; Fig. 4/5 ~1 min; Fig. 7 a few min across cores). No GPU or cluster needed."
+      "full_run_note": "All figures run on a laptop CPU (Fig. 3 in seconds; Fig. 4/5 ~1 min; Fig. 7 a few min across cores). No GPU or cluster needed.",
+      "comparison_attribution": "Y. Sun",
+      "comparison_results": [
+        {
+          "paper_item": "Fig. 3 (single-photon CZ)",
+          "figure": "fig3_singlephoton_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 4 (two-photon CZ)",
+          "figure": "fig4_twophoton_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 5 (dual-pulse Doppler)",
+          "figure": "fig5_dualpulse_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 7 (robustness colormap)",
+          "figure": "fig7_robustness_comparison.png"
+        }
+      ]
     }
   ]
 }
