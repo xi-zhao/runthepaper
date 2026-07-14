@@ -10,6 +10,14 @@ import numpy as np
 WORKSPACE = Path(__file__).resolve().parents[2]
 DATA = WORKSPACE / "outputs" / "data"
 FIGURES = WORKSPACE / "outputs" / "figures"
+FEATURE_DIFFERENCE_REASON = (
+    "Difference reason: 18-qubit random-circuit feature check; the paper uses "
+    "a 53-qubit Sycamore tensor-network contraction."
+)
+TABLE_DIFFERENCE_REASON = (
+    "Difference reason: paper-reported estimates only; the 53-qubit contraction "
+    "was not rerun (reported: 149 days on one A100)."
+)
 
 
 def read_probability_csv(path: Path) -> tuple[np.ndarray, np.ndarray]:
@@ -62,9 +70,11 @@ def plot_postselection(ax: plt.Axes, fractions: np.ndarray, xeb: np.ndarray, tit
 def plot_depth(label: str, title: str, output_name: str) -> None:
     scaled, _ = read_probability_csv(DATA / f"{label}_big_batch_probabilities.csv")
     fractions, xeb = read_curve_csv(DATA / f"{label}_postselection_xeb.csv")
-    fig, axes = plt.subplots(1, 2, figsize=(10.5, 4.2), constrained_layout=True)
+    fig, axes = plt.subplots(1, 2, figsize=(10.5, 4.6))
     plot_histogram(axes[0], scaled, 8.0, f"{title}: batch probabilities")
     plot_postselection(axes[1], fractions, xeb, f"{title}: post-selected XEB")
+    fig.tight_layout(rect=(0, 0.14, 1, 1))
+    fig.text(0.5, 0.025, FEATURE_DIFFERENCE_REASON, ha="center", va="bottom", fontsize=8.2)
     fig.savefig(FIGURES / output_name, dpi=220)
     plt.close(fig)
 
@@ -72,9 +82,11 @@ def plot_depth(label: str, title: str, output_name: str) -> None:
 def plot_conditional() -> None:
     _, cond20 = read_probability_csv(DATA / "depth20_big_batch_probabilities.csv")
     _, cond14 = read_probability_csv(DATA / "depth14_big_batch_probabilities.csv")
-    fig, axes = plt.subplots(1, 2, figsize=(10.5, 4.2), constrained_layout=True)
+    fig, axes = plt.subplots(1, 2, figsize=(10.5, 4.6))
     plot_histogram(axes[0], cond20, 8.0, "depth 20: conditional probabilities")
     plot_histogram(axes[1], cond14, 8.0, "depth 14: conditional probabilities")
+    fig.tight_layout(rect=(0, 0.14, 1, 1))
+    fig.text(0.5, 0.025, FEATURE_DIFFERENCE_REASON, ha="center", va="bottom", fontsize=8.2)
     fig.savefig(FIGURES / "fig6_conditional_probability_reproduction.png", dpi=220)
     plt.close(fig)
 
@@ -91,7 +103,7 @@ def plot_table_summary() -> None:
                 bitstrings.append(float(row["bitstrings"]))
                 time_complexity.append(float(row["time_complexity"]))
 
-    fig, axes = plt.subplots(1, 2, figsize=(9.8, 4.0), constrained_layout=True)
+    fig, axes = plt.subplots(1, 2, figsize=(9.8, 4.5))
     axes[0].bar(methods, bitstrings, color=["#8da0cb", "#66c2a5", "#fc8d62"])
     axes[0].set_yscale("log")
     axes[0].set_ylabel("# bitstrings")
@@ -103,6 +115,8 @@ def plot_table_summary() -> None:
     axes[1].set_ylabel("time complexity")
     axes[1].set_title("Reported contraction cost")
     axes[1].grid(axis="y", alpha=0.2)
+    fig.tight_layout(rect=(0, 0.16, 1, 1))
+    fig.text(0.5, 0.025, TABLE_DIFFERENCE_REASON, ha="center", va="bottom", fontsize=8.0)
     fig.savefig(FIGURES / "table2_method_comparison_reproduction.png", dpi=220)
     plt.close(fig)
 

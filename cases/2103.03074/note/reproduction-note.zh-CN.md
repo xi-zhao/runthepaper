@@ -72,7 +72,7 @@ P(s2 | s1) = P(s1, s2) / sum_s2 P(s1, s2)
 
 ![Generated Fig. 2 reproduction](../outputs/figures/fig2_depth20_reproduction.png)
 
-一致性说明：左图的蓝色直方图沿红色指数线下降，说明 batch 概率满足 Porter-Thomas 特征。右图的 XEB 随选择比例增加而下降，100% bitstring 时回到接近 0。检查文件里，完整 batch 的 XEB 是 `0.00494`，和论文中“完整固定子空间接近 0”的特征一致。
+差异原因：图中数据来自 18-qubit 随机电路的机制检查；论文结果来自 53-qubit Sycamore 张量网络收缩。该原因也直接写在图脚。
 
 ## Fig. 5: 14-cycle 概率分布和 post-selection XEB
 
@@ -84,7 +84,7 @@ P(s2 | s1) = P(s1, s2) / sum_s2 P(s1, s2)
 
 ![Generated Fig. 5 reproduction](../outputs/figures/fig5_depth14_reproduction.png)
 
-一致性说明：生成图同样给出指数型概率分布和单调下降的 post-selection XEB 曲线。完整 batch 的 XEB 是 `-0.00252`，与论文中 `-0.00687` 同量级，都表达了“完整子空间本身不提高 XEB，但高概率筛选会提高 XEB”这个结论。
+差异原因：图中数据来自 18-qubit 随机电路的机制检查，不是原论文 53-qubit depth-14 amplitude 的重算。
 
 ## Fig. 6: 条件概率分布
 
@@ -96,7 +96,7 @@ P(s2 | s1) = P(s1, s2) / sum_s2 P(s1, s2)
 
 ![Generated conditional probability reproduction](../outputs/figures/fig6_conditional_probability_reproduction.png)
 
-一致性说明：两个深度下，条件概率都已经归一化，直方图也沿红色指数线下降。检查文件确认归一化误差在数值精度内。
+差异原因：条件概率公式与归一化已在 18 qubit 上验证，但没有对原始 53-qubit 电路执行 tensor contraction。
 
 ## Table II: 方法对比
 
@@ -104,13 +104,13 @@ P(s2 | s1) = P(s1, s2) / sum_s2 P(s1, s2)
 
 ![Generated table comparison](../outputs/figures/table2_method_comparison_reproduction.png)
 
-一致性说明：这部分复现的是论文表格里的数值关系，不是重新跑 53 比特大规模收缩。它清楚展示了论文的核心 claim：作者方法一次拿到的 bitstring 数量远高于小 batch 方法，同时报告的时间复杂度低于 Alibaba 方法。
+差异原因：这张图只可视化论文报告的复杂度和 batch size，不是硬件实测复现；表中作者方案本身估算为单 A100 运行 149 天。
 
 ## 当前结论
 
 这个 case 已经完成了论文核心数值特征的本地复现。公式链、概率提取、XEB、条件概率和 Porter-Thomas 检查都能闭环。
 
-还没有完成的是 53 比特 Sycamore 原始全尺寸概率的精确重算。这需要原始电路数据、收缩阶、切片配置和多 GPU 资源。下一步如果要做精确复现，应该把作者释放的概率数据当作验证集，把电路文件当作 benchmark corpus，再逐步替换本地小规模模拟器。
+还没有完成的是 53 比特 Sycamore 原始全尺寸概率的精确重算。直接 complex128 statevector 需要 `2^53×16 bytes = 128 PiB`；张量网络方案按论文表格仍约 `4.51×10^18` 次 head contraction、单 A100 149 天。当前 public case 也没有把原始电路、contraction path、切片配置和验证 amplitudes 打成可运行资产包，因此本轮停止，不启动大规模任务。
 
 ## 还有哪些问题
 
@@ -125,11 +125,11 @@ P(s2 | s1) = P(s1, s2) / sum_s2 P(s1, s2)
 
 ## 推荐算力
 
-如果目标是完整复现 53 qubit 结果，推荐：
+如果未来另立多 GPU 计算项目，需要：
 
 - 原始 Sycamore 电路文件、bitstring 列表和作者概率输出作为验证集；
 - 多 GPU 环境，至少 A100 级别 GPU，最好有多卡和批处理队列；
 - 高内存 CPU/GPU 节点，用于保存 contraction path、切片任务和中间张量；
 - 任务组织上按 bitstring batch 或 tensor-network slice 分发，保留可恢复的中间结果。
 
-当前本地机器适合继续做方法验证和小规模统计特征复现，不适合直接重跑 53 qubit 完整实验。
+当前 case 只保留方法验证和小规模统计特征复现。停止原因与资源数字见 `../outputs/checks/completion_assessment.json`；缺失结果不会由 18-qubit proxy 冒充。

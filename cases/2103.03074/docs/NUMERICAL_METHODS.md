@@ -71,3 +71,12 @@ The local simulation checks the same features:
 - `outputs/checks/depth20_feature_check.json`
 - `outputs/checks/depth14_feature_check.json`
 - `outputs/checks/table_reproduction_check.json`
+- `outputs/checks/completion_assessment.json`
+
+## Stop Boundary
+
+The 53-qubit direct statevector would require 128 PiB in complex128. The paper's
+tensor-network table reports `4.51e18` head-contraction operations and 149 days
+on one A100. Because the runnable circuit, contraction-path, slicing, and
+validation-amplitude bundle is also absent from this public case, the full
+contraction is not launched under the current resource policy.

@@ -95,7 +95,7 @@
           {
             "panel_id": "single",
             "status": "reproduced",
-            "note": "XEB/postselection content generated (53-qubit scale via parameter axis)",
+            "note": "XEB/postselection content generated from an 18-qubit feature check; no 53-qubit scale claim",
             "evidence": "outputs/checks/depth20_feature_check.json"
           }
         ],

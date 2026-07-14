@@ -30,11 +30,7 @@ python3 cases/2103.03074/code/scripts/run_reproduction.py
 python3 cases/2103.03074/code/scripts/plot_reproduction.py
 ```
 
-The refreshed harness flow also records local compute and planned large-scale targets:
-
-- `COMPUTE_BUDGET.md`
-- `PLANNED_LARGE_SCALE_RUNS.md`
-- `config/table3_53q_recommended.yaml`
+The machine-readable stop decision is recorded in `../outputs/checks/completion_assessment.json`.
 
 ## Code
 
@@ -65,4 +61,6 @@ The local reproduction shows that the mathematical mechanism in the paper is wor
 
 The remaining gap is scale. The original claim relies on a carefully optimized 53-qubit tensor-network contraction. This local case validates the formula and observable behavior, but it does not validate the original large-scale engineering result.
 
-The exact 53-qubit targets are now classified as `memory_impossible` for direct local simulation and `external_required` for tensor-network rerun.
+The exact 53-qubit targets are classified as `memory_impossible` for direct statevector simulation and `external_required` for tensor-network rerun. A complex128 statevector would require 128 PiB; the paper-reported tensor-network estimate is 149 days on one A100. The current case also lacks a runnable circuit/path/slicing/validation asset bundle, so no large campaign is launched.
+
+Difference reason shown on the figures: generated probability panels use an 18-qubit random-circuit feature check, while the table panel contains paper-reported estimates rather than a measured 53-qubit rerun.

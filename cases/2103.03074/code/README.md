@@ -13,4 +13,4 @@ python scripts/plot_reproduction.py
 
 Generated data files are written to `../outputs/data/`, figures to `../outputs/figures/`, and machine-readable checks to `../outputs/checks/`.
 
-Boundary: Exact 53-qubit tensor contractions and paper-scale amplitude recomputation require external compute.
+Boundary: do not launch the 53-qubit contraction as a normal case run. The paper table estimates 149 days on one A100, and the public case does not include the full circuit/path/slicing asset bundle. The checked-in scripts reproduce the 18-qubit statistical mechanism only.
