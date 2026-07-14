@@ -162,6 +162,8 @@ def render_case_readme(case: dict[str, Any], case_dir: Path) -> str:
         lines.append("- [Machine-readable completion boundary](outputs/checks/completion_assessment.json)")
     if (case_dir / "note" / "reproduction-note.zh-CN.pdf").is_file():
         lines.append("- [中文复现 Note PDF](note/reproduction-note.zh-CN.pdf)")
+    if (case_dir / "docs" / "DERIVATION.md").is_file():
+        lines.append("- [Derivation (equations)](docs/DERIVATION.md)")
     lines.extend(
         [
             "- [Numerical methods](docs/NUMERICAL_METHODS.md)",

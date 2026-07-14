@@ -18,6 +18,7 @@ Reproduces Figs. 3–5 with an L=1000, 3200-realization spectral ensemble, Lyapu
 - [Machine-readable scorecard](outputs/checks/similarity_scorecard.json)
 - [Machine-readable completion boundary](outputs/checks/completion_assessment.json)
 - [中文复现 Note PDF](note/reproduction-note.zh-CN.pdf)
+- [Derivation (equations)](docs/DERIVATION.md)
 - [Numerical methods](docs/NUMERICAL_METHODS.md)
 - [Lessons learned](docs/LESSONS_LEARNED.md)
 

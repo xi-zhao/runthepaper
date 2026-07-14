@@ -21,6 +21,17 @@ are necessary for validation. Use the minimum source excerpt, label both sides,
 cite the official paper, keep the standalone source panel out of the repository,
 and state that visual agreement is not author-data-level equivalence.
 
+Every formula/theory case must ship, so readers can follow the science:
+
+- an **equation-level derivation** at `docs/DERIVATION.md` — the actual equations
+  the reproduction depends on, in the order understand → derive → numericalize.
+  It is generated from the reproduction's equation cards, not hand-written after
+  the fact, and the numerical code must follow the derivation, not precede it;
+- **source-vs-reproduction comparison panels** under `docs/comparisons/` for the
+  reproduced figures (see the limited-excerpt rules above).
+
+Algorithm/benchmark cases substitute a method/algorithm trace for the derivation.
+
 For each case, keep the public boundary clear:
 
 - generated data belongs in `outputs/data/`;
