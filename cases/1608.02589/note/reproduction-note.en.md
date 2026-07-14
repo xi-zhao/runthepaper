@@ -1,6 +1,6 @@
 # Reproduction Report
 
-Similarity score: `73.56/100` (`numerical_feature_reproduction`).
+Similarity score: `73.56/100` (`numerical_feature_reproduction`). Public status: `medium_scale_partial_reproduction`.
 
 ## Completed
 
@@ -12,6 +12,7 @@ Similarity score: `73.56/100` (`numerical_feature_reproduction`).
 - Reproduced the main DTC rigidity feature at `L=14`.
 - Generated level-statistics, variance, long-range variance, and corrected mutual-information outputs.
 - Added an observable sanity check for endpoint mutual information.
+- Completed a mixed CuPy/NumPy medium campaign for Fig. 3b-d: 168 jobs, 55 paper-parameter points, and `L=8,10,12`.
 - Wrote machine-readable checks and passed the harness audit.
 
 ## Commands
@@ -21,6 +22,7 @@ python3 cases/1608.02589/code/scripts/run_reproduction.py
 python3 cases/1608.02589/code/scripts/plot_reproduction.py
 python3 cases/1608.02589/code/scripts/run_reproduction_iteration2.py
 python3 cases/1608.02589/code/scripts/plot_reproduction_iteration2.py
+python3 cases/1608.02589/code/scripts/extract_fig3_scaling_collapse.py
 ```
 
 ## Second Iteration Results
@@ -32,7 +34,7 @@ python3 cases/1608.02589/code/scripts/plot_reproduction_iteration2.py
 | Fig. 2a | Same level-statistics observable generated through `L=10`; crossing remains sample-limited. |
 | Fig. 2b | Feature reproduced: variance peak appears and moves with interaction strength. |
 | Fig. 3a | Feature reproduced after correcting endpoint mutual information; `epsilon=0` gives `log 2`, large detuning drops near zero. |
-| Fig. 3b-d | Not fully reproduced locally; concrete large-ED rerun parameters are recorded in `FIG3_LARGE_ED_PLAN.md`. |
+| Fig. 3b-d | Medium campaign completed at `L=8,10,12`; strong-coupling collapses are tight, but the weak-coupling panel and fitted critical exponents have not converged. |
 | Fig. 4 | Feature reproduced at `L=10` for the long-range `alpha=1.5` model. |
 
 ## Evidence
@@ -42,11 +44,11 @@ python3 cases/1608.02589/code/scripts/plot_reproduction_iteration2.py
 - `../outputs/figures/iteration2_fig1_phase_boundary_proxy.png`
 - `../outputs/figures/iteration2_fig2_level_statistics_variance_L10.png`
 - `../outputs/figures/iteration2_fig3_mutual_information_corrected.png`
+- `../outputs/figures/fig3_scaling_collapse.png`
+- `../outputs/checks/completion_assessment.json`
 - `../outputs/figures/iteration2_fig4_long_range_variance_L10.png`
-- `FIG3_LARGE_ED_PLAN.md`
-- `PLANNED_LARGE_SCALE_RUNS.md`
-- `config/fig3_large_ed_recommended.yaml`
-
 ## Scope
 
-This is now a strong feature-level reproduction of the main numerical physics. It is still not a full PRL-scale rerun, because the paper uses much larger disorder averaging and larger exact-diagonalization sizes for the phase diagram and critical scaling.
+This is a medium-scale partial reproduction of the main numerical physics. It is still not a full PRL-scale rerun because the paper-scale exponent fit requires `L=14`, optional `L=16,18` checks, and much larger disorder averaging. The final campaign was not launched under the stop-at-resource-boundary policy.
+
+Difference reason shown on the Fig. 3 comparison: the medium campaign stops at `L=12` and uses reduced disorder sampling; missing sizes and statistics prevent paper-level critical-exponent agreement.

@@ -2,17 +2,17 @@
 
 ## 一句话结果
 
-这个 case 已经跑通了一篇离散时间晶体论文的主要数值链路：从 Floquet 公式出发，写出可执行模型，生成结构化数据，再把核心物理特征画出来。第二轮迭代后，Fig. 1、Fig. 2、Fig. 3、Fig. 4 的主要数值特征都已经能在本地复现；临界指数和原文级别的大规模 disorder 平均仍然不在本地完成范围内。
+这个 case 已经跑通了一篇离散时间晶体论文的主要数值链路：从 Floquet 公式出发，写出可执行模型，生成结构化数据，再把核心物理特征画出来。除本地小规模验证外，Fig. 3b–d 还完成了一次 A100/CPU 混合的中等规模 campaign；论文级临界指数与 disorder 统计仍未完成。
 
 ## 相似度等级
 
-当前等级：**数值特征复现**。
+当前等级：**中等规模部分复现**。
 
-当前相似度分数：**71.22/100**。
+当前相似度分数：**73.56/100**。
 
 这个 case 已经体现了原论文的主要物理特征：相互作用系统的半频峰锁定在 `1/2`，自由自旋峰会随 pulse error 漂移，`Var(h)` 出现转变峰，endpoint mutual information 在小 `epsilon` 时接近 `log 2`、在大 `epsilon` 时下降，长程相互作用版本也出现方差峰。
 
-它还不是“完整复现”，因为原论文 Fig. 3b-d 的 scaling collapse、临界指数和大规模 disorder 平均没有在本地完成。本地结果不是失败；它已经展示了时间晶体的核心数值特征，但精度和统计规模还不足以复刻论文的临界指数图。
+它还不是“完整复现”。仓库中的 Fig. 3b–d scaling collapse 已由 `L=8,10,12`、168 个任务和 55 个论文参数点生成；强耦合面板的塌缩较紧，但弱耦合面板和临界指数尚未收敛。差异原因是缺少 `L=14`（以及可选的 `L=16,18`）和论文级 disorder 统计，不是这部分完全没有计算。
 
 ## 这篇文章在做什么
 
@@ -60,6 +60,8 @@ R(n) = <sigma_i^z(n) sigma_i^z(0)>
 
 第二轮把 Fig. 1 的主计算提升到 `L=14`，与原文 Fig. 1 caption 中的系统尺寸一致；Fig. 2 和 Fig. 4 提升到 `L=10`；Fig. 3 修正了 endpoint reduced density matrix 的轴顺序，并加入 `GHZ -> log 2` 的 sanity check。
 
+随后完成的 Fig. 3 medium campaign 使用 `L=8,10,12`，将 CuPy 和 NumPy 结果汇总为 55 个参数点。最终 campaign 需要 `L=14` 和每点最高 `10^4` 次 disorder 平均；按照“缺资源不硬跑”的原则，本轮没有启动。
+
 ## Fig. 1: 亚谐波响应的刚性
 
 原图展示：自由自旋的峰会随 pulse error 漂移；相互作用系统的峰锁在 `1/2`。
@@ -77,7 +79,7 @@ R(n) = <sigma_i^z(n) sigma_i^z(0)>
 
 ![Generated phase proxy](../outputs/figures/iteration2_fig1_phase_boundary_proxy.png)
 
-一致性说明：这个图只能作为本地边界估计，不等价于原文完整相图。它记录了方差峰随参数移动的趋势，但小样本下仍有波动，所以不把它标成精确相边界复现。
+差异原因：这个图只用 `Var(h)` 峰位置估计边界，没有复算原文完整相图所需的全部诊断量和大规模 disorder 统计。
 
 ## Fig. 2: level statistics 和峰方差
 
@@ -88,7 +90,7 @@ R(n) = <sigma_i^z(n) sigma_i^z(0)>
 
 ![Generated Fig. 2](../outputs/figures/iteration2_fig2_level_statistics_variance_L10.png)
 
-一致性说明：右图的 `Var(h)` 峰清楚出现，并在较强相互作用下移动到更大的 detuning 区域。左图已经加入 `L=10`，但 disorder 数量仍远少于原文，level-statistics crossing 只能作为局部特征参考。
+差异原因：最大尺寸只到 `L=10`，disorder 数量也少于原文，因此 level-statistics crossing 只作为局部特征参考。
 
 ## Fig. 3: mutual information flow
 
@@ -99,7 +101,13 @@ R(n) = <sigma_i^z(n) sigma_i^z(0)>
 
 ![Generated Fig. 3](../outputs/figures/iteration2_fig3_mutual_information_corrected.png)
 
-一致性说明：第二轮修正后，`epsilon=0` 时 endpoint mutual information 回到 `log 2`，大 detuning 时快速下降，和原文 Fig. 3a 的主要物理特征一致。原文 Fig. 3b-d 的 scaling collapse 和临界指数需要更大的系统尺寸与更多 disorder 平均；我们已经把推荐的大规模 ED 参数写入 `FIG3_LARGE_ED_PLAN.md` 和 `config/fig3_large_ed_recommended.yaml`，但本地 case 不声明完成这部分。
+差异原因：这张 finite-size-flow 图只使用本地较小尺寸；虽然 `epsilon=0` 的解析锚点 `log 2` 与大 detuning 衰减已经通过，但不足以拟合论文临界指数。
+
+中等规模 scaling collapse：
+
+![Generated Fig. 3 scaling collapse](../outputs/figures/fig3_scaling_collapse.png)
+
+差异原因：medium campaign 到 `L=12` 为止且 disorder 统计缩减；论文级指数拟合还需要 `L=14`、可选的 `L=16,18` 检查和更大的统计量。该原因也直接写在图脚，避免图片脱离 note 后被误读。
 
 ## Fig. 4: 长程相互作用下的 trapped-ion 版本
 
@@ -110,7 +118,7 @@ R(n) = <sigma_i^z(n) sigma_i^z(0)>
 
 ![Generated Fig. 4](../outputs/figures/iteration2_fig4_long_range_variance_L10.png)
 
-一致性说明：长程模型同样出现了明显的方差峰，说明 trapped-ion 版本中也能看到时间晶体熔化的数值信号。原图右上角的实验示意图不是数值图，因此不复现。
+差异原因：长程模型只计算到 `L=10` 且 disorder 统计缩减；原图的实验装置示意不是数值对象，因此不在复现范围内。
 
 ## 当前结论
 
@@ -123,7 +131,7 @@ R(n) = <sigma_i^z(n) sigma_i^z(0)>
 - endpoint mutual information 从 `log 2` 到接近 0 的 finite-size flow；
 - 长程相互作用模型中的方差峰。
 
-保留限制也很清楚：原文的大规模相图、Fig. 3 的 scaling collapse、临界指数和 `10^3-10^4` 级 disorder 平均还没有在本地重跑。
+保留限制也很清楚：原文的大规模相图和论文级临界指数尚未完成。Fig. 3 scaling collapse 已完成 medium campaign，但没有补齐 `L=14–18` 与最终 disorder 统计。
 
 ## 还有哪些问题
 
@@ -131,18 +139,18 @@ R(n) = <sigma_i^z(n) sigma_i^z(0)>
 
 - Fig. 1 的半频峰锁定已经非常清楚，`L=14` 的 interacting peak 锁定误差为 `0.0`，这一物理特征体现得很好。
 - Fig. 2 的 `Var(h)` 峰已经出现，但 level statistics 的 crossing 需要更多 disorder 样本和更大系统尺寸才接近原文。
-- Fig. 3a 的 mutual information flow 已经体现，`epsilon=0` 时接近 `log 2`，`epsilon=0.32` 时降到约 `0.143` 以下；但 Fig. 3b-d 的 scaling collapse 和临界指数还没有完成。
+- Fig. 3a 的 mutual information flow 已经体现；Fig. 3b–d 已生成 `L=8,10,12` scaling collapse，强耦合面板的相对 spread 为 `0.109/0.064`，但弱耦合面板和临界指数仍未收敛。
 - Fig. 4 的长程相互作用方差峰已经出现，但仍是本地小规模版本。
 
 没有出现“完全没有体现物理特征”的目标。当前主要问题是精度、采样和规模不够，不是物理机制跑错。
 
 ## 推荐算力
 
-如果要从当前“数值特征复现”推进到“完整复现”，推荐：
+如果未来有独立的大内存算力预算，要从当前结果推进到完整复现，需要：
 
 - 高内存 CPU 节点或集群队列，优先支持大量独立 disorder samples；
-- 对 Fig. 3b-d，至少按 `FIG3_LARGE_ED_PLAN.md` 运行 `L=8,10,12,14` 的 dense ED 批处理；
+- 对 Fig. 3b–d，运行 `L=8,10,12,14` 的 final profile，并补齐每点 `10000/10000/3000/1000` 次 disorder 平均；
 - 若要尝试 `L=16,18`，需要更高内存或优化 ED 方法，不能用当前本地 naive dense ED 强行跑；
 - 每个 `(J_z, L, epsilon)` 切片独立保存，方便断点续跑和后续 scaling collapse 拟合。
 
-当前本地机器适合验证物理特征，不适合独立完成论文级临界指数和 full scaling collapse。
+本轮停止在 medium campaign，不启动 final profile，也不用 proxy 冒充缺失结果。停止原因已经记录在 `outputs/checks/completion_assessment.json`。

@@ -180,7 +180,7 @@
         },
         "numeric_closeness": {
           "score": 24.0,
-          "reason": "GPU L=8/10/12 campaign (55 paper points, 1000 samples/point). 以论文自身 (eps_c,beta,nu) 塌缩:强耦合 3c/3d 三尺寸并到一条普适曲线 (relative spread 0.109/0.064);I_end(eps=0)=ln2 精确命中(误差 0);深尾→0。自数据反解临界指数复原 eps_c(3c/3d 差<0.03)与 nu 量级,beta 因 L<=12 系统低估;弱耦合 3b 峰区仍松(spread 0.45)。",
+          "reason": "CuPy/NumPy L=8/10/12 medium campaign (55 paper points; target samples 1000/1000/300 per point, with some merged points carrying additional samples). 以论文自身 (eps_c,beta,nu) 塌缩:强耦合 3c/3d 三尺寸并到一条普适曲线 (relative spread 0.109/0.064);I_end(eps=0)=ln2 精确命中(误差 0);深尾→0。自数据反解临界指数复原 eps_c(3c/3d 差<0.03)与 nu 量级,beta 因 L<=12 系统低估;弱耦合 3b 峰区仍松(spread 0.45)。",
           "max_score": 35.0
         },
         "paper_scope_coverage": {
@@ -190,13 +190,13 @@
         }
       },
       "score_cap": 80.0,
-      "cap_reason": "Scaling collapse 复现:强耦合 3c/3d 用论文自身指数并到普适曲线,I(eps=0)=ln2 精确;弱耦合 3b 边际、beta 在 L<=12 被低估。系统尺寸低于论文(未含 L=16/18),reduced_scale 参数上限 70 为诚实天花板。",
+      "cap_reason": "Scaling collapse 复现:强耦合 3c/3d 用论文自身指数并到普适曲线,I(eps=0)=ln2 精确;弱耦合 3b 边际、beta 在 L<=12 被低估。系统尺寸低于论文级拟合范围(未含 L=14 及可选 L=16/18),reduced_scale 参数上限 70 为诚实天花板。",
       "evidence": [
         "outputs/checks/iteration2_dtc_feature_checks.json",
         "outputs/checks/fig3_scaling_collapse.json",
         "outputs/checks/paper_exact_campaign_result.json"
       ],
-      "remaining_gap": "弱耦合 3b 峰区塌缩不紧、beta 低估,均源于 L<=12;需 L>=16 才能收紧(受稠密 Floquet 求解器内存限制)。",
+      "remaining_gap": "弱耦合 3b 峰区塌缩不紧、beta 低估，均受 L<=12 与 reduced disorder statistics 限制；需要补齐 L=14 和论文级统计，可选 L=16/18 还受稠密 Floquet 求解器内存限制。",
       "component_total": 77.0,
       "score": 70.0,
       "similarity_level": "numerical_feature_reproduction",

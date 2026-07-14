@@ -41,6 +41,11 @@ ROOT = Path(__file__).resolve().parents[2]
 DATA_CSV = ROOT / "outputs/data/fig3_large_ed_campaign.csv"
 FIGURE_PATH = ROOT / "outputs/figures/fig3_scaling_collapse.png"
 CHECK_PATH = ROOT / "outputs/checks/fig3_scaling_collapse.json"
+DIFFERENCE_REASON = (
+    "Difference reason: this medium campaign stops at L=12 and uses reduced "
+    "disorder sampling; the paper-scale exponent fit also needs L=14 "
+    "(with optional L=16/18 checks) and larger statistics."
+)
 
 # Paper Fig. 3 critical point + exponents per coupling (panel -> params).
 PAPER = {
@@ -200,7 +205,10 @@ def main() -> int:
                 "nu": round(abs(fitted["nu"] - params["nu"]), 4),
             },
         }
-    fig.tight_layout()
+    # Keep the qualification on the comparison figure itself so the image
+    # cannot be detached from its reproduction boundary in the note.
+    fig.tight_layout(rect=(0, 0.14, 1, 1))
+    fig.text(0.5, 0.025, DIFFERENCE_REASON, ha="center", va="bottom", fontsize=8.5)
     FIGURE_PATH.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(FIGURE_PATH, dpi=150)
     plt.close(fig)
@@ -236,6 +244,7 @@ def main() -> int:
         "analytic_anchor": anchor,
         "panels": report,
         "gate_flags": gate_flags,
+        "difference_reason": DIFFERENCE_REASON,
         "figure_path": "outputs/figures/fig3_scaling_collapse.png",
         "data": "outputs/data/fig3_large_ed_campaign.csv",
     }
