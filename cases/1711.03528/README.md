@@ -6,7 +6,7 @@ Published as: [Weak ergodicity breaking from quantum many-body scars](https://do
 
 Formal citation: Nature Physics 14, 745–749 (2018) · DOI `10.1038/s41567-018-0137-5` · Locator `745–749`
 
-Public status: **Reduced-scale feature reproduction** · Audit score: **72.50/100**
+Public status: **Symmetry-resolved partial reproduction** · Audit score: **72.50/100**
 
 Reproduces constrained Hilbert-space structure, scar overlaps, revivals, participation ratios, and symmetry-resolved level statistics.
 
@@ -16,6 +16,7 @@ Reproduces constrained Hilbert-space structure, scar overlaps, revivals, partici
 - [English reproduction note](note/reproduction-note.en.md)
 - [Code and run commands](code/README.md)
 - [Machine-readable scorecard](outputs/checks/similarity_scorecard.json)
+- [Machine-readable completion boundary](outputs/checks/completion_assessment.json)
 - [Numerical methods](docs/NUMERICAL_METHODS.md)
 - [Lessons learned](docs/LESSONS_LEARNED.md)
 
@@ -29,6 +30,7 @@ cd cases/1711.03528/code
 python scripts/run_reproduction.py
 python scripts/plot_reproduction.py
 python scripts/run_symmetry_resolved_sector.py
+python scripts/plot_symmetry_resolved_sector.py
 ```
 
 Generated files are kept under [data](outputs/data/), [figures](outputs/figures/), and [checks](outputs/checks/).
@@ -37,7 +39,7 @@ Generated files are kept under [data](outputs/data/), [figures](outputs/figures/
 
 This public case includes paper-derived code, generated data, generated figures, public validation checks, and explanatory notes. It does not redistribute the paper PDF, arXiv source archive, original figures, EPS paths, digitized source curves, source-derived point sets, or source-vs-generated composite panels.
 
-Remaining limitation: The full L=32 symmetry sector and thermodynamic-limit iTEBD calculations are not rerun.
+Remaining limitation: The paper's k=0, I=+1 sector is reproduced at L=28 (dimension 13201), including the 15-state scar tower. L=32 is not launched because one float64 dense matrix is already about 47 GB before eigensolver workspace on the current 40 GB A100 path; thermodynamic-limit iTEBD also remains unimplemented.
 
 Final-parameter rule: final public figures use the paper parameters when feasible. Any reduced-scale, subset, proxy, or blocked target must be labeled explicitly and cannot be presented as a complete reproduction.
 

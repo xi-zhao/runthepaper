@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "status": "completed_profile",
+  "paper_id": "1608.02589",
+  "target_id": "T003",
+  "target_label": "Fig. 3b-d endpoint mutual information scaling collapse",
+  "profile": "medium",
+  "sample_chunk_size": null,
+  "sample_chunk_sizes_by_l": {
+    "8": 500,
+    "10": 250,
+    "12": 100
+  },
+  "jobs_total": 168,
+  "jobs_completed": 168,
+  "paper_points_completed": 55,
+  "missing_job_indices": [],
+  "compute_backends_present": [
+    "cupy",
+    "numpy"
+  ],
+  "outputs": {
+    "data_csv": "outputs/data/fig3_large_ed_campaign.csv",
+    "result_json": "outputs/checks/paper_exact_campaign_result.json",
+    "quality_check": "outputs/checks/fig3_scaling_collapse.json"
+  },
+  "paper_parameter_scope": "medium staged run using reduced sample counts before the final paper-scale campaign",
+  "excluded_scope": [
+    "The final L=14 campaign and its paper-scale disorder statistics were not launched under the current resource policy.",
+    "The dense Floquet eigensolver path does not schedule the optional L=16 and L=18 checks; those need a separate memory-aware strategy."
+  ]
+}

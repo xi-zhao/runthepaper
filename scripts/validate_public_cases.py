@@ -185,8 +185,18 @@ def validate_case(case: dict[str, Any], errors: list[str]) -> None:
             errors.append(f"symlink is not allowed: {path.relative_to(ROOT)}")
         if any(part in FORBIDDEN_PATH_PARTS for part in relative.parts):
             errors.append(f"forbidden public path: {path.relative_to(ROOT)}")
-        if path.is_file() and (path.suffix.lower() in {".eps", ".pdf"} or path.name == "paper.pdf"):
+        if path.is_file() and (path.suffix.lower() == ".eps" or path.name == "paper.pdf"):
             errors.append(f"source publication asset is not allowed: {path.relative_to(ROOT)}")
+        if path.is_file() and path.suffix.lower() == ".pdf" and path.name != "paper.pdf":
+            is_derived_note = (
+                relative.parent == Path("note")
+                and path.name.startswith("reproduction-note")
+                and path.with_suffix(".md").is_file()
+            )
+            if not is_derived_note:
+                errors.append(f"source publication asset is not allowed: {path.relative_to(ROOT)}")
+            elif path.stat().st_size < 1024 or not path.read_bytes().startswith(b"%PDF-"):
+                errors.append(f"invalid derived note PDF: {path.relative_to(ROOT)}")
 
     for path in text_files(case_dir):
         text = path.read_text(encoding="utf-8", errors="replace")

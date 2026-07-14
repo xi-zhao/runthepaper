@@ -4,7 +4,7 @@
   "paper_id": "2512.23799",
   "status": "passed",
   "checks_status": "passed",
-  "summary": "Formula and method checks are useful, but the benchmark targets use a proxy model rather than the paper's exact Steane circuit and Stim/Cirq benchmark parameters.",
+  "summary": "T001/T002 use the reconstructed exact Steane circuit. Acceptance matches all 12 internally validated points; infidelity matches the trend and edge regimes with a declared 0.42-0.68x mid-range residual. Runtime remains proxy timing.",
   "targets": [
     {
       "target_id": "T001",
@@ -48,10 +48,10 @@
         "outputs/checks/steane_exact_benchmark.json",
         "internal digitized acceptance validation (not redistributed)",
         "internal digitized infidelity validation (not redistributed)",
-        "outputs/checks/steane_benchmark_digitization.json",
-        "outputs/figures/steane_exact_infidelity.png"
+        "outputs/checks/completion_assessment.json",
+        "outputs/figures/steane_exact_infidelity_comparison.png"
       ],
-      "remaining_gap": "known_residual: mid-range second-order damaging-pair count is ~half the source curve's under the reconstructed schedule; author code is not public. Hypotheses and next probes recorded in STEANE_EXACT_WIP.md.",
+      "remaining_gap": "known_residual: mid-range second-order damaging-pair count is ~half the source curve's under the reconstructed schedule; the author gate/idle schedule and code are not public.",
       "critical": true,
       "component_total": 75.0,
       "score": 75.0,
@@ -69,7 +69,7 @@
           "tier": "analytic",
           "essential": true,
           "status": "passed",
-          "evidence": "tests/test_2512_steane_exact.py",
+          "evidence": "tests/test_steane_exact.py",
           "claim": "The transcribed circuit's encoded state is a +1 eigenstate of logical H and of all six measured stabilizers, whose supports form a perfect Hamming check; the ideal decoder corrects every single-qubit Pauli exactly."
         },
         {
@@ -98,7 +98,7 @@
             "panel_id": "a",
             "status": "reproduced",
             "note": "exact-protocol infidelity curve; mid-range residual is the numeric axis",
-            "evidence": "outputs/figures/steane_exact_infidelity.png"
+            "evidence": "outputs/figures/steane_exact_infidelity_comparison.png"
           },
           {
             "panel_id": "b",
@@ -150,8 +150,8 @@
         "outputs/checks/steane_exact_benchmark.json",
         "internal digitized acceptance validation (not redistributed)",
         "internal digitized infidelity validation (not redistributed)",
-        "outputs/checks/steane_benchmark_digitization.json",
-        "outputs/figures/steane_exact_acceptance.png"
+        "outputs/checks/completion_assessment.json",
+        "outputs/figures/steane_exact_acceptance_comparison.png"
       ],
       "remaining_gap": "Panel (c) slice structure and panel (a) noise placement are reconstructed details validated by the acceptance verdict; author shot counts not fully matched.",
       "critical": true,
@@ -171,7 +171,7 @@
           "tier": "analytic",
           "essential": true,
           "status": "passed",
-          "evidence": "tests/test_2512_steane_exact.py",
+          "evidence": "tests/test_steane_exact.py",
           "claim": "The transcribed circuit's encoded state is a +1 eigenstate of logical H and of all six measured stabilizers, whose supports form a perfect Hamming check; the ideal decoder corrects every single-qubit Pauli exactly."
         },
         {
@@ -197,7 +197,7 @@
             "panel_id": "b",
             "status": "reproduced",
             "note": "12/12 acceptance points",
-            "evidence": "outputs/figures/steane_exact_acceptance.png"
+            "evidence": "outputs/figures/steane_exact_acceptance_comparison.png"
           }
         ],
         "panel_scope_cap": 15.0
@@ -309,7 +309,7 @@
         },
         "paper_scope_coverage": {
           "score": 10.0,
-          "reason": "The formula path behind the benchmark is covered, but the full Steane gadget is not implemented.",
+          "reason": "The formula path and reconstructed full Steane gadget are covered; this target remains a method gate rather than a separate paper figure.",
           "max_score": 15.0
         }
       },
@@ -335,7 +335,7 @@
         "outputs/data/sampling_scaling.csv",
         "outputs/figures/fig4_sampling_precision_reproduction.png"
       ],
-      "remaining_gap": "Use the formula gate as support, not as a substitute for exact benchmark rerun.",
+      "remaining_gap": "Use the formula gate as supporting evidence; T001/T002 are evaluated separately using the exact-circuit rerun.",
       "critical": false,
       "component_total": 84.0,
       "score": 84.0,

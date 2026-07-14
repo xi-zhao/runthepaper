@@ -13,4 +13,4 @@ python scripts/plot_reproduction.py
 
 Generated data files are written to `../outputs/data/`, figures to `../outputs/figures/`, and machine-readable checks to `../outputs/checks/`.
 
-Boundary: Exact 53-qubit tensor contractions and paper-scale amplitude recomputation require external compute.
+Boundary: The exact 53-qubit contraction is not launched: the paper reports 4.51e18 head-contraction operations and 149 days on one A100, while a direct complex128 statevector would require 128 PiB. The public case also lacks the original circuit, contraction path, slicing configuration, and validation-amplitude bundle.

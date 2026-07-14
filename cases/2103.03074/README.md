@@ -6,7 +6,7 @@ Published as: [Simulation of Quantum Circuits Using the Big-Batch Tensor Network
 
 Formal citation: Physical Review Letters 128, 030501 (2022) · DOI `10.1103/PhysRevLett.128.030501` · Locator `030501`
 
-Public status: **Reduced-scale feature reproduction** · Audit score: **70.00/100**
+Public status: **Compute-bounded feature reproduction** · Audit score: **70.00/100**
 
 Reproduces batch-probability, post-selection XEB, conditional-probability, and complexity-table features.
 
@@ -16,6 +16,7 @@ Reproduces batch-probability, post-selection XEB, conditional-probability, and c
 - [English reproduction note](note/reproduction-note.en.md)
 - [Code and run commands](code/README.md)
 - [Machine-readable scorecard](outputs/checks/similarity_scorecard.json)
+- [Machine-readable completion boundary](outputs/checks/completion_assessment.json)
 - [Numerical methods](docs/NUMERICAL_METHODS.md)
 - [Lessons learned](docs/LESSONS_LEARNED.md)
 
@@ -36,7 +37,7 @@ Generated files are kept under [data](outputs/data/), [figures](outputs/figures/
 
 This public case includes paper-derived code, generated data, generated figures, public validation checks, and explanatory notes. It does not redistribute the paper PDF, arXiv source archive, original figures, EPS paths, digitized source curves, source-derived point sets, or source-vs-generated composite panels.
 
-Remaining limitation: Exact 53-qubit tensor contractions and paper-scale amplitude recomputation require external compute.
+Remaining limitation: The exact 53-qubit contraction is not launched: the paper reports 4.51e18 head-contraction operations and 149 days on one A100, while a direct complex128 statevector would require 128 PiB. The public case also lacks the original circuit, contraction path, slicing configuration, and validation-amplitude bundle.
 
 Final-parameter rule: final public figures use the paper parameters when feasible. Any reduced-scale, subset, proxy, or blocked target must be labeled explicitly and cannot be presented as a complete reproduction.
 

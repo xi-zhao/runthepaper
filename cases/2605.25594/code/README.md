@@ -14,4 +14,4 @@ python scripts/run_fig11_phenomenological_model.py
 
 Generated data files are written to `../outputs/data/`, figures to `../outputs/figures/`, and machine-readable checks to `../outputs/checks/`.
 
-Boundary: Several exponent-level and paper-size targets remain compute-limited or only partially reproduced.
+Boundary: The paper's L=32-38 targets were not forced through the current dense eigensolver: L=32 hit a 32-bit workspace failure and L=38 exceeds the practical single-A100 memory path. The T and randomized-site n operator panels remain outside the completed subset and are not replaced by proxy data.

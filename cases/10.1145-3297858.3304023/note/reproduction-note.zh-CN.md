@@ -9,17 +9,17 @@
 - 核心算法机制：一致；
 - 小规模论文例子：精确一致；
 - 反向遍历和 decay 的关键特征：一致；
-- Table II 全表数值：部分一致，还没有达到逐行精确复现。
+- Table II 全表机制：26/26 行已运行；逐行最优值仍是部分一致。
 
 ## 相似度等级
 
 当前等级：**数值特征复现**。
 
-当前相似度分数：**61.71/100**。
+当前相似度分数：**68.29/100**。
 
 这篇 case 已经体现了 SABRE 论文里的核心算法特征：front layer 驱动的 SWAP 搜索、look-ahead cost、reverse traversal 改善初始映射，以及 decay 带来的门数/深度权衡。Fig. 3 的小例子达到了完整一致。
 
-还没有达到“完整复现”的部分是 Table II。Table II 要求对每一行 benchmark 复刻论文里的最优门数，这依赖随机初始映射、tie-breaking、尝试次数和 BKA baseline 等实现细节。我们已经把 Table II 的 26 个 benchmark 用原文表格参数全部跑完，并在 A100 远端机器上把每行随机尝试提高到 1000 次。`g_op` 精确匹配从 6/26 提升到 7/26 后不再继续提升，说明主要差距不是简单加时间，而是缺失的实现元信息。
+还没有达到“完整复现”的部分是 Table II 的逐行最优值。我们已经把 26 个 benchmark 用原文表格参数全部跑完，并在 A100 远端机器上把每行随机尝试提高到 1000 次。`g_op` 精确匹配从 6/26 提升到 7/26 后不再继续提升；按论文 best-of-5 协议评估时，20/26 行精确或落在随机种子分布区间内，其余 6 行都是本实现找到的结果更优，没有论文结果更优的行。剩余差距来自缺失的随机种子、tie-breaking 顺序和 BKA 后处理输入，而不是简单缺算力。
 
 这个 case 不是“没有体现算法特征”。它已经体现了核心机制，只是全表精确数字还没有达到原文级别。
 
@@ -92,6 +92,8 @@
 | 原文中的例子 | Agent 生成的运行轨迹 |
 ![Reproduced Fig. 3 trace](../outputs/figures/paper_swap_example_trace.png)
 
+**差距原因：** 无；门数、SWAP 数和深度与论文例子一致。
+
 **一致性结论：`exact_match`**
 
 这个目标用于检查算法的最小闭环：front layer 无法执行时，Agent 是否能插入正确的 SWAP，并继续完成后续门。
@@ -108,6 +110,8 @@
 
 | 原文中的 reverse traversal 机制 | Agent 生成的 QFT 风格 benchmark 结果 |
 ![Reverse traversal reproduction](../outputs/figures/core_benchmarks_qft.png)
+
+**差距原因：** 图中使用 QFT-6/8/10 检验同一 reverse-traversal 机制，不是论文完整 benchmark 组合。
 
 **一致性结论：`feature_match`**
 
@@ -134,6 +138,8 @@
 | 原文中的 trade-off 图 | Agent 生成的 decay sweep |
 ![Decay tradeoff reproduction](../outputs/figures/decay_tradeoff.png)
 
+**差距原因：** 论文没有公开 Fig. 9 的完整线路组合与运行细节，因此这里是同一算法机制的本地参数扫描。
+
 **一致性结论：`feature_match`**
 
 论文这里关注的是 decay 带来的搜索偏好变化：参数调整后，算法会在“少插入门”和“降低深度”之间移动。
@@ -153,6 +159,8 @@
 | 原文 Table II | Agent 生成的 `g_op` 对比 |
 ![Table II g_op comparison](../outputs/figures/table2_gop_comparison.png)
 
+**差距原因：** 论文未公开随机种子、并列候选的 tie-breaking 顺序和 BKA 后处理输入；1000 次/行后差距仍不收敛，继续增加算力不能确定性消除它。
+
 **一致性结论：`partial_match`**
 
 这部分是最严格的验收目标，因为它要求对整批 benchmark 逐行对齐。我们已经把 Table II 的 26 个输入 benchmark 都纳入了本地 corpus，并且用论文表格中的 `g_ori` 做了输入核验。
@@ -170,6 +178,8 @@
 证据文件：
 
 - `../outputs/checks/table2_reproduction.json`
+- `../outputs/checks/table2_seed_sensitivity.json`
+- `../outputs/checks/completion_assessment.json`
 - `../outputs/data/table2_reproduction.csv`
 - `../outputs/data/table2_attempts.csv`
 - Table II 的历史生成结果保留在公开输出中；由于完整 benchmark corpus 和验收输入不在公开边界内，对应批量脚本不作为公开 quick run 发布。
@@ -190,7 +200,7 @@
 
 这里的问题就是和原论文之间还没有对齐的地方：
 
-- Table II 还不是完整复现。输入 `g_ori` 已经全部对齐，输出 `g_op` 在 1000 次/行搜索后仍只有 7/26 逐行精确一致。
+- Table II 的全语料机制复现已完成；未完成的是逐行最优值精确回放。输入 `g_ori` 已经全部对齐，输出 `g_op` 在 1000 次/行搜索后仍只有 7/26 逐行精确一致。
 - `sym6_145` 和 `sym9_193` 的 qubit 数与论文表格不一致，说明 benchmark 元数据仍需要继续核对。
 - 当前 SABRE 实现能生成合法路由，并体现 reverse traversal 和 decay 特征，但未必复刻了论文作者的全部随机种子策略、相同分数下的选择规则和工程细节。
 - BKA baseline 没有完整复现环境，因此 Table II 里 BKA 对比还只能作为参考，不是本地重算结果。
@@ -200,7 +210,7 @@
 这篇的主要瓶颈不是内存，而是大量随机尝试和缺失元信息：
 
 - 本地 CPU 已经足够跑 feature-level 和几百次尝试；
-- 推荐 16 核以上 CPU 工作站或批处理队列，把每个 benchmark、每个 seed 分发成独立任务；
+- 16 核以上 CPU 工作站或批处理队列足以运行当前全表流程；
 - 若只靠时间，1000 次/行已经证明提升有限；下一步应优先记录/搜索 seed policy、初始 mapping 和 tie-breaking 规则，而不是继续盲目加大尝试次数；
 - 若要完整复现，除了算力，还需要作者的 seed policy、tie-breaking 规则、attempt count、BKA 实现或可信输出。
 
@@ -215,4 +225,4 @@
 5. 用数字特征检查一致性；
 6. 对没有完全一致的部分给出清楚原因。
 
-因此，这个案例目前适合作为一个“可展示的部分复现案例”：核心机制已经对齐，关键小例子精确通过，Table II 仍然保留为继续迭代的精确复现目标。
+因此，这个案例适合作为“全语料机制复现、逐行数值受元数据限制”的公开案例：核心机制已经对齐，关键小例子精确通过，Table II 的剩余差距及原因也有机器可读记录。

@@ -2,7 +2,7 @@
   "schema_version": 3,
   "score_model": "rra_similarity_v3_figure_evaluation",
   "paper_id": "10.1145-3297858.3304023",
-  "summary": "SABRE 的核心算法机制已经复现，小例子可以精确对齐；但 Table II 是论文里最重要的数值表，目前只达到部分一致。",
+  "summary": "SABRE 的核心算法和 Table II 26 行全语料流程已经复现；逐行最优值仍受作者未公开运行元数据限制。",
   "targets": [
     {
       "target_id": "T001",
@@ -101,7 +101,7 @@
         },
         "paper_scope_coverage": {
           "score": 8.0,
-          "reason": "覆盖了代表性 benchmark 特征，没有覆盖完整 Table II 精确条件。",
+          "reason": "该目标覆盖代表性 QFT benchmark；完整 Table II 由独立的 T004 全语料目标验收。",
           "max_score": 15.0
         }
       },

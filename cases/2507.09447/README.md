@@ -16,6 +16,8 @@ Reproduces Figs. 3–5 with an L=1000, 3200-realization spectral ensemble, Lyapu
 - [English reproduction note](note/reproduction-note.en.md)
 - [Code and run commands](code/README.md)
 - [Machine-readable scorecard](outputs/checks/similarity_scorecard.json)
+- [Machine-readable completion boundary](outputs/checks/completion_assessment.json)
+- [中文复现 Note PDF](note/reproduction-note.zh-CN.pdf)
 - [Numerical methods](docs/NUMERICAL_METHODS.md)
 - [Lessons learned](docs/LESSONS_LEARNED.md)
 
@@ -65,6 +67,6 @@ Generated files are kept under [data](outputs/data/), [figures](outputs/figures/
 
 This public case includes paper-derived code, generated data, generated figures, public validation checks, and explanatory notes. It does not redistribute the paper PDF, arXiv source archive, original figures, EPS paths, digitized source curves, source-derived point sets, or source-vs-generated composite panels.
 
-Remaining limitation: Author seeds, state-selection windows, transfer/grid details, and final artwork are unavailable; all scientific gates pass, but source-pixel identity is not claimed.
+Remaining limitation: Author seeds, state-selection windows, transfer/grid details, and final artwork are unavailable; all scientific gates pass, but source-pixel identity is not claimed. This is an author-protocol boundary, not a compute boundary, so no further large campaign is scheduled.
 
 Final-parameter rule: final public figures use the paper parameters when feasible. Any reduced-scale, subset, proxy, or blocked target must be labeled explicitly and cannot be presented as a complete reproduction.

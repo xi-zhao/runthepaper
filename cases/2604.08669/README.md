@@ -4,9 +4,9 @@ Preprint: [arXiv:2604.08669 — An Algorithm for Fast Assembling Large-Scale Def
 
 Formal publication: **Not recorded as of 2026-07-14**
 
-Public status: **Reduced-scale feature reproduction** · Audit score: **61.60/100**
+Public status: **Paper-geometry partial reproduction** · Audit score: **61.60/100**
 
-Reproduces reduced path-planning, P2WGS continuity, and pipelined timing objects for atom-array assembly.
+Reproduces paper-geometry path-planning probes, paper-scale P2WGS continuity, and a pipelined timing model for atom-array assembly.
 
 ## Start Here / 从这里开始
 
@@ -14,6 +14,7 @@ Reproduces reduced path-planning, P2WGS continuity, and pipelined timing objects
 - [English reproduction note](note/reproduction-note.en.md)
 - [Code and run commands](code/README.md)
 - [Machine-readable scorecard](outputs/checks/similarity_scorecard.json)
+- [Machine-readable completion boundary](outputs/checks/completion_assessment.json)
 - [Numerical methods](docs/NUMERICAL_METHODS.md)
 - [Lessons learned](docs/LESSONS_LEARNED.md)
 
@@ -28,6 +29,7 @@ cd cases/2604.08669/code
 python scripts/run_reduced_pilot.py
 python scripts/run_reduced_p2wgs_pilot.py
 python scripts/plot_reduced_outputs.py
+python scripts/plot_completion_summary.py
 ```
 
 Generated files are kept under [data](outputs/data/), [figures](outputs/figures/), and [checks](outputs/checks/).
@@ -36,13 +38,17 @@ Generated files are kept under [data](outputs/data/), [figures](outputs/figures/
 
 This public case includes paper-derived code, generated data, generated figures, public validation checks, and explanatory notes. It does not redistribute the paper PDF, arXiv source archive, original figures, EPS paths, digitized source curves, source-derived point sets, or source-vs-generated composite panels.
 
-Remaining limitation: The paper-scale GNN training and GPU-parallel decoder are not included; the public code is a reduced reconstruction.
+Remaining limitation: The case includes an A100-SXM4-80GB 127x127 to 101x101 geometry probe and paper-scale P2WGS at N=10201. Full million-sample GNN training was stopped after the strict metric-contract gate failed; the unavailable GPU-parallel auction kernel is not replaced by CPU timing claims.
 
 Final-parameter rule: final public figures use the paper parameters when feasible. Any reduced-scale, subset, proxy, or blocked target must be labeled explicitly and cannot be presented as a complete reproduction.
 
 ## Generated Figures
 
+![fig3 a100 paper geometry gap](outputs/figures/fig3_a100_paper_geometry_gap.png)
+
 ![fig3 reduced gnn metrics](outputs/figures/fig3_reduced_gnn_metrics.png)
+
+![fig4 paper scale p2wgs summary](outputs/figures/fig4_paper_scale_p2wgs_summary.png)
 
 ![fig4 reduced p2wgs continuity](outputs/figures/fig4_reduced_p2wgs_continuity.png)
 

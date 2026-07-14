@@ -140,7 +140,7 @@ def build_timing_model(output_path: Path) -> dict[str, object]:
 
 def plot_timing_model(metrics: dict[str, object], output_path: Path) -> None:
     rows = metrics["rows"]
-    fig, ax = plt.subplots(figsize=(5.4, 3.4), constrained_layout=True)
+    fig, ax = plt.subplots(figsize=(5.4, 4.0))
     for label, color in [("iter5", "#55a868"), ("iter8", "#dd8452"), ("iter10", "#c44e52")]:
         subset = [row for row in rows if row["iteration_label"] == label]
         x = [row["slm_refresh_ms"] for row in subset]
@@ -151,6 +151,16 @@ def plot_timing_model(metrics: dict[str, object], output_path: Path) -> None:
     ax.set_title("Reduced Fig. 5 reproduction: pipeline timing model")
     ax.grid(alpha=0.25)
     ax.legend(frameon=False)
+    fig.tight_layout(rect=(0, 0.17, 1, 1))
+    fig.text(
+        0.5,
+        0.025,
+        "Difference reason: analytic pipeline model only; no measured RTX 5090 or A100 hardware benchmark.",
+        ha="center",
+        va="bottom",
+        fontsize=7.5,
+        wrap=True,
+    )
     fig.savefig(output_path, dpi=180)
     plt.close(fig)
 

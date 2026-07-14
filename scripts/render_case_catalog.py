@@ -156,6 +156,14 @@ def render_case_readme(case: dict[str, Any], case_dir: Path) -> str:
             "- [English reproduction note](note/reproduction-note.en.md)",
             "- [Code and run commands](code/README.md)",
             "- [Machine-readable scorecard](outputs/checks/similarity_scorecard.json)",
+        ]
+    )
+    if (case_dir / "outputs" / "checks" / "completion_assessment.json").is_file():
+        lines.append("- [Machine-readable completion boundary](outputs/checks/completion_assessment.json)")
+    if (case_dir / "note" / "reproduction-note.zh-CN.pdf").is_file():
+        lines.append("- [中文复现 Note PDF](note/reproduction-note.zh-CN.pdf)")
+    lines.extend(
+        [
             "- [Numerical methods](docs/NUMERICAL_METHODS.md)",
             "- [Lessons learned](docs/LESSONS_LEARNED.md)",
             "",
@@ -222,7 +230,7 @@ def render_case_readme(case: dict[str, Any], case_dir: Path) -> str:
         lines.append("pip install " + " ".join(extras))
     lines.append(f"cd cases/{paper_id}/code")
     for script in case.get("run_scripts", []):
-        lines.append(f"python scripts/{script}")
+        lines.append(render_script_command(str(script), case.get("script_arguments")))
     lines.extend(["```", ""])
     full_run_scripts = [str(item) for item in case.get("full_run_scripts", [])]
     if full_run_scripts:
@@ -234,7 +242,10 @@ def render_case_readme(case: dict[str, Any], case_dir: Path) -> str:
                 "",
                 "```bash",
                 f"cd cases/{paper_id}/code",
-                *[f"python scripts/{script}" for script in full_run_scripts],
+                *[
+                    render_script_command(str(script), case.get("full_run_script_arguments"))
+                    for script in full_run_scripts
+                ],
                 "```",
                 "",
             ]
@@ -277,6 +288,14 @@ def render_case_readme(case: dict[str, Any], case_dir: Path) -> str:
     return "\n".join(lines).rstrip() + "\n"
 
 
+def render_script_command(
+    script: str, arguments: dict[str, Any] | None = None
+) -> str:
+    suffix = str((arguments or {}).get(script, "")).strip()
+    command = f"python scripts/{script}"
+    return f"{command} {suffix}" if suffix else command
+
+
 def render_code_readme(case: dict[str, Any]) -> str:
     paper_id = str(case["paper_id"])
     extras = [str(item) for item in case.get("extra_dependencies", [])]
@@ -293,8 +312,11 @@ def render_code_readme(case: dict[str, Any]) -> str:
     if extras:
         lines.append("pip install " + " ".join(extras))
     lines.extend([f"cd cases/{paper_id}/code"])
+    run_arguments = case.get("script_arguments")
+    if run_arguments is not None and not isinstance(run_arguments, dict):
+        raise ValueError(f"{paper_id} script_arguments must be an object")
     for script in case.get("run_scripts", []):
-        lines.append(f"python scripts/{script}")
+        lines.append(render_script_command(str(script), run_arguments))
     lines.extend(["```", ""])
     full_run_scripts = [str(item) for item in case.get("full_run_scripts", [])]
     if full_run_scripts:
@@ -306,7 +328,10 @@ def render_code_readme(case: dict[str, Any]) -> str:
                 "",
                 "```bash",
                 f"cd cases/{paper_id}/code",
-                *[f"python scripts/{script}" for script in full_run_scripts],
+                *[
+                    render_script_command(str(script), case.get("full_run_script_arguments"))
+                    for script in full_run_scripts
+                ],
                 "```",
                 "",
             ]
@@ -322,20 +347,25 @@ def render_code_readme(case: dict[str, Any]) -> str:
     return "\n".join(lines)
 
 
-def render_note_index(case: dict[str, Any]) -> str:
-    return "\n".join(
+def render_note_index(case: dict[str, Any], case_dir: Path) -> str:
+    lines = [
+        f"# {case['paper_id']} reproduction notes / 复现讲义",
+        "",
+        "请选择语言 / Choose a language:",
+        "",
+        "- [中文上手讲义](reproduction-note.zh-CN.md)",
+    ]
+    if (case_dir / "note" / "reproduction-note.zh-CN.pdf").is_file():
+        lines.append("- [中文复现讲义 PDF](reproduction-note.zh-CN.pdf)")
+    lines.extend(
         [
-            f"# {case['paper_id']} reproduction notes / 复现讲义",
-            "",
-            "请选择语言 / Choose a language:",
-            "",
-            "- [中文上手讲义](reproduction-note.zh-CN.md)",
             "- [English getting-started note](reproduction-note.en.md)",
             "",
             f"Case overview: [../README.md](../README.md)",
             "",
         ]
     )
+    return "\n".join(lines)
 
 
 def expected_files(cases: list[dict[str, Any]]) -> dict[Path, str]:
@@ -349,7 +379,7 @@ def expected_files(cases: list[dict[str, Any]]) -> dict[Path, str]:
             raise FileNotFoundError(case_dir)
         rendered[case_dir / "README.md"] = render_case_readme(case, case_dir)
         rendered[case_dir / "code" / "README.md"] = render_code_readme(case)
-        rendered[case_dir / "note" / "reproduction-note.md"] = render_note_index(case)
+        rendered[case_dir / "note" / "reproduction-note.md"] = render_note_index(case, case_dir)
     return rendered
 
 

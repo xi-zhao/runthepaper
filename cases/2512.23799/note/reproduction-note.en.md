@@ -1,40 +1,63 @@
-# Reproduction Report
+# 2512.23799 Reproduction Note
 
-## Summary
+## Result
 
-This case is not accepted as paper-figure reproduction under the original-parameter gate. The formula gate passed and the proxy checks are useful, but the benchmark curves were not generated from the paper's exact Steane circuit and benchmark parameters.
+This case now runs the reconstructed full Steane `[[7,1,3]]` `|Hbar>` preparation circuit rather than a toy acceptance/infidelity model. The published campaign covers the paper's 12 physical-error-rate points and 790,000 state-vector Monte Carlo shots.
 
-## Reproduced Parts
+Status: `exact_circuit_partial_reproduction` · Audit score: `73.00/100`.
 
-| Target | Result | Evidence |
-| --- | --- | --- |
-| PSC formula gate | passed | `../outputs/checks/formula_verification.json` |
-| Infidelity benchmark | proxy trend only | `../outputs/figures/fig1_infidelity_reproduction.png` |
-| Acceptance benchmark | weak trend only | `../outputs/figures/fig2_acceptance_reproduction.png` |
-| Runtime benchmark | proxy timing only | `../outputs/figures/fig3_runtime_reproduction.png` |
-| Sampling precision | method validation passed | `../outputs/figures/fig4_sampling_precision_reproduction.png` |
+- Acceptance: all 12 internally digitized validation points pass.
+- Logical infidelity: the trend and both edge regimes agree; the mid-range is `0.42–0.68x` of the paper curve.
+- Runtime: still a local proxy, not author wall-clock timing.
 
-## Main Numerical Results
+## Exact Protocol
 
-- Max acceptance mismatch between the local reference curve and local Monte Carlo feature model: `0.00106`. This does not measure closeness to the paper curve.
-- Max infidelity mismatch between reference curve and Monte Carlo feature model: `0.000859`.
-- Low-`p` runtime speedup at `p=1e-3`: about `22x` in the conservative local proxy.
-- Sampling error slope: `-0.498`, matching the expected `1/sqrt(N)` behavior.
+The implementation contains the non-fault-tolerant Steane `|Hbar>` encoder, the flagged transversal logical-H measurement, one mutual-flag stabilizer round, circuit-level Pauli noise, postselection, and ideal logical decoding.
 
-## Visual Feature Checks
+Tests verify the noiseless logical-H eigenstate, all six stabilizers, the perfect Hamming syndrome map, and correction of every single-qubit Pauli error.
 
-The harness visual validator was also run on the source PNGs:
+## Paper Comparison
 
-- T001 infidelity: `partial_match`, digitized visual feature.
-- T002 acceptance: downgraded to `weak_trend_only` after manual review; the generated curve drops too slowly compared with the paper.
-- T003 runtime: `mismatch`, which is expected because this case uses local proxy timing rather than the authors' timing data.
+The orange curves below were digitized internally from the published PNGs solely for validation. The source-derived points are not distributed, the comparison panels are outside the repository's open-content license, and the panels do not establish author-data-level equivalence. Paper: [PRX Quantum 7, 020329 (2026)](https://doi.org/10.1103/fby6-xjbm).
 
-These checks support the case conclusion but do not replace author CSV or exact benchmark reruns.
+### Logical infidelity
 
-## What Is Missing
+![Exact-circuit infidelity comparison](../outputs/figures/steane_exact_infidelity_comparison.png)
 
-The case does not include a full Steane flag-gadget implementation and does not reproduce the authors' original benchmark arrays. The source package contains PNG figures but no CSV data or implementation code. This prevents complete pointwise reproduction.
+Difference reason: in the mid-range, second-order damaging-pair counts depend on reconstructed panel-(c) gate/idle ordering. The author implementation is not public. More shots would reduce Monte Carlo error but cannot identify that schedule detail.
 
-## Verdict
+### Postselection acceptance
 
-The case is suitable as a demonstration of formula-to-code proxy checks. It should not be advertised as reproduction of the authors' exact numerical benchmark until the paper parameters and exact Steane circuit are run.
+![Exact-circuit acceptance comparison](../outputs/figures/steane_exact_acceptance_comparison.png)
+
+Difference reason: no numerical residual is accepted—12/12 points pass within `max(0.012, 3 sigma)`. The remaining boundary is that exact time-slice details were reconstructed from the paper rather than confirmed against author code.
+
+### Runtime
+
+![Runtime proxy](../outputs/figures/fig3_runtime_reproduction.png)
+
+Difference reason: the paper's wall-clock values depend on the authors' hardware, Stim/Cirq versions, compiler, and benchmark harness. The public curve remains explicitly labeled as proxy timing.
+
+## Stop Decision
+
+The remaining scientific discrepancy is not compute-limited. The 790,000-shot exact campaign is complete, and additional shots cannot recover unpublished circuit scheduling. The mid-range residual is recorded as `author_implementation_detail_required`; author wall-clock equality is `author_environment_required`.
+
+See `../outputs/checks/completion_assessment.json` for the machine-readable decision.
+
+## Run
+
+Smoke profile:
+
+```bash
+cd cases/2512.23799/code
+python scripts/run_steane_exact_benchmark.py --profile smoke
+```
+
+Full profile:
+
+```bash
+python scripts/run_steane_exact_benchmark.py --profile paper
+python scripts/plot_steane_exact_comparison.py
+```
+
+The public runner generates independent data only; digitized source point sets are not redistributed.
