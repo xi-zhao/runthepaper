@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "overall_score": 78.47,
+  "requested_main_figure_score": 80.05,
+  "similarity_level": "numerical_feature_reproduction",
+  "exact_reproduction": false,
+  "targets": [
+    {
+      "paper_item": "Fig. 2",
+      "result": "Seven dispersion and phase-matching landmarks reproduced",
+      "pixel_ssim": 0.8237689308859618,
+      "provenance": "mixed_independent_and_source_reference"
+    },
+    {
+      "paper_item": "Fig. 4",
+      "result": "Six Eq. (D.1) curves; blind mean NRMSE 0.0653 and correlation 0.9810",
+      "pixel_ssim": 0.7347711842399965,
+      "provenance": "mixed_independent_and_source_reference"
+    },
+    {
+      "paper_item": "Fig. 5",
+      "result": "Thermal slope ratio 1.0211 versus reported 1.02",
+      "pixel_ssim": 0.8201377911321887,
+      "provenance": "digitized_source_reference"
+    }
+  ],
+  "public_boundary": {
+    "author_code_used": false,
+    "paper_pdf_included": false,
+    "source_derived_point_sets_included": false,
+    "raw_experimental_data_available": false
+  }
+}

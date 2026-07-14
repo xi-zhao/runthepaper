@@ -137,6 +137,17 @@ def validate_case(case: dict[str, Any], errors: list[str]) -> None:
         if note.is_file() and len(note.read_text(encoding="utf-8").strip()) < 200:
             errors.append(f"note is too short to be useful: {note.relative_to(ROOT)}")
 
+    for resource in case.get("additional_resources", []):
+        if not isinstance(resource, dict) or not all(
+            isinstance(resource.get(field), str) and resource[field].strip()
+            for field in ("label", "path")
+        ):
+            errors.append(f"invalid additional resource for {paper_id}: {resource!r}")
+            continue
+        resource_path = (case_dir / resource["path"]).resolve()
+        if case_dir.resolve() not in resource_path.parents or not resource_path.is_file():
+            errors.append(f"missing additional resource for {paper_id}: {resource['path']}")
+
     required_groups = {
         "runnable Python": list((case_dir / "code").rglob("*.py")),
         "generated data": [p for p in (case_dir / "outputs" / "data").rglob("*") if p.is_file()],
@@ -193,10 +204,14 @@ def validate_case(case: dict[str, Any], errors: list[str]) -> None:
                 and path.name.startswith("reproduction-note")
                 and path.with_suffix(".md").is_file()
             )
-            if not is_derived_note:
+            is_derived_document = (
+                relative.parent == Path("docs")
+                and path.with_suffix(".md").is_file()
+            )
+            if not (is_derived_note or is_derived_document):
                 errors.append(f"source publication asset is not allowed: {path.relative_to(ROOT)}")
             elif path.stat().st_size < 1024 or not path.read_bytes().startswith(b"%PDF-"):
-                errors.append(f"invalid derived note PDF: {path.relative_to(ROOT)}")
+                errors.append(f"invalid derived PDF: {path.relative_to(ROOT)}")
 
     for path in text_files(case_dir):
         text = path.read_text(encoding="utf-8", errors="replace")

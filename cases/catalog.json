@@ -748,6 +748,16 @@
         "run_ed_validation.py"
       ],
       "extra_dependencies": [],
+      "additional_resources": [
+        {
+          "label": "中文逐步推导",
+          "path": "docs/DERIVATION_WALKTHROUGH.zh-CN.md"
+        },
+        {
+          "label": "中文推导讲义 PDF",
+          "path": "docs/DERIVATION_WALKTHROUGH.zh-CN.pdf"
+        }
+      ],
       "featured_results": [
         {
           "paper_item": "Numerical main figure",
@@ -807,6 +817,72 @@
           "result": "Site-resolved suppression of double occupancy",
           "figure": "S8_double_occupancy.png",
           "check": "T004_checks.json"
+        }
+      ]
+    },
+    {
+      "paper_id": "10.1038-s41586-026-10720-3",
+      "title": "Backreaction of stimulated Hawking radiation in an optical analogue",
+      "topic": "Stimulated Hawking radiation and backreaction in a fibre-optical analogue horizon",
+      "preprint": {
+        "identifier": "arXiv:2607.01118",
+        "title": "Backreaction of stimulated Hawking radiation in an optical analogue",
+        "url": "https://arxiv.org/abs/2607.01118"
+      },
+      "publication": {
+        "status": "published",
+        "title": "Backreaction of stimulated Hawking radiation in an optical analogue",
+        "venue": "Nature",
+        "citation": "Nature 655, 336-341 (2026)",
+        "doi": "10.1038/s41586-026-10720-3",
+        "doi_url": "https://doi.org/10.1038/s41586-026-10720-3",
+        "locator": "336-341"
+      },
+      "status": "Main-figure numerical feature reproduction",
+      "similarity_level": "numerical_feature_reproduction",
+      "audit_score": 78.47,
+      "summary": "Without author code, reproduces the numerical content and registered layout of main-text Figs. 2, 4, and 5: seven phase-matching landmarks, all six Eq. (D.1) spectra, and the 1.0211 thermal-slope ratio.",
+      "limitation": "The measured fibre coefficients, raw spectra, fitted parameter tables, raw NRR fluxes, and measured pulse shapes are unavailable; visible PDF vector content is used internally as a source-derived fit or validation input, so this is not author-data-level exact reproduction.",
+      "run_scripts": [
+        "run_main_figures.py"
+      ],
+      "extra_dependencies": [
+        "torch"
+      ],
+      "featured_results": [
+        {
+          "paper_item": "Fig. 2",
+          "result": "Co-moving dispersion and seven phase-matching landmarks",
+          "figure": "fig2_doppler_reproduction_public.png",
+          "check": "main_figure_reproduction.json"
+        },
+        {
+          "paper_item": "Fig. 4",
+          "result": "Six independently evaluated Eq. (D.1) theory spectra",
+          "figure": "fig4_eq_d1_theory_public.png",
+          "check": "main_figure_reproduction.json"
+        },
+        {
+          "paper_item": "Fig. 5",
+          "result": "Public-safe Eq. (D.3) fitted lines with slope ratio 1.0211",
+          "figure": "fig5_eq_d3_lines_public.png",
+          "check": "main_figure_reproduction.json"
+        }
+      ],
+      "comparison_attribution": "Procopio et al.",
+      "comparison_note": "The left column is a limited paper excerpt. The right column is the case reconstruction: its theory curves, roots, and regressions are equation-generated, while the displayed Fig. 4/5 markers are disclosed source-derived fit or regression inputs. The boards validate structure and numerical features, not author-data-level independence.",
+      "comparison_results": [
+        {
+          "paper_item": "Fig. 2",
+          "figure": "fig2_pixel_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 4",
+          "figure": "fig4_pixel_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 5",
+          "figure": "fig5_pixel_comparison.png"
         }
       ]
     }

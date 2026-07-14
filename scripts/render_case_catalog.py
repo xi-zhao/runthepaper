@@ -154,6 +154,12 @@ def render_case_readme(case: dict[str, Any], case_dir: Path) -> str:
             "",
             "- [中文复现 Note](note/reproduction-note.zh-CN.md)",
             "- [English reproduction note](note/reproduction-note.en.md)",
+        ]
+    )
+    for resource in case.get("additional_resources", []):
+        lines.append(f"- [{resource['label']}]({resource['path']})")
+    lines.extend(
+        [
             "- [Code and run commands](code/README.md)",
             "- [Machine-readable scorecard](outputs/checks/similarity_scorecard.json)",
         ]
@@ -193,11 +199,15 @@ def render_case_readme(case: dict[str, Any], case_dir: Path) -> str:
             cite = f"[{publication['citation']}]({publication['doi_url']})"
         else:
             cite = preprint_reference(case)
+        comparison_note = case.get(
+            "comparison_note",
+            f"The left column in each panel is a limited excerpt from {case['comparison_attribution']}, {cite}; the right column is generated independently from this case. These comparisons validate physical structure and key numerical features, not author-data-level or point-for-point equivalence.",
+        )
         lines.extend(
             [
                 "## Paper Reference vs Independent Reproduction",
                 "",
-                f"The left column in each panel is a limited excerpt from {case['comparison_attribution']}, {cite}; the right column is generated independently from this case. These comparisons validate physical structure and key numerical features, not author-data-level or point-for-point equivalence.",
+                str(comparison_note),
                 "",
             ]
         )
