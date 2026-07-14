@@ -14,7 +14,7 @@ Reproduces paper-geometry path-planning probes, paper-scale P2WGS continuity, an
 - [English reproduction note](note/reproduction-note.en.md)
 - [Code and run commands](code/README.md)
 - [Machine-readable scorecard](outputs/checks/similarity_scorecard.json)
-- [Completion assessment](outputs/checks/completion_assessment.json)
+- [Machine-readable completion boundary](outputs/checks/completion_assessment.json)
 - [Numerical methods](docs/NUMERICAL_METHODS.md)
 - [Lessons learned](docs/LESSONS_LEARNED.md)
 
@@ -38,18 +38,18 @@ Generated files are kept under [data](outputs/data/), [figures](outputs/figures/
 
 This public case includes paper-derived code, generated data, generated figures, public validation checks, and explanatory notes. It does not redistribute the paper PDF, arXiv source archive, original figures, EPS paths, digitized source curves, source-derived point sets, or source-vs-generated composite panels.
 
-The case includes an A100-SXM4-80GB paper-geometry campaign summary (`127×127 → 101×101`), a 64-instance validation probe, and paper-scale P2WGS at `N=10201` on a `1024×1024` grid. Full million-sample GNN training was stopped because the strict metric-contract gate failed; the paper's GPU-parallel decoder is not in the public source and is not reproduced by the CPU auction implementation.
+Remaining limitation: The case includes an A100-SXM4-80GB 127x127 to 101x101 geometry probe and paper-scale P2WGS at N=10201. Full million-sample GNN training was stopped after the strict metric-contract gate failed; the unavailable GPU-parallel auction kernel is not replaced by CPU timing claims.
 
 Final-parameter rule: final public figures use the paper parameters when feasible. Any reduced-scale, subset, proxy, or blocked target must be labeled explicitly and cannot be presented as a complete reproduction.
 
 ## Generated Figures
 
+![fig3 a100 paper geometry gap](outputs/figures/fig3_a100_paper_geometry_gap.png)
+
 ![fig3 reduced gnn metrics](outputs/figures/fig3_reduced_gnn_metrics.png)
 
-![fig3 A100 paper geometry gap](outputs/figures/fig3_a100_paper_geometry_gap.png)
+![fig4 paper scale p2wgs summary](outputs/figures/fig4_paper_scale_p2wgs_summary.png)
 
 ![fig4 reduced p2wgs continuity](outputs/figures/fig4_reduced_p2wgs_continuity.png)
-
-![fig4 paper scale p2wgs summary](outputs/figures/fig4_paper_scale_p2wgs_summary.png)
 
 ![fig5 reduced timing model](outputs/figures/fig5_reduced_timing_model.png)

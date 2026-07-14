@@ -16,7 +16,7 @@ Reproduces subharmonic rigidity, level statistics, variance, long-range variance
 - [English reproduction note](note/reproduction-note.en.md)
 - [Code and run commands](code/README.md)
 - [Machine-readable scorecard](outputs/checks/similarity_scorecard.json)
-- [Completion assessment](outputs/checks/completion_assessment.json)
+- [Machine-readable completion boundary](outputs/checks/completion_assessment.json)
 - [Numerical methods](docs/NUMERICAL_METHODS.md)
 - [Lessons learned](docs/LESSONS_LEARNED.md)
 
@@ -31,7 +31,7 @@ python scripts/run_reproduction.py
 python scripts/plot_reproduction.py
 python scripts/run_reproduction_iteration2.py
 python scripts/plot_reproduction_iteration2.py
-python scripts/extract_fig3_scaling_collapse.py  # exits 1 while quality status is partial
+python scripts/extract_fig3_scaling_collapse.py
 ```
 
 Generated files are kept under [data](outputs/data/), [figures](outputs/figures/), and [checks](outputs/checks/).
@@ -40,7 +40,7 @@ Generated files are kept under [data](outputs/data/), [figures](outputs/figures/
 
 This public case includes paper-derived code, generated data, generated figures, public validation checks, and explanatory notes. It does not redistribute the paper PDF, arXiv source archive, original figures, EPS paths, digitized source curves, source-derived point sets, or source-vs-generated composite panels.
 
-The published Fig. 3 dataset is a completed medium campaign: 168 jobs aggregated into 55 paper-parameter points at `L=8,10,12`, using CuPy and NumPy results. The paper-scale final campaign (`L=8,10,12,14` with much larger disorder statistics) and optional `L=16,18` checks were not launched because they exceed the current compute/memory boundary.
+Remaining limitation: The published medium campaign aggregates 168 jobs into 55 paper-parameter points at L=8,10,12. The final L=8,10,12,14 high-statistics campaign was not launched; optional L=16,18 also require a memory-aware eigensolver.
 
 Final-parameter rule: final public figures use the paper parameters when feasible. Any reduced-scale, subset, proxy, or blocked target must be labeled explicitly and cannot be presented as a complete reproduction.
 

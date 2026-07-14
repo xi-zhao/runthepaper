@@ -39,7 +39,7 @@ Generated files are kept under [data](outputs/data/), [figures](outputs/figures/
 
 This public case includes paper-derived code, generated data, generated figures, public validation checks, and explanatory notes. It does not redistribute the paper PDF, arXiv source archive, original figures, EPS paths, digitized source curves, source-derived point sets, or source-vs-generated composite panels.
 
-Remaining limitation: all 26 Table II rows run and produce hardware-compliant routes, but row-exact optimized values require the paper's unpublished random seeds, tie-breaking order, and BKA post-processing inputs. This is a metadata boundary, not a compute boundary.
+Remaining limitation: All 26 Table II rows run and produce hardware-compliant routes, but row-exact optimized values require the paper's unpublished random seeds, tie-breaking order, and BKA post-processing inputs. This is a metadata boundary, not a compute boundary.
 
 Final-parameter rule: final public figures use the paper parameters when feasible. Any reduced-scale, subset, proxy, or blocked target must be labeled explicitly and cannot be presented as a complete reproduction.
 

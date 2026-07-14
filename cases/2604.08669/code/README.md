@@ -16,6 +16,4 @@ python scripts/plot_completion_summary.py
 
 Generated data files are written to `../outputs/data/`, figures to `../outputs/figures/`, and machine-readable checks to `../outputs/checks/`.
 
-`run_paper_scale_gnn_training.py --profile paper_target --dry-run` records the full configuration without launching the million-sample job. `plot_completion_summary.py` redraws the checked-in A100 paper-geometry and paper-scale P2WGS summaries without starting training.
-
-Boundary: the A100 paper-geometry short probe is complete, but long training is blocked by the failed metric-contract gate and large compute budget. The public source has no GPU-parallel auction kernel; the CPU decoder validates assignment logic but is not a hardware-performance reproduction.
+Boundary: The case includes an A100-SXM4-80GB 127x127 to 101x101 geometry probe and paper-scale P2WGS at N=10201. Full million-sample GNN training was stopped after the strict metric-contract gate failed; the unavailable GPU-parallel auction kernel is not replaced by CPU timing claims.

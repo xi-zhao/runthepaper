@@ -130,11 +130,11 @@
         "doi_url": "https://doi.org/10.1145/3297858.3304023",
         "locator": "1001–1014"
       },
-      "status": "Feature-level reproduction with partial benchmark coverage",
+      "status": "Full-corpus mechanism reproduction",
       "similarity_level": "numerical_feature_reproduction",
       "audit_score": 68.29,
-      "summary": "Reconstructs the SABRE routing pipeline, swap trace, reverse traversal, decay trade-off, and a partial Table II rerun.",
-      "limitation": "Several large benchmark rows lack complete public metadata and remain subset or proxy evaluations.",
+      "summary": "Reconstructs the SABRE routing pipeline, swap trace, reverse traversal, decay trade-off, and all 26 rows of Table II. Row-exact optimized values remain limited by unpublished run metadata.",
+      "limitation": "All 26 Table II rows run and produce hardware-compliant routes, but row-exact optimized values require the paper's unpublished random seeds, tie-breaking order, and BKA post-processing inputs. This is a metadata boundary, not a compute boundary.",
       "run_scripts": [
         "run_paper_swap_example.py",
         "run_core_benchmarks.py",
@@ -163,16 +163,17 @@
         "doi_url": "https://doi.org/10.1103/PhysRevLett.118.030401",
         "locator": "030401"
       },
-      "status": "Reduced-scale feature reproduction",
+      "status": "Medium-scale partial reproduction",
       "similarity_level": "numerical_feature_reproduction",
       "audit_score": 73.56,
       "summary": "Reproduces subharmonic rigidity, level statistics, variance, long-range variance, and mutual-information features with exact local evolution.",
-      "limitation": "Paper-scale disorder statistics and the largest exact-diagonalization targets remain compute-limited.",
+      "limitation": "The published medium campaign aggregates 168 jobs into 55 paper-parameter points at L=8,10,12. The final L=8,10,12,14 high-statistics campaign was not launched; optional L=16,18 also require a memory-aware eigensolver.",
       "run_scripts": [
         "run_reproduction.py",
         "plot_reproduction.py",
         "run_reproduction_iteration2.py",
-        "plot_reproduction_iteration2.py"
+        "plot_reproduction_iteration2.py",
+        "extract_fig3_scaling_collapse.py"
       ],
       "extra_dependencies": []
     },
@@ -194,15 +195,16 @@
         "doi_url": "https://doi.org/10.1038/s41567-018-0137-5",
         "locator": "745–749"
       },
-      "status": "Reduced-scale feature reproduction",
+      "status": "Symmetry-resolved partial reproduction",
       "similarity_level": "numerical_feature_reproduction",
       "audit_score": 72.5,
       "summary": "Reproduces constrained Hilbert-space structure, scar overlaps, revivals, participation ratios, and symmetry-resolved level statistics.",
-      "limitation": "The full L=32 symmetry sector and thermodynamic-limit iTEBD calculations are not rerun.",
+      "limitation": "The paper's k=0, I=+1 sector is reproduced at L=28 (dimension 13201), including the 15-state scar tower. L=32 is not launched because one float64 dense matrix is already about 47 GB before eigensolver workspace on the current 40 GB A100 path; thermodynamic-limit iTEBD also remains unimplemented.",
       "run_scripts": [
         "run_reproduction.py",
         "plot_reproduction.py",
-        "run_symmetry_resolved_sector.py"
+        "run_symmetry_resolved_sector.py",
+        "plot_symmetry_resolved_sector.py"
       ],
       "extra_dependencies": []
     },
@@ -224,11 +226,11 @@
         "doi_url": "https://doi.org/10.1103/PhysRevLett.128.030501",
         "locator": "030501"
       },
-      "status": "Reduced-scale feature reproduction",
+      "status": "Compute-bounded feature reproduction",
       "similarity_level": "numerical_feature_reproduction",
       "audit_score": 70.0,
       "summary": "Reproduces batch-probability, post-selection XEB, conditional-probability, and complexity-table features.",
-      "limitation": "Exact 53-qubit tensor contractions and paper-scale amplitude recomputation require external compute.",
+      "limitation": "The exact 53-qubit contraction is not launched: the paper reports 4.51e18 head-contraction operations and 149 days on one A100, while a direct complex128 statevector would require 128 PiB. The public case also lacks the original circuit, contraction path, slicing configuration, and validation-amplitude bundle.",
       "run_scripts": [
         "run_reproduction.py",
         "plot_reproduction.py"
@@ -253,15 +255,27 @@
         "doi_url": "https://doi.org/10.1103/fby6-xjbm",
         "locator": "020329"
       },
-      "status": "Partial feature reproduction",
+      "status": "Exact-circuit partial reproduction",
       "similarity_level": "numerical_feature_reproduction",
       "audit_score": 73.0,
-      "summary": "Implements local fidelity, acceptance, runtime, and sampling-precision models for logical magic-state preparation.",
-      "limitation": "The public package excludes digitized paper curves; several visible benchmark trends remain proxy or subset validations.",
+      "summary": "Reconstructs the exact Steane [[7,1,3]] logical-H circuit and evaluates acceptance, logical infidelity, runtime, and sampling precision.",
+      "limitation": "Exact-circuit acceptance matches all 12 validated points, while mid-range logical infidelity remains 0.42-0.68x of the paper curve because the panel-(c) gate/idle schedule is reconstructed and the author implementation is unavailable. Runtime remains proxy timing; digitized source point sets are not redistributed.",
       "run_scripts": [
         "run_reproduction.py",
-        "plot_reproduction.py"
+        "plot_reproduction.py",
+        "run_steane_exact_benchmark.py",
+        "plot_steane_exact_comparison.py"
       ],
+      "script_arguments": {
+        "run_steane_exact_benchmark.py": "--profile smoke"
+      },
+      "full_run_scripts": [
+        "run_steane_exact_benchmark.py"
+      ],
+      "full_run_script_arguments": {
+        "run_steane_exact_benchmark.py": "--profile paper"
+      },
+      "full_run_note": "The paper profile evaluates all 12 physical-error points with the larger Monte Carlo shot budget used by the published case output.",
       "extra_dependencies": []
     },
     {
@@ -277,15 +291,16 @@
         "status": "not_recorded",
         "checked_at": "2026-07-14"
       },
-      "status": "Reduced-scale feature reproduction",
+      "status": "Paper-geometry partial reproduction",
       "similarity_level": "numerical_feature_reproduction",
       "audit_score": 61.6,
-      "summary": "Reproduces reduced path-planning, P2WGS continuity, and pipelined timing objects for atom-array assembly.",
-      "limitation": "The paper-scale GNN training and GPU-parallel decoder are not included; the public code is a reduced reconstruction.",
+      "summary": "Reproduces paper-geometry path-planning probes, paper-scale P2WGS continuity, and a pipelined timing model for atom-array assembly.",
+      "limitation": "The case includes an A100-SXM4-80GB 127x127 to 101x101 geometry probe and paper-scale P2WGS at N=10201. Full million-sample GNN training was stopped after the strict metric-contract gate failed; the unavailable GPU-parallel auction kernel is not replaced by CPU timing claims.",
       "run_scripts": [
         "run_reduced_pilot.py",
         "run_reduced_p2wgs_pilot.py",
-        "plot_reduced_outputs.py"
+        "plot_reduced_outputs.py",
+        "plot_completion_summary.py"
       ],
       "extra_dependencies": [
         "torch"
@@ -328,11 +343,11 @@
         "status": "not_recorded",
         "checked_at": "2026-07-14"
       },
-      "status": "Reduced-scale feature reproduction",
+      "status": "Paper-scale subset reproduction",
       "similarity_level": "numerical_feature_reproduction",
       "audit_score": 67.49,
-      "summary": "Reproduces disorder sensitivity, gap-ratio, IPR, susceptibility separation, and phenomenological strong-disorder trends.",
-      "limitation": "Several exponent-level and paper-size targets remain compute-limited or only partially reproduced.",
+      "summary": "Reproduces disorder sensitivity, gap-ratio, IPR, susceptibility separation, and phenomenological strong-disorder trends, including an A100 campaign at L=24,28,31 with 605 disorder realizations.",
+      "limitation": "The paper's L=32-38 targets were not forced through the current dense eigensolver: L=32 hit a 32-bit workspace failure and L=38 exceeds the practical single-A100 memory path. The T and randomized-site n operator panels remain outside the completed subset and are not replaced by proxy data.",
       "run_scripts": [
         "run_reproduction.py",
         "plot_reproduction.py",
@@ -362,7 +377,7 @@
       "similarity_level": "numerical_feature_reproduction",
       "audit_score": 89.0,
       "summary": "Reproduces Figs. 3–5 with an L=1000, 3200-realization spectral ensemble, Lyapunov grids, state profiles, winding sectors, and the W_c=2.1 transition.",
-      "limitation": "Author seeds, state-selection windows, transfer/grid details, and final artwork are unavailable; all scientific gates pass, but source-pixel identity is not claimed.",
+      "limitation": "Author seeds, state-selection windows, transfer/grid details, and final artwork are unavailable; all scientific gates pass, but source-pixel identity is not claimed. This is an author-protocol boundary, not a compute boundary, so no further large campaign is scheduled.",
       "run_scripts": [
         "plot_paper_exact.py",
         "qa_paper_exact.py"
