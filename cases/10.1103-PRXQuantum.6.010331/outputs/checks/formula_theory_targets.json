@@ -1,0 +1,234 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "source_figure_data_used_as_computational_input": false,
+  "targets": [
+    {
+      "target_id": "T003",
+      "figure_refs": [
+        "Fig. 1(f)",
+        "Fig. 7"
+      ],
+      "status": "partial",
+      "artifact_stage": "exploratory",
+      "parameter_match": "paper_subset",
+      "generated_data_provenance": "formula_numerics",
+      "formula_gate": "verified",
+      "formula_dependencies": [
+        "EQ006",
+        "EQ007"
+      ],
+      "reproduced": [
+        "four asymptotic power laws",
+        "absolute intensity term",
+        "absolute lifetime term"
+      ],
+      "blocked_exact": [
+        "absolute frequency-noise term: numerical PSD unavailable",
+        "absolute motion term: Doppler variance unavailable"
+      ],
+      "data": "outputs/data/fig7_formula_scalings.csv",
+      "figure": "outputs/figures/fig7_formula_scalings.png"
+    },
+    {
+      "target_id": "T004",
+      "figure_refs": [
+        "Fig. 8"
+      ],
+      "status": "partial",
+      "artifact_stage": "exploratory",
+      "parameter_match": "paper_subset",
+      "generated_data_provenance": "formula_numerics",
+      "formula_gate": "reconstructed",
+      "formula_dependencies": [
+        "EQ008"
+      ],
+      "reproduced": [
+        "fixed-power Rabi scaling",
+        "fixed-blockade-ratio spacing scaling"
+      ],
+      "blocked_exact": [
+        "total infidelity and n=44 optimum: author lifetime, PSD, temperature, and electric-field arrays unavailable"
+      ],
+      "data": "outputs/data/fig8_public_anchor_scaling.csv",
+      "figure": "outputs/figures/fig8_public_anchor_scaling.png"
+    },
+    {
+      "target_id": "T005",
+      "figure_refs": [
+        "Fig. 9(a)",
+        "Fig. 9(b)",
+        "Fig. 9(c)"
+      ],
+      "status": "passed",
+      "artifact_stage": "exploratory",
+      "parameter_match": "cited_source_reconstructed_identity",
+      "generated_data_provenance": "independent_hamiltonian_numerics",
+      "reference_comparison": "visual_only",
+      "formula_gate": "verified",
+      "formula_dependencies": [
+        "EQ001",
+        "EQ003",
+        "EQ004",
+        "EQ009"
+      ],
+      "panel_coverage": {
+        "a": "reproduced",
+        "b": "reproduced",
+        "c": "blocked_exact: experimental PSD and atomic-motion amplitude unavailable"
+      },
+      "gate_diagnostics": {
+        "Time-optimal": {
+          "max_return_leakage": 2.3309276489851772e-05,
+          "max_computational_off_diagonal": 0.0,
+          "controlled_phase_radians": 3.14145980642322,
+          "controlled_phase_error_radians": 0.00013284716657313567,
+          "minimum_return_probability": 0.999976690723721
+        },
+        "Levine-Pichler": {
+          "max_return_leakage": 3.4651449530975143e-12,
+          "max_computational_off_diagonal": 0.0,
+          "controlled_phase_radians": -3.141590770598953,
+          "controlled_phase_error_radians": 1.882990840829782e-06,
+          "minimum_return_probability": 0.9999999999965206
+        },
+        "Fromonteil Protocol II": {
+          "max_return_leakage": 4.392628035517962e-30,
+          "max_computational_off_diagonal": 0.0,
+          "controlled_phase_radians": -3.141592653589793,
+          "controlled_phase_error_radians": 2.4492935982947064e-16,
+          "minimum_return_probability": 0.9999999999999147
+        }
+      },
+      "rydberg_exposure_over_omega": {
+        "Time-optimal": null,
+        "Levine-Pichler": 2.859186528470288,
+        "Fromonteil Protocol II": 7.150712163558382
+      },
+      "fromonteil_dc_intensity_response": 4.867206437582167e-06,
+      "data": "outputs/data/fig9_protocol_responses.csv",
+      "figure": "outputs/figures/fig9_protocol_responses.png"
+    },
+    {
+      "target_id": "T006",
+      "figure_refs": [
+        "Fig. 10"
+      ],
+      "status": "partial",
+      "artifact_stage": "exploratory",
+      "parameter_match": "paper_subset",
+      "generated_data_provenance": "formula_numerics",
+      "formula_gate": "verified",
+      "formula_dependencies": [
+        "EQ010"
+      ],
+      "reproduced": [
+        "finite-time spin-lock response",
+        "resonance-frequency selection",
+        "lifetime-floor formula in code"
+      ],
+      "blocked_exact": [
+        "absolute decay-rate and PSD panels: author PSD array and experimental points unavailable"
+      ],
+      "data": "outputs/data/fig10_spin_lock_filter.csv",
+      "figure": "outputs/figures/fig10_spin_lock_filter.png"
+    },
+    {
+      "target_id": "T009",
+      "figure_refs": [
+        "Fig. 11"
+      ],
+      "status": "partial",
+      "artifact_stage": "exploratory",
+      "parameter_match": "explicit_physical_reconstruction",
+      "generated_data_provenance": "independent_many_body_numerics",
+      "reference_comparison": "visual_only",
+      "formula_gate": "reconstructed",
+      "formula_dependencies": [
+        "EQ003",
+        "EQ011"
+      ],
+      "model": {
+        "sites": 7,
+        "rabi_frequency_mhz": 7.7,
+        "duration_us": 6.0,
+        "nearest_neighbor_interaction_over_omega": 20.0,
+        "interaction_status": "explicit reconstruction; geometry and C6/r^6 were not tabulated in the target paper",
+        "detuning_sign_status": "mapped to -10 to +10 for H=-Delta sum(n), equivalent to the paper's oppositely signed plotted detuning convention"
+      },
+      "solver": {
+        "quench": "exact spectral decomposition",
+        "adiabatic": "unitary diagonal/X split-step plus midpoint first-order complex tangent equations",
+        "adiabatic_time_steps": 2400,
+        "maximum_norm_error": 6.350475700855895e-14,
+        "half_grid_convergence_nrmse": {
+          "frequency": 0.031022717014561663,
+          "intensity": 0.045458607896463304
+        }
+      },
+      "z2_final_probability": {
+        "pattern_a": 0.9999853140974488,
+        "pattern_b": 3.4254218482049975e-14,
+        "total": 0.9999853140974831
+      },
+      "reproduced": [
+        "seven-site Hamiltonian response calculation",
+        "quench low-frequency intensity accumulation",
+        "adiabatic finite-frequency response mechanism"
+      ],
+      "blocked_exact": [
+        "paper-exact curves: atom spacing, C6/r^6, exact Rabi ramp, and tangent-shape parameter unavailable"
+      ],
+      "data": "outputs/data/fig11_many_body_responses.csv",
+      "figure": "outputs/figures/fig11_many_body_responses.png"
+    },
+    {
+      "target_id": "T007",
+      "figure_refs": [
+        "Fig. 12"
+      ],
+      "status": "partial",
+      "artifact_stage": "exploratory",
+      "parameter_match": "reconstructed_transfer_convention",
+      "generated_data_provenance": "formula_numerics",
+      "formula_gate": "reconstructed",
+      "formula_dependencies": [
+        "EQ013"
+      ],
+      "reproduced": [
+        "140 kHz cavity transfer and limiting behavior"
+      ],
+      "blocked_exact": [
+        "filtered PSD and fidelity curves: numerical current PSD unavailable",
+        "full-model panel: calibration/error-model inputs unavailable"
+      ],
+      "data": "outputs/data/fig12_cavity_transfer.csv",
+      "figure": "outputs/figures/fig12_cavity_transfer.png"
+    },
+    {
+      "target_id": "T008",
+      "figure_refs": [
+        "Fig. 17"
+      ],
+      "status": "partial",
+      "artifact_stage": "exploratory",
+      "parameter_match": "paper_formula_with_explicit_N_reconstruction",
+      "generated_data_provenance": "formula_numerics",
+      "formula_gate": "verified",
+      "formula_dependencies": [
+        "EQ012"
+      ],
+      "single_qubit_gate_count": 10,
+      "gate_count_status": "explicit reconstruction; N=10 is printed for the phase-calibration SSB sequence, but not specified for Fig. 17",
+      "reproduced": [
+        "product/symmetric phase-flip fidelities",
+        "first-order SSB slope and cancellation"
+      ],
+      "blocked_exact": [
+        "quadratic perfect-CZ inset and full circuit simulation: exact Fig. 17 circuit length/recovery realization unavailable"
+      ],
+      "data": "outputs/data/fig17_phase_flip_first_order.csv",
+      "figure": "outputs/figures/fig17_phase_flip_first_order.png"
+    }
+  ]
+}

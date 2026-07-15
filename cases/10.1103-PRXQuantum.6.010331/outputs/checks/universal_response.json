@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "target_id": "T001",
+  "figure_refs": [
+    "Fig. 15"
+  ],
+  "status": "passed",
+  "artifact_stage": "final_reproduction",
+  "parameter_match": "paper_exact",
+  "generated_data_provenance": "analytic_reference",
+  "reference_comparison": "analytic_reference",
+  "formula_gate": "source_only",
+  "formula_dependencies": [
+    "EQ005",
+    "EQ006"
+  ],
+  "normalized_frequency_points": 1001,
+  "minimum_response": 6.541682949138318e-21,
+  "frequency_second_peak_locations": {
+    "haar": 1.165,
+    "symmetric_haar": 1.225
+  },
+  "haar_intensity_response_x_0p5": 1.0751009249877332,
+  "paper_reference_x_0p5": 1.04,
+  "acceptance": {
+    "responses_nonnegative": true,
+    "published_1p5_mhz_response": true,
+    "frequency_second_peak_present": true
+  },
+  "known_residuals": [
+    {
+      "feature": "high-frequency intensity-response side peaks",
+      "status": "not_reproduced_by_appendix_l_fit",
+      "reason": "The paper labels Appendix L as approximate; its monotone fit omits the small side peaks visible near normalized frequencies 1.5 and 2.5."
+    }
+  ],
+  "data": "outputs/data/universal_response.csv",
+  "figure": "outputs/figures/fig15_universal_response.png"
+}

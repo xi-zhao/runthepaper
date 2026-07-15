@@ -16,7 +16,7 @@ explicit reproduction boundary.
 ## Reproduction Catalog / 论文复现目录
 
 <!-- case-catalog:start -->
-**16 public cases.** Open a paper below, then choose the reading or
+**17 public cases.** Open a paper below, then choose the reading or
 reproduction resource you need.
 
 | Paper | Preprint / formal publication | Reproduction status | Open package |
@@ -37,6 +37,7 @@ reproduction resource you need.
 | [Particle exchange statistics beyond fermions and bosons](cases/10.1038-s41586-024-08262-7/README.md) | [arXiv:2308.05203](https://arxiv.org/abs/2308.05203)<br>[Nature 637, 314–318 (2025)](https://doi.org/10.1038/s41586-024-08262-7) · DOI `10.1038/s41586-024-08262-7` | Complete reproduction | [中文 Note](cases/10.1038-s41586-024-08262-7/note/reproduction-note.zh-CN.md) · [English Note](cases/10.1038-s41586-024-08262-7/note/reproduction-note.en.md)<br>[Code](cases/10.1038-s41586-024-08262-7/code/README.md) · [Figures](cases/10.1038-s41586-024-08262-7/outputs/figures/) · [Checks](cases/10.1038-s41586-024-08262-7/outputs/checks/) |
 | [Strongly correlated quantum walks with a 12-qubit superconducting processor](cases/10.1126-science.aaw1611/README.md) | No preprint recorded / 未检索到预印本（checked 2026-07-15）<br>[Science 364, 753–756 (2019)](https://doi.org/10.1126/science.aaw1611) · DOI `10.1126/science.aaw1611` | Pixel-audited numerical feature reproduction | [中文 Note](cases/10.1126-science.aaw1611/note/reproduction-note.zh-CN.md) · [English Note](cases/10.1126-science.aaw1611/note/reproduction-note.en.md)<br>[Code](cases/10.1126-science.aaw1611/code/README.md) · [Figures](cases/10.1126-science.aaw1611/outputs/figures/) · [Checks](cases/10.1126-science.aaw1611/outputs/checks/) |
 | [Backreaction of stimulated Hawking radiation in an optical analogue](cases/10.1038-s41586-026-10720-3/README.md) | [arXiv:2607.01118](https://arxiv.org/abs/2607.01118)<br>[Nature 655, 336-341 (2026)](https://doi.org/10.1038/s41586-026-10720-3) · DOI `10.1038/s41586-026-10720-3` | Main-figure numerical feature reproduction | [中文 Note](cases/10.1038-s41586-026-10720-3/note/reproduction-note.zh-CN.md) · [English Note](cases/10.1038-s41586-026-10720-3/note/reproduction-note.en.md)<br>[Code](cases/10.1038-s41586-026-10720-3/code/README.md) · [Figures](cases/10.1038-s41586-026-10720-3/outputs/figures/) · [Checks](cases/10.1038-s41586-026-10720-3/outputs/checks/) |
+| [Benchmarking and Fidelity Response Theory of High-Fidelity Rydberg Entangling Gates](cases/10.1103-PRXQuantum.6.010331/README.md) | [arXiv:2407.20184](https://arxiv.org/abs/2407.20184)<br>[PRX Quantum 6, 010331 (2025)](https://doi.org/10.1103/PRXQuantum.6.010331) · DOI `10.1103/PRXQuantum.6.010331` | Formula-derived numerical reproduction | [中文 Note](cases/10.1103-PRXQuantum.6.010331/note/reproduction-note.zh-CN.md) · [English Note](cases/10.1103-PRXQuantum.6.010331/note/reproduction-note.en.md)<br>[Code](cases/10.1103-PRXQuantum.6.010331/code/README.md) · [Figures](cases/10.1103-PRXQuantum.6.010331/outputs/figures/) · [Checks](cases/10.1103-PRXQuantum.6.010331/outputs/checks/) |
 
 Status describes reproduction scope, not rank. See [how to read reproduction quality](#how-to-read-reproduction-quality) and the [detailed case index](CASES.md) for audit scores and explicit boundaries.
 <!-- case-catalog:end -->

@@ -1,0 +1,447 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "summary": {
+    "claims_total": 6,
+    "numeric_claims_total": 6,
+    "numeric_claims_without_targets": 0,
+    "targets_total": 9,
+    "targets_without_claim_refs": 0,
+    "claims_by_coverage_status": {
+      "evidence_compared": 2,
+      "target_declared": 4
+    },
+    "findings_total": 0,
+    "finding_counts": {
+      "error": 0,
+      "warning": 0,
+      "info": 0
+    }
+  },
+  "claims": [
+    {
+      "claim_id": "CLM001",
+      "status": "active",
+      "statement": "Appendix L approximates the ideal Rydberg CZ universal Haar and symmetric-Haar responses and captures the dominant Fig. 15 features.",
+      "source_refs": [
+        "figure:FIG015",
+        "equation:EQ006"
+      ],
+      "numeric_source_refs": [
+        "figure:FIG015"
+      ],
+      "formula_refs": [
+        "EQ006"
+      ],
+      "target_refs": [
+        "T001"
+      ],
+      "target_count": 1,
+      "target_statuses": [
+        "partially_reproduced"
+      ],
+      "evidence_comparison_count": 1,
+      "coverage_status": "evidence_compared"
+    },
+    {
+      "claim_id": "CLM002",
+      "status": "active",
+      "statement": "Frequency response scales as Omega^-2 while intensity response is universal in 2*pi*f/Omega.",
+      "source_refs": [
+        "figure:FIG006",
+        "equation:EQ005",
+        "equation:EQ006"
+      ],
+      "numeric_source_refs": [
+        "figure:FIG006"
+      ],
+      "formula_refs": [
+        "EQ005",
+        "EQ006"
+      ],
+      "target_refs": [
+        "T002"
+      ],
+      "target_count": 1,
+      "target_statuses": [
+        "partially_reproduced"
+      ],
+      "evidence_comparison_count": 1,
+      "coverage_status": "evidence_compared"
+    },
+    {
+      "claim_id": "CLM003",
+      "status": "active",
+      "statement": "FRT predicts distinct Omega power laws for frequency, intensity, decay, and motion errors.",
+      "source_refs": [
+        "figure:FIG007",
+        "equation:EQ007"
+      ],
+      "numeric_source_refs": [
+        "figure:FIG007"
+      ],
+      "formula_refs": [
+        "EQ007"
+      ],
+      "target_refs": [
+        "T003"
+      ],
+      "target_count": 1,
+      "target_statuses": [
+        "partially_reproduced"
+      ],
+      "evidence_comparison_count": 0,
+      "coverage_status": "target_declared"
+    },
+    {
+      "claim_id": "CLM004",
+      "status": "active",
+      "statement": "Public gate controls generate independently calculable protocol response functions.",
+      "source_refs": [
+        "figure:FIG009",
+        "equation:EQ009"
+      ],
+      "numeric_source_refs": [
+        "figure:FIG009"
+      ],
+      "formula_refs": [
+        "EQ009"
+      ],
+      "target_refs": [
+        "T005"
+      ],
+      "target_count": 1,
+      "target_statuses": [
+        "partially_reproduced"
+      ],
+      "evidence_comparison_count": 0,
+      "coverage_status": "target_declared"
+    },
+    {
+      "claim_id": "CLM005",
+      "status": "active",
+      "statement": "The spin-lock, many-body, cavity-filter, and SSB proxy mechanisms follow from explicit response formulas.",
+      "source_refs": [
+        "figure:FIG010",
+        "figure:FIG011",
+        "figure:FIG012",
+        "figure:FIG017"
+      ],
+      "numeric_source_refs": [
+        "figure:FIG010",
+        "figure:FIG011",
+        "figure:FIG012",
+        "figure:FIG017"
+      ],
+      "formula_refs": [
+        "EQ010",
+        "EQ011",
+        "EQ012",
+        "EQ013"
+      ],
+      "target_refs": [
+        "T006",
+        "T007",
+        "T008",
+        "T009"
+      ],
+      "target_count": 4,
+      "target_statuses": [
+        "partially_reproduced"
+      ],
+      "evidence_comparison_count": 0,
+      "coverage_status": "target_declared"
+    },
+    {
+      "claim_id": "CLM006",
+      "status": "active",
+      "statement": "At fixed laser power, principal quantum number changes both the Rabi frequency and blockade-limited spacing.",
+      "source_refs": [
+        "figure:FIG008",
+        "equation:EQ008"
+      ],
+      "numeric_source_refs": [
+        "figure:FIG008"
+      ],
+      "formula_refs": [
+        "EQ008"
+      ],
+      "target_refs": [
+        "T004"
+      ],
+      "target_count": 1,
+      "target_statuses": [
+        "partially_reproduced"
+      ],
+      "evidence_comparison_count": 0,
+      "coverage_status": "target_declared"
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "T001",
+      "figure_id": "FIG015",
+      "target_kind": "response_function",
+      "status": "partially_reproduced",
+      "claim_refs": [
+        "CLM001"
+      ],
+      "formula_refs": [
+        "EQ005",
+        "EQ006"
+      ],
+      "method_refs": [],
+      "parameter_match": "paper_exact",
+      "evidence_fields": [
+        "frequency_second_peak_present",
+        "published_1p5_mhz_response",
+        "responses_nonnegative"
+      ],
+      "acceptance_metrics": {
+        "responses_nonnegative": true,
+        "frequency_second_peak_present": true,
+        "published_1p5_mhz_response": true
+      },
+      "required_artifacts": [
+        "DATA_T001",
+        "RFIG_T001",
+        "CMP_T001"
+      ],
+      "dataset_count": 1,
+      "rendered_figure_count": 1,
+      "evidence_comparison_count": 1
+    },
+    {
+      "target_id": "T002",
+      "figure_id": "FIG006",
+      "target_kind": "response_scaling",
+      "status": "partially_reproduced",
+      "claim_refs": [
+        "CLM002"
+      ],
+      "formula_refs": [
+        "EQ005",
+        "EQ006"
+      ],
+      "method_refs": [],
+      "parameter_match": "paper_exact",
+      "evidence_fields": [
+        "maximum_scaling_collapse_error"
+      ],
+      "acceptance_metrics": {
+        "maximum_scaling_collapse_error": 1.4210854715202004e-14
+      },
+      "required_artifacts": [
+        "DATA_T002",
+        "RFIG_T002",
+        "CMP_T002"
+      ],
+      "dataset_count": 1,
+      "rendered_figure_count": 1,
+      "evidence_comparison_count": 1
+    },
+    {
+      "target_id": "T003",
+      "figure_id": "FIG007",
+      "target_kind": "response_scaling",
+      "status": "partially_reproduced",
+      "claim_refs": [
+        "CLM003"
+      ],
+      "formula_refs": [
+        "EQ006",
+        "EQ007"
+      ],
+      "method_refs": [],
+      "parameter_match": "paper_subset",
+      "evidence_fields": [
+        "absolute_public_terms_generated",
+        "power_laws_verified"
+      ],
+      "acceptance_metrics": {
+        "power_laws_verified": true,
+        "absolute_public_terms_generated": true
+      },
+      "required_artifacts": [
+        "DATA_T003",
+        "RFIG_T003"
+      ],
+      "dataset_count": 1,
+      "rendered_figure_count": 1,
+      "evidence_comparison_count": 0
+    },
+    {
+      "target_id": "T004",
+      "figure_id": "FIG008",
+      "target_kind": "parameter_scaling",
+      "status": "partially_reproduced",
+      "claim_refs": [
+        "CLM006"
+      ],
+      "formula_refs": [
+        "EQ008"
+      ],
+      "method_refs": [],
+      "parameter_match": "paper_subset",
+      "evidence_fields": [
+        "printed_anchors_recovered"
+      ],
+      "acceptance_metrics": {
+        "printed_anchors_recovered": true
+      },
+      "required_artifacts": [
+        "DATA_T004",
+        "RFIG_T004"
+      ],
+      "dataset_count": 1,
+      "rendered_figure_count": 1,
+      "evidence_comparison_count": 0
+    },
+    {
+      "target_id": "T005",
+      "figure_id": "FIG009",
+      "target_kind": "response_function",
+      "status": "partially_reproduced",
+      "claim_refs": [
+        "CLM004"
+      ],
+      "formula_refs": [
+        "EQ009"
+      ],
+      "method_refs": [],
+      "parameter_match": "paper_subset",
+      "evidence_fields": [
+        "gate_closure_verified",
+        "hamiltonian_hermitian",
+        "responses_nonnegative"
+      ],
+      "acceptance_metrics": {
+        "hamiltonian_hermitian": true,
+        "gate_closure_verified": true,
+        "responses_nonnegative": true
+      },
+      "required_artifacts": [
+        "DATA_T005",
+        "RFIG_T005"
+      ],
+      "dataset_count": 1,
+      "rendered_figure_count": 1,
+      "evidence_comparison_count": 0
+    },
+    {
+      "target_id": "T006",
+      "figure_id": "FIG010",
+      "target_kind": "response_function",
+      "status": "partially_reproduced",
+      "claim_refs": [
+        "CLM005"
+      ],
+      "formula_refs": [
+        "EQ010"
+      ],
+      "method_refs": [],
+      "parameter_match": "paper_subset",
+      "evidence_fields": [
+        "resonance_selection_verified"
+      ],
+      "acceptance_metrics": {
+        "resonance_selection_verified": true
+      },
+      "required_artifacts": [
+        "DATA_T006",
+        "RFIG_T006"
+      ],
+      "dataset_count": 1,
+      "rendered_figure_count": 1,
+      "evidence_comparison_count": 0
+    },
+    {
+      "target_id": "T007",
+      "figure_id": "FIG012",
+      "target_kind": "filter_transfer",
+      "status": "partially_reproduced",
+      "claim_refs": [
+        "CLM005"
+      ],
+      "formula_refs": [
+        "EQ013"
+      ],
+      "method_refs": [],
+      "parameter_match": "proxy_model",
+      "evidence_fields": [
+        "dc_unity",
+        "half_power_at_linewidth"
+      ],
+      "acceptance_metrics": {
+        "dc_unity": true,
+        "half_power_at_linewidth": true
+      },
+      "required_artifacts": [
+        "DATA_T007",
+        "RFIG_T007"
+      ],
+      "dataset_count": 1,
+      "rendered_figure_count": 1,
+      "evidence_comparison_count": 0
+    },
+    {
+      "target_id": "T008",
+      "figure_id": "FIG017",
+      "target_kind": "analytic_error_model",
+      "status": "partially_reproduced",
+      "claim_refs": [
+        "CLM005"
+      ],
+      "formula_refs": [
+        "EQ012"
+      ],
+      "method_refs": [],
+      "parameter_match": "paper_subset",
+      "evidence_fields": [
+        "first_order_cancellation_verified",
+        "printed_formulas_exact"
+      ],
+      "acceptance_metrics": {
+        "printed_formulas_exact": true,
+        "first_order_cancellation_verified": true
+      },
+      "required_artifacts": [
+        "DATA_T008",
+        "RFIG_T008"
+      ],
+      "dataset_count": 1,
+      "rendered_figure_count": 1,
+      "evidence_comparison_count": 0
+    },
+    {
+      "target_id": "T009",
+      "figure_id": "FIG011",
+      "target_kind": "many_body_response",
+      "status": "partially_reproduced",
+      "claim_refs": [
+        "CLM005"
+      ],
+      "formula_refs": [
+        "EQ011"
+      ],
+      "method_refs": [],
+      "parameter_match": "proxy_model",
+      "evidence_fields": [
+        "maximum_norm_error",
+        "z2_final_probability"
+      ],
+      "acceptance_metrics": {
+        "maximum_norm_error": 6.350475700855895e-14,
+        "z2_final_probability": 0.9999853140974831
+      },
+      "required_artifacts": [
+        "DATA_T009",
+        "RFIG_T009"
+      ],
+      "dataset_count": 1,
+      "rendered_figure_count": 1,
+      "evidence_comparison_count": 0
+    }
+  ],
+  "findings": []
+}

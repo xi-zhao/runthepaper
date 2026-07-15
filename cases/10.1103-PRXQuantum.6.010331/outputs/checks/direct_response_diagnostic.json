@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "target_id": "D001",
+  "figure_refs": [
+    "Fig. 15"
+  ],
+  "status": "partial",
+  "artifact_stage": "exploratory",
+  "parameter_match": "reconstructed",
+  "generated_data_provenance": "independent_numerics",
+  "reference_comparison": "analytic_reference",
+  "formula_gate": "reconstructed",
+  "formula_dependencies": [
+    "EQ001",
+    "EQ002",
+    "EQ003",
+    "EQ004"
+  ],
+  "failure_type": "missing_parameters",
+  "limitation": "The paper does not disclose the exact Fig. 15 phase trajectory. The cited generic Evered pulse closes to a high-fidelity CZ but does not reproduce the Appendix-L response features, so this diagnostic is intentionally unscored.",
+  "runtime_seconds": 0.19347358401864767,
+  "time_points": 4001,
+  "normalized_frequency_points": 1001,
+  "hermiticity_error": 0.0,
+  "unitarity_error": 3.0464519795714295e-13,
+  "gate_diagnostics": {
+    "max_return_leakage": 2.3310734154052572e-05,
+    "max_computational_off_diagonal": 0.0,
+    "controlled_phase_radians": 3.1414597162524274,
+    "controlled_phase_error_radians": 0.0001329373373657461,
+    "minimum_return_probability": 0.9999766892660094
+  },
+  "appendix_fit_nrmse": {
+    "haar_frequency": 0.4107831203987186,
+    "symmetric_haar_frequency": 0.38058202996457674,
+    "haar_intensity": 0.11037860428413408,
+    "symmetric_haar_intensity": 0.08387711196824837
+  },
+  "convergence_nrmse": {
+    "haar_frequency": 2.6877050082445963e-07,
+    "symmetric_haar_frequency": 2.2693229463084144e-07,
+    "haar_intensity": 4.544425278685606e-07,
+    "symmetric_haar_intensity": 4.6232217740657617e-07
+  },
+  "haar_intensity_response_x_0p5": 0.8031928656643388,
+  "acceptance": {
+    "hamiltonian_and_noise_hermitian": true,
+    "final_propagator_unitary": true,
+    "computational_return": true,
+    "controlled_phase": true,
+    "responses_nonnegative": true,
+    "time_grid_converged": true
+  },
+  "data": "outputs/data/reconstructed_direct_response.csv",
+  "figure": "outputs/figures/fig15_direct_diagnostic.png"
+}

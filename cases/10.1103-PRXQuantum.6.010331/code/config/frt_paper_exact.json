@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "paper_id": "10.1103-PRXQuantum.6.010331",
+  "artifact_stage": "final_reproduction",
+  "parameter_match": "paper_exact",
+  "final_target": {
+    "model": "appendix_l_analytic_fits",
+    "generated_data_provenance": "analytic_reference",
+    "reference_comparison": "analytic_reference",
+    "formula_dependencies": ["EQ005", "EQ006"]
+  },
+  "direct_diagnostic": {
+    "status": "reconstructed",
+    "artifact_stage": "exploratory",
+    "parameter_match": "reconstructed",
+    "generated_data_provenance": "independent_numerics",
+    "limitation": "The exact Fig. 15 phase trajectory is not disclosed in the paper or source package."
+  },
+  "model": {
+    "blockade_limit": "infinite",
+    "aom_rise_fall_time": 0.0,
+    "self_light_shift": 0.0,
+    "omega_angular": 1.0,
+    "phase_amplitude": 0.704973391304171,
+    "phase_frequency_over_omega": 1.0431,
+    "phase_offset": -0.7318,
+    "detuning_over_omega": 0.0,
+    "omega_duration_over_2pi": 1.215
+  },
+  "universal_response": {
+    "normalized_frequency_min": 0.0,
+    "normalized_frequency_max": 5.0,
+    "fig15_plot_max": 3.0,
+    "frequency_points": 1001,
+    "time_points": 4001,
+    "convergence_time_points": 2001,
+    "fidelity_metrics": ["haar", "symmetric_haar"]
+  },
+  "fig6a": {
+    "rabi_frequencies_mhz": [3.0, 7.7],
+    "frequency_min_mhz": 0.0,
+    "frequency_max_mhz": 15.0,
+    "frequency_points": 601
+  },
+  "sources": {
+    "ideal_model": "paper Eqs. (12)-(16), Appendix G and Appendix L",
+    "diagnostic_pulse_parameters": "Evered et al., Nature 622, 268-272 (2023), Methods, cited as Ref. 8; reconstructed diagnostic only",
+    "plotted_range": "paper Fig. 15 and Fig. 6(a)"
+  }
+}

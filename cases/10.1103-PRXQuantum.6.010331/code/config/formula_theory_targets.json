@@ -1,0 +1,57 @@
+{
+  "fig7": {
+    "rabi_frequency_min_mhz": 1.5,
+    "rabi_frequency_max_mhz": 15.0,
+    "points": 240,
+    "reference_rabi_mhz": 7.7
+  },
+  "fig8": {
+    "principal_quantum_number_min": 10,
+    "principal_quantum_number_max": 80,
+    "points": 281
+  },
+  "fig9": {
+    "normalized_frequency_min": 0.0,
+    "normalized_frequency_max": 3.0,
+    "points": 301,
+    "points_per_radian": 80,
+    "time_optimal_time_points": 5001
+  },
+  "fig10": {
+    "frequency_min_mhz": 0.0,
+    "frequency_max_mhz": 5.25,
+    "points": 1501,
+    "locking_frequencies_mhz": [1.0, 3.0, 5.0],
+    "duration_us": 50.0
+  },
+  "fig11": {
+    "sites": 7,
+    "rabi_frequency_mhz": 7.7,
+    "duration_us": 6.0,
+    "nearest_neighbor_interaction_over_omega": 20.0,
+    "interaction_status": "explicit reconstruction; geometry and C6/r^6 were not tabulated in the target paper",
+    "normalized_frequency_min": 0.0,
+    "normalized_frequency_max": 3.0,
+    "frequency_points": 121,
+    "adiabatic_time_steps": 2400,
+    "tangent_shape": 1.35,
+    "detuning_endpoint_over_omega": 10.0,
+    "detuning_sign_status": "mapped to -10 to +10 for H=-Delta sum(n), equivalent to the paper's oppositely signed plotted detuning convention"
+  },
+  "fig12": {
+    "frequency_min_mhz": 0.0,
+    "frequency_max_mhz": 5.0,
+    "points": 1001,
+    "linewidth_mhz": 0.14
+  },
+  "fig17": {
+    "phase_flip_probability_min": 0.002,
+    "phase_flip_probability_max": 0.01,
+    "phase_flip_points": 5,
+    "symmetric_infidelity_min": 0.0,
+    "symmetric_infidelity_max": 0.006,
+    "symmetric_infidelity_points": 121,
+    "single_qubit_gate_count": 10,
+    "gate_count_status": "explicit reconstruction; N=10 is printed for the phase-calibration SSB sequence, but not specified for Fig. 17"
+  }
+}

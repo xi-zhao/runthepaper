@@ -1,0 +1,250 @@
+# Derivation
+
+Equation-level derivation for **10.1103-PRXQuantum.6.010331**, generated from the reproduction's equation cards (13 equations). Each block is an equation the reproduction depends on, transcribed from the paper with its source location and tagged by derivation status. For the narrative walk-through see `DERIVATION_TRACE.md` (or `METHOD_TRACE.md`).
+
+## Equations
+### EQ001 — Ideal infinite-blockade Rydberg CZ Hamiltonian
+
+*Defines the ideal gate trajectory whose fidelity susceptibility is reproduced.*
+
+$$
+H_0(t)=\frac{\Omega}{2}\sum_{i=1}^2[e^{-i\varphi(t)}|1_i\rangle\langle r_i|+e^{i\varphi(t)}|r_i\rangle\langle1_i|]+B|rr\rangle\langle rr|,\quad B\to\infty
+$$
+
+status: `verified` · source: paper_equation: Eq. (12), arXiv source label eq:gateHamiltonian
+
+Numerical form:
+
+```
+8x8 dense Hamiltonian in the {|0>,|1>,|r>} tensor basis with |rr> omitted.
+```
+
+Code: `code/src/fidelity_response.py::ideal_hamiltonian`
+
+
+### EQ002 — Sinusoidal time-optimal control phase
+
+*Defines a reconstructed direct-integration diagnostic; the current paper does not disclose that these cited generic-pulse parameters are the exact Fig. 15 trajectory.*
+
+$$
+\varphi(t)=A\cos(\omega t-\varphi_0)+\delta_0t
+$$
+
+status: `reconstructed` · derived from: `EQ001` · source: paper_method: Main text: parameterized sinusoidal phase modulation, citing Ref. 8; cited_primary_source: Evered et al., Nature 622, 268-272 (2023), Methods: A/(2pi)=0.1122, omega/Omega=1.0431,…
+
+Numerical form:
+
+```
+phase(t, params), with Omega=1 normalized units and T=2*pi*1.215.
+```
+
+Code: `code/src/fidelity_response.py::phase`
+
+
+### EQ003 — Haar-averaged fidelity response
+
+*Maps the ideal gate trajectory and a noise operator to the universal response.*
+
+$$
+I_{\mathrm{avg}}(f)=\int_0^Tdt\int_0^Td\tau\cos[2\pi f(t-\tau)]\left\{\frac{\mathrm{Tr}[O_H(t)O_H(\tau)P]}{D}-\frac{\mathrm{Tr}[O_H(t)PO_H(\tau)P]+\mathrm{Tr}[O_H(t)P]\mathrm{Tr}[O_H(\tau)P]}{D(D+1)}\right\}
+$$
+
+status: `verified` · derived from: `EQ001`, `EQ002` · source: paper_equation: Eq. (9) and Appendix Eq. (G7), source label eq:response_avg
+
+Numerical form:
+
+```
+Fourier-transform O_H(t), then evaluate Tr[A A^dag P]/D - (Tr[A P A^dag P]+|Tr[A P]|^2)/(D(D+1)).
+```
+
+Code: `code/src/fidelity_response.py::average_response`
+
+
+### EQ004 — Frequency and relative-intensity noise operators
+
+*Defines the two perturbations used in Fig. 6 and Fig. 15.*
+
+$$
+O_\nu=-2\pi\sum_i|r_i\rangle\langle r_i|,\qquad O_I(t)=\frac{\Omega}{4}\sum_i[e^{-i\varphi(t)}|1_i\rangle\langle r_i|+\mathrm{h.c.}]
+$$
+
+status: `verified` · derived from: `EQ001` · source: paper_equation: Eqs. (13)-(14), source label equ:noise operators
+
+Numerical form:
+
+```
+frequency_noise_operator() and intensity_noise_operator(t).
+```
+
+Code: `code/src/fidelity_response.py::frequency_noise_operator`, `code/src/fidelity_response.py::intensity_noise_operator`
+
+
+### EQ005 — Universal response scaling
+
+*Turns Fig. 15 universal curves into the dimensional responses of Fig. 6(a).*
+
+$$
+I_\nu(f;\Omega)=\Omega^{-2}g_\nu(2\pi f/\Omega),\qquad I_I(f;\Omega)=g_I(2\pi f/\Omega)
+$$
+
+status: `verified` · derived from: `EQ003`, `EQ004` · source: paper_equation: Eqs. (15)-(16), source labels Eq:nu_scaling and Eq:I_Scaling
+
+Numerical form:
+
+```
+x=f_MHz/rabi_MHz; I_nu in MHz^-2 equals g_nu(x)/(2*pi*rabi_MHz)^2, and I_I=g_I(x).
+```
+
+Code: `code/src/fidelity_response.py::scale_universal_response`
+
+
+### EQ006 — Appendix-L response fits
+
+*Defines the paper-exact analytic envelope target because all four approximate-fit coefficient sets are printed in the paper.*
+
+$$
+g_\nu(x)/(2\pi)^2=a e^{-((x-b)/c)^2}+d e^{-((x-e)/f)^2},\quad g_I(x)=a[1+d\tanh(e(x-f))]/[1+e^{b(x-c)}]
+$$
+
+status: `source_only` · derived from: `EQ003`, `EQ005` · source: paper_formula: Appendix L, four six-parameter fits for Haar and symmetric-Haar frequency/intensity res…
+
+Numerical form:
+
+```
+appendix_fit(normalized_frequency, metric, noise_kind), used to generate the final Fig. 15 response and the Fig. 6(a) rescaling.
+```
+
+Code: `code/src/fidelity_response.py::appendix_fit`
+
+
+### EQ007 — FRT error-budget contributions
+
+*Generates the theoretical error-source curves in Fig. 1(f), Fig. 7, and the infidelity part of Figs. 9 and 12.*
+
+$$
+\varepsilon_\nu=\int_0^\infty S_\nu(f)I_\nu(f;\Omega)df,\quad \varepsilon_I=\int_0^\infty S_I(f)I_I(f;\Omega)df,\quad \varepsilon_\mathrm{decay}=2.6\Gamma/\Omega,\quad \varepsilon_\mathrm{motion}\propto\Omega^{-2}
+$$
+
+status: `verified` · derived from: `EQ005`, `EQ006` · source: paper_equation: Eqs. (10)-(11), PSD-weighted infidelity; paper_method: Main text around Fig. 7 and Appendix D: decay, motion, and 0.8% shot-to-shot intensity …
+
+Numerical form:
+
+```
+Evaluate the Appendix-L response at zero frequency to obtain quasistatic frequency/intensity coefficients, add the lifetime-derived decay term, and expose all unavailable PSD or Doppler variances as explicit inputs. No source-figure pixels are computational inputs.
+```
+
+Code: `code/src/theory_targets.py::error_budget`
+
+
+### EQ008 — Fixed-power principal-quantum-number scaling
+
+*Reconstructs the mechanisms and optimum in Fig. 8 at fixed laser power.*
+
+$$
+\Omega(n)=\Omega_{61}(61/n)^\alpha,\quad \varepsilon_\nu(n)=\int S_\nu(f)I_\nu[f;\Omega(n)]df,\quad \varepsilon_\mathrm{tot}=\varepsilon_\nu+\varepsilon_I+\varepsilon_\mathrm{decay}+\varepsilon_\mathrm{motion}
+$$
+
+status: `reconstructed` · derived from: `EQ007` · source: paper_method: Fig. 8 caption and accompanying text; cited_primary_source: Saffman, Walker, and Molmer, Rev. Mod. Phys. 82, 2313 (2010)
+
+Numerical form:
+
+```
+Use the two Rabi-frequency anchors printed in the text and expose lifetime/electric-field scaling assumptions as parameters. Only the anchor-constrained Rabi curve is paper-specific; unavailable author arrays are never inferred from figure pixels.
+```
+
+Code: `code/src/theory_targets.py::principal_quantum_number_scaling`
+
+
+### EQ009 — Cited CZ gate protocol controls
+
+*Defines the three independent gate trajectories compared in Fig. 9.*
+
+$$
+U_\mathrm{LP}=U(\tau,\xi)U(\tau,0),\quad \Delta/\Omega=0.377371,\quad \Omega\tau=4.29268;\qquad U_\mathrm{robust}=[C_{\pi/2}]^2
+$$
+
+status: `verified` · derived from: `EQ001`, `EQ003`, `EQ004` · source: cited_primary_source: Levine et al., PRL 123, 170503 (2019): Delta/Omega=0.377371, xi=3.90242, Omega*tau=4.29268; cited_primary_source: Fromonteil et al., PRX Quantum 4, 020335 (2023): resonant pulse sequences and Protocol II; cited_primary_source: Evered et al., Nature 622, 268 (2023): sinusoidal time-optimal control
+
+Numerical form:
+
+```
+Piecewise-constant protocol segments plus the existing sinusoidal protocol, all propagated in the same infinite-blockade eight-dimensional Hilbert space.
+```
+
+Code: `code/src/gate_protocols.py`
+
+
+### EQ010 — Rydberg spin-lock response
+
+*Reproduces the analytical component of Fig. 10 and verifies the PSD-to-decay-rate mapping.*
+
+$$
+I_\nu(f)=\frac{\pi^2t^2}{2}\{\mathrm{sinc}^2[(\Omega/2+\pi f)t]+\mathrm{sinc}^2[(\Omega/2-\pi f)t]\},\quad \Gamma_\mathrm{SL}=\pi^2S_\nu(\Omega/2\pi)+\Gamma_\mathrm{Ryd}/2
+$$
+
+status: `verified` · derived from: `EQ003` · source: paper_appendix: Appendix H, analytic prediction of the Rydberg spin-lock experiment
+
+Numerical form:
+
+```
+Numerically evaluate the finite-time sinc-squared filter and the lifetime floor. Mapping it to an absolute decay-rate curve requires a public numerical PSD and is therefore blocked for the paper-specific panel.
+```
+
+Code: `code/src/theory_targets.py::spin_lock_decay_rate`
+
+
+### EQ011 — Seven-qubit many-body fidelity response
+
+*Defines the quench and quasi-adiabatic response functions in Fig. 11.*
+
+$$
+H(t)=\frac{\Omega(t)}{2}\sum_i\sigma_i^x-\Delta(t)\sum_i n_i+\sum_{i<j}\frac{C_6}{r_{ij}^6}n_in_j,\quad O_\nu=-2\pi\sum_i n_i,\quad O_I=\frac{\Omega(t)}{4}\sum_i\sigma_i^x
+$$
+
+status: `reconstructed` · derived from: `EQ003`, `EQ004` · source: paper_equation: Main text equation below Fig. 11; paper_method: Fig. 11 caption: seven qubits, 7.7 MHz quench, 6 us duration, and tangent detuning sweep
+
+Numerical form:
+
+```
+Exact 2^7 state-vector propagation with tangent equations for cosine and sine perturbations at every sampled frequency.
+```
+
+Code: `code/src/many_body_response.py`
+
+
+### EQ012 — SSB phase-flip and depolarizing proxy model
+
+*Reproduces Fig. 17 and the theoretical sensitivity mechanism underlying Fig. 16(b).*
+
+$$
+f_\mathrm{prod}=1-\frac{4}{3}p+\frac{8}{15}p^2,\quad f_\mathrm{sym}=1-\frac{5}{3}p+p^2,\quad F_\mathrm{SSB}=1-[1-\frac{5}{9}Np+O(N_\mathrm{CZ}d)]\frac{3d}{4}+O(p^2)
+$$
+
+status: `verified` · source: paper_appendix: Appendix D, abstract analytical models and Fig. 17
+
+Numerical form:
+
+```
+Evaluate the paper equations over the printed p and d ranges and fit the same panel-wise linear slopes.
+```
+
+Code: `code/src/theory_targets.py::phase_flip_proxy`
+
+
+### EQ013 — Cavity-filtered frequency-noise projection
+
+*Reproduces the cavity-transfer calculation used by the FRT projection in Fig. 12(a).*
+
+$$
+S_\nu^\mathrm{filtered}(f)=S_\nu(f)/[1+(f/f_c)^2],\quad f_c=0.14\,\mathrm{MHz}
+$$
+
+status: `reconstructed` · derived from: `EQ007` · source: paper_method: Fig. 12: projected filtering by a cavity with 140 kHz linewidth
+
+Numerical form:
+
+```
+Evaluate the disclosed single-pole power transfer. An absolute paper-specific infidelity projection additionally requires the unpublished numerical PSD and is marked blocked.
+```
+
+Code: `code/src/theory_targets.py::cavity_filtered_psd`

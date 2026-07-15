@@ -1,0 +1,904 @@
+protocol,normalized_frequency,frequency_response,intensity_response,generated_data_provenance
+Time-optimal,0.0,120.77417679132697,1.162999167636651,independent_hamiltonian_numerics
+Time-optimal,0.01,121.30592747619431,1.1726979077857609,independent_hamiltonian_numerics
+Time-optimal,0.02,121.76210152116585,1.1824100289047363,independent_hamiltonian_numerics
+Time-optimal,0.03,122.141543501804,1.1920961904376872,independent_hamiltonian_numerics
+Time-optimal,0.04,122.44329282082793,1.2017162385018567,independent_hamiltonian_numerics
+Time-optimal,0.05,122.66658304239911,1.2112293573394264,independent_hamiltonian_numerics
+Time-optimal,0.06,122.81084071659387,1.2205942237070253,independent_hamiltonian_numerics
+Time-optimal,0.07,122.8756837051921,1.2297691635883872,independent_hamiltonian_numerics
+Time-optimal,0.08,122.86091902126839,1.2387123106065827,independent_hamiltonian_numerics
+Time-optimal,0.09,122.76654019637681,1.2473817655058788,independent_hamiltonian_numerics
+Time-optimal,0.1,122.59272419032749,1.2557357560697198,independent_hamiltonian_numerics
+Time-optimal,0.11,122.33982785974985,1.2637327968401963,independent_hamiltonian_numerics
+Time-optimal,0.12,122.00838400272482,1.2713318480059908,independent_hamiltonian_numerics
+Time-optimal,0.13,121.59909699779206,1.2784924728301879,independent_hamiltonian_numerics
+Time-optimal,0.14,121.11283805661895,1.2851749929958416,independent_hamiltonian_numerics
+Time-optimal,0.15,120.55064011047477,1.29134064125717,independent_hamiltonian_numerics
+Time-optimal,0.16,119.91369235146396,1.2969517107956394,independent_hamiltonian_numerics
+Time-optimal,0.17,119.2033344502185,1.3019717006950668,independent_hamiltonian_numerics
+Time-optimal,0.18,118.42105047236555,1.3063654569665293,independent_hamiltonian_numerics
+Time-optimal,0.19,117.5684625166636,1.3100993085731005,independent_hamiltonian_numerics
+Time-optimal,0.2,116.64732409818754,1.3131411979257224,independent_hamiltonian_numerics
+Time-optimal,0.21,115.65951330032351,1.315460805345305,independent_hamiltonian_numerics
+Time-optimal,0.22,114.60702571967249,1.3170296670115729,independent_hamiltonian_numerics
+Time-optimal,0.23,113.49196722816521,1.317821285946743,independent_hamiltonian_numerics
+Time-optimal,0.24,112.3165465768738,1.3178112356112641,independent_hamiltonian_numerics
+Time-optimal,0.25,111.08306786603742,1.3169772557203023,independent_hamiltonian_numerics
+Time-optimal,0.26,109.7939229058345,1.3152993399215065,independent_hamiltonian_numerics
+Time-optimal,0.27,108.45158349232594,1.3127598150090634,independent_hamiltonian_numerics
+Time-optimal,0.28,107.05859362282291,1.3093434113838023,independent_hamiltonian_numerics
+Time-optimal,0.29,105.61756167468553,1.3050373245055527,independent_hamiltonian_numerics
+Time-optimal,0.3,104.13115257124247,1.2998312671210175,independent_hamiltonian_numerics
+Time-optimal,0.31,102.60207995811103,1.2937175120882958,independent_hamiltonian_numerics
+Time-optimal,0.32,101.03309841274628,1.2866909256578531,independent_hamiltonian_numerics
+Time-optimal,0.33,99.42699570951004,1.278748991108388,independent_hamiltonian_numerics
+Time-optimal,0.34,97.7865851619481,1.269891822675756,independent_hamiltonian_numerics
+Time-optimal,0.35000000000000003,96.11469806331354,1.2601221697517817,independent_hamiltonian_numerics
+Time-optimal,0.36,94.41417624565605,1.2494454113696336,independent_hamiltonian_numerics
+Time-optimal,0.37,92.68786477702156,1.2378695410310987,independent_hamiltonian_numerics
+Time-optimal,0.38,90.93860481548714,1.2254051419697534,independent_hamiltonian_numerics
+Time-optimal,0.39,89.16922663788853,1.212065352982186,independent_hamiltonian_numerics
+Time-optimal,0.4,87.38254286018224,1.1978658249966383,independent_hamiltonian_numerics
+Time-optimal,0.41000000000000003,85.58134186542694,1.1828246685849766,independent_hamiltonian_numerics
+Time-optimal,0.42,83.76838145439103,1.1669623926592336,independent_hamiltonian_numerics
+Time-optimal,0.43,81.94638273275706,1.1503018346282197,independent_hamiltonian_numerics
+Time-optimal,0.44,80.11802424786504,1.132868082322806,independent_hamiltonian_numerics
+Time-optimal,0.45,78.28593638684092,1.1146883880295935,independent_hamiltonian_numerics
+Time-optimal,0.46,76.4526960468915,1.0957920750030765,independent_hamiltonian_numerics
+Time-optimal,0.47000000000000003,74.62082158741816,1.0762104368541363,independent_hamiltonian_numerics
+Time-optimal,0.48,72.79276807250184,1.0559766302395106,independent_hamiltonian_numerics
+Time-optimal,0.49,70.97092281117472,1.0351255613011319,independent_hamiltonian_numerics
+Time-optimal,0.5,69.15760120177649,1.0136937663267869,independent_hamiltonian_numerics
+Time-optimal,0.51,67.35504288556442,0.9917192871241182,independent_hamiltonian_numerics
+Time-optimal,0.52,65.5654082136239,0.9692415416179078,independent_hamiltonian_numerics
+Time-optimal,0.53,63.79077503001875,0.9463011901969962,independent_hamiltonian_numerics
+Time-optimal,0.54,62.03313577302248,0.9229399983505996,independent_hamiltonian_numerics
+Time-optimal,0.55,60.29439489518437,0.899200696145405,independent_hamiltonian_numerics
+Time-optimal,0.56,58.576366601933216,0.8751268351037845,independent_hamiltonian_numerics
+Time-optimal,0.5700000000000001,56.88077290737188,0.8507626430501796,independent_hamiltonian_numerics
+Time-optimal,0.58,55.209242004917,0.8261528774968758,independent_hamiltonian_numerics
+Time-optimal,0.59,53.56330694944495,0.8013426781424264,independent_hamiltonian_numerics
+Time-optimal,0.6,51.94440464666842,0.77637741905523,independent_hamiltonian_numerics
+Time-optimal,0.61,50.353875144547686,0.7513025611120239,independent_hamiltonian_numerics
+Time-optimal,0.62,48.7929612206719,0.7261635052557321,independent_hamiltonian_numerics
+Time-optimal,0.63,47.26280825870643,0.701005447129533,independent_hamiltonian_numerics
+Time-optimal,0.64,45.76446440622098,0.6758732336341371,independent_hamiltonian_numerics
+Time-optimal,0.65,44.29888100545796,0.6508112219433588,independent_hamiltonian_numerics
+Time-optimal,0.66,42.866913287909156,0.6258631414987146,independent_hamiltonian_numerics
+Time-optimal,0.67,41.46932132291619,0.6010719594876626,independent_hamiltonian_numerics
+Time-optimal,0.68,40.10677120990705,0.5764797502918579,independent_hamiltonian_numerics
+Time-optimal,0.6900000000000001,38.779836503339055,0.5521275693716885,independent_hamiltonian_numerics
+Time-optimal,0.7000000000000001,37.4889998589106,0.5280553320314204,independent_hamiltonian_numerics
+Time-optimal,0.71,36.23465488916739,0.5043016974858558,independent_hamiltonian_numerics
+Time-optimal,0.72,35.01710821623742,0.48090395862411295,independent_hamiltonian_numerics
+Time-optimal,0.73,33.83658170907929,0.45789793783972854,independent_hamiltonian_numerics
+Time-optimal,0.74,32.69321489236253,0.4353178892682732,independent_hamiltonian_numerics
+Time-optimal,0.75,31.587067513849334,0.4131964077446867,independent_hamiltonian_numerics
+Time-optimal,0.76,30.51812225698096,0.3915643447623631,independent_hamiltonian_numerics
+Time-optimal,0.77,29.486287585243367,0.3704507316850151,independent_hamiltonian_numerics
+Time-optimal,0.78,28.49140070481139,0.34988271043049013,independent_hamiltonian_numerics
+Time-optimal,0.79,27.533230631954275,0.32988547181332817,independent_hamiltonian_numerics
+Time-optimal,0.8,26.611481351706466,0.3104822016998965,independent_hamiltonian_numerics
+Time-optimal,0.81,25.72579505439154,0.2916940350966324,independent_hamiltonian_numerics
+Time-optimal,0.8200000000000001,24.87575543670806,0.2735400182585765,independent_hamiltonian_numerics
+Time-optimal,0.8300000000000001,24.06089105425688,0.2560370788717552,independent_hamiltonian_numerics
+Time-optimal,0.84,23.2806787126043,0.2392000043296852,independent_hamiltonian_numerics
+Time-optimal,0.85,22.53454688423229,0.22304142809098926,independent_hamiltonian_numerics
+Time-optimal,0.86,21.82187913902881,0.2075718240725004,independent_hamiltonian_numerics
+Time-optimal,0.87,21.142017576296563,0.19279950899981033,independent_hamiltonian_numerics
+Time-optimal,0.88,20.494266246643882,0.17873065260576193,independent_hamiltonian_numerics
+Time-optimal,0.89,19.877894552514114,0.16536929553648327,independent_hamiltonian_numerics
+Time-optimal,0.9,19.292140616559415,0.15271737479475728,independent_hamiltonian_numerics
+Time-optimal,0.91,18.736214607517397,0.14077475652158908,independent_hamiltonian_numerics
+Time-optimal,0.92,18.20930201375703,0.1295392758891899,independent_hamiltonian_numerics
+Time-optimal,0.93,17.71056685516082,0.11900678385210459,independent_hamiltonian_numerics
+Time-optimal,0.9400000000000001,17.2391548245615,0.10917120047819479,independent_hamiltonian_numerics
+Time-optimal,0.9500000000000001,16.794196350497355,0.100024574557482,independent_hamiltonian_numerics
+Time-optimal,0.96,16.374809573630174,0.09155714916487481,independent_hamiltonian_numerics
+Time-optimal,0.97,15.980103229751546,0.08375743283227924,independent_hamiltonian_numerics
+Time-optimal,0.98,15.60917943289635,0.07661227596689735,independent_hamiltonian_numerics
+Time-optimal,0.99,15.261136352696123,0.07010695213551307,independent_hamiltonian_numerics
+Time-optimal,1.0,14.935070780701853,0.06422524381940653,independent_hamiltonian_numerics
+Time-optimal,1.01,14.630080581027645,0.05894953223124574,independent_hamiltonian_numerics
+Time-optimal,1.02,14.34526702127441,0.05426089077391789,independent_hamiltonian_numerics
+Time-optimal,1.03,14.079736980302393,0.05013918171180358,independent_hamiltonian_numerics
+Time-optimal,1.04,13.83260503002999,0.04656315561750616,independent_hamiltonian_numerics
+Time-optimal,1.05,13.602995389029484,0.04351055315150081,independent_hamiltonian_numerics
+Time-optimal,1.06,13.390043746283732,0.040958208728642476,independent_hamiltonian_numerics
+Time-optimal,1.07,13.192898954041446,0.03888215562382735,independent_hamiltonian_numerics
+Time-optimal,1.08,13.010724589275231,0.03725773206949139,independent_hamiltonian_numerics
+Time-optimal,1.09,12.842700383791215,0.0360596878998851,independent_hamiltonian_numerics
+Time-optimal,1.1,12.688023523573188,0.03526229130123934,independent_hamiltonian_numerics
+Time-optimal,1.11,12.545909818451793,0.03483943523295198,independent_hamiltonian_numerics
+Time-optimal,1.12,12.415594743682068,0.03476474309275684,independent_hamiltonian_numerics
+Time-optimal,1.1300000000000001,12.296334355479988,0.035011673208400824,independent_hamiltonian_numerics
+Time-optimal,1.1400000000000001,12.187406083011336,0.03555362174962461,independent_hamiltonian_numerics
+Time-optimal,1.1500000000000001,12.088109399748229,0.036364023667101945,independent_hamiltonian_numerics
+Time-optimal,1.16,11.997766377498419,0.03741645127941329,independent_hamiltonian_numerics
+Time-optimal,1.17,11.915722126780327,0.038684710145003694,independent_hamiltonian_numerics
+Time-optimal,1.18,11.8413451275546,0.04014293187328511,independent_hamiltonian_numerics
+Time-optimal,1.19,11.774027454631156,0.041765663547587144,independent_hamiltonian_numerics
+Time-optimal,1.2,11.713184902352063,0.0435279534523102,independent_hamiltonian_numerics
+Time-optimal,1.21,11.658257013400474,0.04540543281741513,independent_hamiltonian_numerics
+Time-optimal,1.22,11.608707016805313,0.04737439331509097,independent_hamiltonian_numerics
+Time-optimal,1.23,11.564021680405519,0.049411860066037226,independent_hamiltonian_numerics
+Time-optimal,1.24,11.523711083192815,0.05149565993609591,independent_hamiltonian_numerics
+Time-optimal,1.25,11.487308313087944,0.05360448492795012,independent_hamiltonian_numerics
+Time-optimal,1.26,11.454369095802681,0.05571795049705145,independent_hamiltonian_numerics
+Time-optimal,1.27,11.424471360512602,0.057816648645810174,independent_hamiltonian_numerics
+Time-optimal,1.28,11.397214748109652,0.05988219567523228,independent_hamiltonian_numerics
+Time-optimal,1.29,11.372220067815856,0.061897274498478774,independent_hamiltonian_numerics
+Time-optimal,1.3,11.349128707929552,0.06384567144619568,independent_hamiltonian_numerics
+Time-optimal,1.31,11.327602006433874,0.06571230751871497,independent_hamiltonian_numerics
+Time-optimal,1.32,11.307320587133443,0.06748326406537168,independent_hamiltonian_numerics
+Time-optimal,1.33,11.287983666895594,0.06914580289592785,independent_hamiltonian_numerics
+Time-optimal,1.34,11.269308339458561,0.07068838085355542,independent_hamiltonian_numerics
+Time-optimal,1.35,11.251028841133905,0.07210065890267317,independent_hamiltonian_numerics
+Time-optimal,1.36,11.232895803573975,0.07337350580824312,independent_hamiltonian_numerics
+Time-optimal,1.37,11.214675498598766,0.07449899650568703,independent_hamiltonian_numerics
+Time-optimal,1.3800000000000001,11.196149079881533,0.07547040528235888,independent_hamiltonian_numerics
+Time-optimal,1.3900000000000001,11.17711182608083,0.07628219391239002,independent_hamiltonian_numerics
+Time-optimal,1.4000000000000001,11.15737238978,0.07692999490661502,independent_hamiltonian_numerics
+Time-optimal,1.41,11.136752056353936,0.07741059005815662,independent_hamiltonian_numerics
+Time-optimal,1.42,11.11508401662926,0.07772188448195964,independent_hamiltonian_numerics
+Time-optimal,1.43,11.092212656939903,0.07786287636310846,independent_hamiltonian_numerics
+Time-optimal,1.44,11.067992869907837,0.07783362264406628,independent_hamiltonian_numerics
+Time-optimal,1.45,11.04228938899537,0.07763520089493445,independent_hamiltonian_numerics
+Time-optimal,1.46,11.014976149591384,0.07726966762351345,independent_hamiltonian_numerics
+Time-optimal,1.47,10.98593567909882,0.07674001329316096,independent_hamiltonian_numerics
+Time-optimal,1.48,10.955058518201056,0.07605011432632564,independent_hamiltonian_numerics
+Time-optimal,1.49,10.922242675182991,0.07520468237998702,independent_hamiltonian_numerics
+Time-optimal,1.5,10.88739311489322,0.07420921118621723,independent_hamiltonian_numerics
+Time-optimal,1.51,10.85042128363584,0.07306992125649289,independent_hamiltonian_numerics
+Time-optimal,1.52,10.81124467098888,0.07179370275242705,independent_hamiltonian_numerics
+Time-optimal,1.53,10.76978640926577,0.07038805682807499,independent_hamiltonian_numerics
+Time-optimal,1.54,10.725974911046318,0.06886103575003771,independent_hamiltonian_numerics
+Time-optimal,1.55,10.679743544938518,0.06722118210121214,independent_hamiltonian_numerics
+Time-optimal,1.56,10.631030349462733,0.06547746737221402,independent_hamiltonian_numerics
+Time-optimal,1.57,10.579777784693498,0.06363923024131898,independent_hamiltonian_numerics
+Time-optimal,1.58,10.525932521051487,0.061716114839212,independent_hamiltonian_numerics
+Time-optimal,1.59,10.469445264401312,0.059718009288975346,independent_hamiltonian_numerics
+Time-optimal,1.6,10.410270616390068,0.05765498480462875,independent_hamiltonian_numerics
+Time-optimal,1.61,10.348366968753659,0.05553723562319372,independent_hamiltonian_numerics
+Time-optimal,1.62,10.283696430122216,0.05337502003577144,independent_hamiltonian_numerics
+Time-optimal,1.6300000000000001,10.216224783675829,0.051178602772556786,independent_hamiltonian_numerics
+Time-optimal,1.6400000000000001,10.145921473839419,0.048958198985106866,independent_hamiltonian_numerics
+Time-optimal,1.6500000000000001,10.072759620051816,0.04672392005663625,independent_hamiltonian_numerics
+Time-optimal,1.6600000000000001,9.996716055516638,0.044485721457707406,independent_hamiltonian_numerics
+Time-optimal,1.67,9.917771388720398,0.04225335285044095,independent_hamiltonian_numerics
+Time-optimal,1.68,9.83591008540775,0.04003631062945959,independent_hamiltonian_numerics
+Time-optimal,1.69,9.751120568617676,0.037843793072199886,independent_hamiltonian_numerics
+Time-optimal,1.7,9.663395334317995,0.03568465825511462,independent_hamiltonian_numerics
+Time-optimal,1.71,9.57273108012842,0.03356738487570747,independent_hamiltonian_numerics
+Time-optimal,1.72,9.479128844584807,0.03150003610339159,independent_hamiltonian_numerics
+Time-optimal,1.73,9.382594154384824,0.029490226564926735,independent_hamiltonian_numerics
+Time-optimal,1.74,9.283137177051632,0.027545092552746665,independent_hamiltonian_numerics
+Time-optimal,1.75,9.18077287646922,0.02567126552694208,independent_hamiltonian_numerics
+Time-optimal,1.76,9.075521168772084,0.023874848964095013,independent_hamiltonian_numerics
+Time-optimal,1.77,8.96740707611869,0.02216139858864359,independent_hamiltonian_numerics
+Time-optimal,1.78,8.856460875936726,0.020535906005100097,independent_hamiltonian_numerics
+Time-optimal,1.79,8.7427182433023,0.01900278573230028,independent_hamiltonian_numerics
+Time-optimal,1.8,8.62622038420082,0.0175658656240461,independent_hamiltonian_numerics
+Time-optimal,1.81,8.507014157516359,0.01622838064405407,independent_hamiltonian_numerics
+Time-optimal,1.82,8.385152183706053,0.014992969947149274,independent_hamiltonian_numerics
+Time-optimal,1.83,8.260692938236845,0.013861677203191284,independent_hamiltonian_numerics
+Time-optimal,1.84,8.133700827991635,0.012835954085372754,independent_hamiltonian_numerics
+Time-optimal,1.85,8.004246248992516,0.011916666830342615,independent_hamiltonian_numerics
+Time-optimal,1.86,7.872405623933439,0.011104105764140506,independent_hamiltonian_numerics
+Time-optimal,1.87,7.738261418171646,0.01039799767523969,independent_hamiltonian_numerics
+Time-optimal,1.8800000000000001,7.601902132984993,0.009797520904131933,independent_hamiltonian_numerics
+Time-optimal,1.8900000000000001,7.463422275067643,0.009301323007897102,independent_hamiltonian_numerics
+Time-optimal,1.9000000000000001,7.322922301407455,0.00890754084811873,independent_hamiltonian_numerics
+Time-optimal,1.9100000000000001,7.18050853885742,0.008613822941374059,independent_hamiltonian_numerics
+Time-optimal,1.92,7.036293077890204,0.00841735390336906,independent_hamiltonian_numerics
+Time-optimal,1.93,6.890393640198676,0.008314880810635993,independent_hamiltonian_numerics
+Time-optimal,1.94,6.742933419979749,0.008302741297571716,independent_hamiltonian_numerics
+Time-optimal,1.95,6.5940408989149955,0.008376893201496599,independent_hamiltonian_numerics
+Time-optimal,1.96,6.44384963503113,0.008532945564353108,independent_hamiltonian_numerics
+Time-optimal,1.97,6.292498025795822,0.0087661907966522,independent_hamiltonian_numerics
+Time-optimal,1.98,6.140129045967239,0.009071637807301098,independent_hamiltonian_numerics
+Time-optimal,1.99,5.98688996087923,0.009444045902016304,independent_hamiltonian_numerics
+Time-optimal,2.0,5.832932015998926,0.009877959253112146,independent_hamiltonian_numerics
+Time-optimal,2.0100000000000002,5.678410103743455,0.01036774174454913,independent_hamiltonian_numerics
+Time-optimal,2.02,5.523482408685415,0.010907611998205214,independent_hamiltonian_numerics
+Time-optimal,2.0300000000000002,5.368310032412712,0.011491678390366581,independent_hamiltonian_numerics
+Time-optimal,2.04,5.21305659943507,0.0121139738713948,independent_hamiltonian_numerics
+Time-optimal,2.05,5.057887845647146,0.012768490406371003,independent_hamiltonian_numerics
+Time-optimal,2.06,4.902971190970039,0.013449212860222139,independent_hamiltonian_numerics
+Time-optimal,2.07,4.748475297889386,0.0141501521573315,independent_hamiltonian_numerics
+Time-optimal,2.08,4.594569617699177,0.01486537755290544,independent_hamiltonian_numerics
+Time-optimal,2.09,4.441423926338816,0.01558904786133396,independent_hamiltonian_numerics
+Time-optimal,2.1,4.2892078517786905,0.01631544149542054,independent_hamiltonian_numerics
+Time-optimal,2.11,4.138090394966436,0.017038985179581002,independent_hamiltonian_numerics
+Time-optimal,2.12,3.988239446390943,0.017754281209889797,independent_hamiltonian_numerics
+Time-optimal,2.13,3.839821300356853,0.01845613314410881,independent_hamiltonian_numerics
+Time-optimal,2.14,3.693000169082694,0.019139569815517034,independent_hamiltonian_numerics
+Time-optimal,2.15,3.547937698749516,0.019799867575402554,independent_hamiltonian_numerics
+Time-optimal,2.16,3.404792489624781,0.020432570680416085,independent_hamiltonian_numerics
+Time-optimal,2.17,3.2637196223758544,0.021033509752563052,independent_hamiltonian_numerics
+Time-optimal,2.18,3.1248701926650453,0.021598818251349797,independent_hamiltonian_numerics
+Time-optimal,2.19,2.9883908560842625,0.022124946909452985,independent_hamiltonian_numerics
+Time-optimal,2.2,2.8544233854438703,0.022608676095171233,independent_hamiltonian_numerics
+Time-optimal,2.21,2.7231042423759666,0.023047126076782012,independent_hamiltonian_numerics
+Time-optimal,2.22,2.594564165148175,0.02343776517572778,independent_hamiltonian_numerics
+Time-optimal,2.23,2.468927774511182,0.023778415807183248,independent_hamiltonian_numerics
+Time-optimal,2.24,2.3463131993194737,0.02406725841801602,independent_hamiltonian_numerics
+Time-optimal,2.25,2.2268317235755406,0.024302833343320052,independent_hamiltonian_numerics
+Time-optimal,2.2600000000000002,2.1105874564471354,0.02448404061358933,independent_hamiltonian_numerics
+Time-optimal,2.27,1.997677026702329,0.0246101377550928,independent_hamiltonian_numerics
+Time-optimal,2.2800000000000002,1.8881893028934416,0.024680735636109105,independent_hamiltonian_numerics
+Time-optimal,2.29,1.7822051405017951,0.024695792421311903,independent_hamiltonian_numerics
+Time-optimal,2.3000000000000003,1.6797971571311965,0.024655605705715816,independent_hamiltonian_numerics
+Time-optimal,2.31,1.581029536707967,0.02456080290818196,independent_hamiltonian_numerics
+Time-optimal,2.32,1.4859578635126671,0.024412330012477713,independent_hamiltonian_numerics
+Time-optimal,2.33,1.3946289867312869,0.024211438751271866,independent_hamiltonian_numerics
+Time-optimal,2.34,1.3070809160745385,0.023959672335188545,independent_hamiltonian_numerics
+Time-optimal,2.35,1.2233427488722624,0.023658849835119653,independent_hamiltonian_numerics
+Time-optimal,2.36,1.1434346289075226,0.023311049331368797,independent_hamiltonian_numerics
+Time-optimal,2.37,1.0673677371115264,0.022918589947888823,independent_hamiltonian_numerics
+Time-optimal,2.38,0.9951443140978349,0.02248401289381248,independent_hamiltonian_numerics
+Time-optimal,2.39,0.9267577143721937,0.022010061637706326,independent_hamiltonian_numerics
+Time-optimal,2.4,0.8621924919137164,0.02149966134245954,independent_hamiltonian_numerics
+Time-optimal,2.41,0.8014245166852816,0.02095589769046497,independent_hamiltonian_numerics
+Time-optimal,2.42,0.7444211214956238,0.02038199522976092,independent_hamiltonian_numerics
+Time-optimal,2.43,0.6911412785038306,0.019781295372081807,independent_hamiltonian_numerics
+Time-optimal,2.44,0.6415358045298257,0.019157234173325252,independent_hamiltonian_numerics
+Time-optimal,2.45,0.5955475942113417,0.018513320025801992,independent_hamiltonian_numerics
+Time-optimal,2.46,0.5531118799307496,0.01785311138979885,independent_hamiltonian_numerics
+Time-optimal,2.47,0.5141565173235272,0.017180194689482925,independent_hamiltonian_numerics
+Time-optimal,2.48,0.47860229507478025,0.01649816249503441,independent_hamiltonian_numerics
+Time-optimal,2.49,0.44636326761202255,0.015810592109131324,independent_hamiltonian_numerics
+Time-optimal,2.5,0.4173471092109483,0.01512102467156111,independent_hamiltonian_numerics
+Time-optimal,2.5100000000000002,0.3914554879474298,0.014432944890838965,independent_hamiltonian_numerics
+Time-optimal,2.52,0.368584457852987,0.01374976150628422,independent_hamiltonian_numerics
+Time-optimal,2.5300000000000002,0.34862486756349365,0.0130747885781127,independent_hamiltonian_numerics
+Time-optimal,2.54,0.33146278369167026,0.012411227696760379,independent_hamiltonian_numerics
+Time-optimal,2.5500000000000003,0.316979927103243,0.011762151195906588,independent_hamiltonian_numerics
+Time-optimal,2.56,0.3050541202350262,0.01113048644657705,independent_hamiltonian_numerics
+Time-optimal,2.57,0.29555974356020276,0.010519001302283257,independent_hamiltonian_numerics
+Time-optimal,2.58,0.2883681992821443,0.00993029075748713,independent_hamiltonian_numerics
+Time-optimal,2.59,0.28334838032333093,0.009366764873775081,independent_hamiltonian_numerics
+Time-optimal,2.6,0.2803671426698209,0.00883063802004824,independent_hamiltonian_numerics
+Time-optimal,2.61,0.27928977913481634,0.00832391946484392,independent_hamiltonian_numerics
+Time-optimal,2.62,0.27998049261659386,0.00784840535060765,independent_hamiltonian_numerics
+Time-optimal,2.63,0.2823028669463989,0.0074056720714297895,independent_hamiltonian_numerics
+Time-optimal,2.64,0.2861203334511764,0.006997071067449425,independent_hamiltonian_numerics
+Time-optimal,2.65,0.29129663139258266,0.006623725040884599,independent_hamiltonian_numerics
+Time-optimal,2.66,0.29769626048951714,0.00628652559050346,independent_hamiltonian_numerics
+Time-optimal,2.67,0.30518492378364986,0.005986132253354405,independent_hamiltonian_numerics
+Time-optimal,2.68,0.31362995916814124,0.005722972934757535,independent_hamiltonian_numerics
+Time-optimal,2.69,0.32290075796655543,0.005497245699986343,independent_hamiltonian_numerics
+Time-optimal,2.7,0.3328691690229387,0.005308921893743515,independent_hamiltonian_numerics
+Time-optimal,2.71,0.3434098868439395,0.0051577505465312265,independent_hamiltonian_numerics
+Time-optimal,2.72,0.35440082241977733,0.005043264020335778,independent_hamiltonian_numerics
+Time-optimal,2.73,0.36572345544142115,0.0049647848397465135,independent_hamiltonian_numerics
+Time-optimal,2.74,0.3772631667276217,0.004921433648720894,independent_hamiltonian_numerics
+Time-optimal,2.75,0.3889095497751839,0.004912138227731323,independent_hamiltonian_numerics
+Time-optimal,2.7600000000000002,0.400556700449743,0.004935643501000699,independent_hamiltonian_numerics
+Time-optimal,2.77,0.41210348394161644,0.0049905224589788565,independent_hamiltonian_numerics
+Time-optimal,2.7800000000000002,0.4234537782206697,0.0050751879171474406,independent_hamiltonian_numerics
+Time-optimal,2.79,0.4345166933364024,0.005187905028682681,independent_hamiltonian_numerics
+Time-optimal,2.8000000000000003,0.4452067660230171,0.005326804465467677,independent_hamiltonian_numerics
+Time-optimal,2.81,0.4554441291834014,0.005489896179435127,independent_hamiltonian_numerics
+Time-optimal,2.82,0.4651546559416124,0.005675083654246487,independent_hamiltonian_numerics
+Time-optimal,2.83,0.4742700780681127,0.005880178555879989,independent_hamiltonian_numerics
+Time-optimal,2.84,0.4827280786967161,0.00610291568980079,independent_hamiltonian_numerics
+Time-optimal,2.85,0.49047235936548245,0.00634096817202901,independent_hamiltonian_numerics
+Time-optimal,2.86,0.497452681525644,0.006591962721593389,independent_hamiltonian_numerics
+Time-optimal,2.87,0.5036248827724135,0.0068534949825506675,independent_hamiltonian_numerics
+Time-optimal,2.88,0.5089508681581743,0.007123144784963089,independent_hamiltonian_numerics
+Time-optimal,2.89,0.5133985770533098,0.007398491255924775,independent_hamiltonian_numerics
+Time-optimal,2.9,0.5169419261195463,0.007677127693921582,independent_hamiltonian_numerics
+Time-optimal,2.91,0.5195607290579389,0.007956676122452625,independent_hamiltonian_numerics
+Time-optimal,2.92,0.5212405938854705,0.0082348014419397,independent_hamiltonian_numerics
+Time-optimal,2.93,0.5219727985818364,0.008509225102455225,independent_hamiltonian_numerics
+Time-optimal,2.94,0.5217541460305,0.008777738223704661,independent_hamiltonian_numerics
+Time-optimal,2.95,0.5205867992551292,0.009038214092972573,independent_hamiltonian_numerics
+Time-optimal,2.96,0.518478098023957,0.009288619976336135,independent_hamiltonian_numerics
+Time-optimal,2.97,0.5154403579601239,0.009527028183376746,independent_hamiltonian_numerics
+Time-optimal,2.98,0.5114906533554288,0.009751626330792462,independent_hamiltonian_numerics
+Time-optimal,2.99,0.5066505849379778,0.009960726755752798,independent_hamiltonian_numerics
+Time-optimal,3.0,0.5009460338906646,0.010152775035469064,independent_hamiltonian_numerics
+Levine-Pichler,0.0,125.64457707619658,0.719525200370775,independent_hamiltonian_numerics
+Levine-Pichler,0.01,126.0246993947896,0.7419791320870688,independent_hamiltonian_numerics
+Levine-Pichler,0.02,126.32961288458654,0.7666960344810193,independent_hamiltonian_numerics
+Levine-Pichler,0.03,126.5547769552013,0.7936386861204426,independent_hamiltonian_numerics
+Levine-Pichler,0.04,126.69602518022288,0.8227604306433085,independent_hamiltonian_numerics
+Levine-Pichler,0.05,126.74957814637571,0.8540053136938814,independent_hamiltonian_numerics
+Levine-Pichler,0.06,126.71205459984992,0.8873082609256164,independent_hamiltonian_numerics
+Levine-Pichler,0.07,126.58048086107368,0.922595296311606,independent_hamiltonian_numerics
+Levine-Pichler,0.08,126.352298486819,0.9597837998091205,independent_hamiltonian_numerics
+Levine-Pichler,0.09,126.02537016609813,0.9987828032354853,independent_hamiltonian_numerics
+Levine-Pichler,0.1,125.59798384393753,1.039493323028859,independent_hamiltonian_numerics
+Levine-Pichler,0.11,125.06885507465176,1.0818087283908027,independent_hamiltonian_numerics
+Levine-Pichler,0.12,124.4371276137465,1.125615143138213,independent_hamiltonian_numerics
+Levine-Pichler,0.13,123.70237226495209,1.1707918794317642,independent_hamiltonian_numerics
+Levine-Pichler,0.14,122.86458400613282,1.2172119013965184,independent_hamiltonian_numerics
+Levine-Pichler,0.15,121.92417742489954,1.2647423165093175,independent_hamiltonian_numerics
+Levine-Pichler,0.16,120.8819805016251,1.3132448924971838,independent_hamiltonian_numerics
+Levine-Pichler,0.17,119.7392267842086,1.3625765973719879,independent_hamiltonian_numerics
+Levine-Pichler,0.18,118.49754600533561,1.4125901601199777,independent_hamiltonian_numerics
+Levine-Pichler,0.19,117.1589531990719,1.4631346494703,independent_hamiltonian_numerics
+Levine-Pichler,0.2,115.72583637945746,1.5140560680856598,independent_hamiltonian_numerics
+Levine-Pichler,0.21,114.2009428492101,1.565197959450367,independent_hamiltonian_numerics
+Levine-Pichler,0.22,112.58736421177974,1.6164020246769686,independent_hamiltonian_numerics
+Levine-Pichler,0.23,110.88852016474493,1.6675087464127585,independent_hamiltonian_numerics
+Levine-Pichler,0.24,109.10814115687714,1.7183580170013633,independent_hamiltonian_numerics
+Levine-Pichler,0.25,107.25024999517024,1.7687897680431433,independent_hamiltonian_numerics
+Levine-Pichler,0.26,105.31914249163799,1.8186445985005548,independent_hamiltonian_numerics
+Levine-Pichler,0.27,103.31936724279205,1.8677643985115076,independent_hamiltonian_numerics
+Levine-Pichler,0.28,101.25570463735608,1.9159929661045925,independent_hamiltonian_numerics
+Levine-Pichler,0.29,99.13314518997151,1.96317661405464,independent_hamiltonian_numerics
+Levine-Pichler,0.3,96.95686730040848,2.009164764175326,independent_hamiltonian_numerics
+Levine-Pichler,0.31,94.73221453905938,2.053810526417104,independent_hamiltonian_numerics
+Levine-Pichler,0.32,92.46467256034532,2.096971260222666,independent_hamiltonian_numerics
+Levine-Pichler,0.33,90.15984574600469,2.138509115688997,independent_hamiltonian_numerics
+Levine-Pichler,0.34,87.82343368016507,2.17829155219297,independent_hamiltonian_numerics
+Levine-Pichler,0.35000000000000003,85.46120755754288,2.2161918322570417,independent_hamiltonian_numerics
+Levine-Pichler,0.36,83.07898662513557,2.2520894885613068,independent_hamiltonian_numerics
+Levine-Pichler,0.37,80.682614756347,2.2858707621477032,independent_hamiltonian_numerics
+Levine-Pichler,0.38,78.27793725464429,2.3174290100106827,independent_hamiltonian_numerics
+Levine-Pichler,0.39,75.87077798158651,2.3466650804254434,independent_hamiltonian_numerics
+Levine-Pichler,0.4,73.46691690140966,2.3734876545284203,independent_hamiltonian_numerics
+Levine-Pichler,0.41000000000000003,71.07206813132584,2.397813552835573,independent_hamiltonian_numerics
+Levine-Pichler,0.42,68.69185858329655,2.419568005559425,independent_hamiltonian_numerics
+Levine-Pichler,0.43,66.3318072793075,2.438684885766409,independent_hamiltonian_numerics
+Levine-Pichler,0.44,63.997305418109136,2.4551069046001013,independent_hamiltonian_numerics
+Levine-Pichler,0.45,61.69359726703735,2.468785767982373,independent_hamiltonian_numerics
+Levine-Pichler,0.46,59.42576194789655,2.479682294392834,independent_hamiltonian_numerics
+Levine-Pichler,0.47000000000000003,57.19869618100131,2.487766493515839,independent_hamiltonian_numerics
+Levine-Pichler,0.48,55.01709804637164,2.4930176057327507,independent_hamiltonian_numerics
+Levine-Pichler,0.49,52.88545181576437,2.49542410262456,independent_hamiltonian_numerics
+Levine-Pichler,0.5,50.808013903748815,2.4949836488348494,independent_hamiltonian_numerics
+Levine-Pichler,0.51,48.788799980409806,2.4917030258247808,independent_hamiltonian_numerics
+Levine-Pichler,0.52,46.831573282518946,2.4855980182296458,independent_hamiltonian_numerics
+Levine-Pichler,0.53,44.9398341541868,2.4766932636987917,independent_hamiltonian_numerics
+Levine-Pichler,0.54,43.11681084211776,2.465022067267834,independent_hamiltonian_numerics
+Levine-Pichler,0.55,41.365451564662905,2.4506261814717725,independent_hamiltonian_numerics
+Levine-Pichler,0.56,39.68841786794029,2.433555553560444,independent_hamiltonian_numerics
+Levine-Pichler,0.5700000000000001,38.08807927638239,2.4138680413218276,independent_hamiltonian_numerics
+Levine-Pichler,0.58,36.566509239217666,2.391629099154462,independent_hamiltonian_numerics
+Levine-Pichler,0.59,35.1254823686078,2.366911436155798,independent_hamiltonian_numerics
+Levine-Pichler,0.6,33.766472959489164,2.3397946481095717,independent_hamiltonian_numerics
+Levine-Pichler,0.61,32.490654775612676,2.3103648253599776,independent_hamiltonian_numerics
+Levine-Pichler,0.62,31.29890208087926,2.27871413865505,independent_hamiltonian_numerics
+Levine-Pichler,0.63,30.191791889845263,2.244940405123974,independent_hamiltonian_numerics
+Levine-Pichler,0.64,29.169607406240658,2.209146636624164,independent_hamiltonian_numerics
+Levine-Pichler,0.65,28.2323426135423,2.1714405727526183,independent_hamiltonian_numerics
+Levine-Pichler,0.66,27.379707977064,2.131934200862856,independent_hamiltonian_numerics
+Levine-Pichler,0.67,26.611137212716265,2.0907432654627693,independent_hamiltonian_numerics
+Levine-Pichler,0.68,25.92579507354325,2.0479867693907057,independent_hamiltonian_numerics
+Levine-Pichler,0.6900000000000001,25.322586101388993,2.0037864691764353,independent_hamiltonian_numerics
+Levine-Pichler,0.7000000000000001,24.80016428759115,1.9582663669906688,independent_hamiltonian_numerics
+Levine-Pichler,0.71,24.356943583461327,1.9115522015717896,independent_hamiltonian_numerics
+Levine-Pichler,0.72,23.991109198492644,1.8637709404912757,independent_hamiltonian_numerics
+Levine-Pichler,0.73,23.700629621752228,1.8150502760804201,independent_hamiltonian_numerics
+Levine-Pichler,0.74,23.483269299771727,1.7655181272909093,independent_hamiltonian_numerics
+Levine-Pichler,0.75,23.33660190244764,1.715302149700416,independent_hamiltonian_numerics
+Levine-Pichler,0.76,23.258024107012222,1.6645292558028066,independent_hamiltonian_numerics
+Levine-Pichler,0.77,23.24476982903358,1.6133251476406925,independent_hamiltonian_numerics
+Levine-Pichler,0.78,23.29392482865059,1.5618138637466923,independent_hamiltonian_numerics
+Levine-Pichler,0.79,23.40244161984568,1.5101173422597556,independent_hamiltonian_numerics
+Levine-Pichler,0.8,23.567154610496814,1.4583550019742804,independent_hamiltonian_numerics
+Levine-Pichler,0.81,23.784795401234938,1.4066433429637986,independent_hamiltonian_numerics
+Levine-Pichler,0.8200000000000001,24.052008171742674,1.3550955682980206,independent_hamiltonian_numerics
+Levine-Pichler,0.8300000000000001,24.365365084073538,1.3038212282430093,independent_hamiltonian_numerics
+Levine-Pichler,0.84,24.721381633823032,1.2529258881997558,independent_hamiltonian_numerics
+Levine-Pichler,0.85,25.11653188154682,1.2025108214974096,independent_hamiltonian_numerics
+Levine-Pichler,0.86,25.547263498669423,1.1526727280146054,independent_hamiltonian_numerics
+Levine-Pichler,0.87,26.010012564261903,1.1035034794564742,independent_hamiltonian_numerics
+Levine-Pichler,0.88,26.50121805146054,1.0550898919670693,independent_hamiltonian_numerics
+Levine-Pichler,0.89,27.01733594494488,1.0075135266075295,independent_hamiltonian_numerics
+Levine-Pichler,0.9,27.55485293376677,0.960850518080619,independent_hamiltonian_numerics
+Levine-Pichler,0.91,28.110299626913854,0.9151714319327612,independent_hamiltonian_numerics
+Levine-Pichler,0.92,28.680263242275494,0.8705411503163106,independent_hamiltonian_numerics
+Levine-Pichler,0.93,29.261399723140784,0.8270187862483327,independent_hamiltonian_numerics
+Levine-Pichler,0.9400000000000001,29.85044523997554,0.7846576261583824,independent_hamiltonian_numerics
+Levine-Pichler,0.9500000000000001,30.44422703898241,0.7435051003773483,independent_hamiltonian_numerics
+Levine-Pichler,0.96,31.039673602813636,0.7036027810831563,independent_hamiltonian_numerics
+Levine-Pichler,0.97,31.63382409277735,0.6649864070876721,independent_hamiltonian_numerics
+Levine-Pichler,0.98,32.22383704591114,0.627685934723124,independent_hamiltonian_numerics
+Levine-Pichler,0.99,32.80699830439294,0.5917256139663888,independent_hamiltonian_numerics
+Levine-Pichler,1.0,33.38072815888043,0.5571240888262214,independent_hamiltonian_numerics
+Levine-Pichler,1.01,33.94258769150663,0.5238945209122473,independent_hamiltonian_numerics
+Levine-Pichler,1.02,34.49028430838238,0.49204473500610874,independent_hamiltonian_numerics
+Levine-Pichler,1.03,35.021676455555244,0.46157738536454396,independent_hamiltonian_numerics
+Levine-Pichler,1.04,35.53477751641651,0.43249014140224495,independent_hamiltonian_numerics
+Levine-Pichler,1.05,36.02775889252796,0.4047758913289253,independent_hamiltonian_numerics
+Levine-Pichler,1.06,36.49895227373193,0.3784229622508421,independent_hamiltonian_numerics
+Levine-Pichler,1.07,36.94685110719,0.3534153551919115,independent_hamiltonian_numerics
+Levine-Pichler,1.08,37.370111278662606,0.3297329934439509,independent_hamiltonian_numerics
+Levine-Pichler,1.09,37.7675510228667,0.3073519826194317,independent_hamiltonian_numerics
+Levine-Pichler,1.1,38.13815008312383,0.286244880753535,independent_hamiltonian_numerics
+Levine-Pichler,1.11,38.481048143712684,0.2663809767852792,independent_hamiltonian_numerics
+Levine-Pichler,1.12,38.79554256137093,0.24772657573991053,independent_hamiltonian_numerics
+Levine-Pichler,1.1300000000000001,39.08108542522305,0.23024528893659668,independent_hamiltonian_numerics
+Levine-Pichler,1.1400000000000001,39.33727997704122,0.21389832755647714,independent_hamiltonian_numerics
+Levine-Pichler,1.1500000000000001,39.563876426168655,0.1986447979261433,independent_hamiltonian_numerics
+Levine-Pichler,1.16,39.76076719563014,0.1844419969003946,independent_hamiltonian_numerics
+Levine-Pichler,1.17,39.92798163792811,0.171245705765272,independent_hamiltonian_numerics
+Levine-Pichler,1.18,40.06568026076,0.15901048112763644,independent_hamiltonian_numerics
+Levine-Pichler,1.19,40.174148504391454,0.14768994131044688,independent_hamiltonian_numerics
+Levine-Pichler,1.2,40.25379011368327,0.13723704683308713,independent_hamiltonian_numerics
+Levine-Pichler,1.21,40.30512014878029,0.12760437362298993,independent_hamiltonian_numerics
+Levine-Pichler,1.22,40.32875767925274,0.11874437767803414,independent_hamiltonian_numerics
+Levine-Pichler,1.23,40.32541820700118,0.11060964997813343,independent_hamiltonian_numerics
+Levine-Pichler,1.24,40.295905863534664,0.10315316052857158,independent_hamiltonian_numerics
+Levine-Pichler,1.25,40.24110542727826,0.09632849050640731,independent_hamiltonian_numerics
+Levine-Pichler,1.26,40.16197420638831,0.09009005157404762,independent_hamiltonian_numerics
+Levine-Pichler,1.27,40.059533832142435,0.08439329152028296,independent_hamiltonian_numerics
+Levine-Pichler,1.28,39.93486200734024,0.07919488548807427,independent_hamiltonian_numerics
+Levine-Pichler,1.29,39.78908425330956,0.07445291214955334,independent_hamiltonian_numerics
+Levine-Pichler,1.3,39.62336569805453,0.07012701429140289,independent_hamiltonian_numerics
+Levine-Pichler,1.31,39.43890294684624,0.06617854337742878,independent_hamiltonian_numerics
+Levine-Pichler,1.32,39.236916075112674,0.06257068775905875,independent_hamiltonian_numerics
+Levine-Pichler,1.33,39.018640781886354,0.05926858430812881,independent_hamiltonian_numerics
+Levine-Pichler,1.34,38.78532074029192,0.05623941334901372,independent_hamiltonian_numerics
+Levine-Pichler,1.35,38.53820017963591,0.05345247686835991,independent_hamiltonian_numerics
+Levine-Pichler,1.36,38.27851673160452,0.05087926007980715,independent_hamiltonian_numerics
+Levine-Pichler,1.37,38.00749457088857,0.048493476517593545,independent_hamiltonian_numerics
+Levine-Pichler,1.3800000000000001,37.72633787826007,0.046271096926310845,independent_hamiltonian_numerics
+Levine-Pichler,1.3900000000000001,37.43622465174038,0.04419036230381761,independent_hamiltonian_numerics
+Levine-Pichler,1.4000000000000001,37.13830088902164,0.04223178153995229,independent_hamiltonian_numerics
+Levine-Pichler,1.41,36.833675161767275,0.040378114174801576,independent_hamiltonian_numerics
+Levine-Pichler,1.42,36.52341359982486,0.038614338876458563,independent_hamiltonian_numerics
+Levine-Pichler,1.43,36.208535300754534,0.03692760830909204,independent_hamiltonian_numerics
+Levine-Pichler,1.44,35.89000817742439,0.03530719112742813,independent_hamiltonian_numerics
+Levine-Pichler,1.45,35.5687452537601,0.033744401893115186,independent_hamiltonian_numerics
+Levine-Pichler,1.46,35.245601416083616,0.032232519761678166,independent_hamiltonian_numerics
+Levine-Pichler,1.47,34.921370624835326,0.03076669683565343,independent_hamiltonian_numerics
+Levine-Pichler,1.48,34.59678358887168,0.02934385711987013,independent_hamiltonian_numerics
+Levine-Pichler,1.49,34.27250590197477,0.02796258704859459,independent_hamiltonian_numerics
+Levine-Pichler,1.5,33.94913663870918,0.026623018581300804,independent_hamiltonian_numerics
+Levine-Pichler,1.51,33.627207404333035,0.025326705884137657,independent_hamiltonian_numerics
+Levine-Pichler,1.52,33.30718183113128,0.02407649662774232,independent_hamiltonian_numerics
+Levine-Pichler,1.53,32.98945551127933,0.02287639893893806,independent_hamiltonian_numerics
+Levine-Pichler,1.54,32.674356354204065,0.021731445044161565,independent_hamiltonian_numerics
+Levine-Pichler,1.55,32.36214535437149,0.020647552636290763,independent_hamiltonian_numerics
+Levine-Pichler,1.56,32.05301775351697,0.019631384984076794,independent_hamiltonian_numerics
+Levine-Pichler,1.57,31.74710457955046,0.018690210784808488,independent_hamiltonian_numerics
+Levine-Pichler,1.58,31.444474542724898,0.017831764736400947,independent_hamiltonian_numerics
+Levine-Pichler,1.59,31.145136268144498,0.017064109775056555,independent_hamiltonian_numerics
+Levine-Pichler,1.6,30.849040842339832,0.01639550188930306,independent_hamiltonian_numerics
+Levine-Pichler,1.61,30.556084650427586,0.01583425838089427,independent_hamiltonian_numerics
+Levine-Pichler,1.62,30.26611247932408,0.01538863039810446,independent_hamiltonian_numerics
+Levine-Pichler,1.6300000000000001,29.978920861591007,0.015066680517742109,independent_hamiltonian_numerics
+Levine-Pichler,1.6400000000000001,29.694261633759858,0.014876166099138798,independent_hamiltonian_numerics
+Levine-Pichler,1.6500000000000001,29.411845682408156,0.014824429076845533,independent_hamiltonian_numerics
+Levine-Pichler,1.6600000000000001,29.131346850852697,0.014918292799214784,independent_hamiltonian_numerics
+Levine-Pichler,1.67,28.852405979068706,0.015163966457901905,independent_hamiltonian_numerics
+Levine-Pichler,1.68,28.574635049350942,0.015566957589025442,independent_hamiltonian_numerics
+Levine-Pichler,1.69,28.29762141029081,0.01613199306073141,independent_hamiltonian_numerics
+Levine-Pichler,1.7,28.02093205185517,0.0168629488946701,independent_hamiltonian_numerics
+Levine-Pichler,1.71,27.744117904705274,0.017762789200861658,independent_hamiltonian_numerics
+Levine-Pichler,1.72,27.466718137398452,0.018833514437054562,independent_hamiltonian_numerics
+Levine-Pichler,1.73,27.188264425742886,0.02007611913540839,independent_hamiltonian_numerics
+Levine-Pichler,1.74,26.90828516934461,0.021490559171600213,independent_hamiltonian_numerics
+Levine-Pichler,1.75,26.626309631270143,0.02307572858467881,independent_hamiltonian_numerics
+Levine-Pichler,1.76,26.34187197774913,0.02482944589059679,independent_hamiltonian_numerics
+Levine-Pichler,1.77,26.05451519595334,0.026748449768715127,independent_hamiltonian_numerics
+Levine-Pichler,1.78,25.763794869092763,0.028828403939095793,independent_hamiltonian_numerics
+Levine-Pichler,1.79,25.469282789371118,0.031063910989409874,independent_hamiltonian_numerics
+Levine-Pichler,1.8,25.170570390719476,0.03344853485414637,independent_hamiltonian_numerics
+Levine-Pichler,1.81,24.867271984679824,0.03597483159580137,independent_hamiltonian_numerics
+Levine-Pichler,1.82,24.55902778432259,0.038634388088164634,independent_hamiltonian_numerics
+Levine-Pichler,1.83,24.24550670264686,0.04141786815593117,independent_hamiltonian_numerics
+Levine-Pichler,1.84,23.926408913521897,0.04431506568290835,independent_hamiltonian_numerics
+Levine-Pichler,1.85,23.60146816486793,0.04731496416323899,independent_hamiltonian_numerics
+Levine-Pichler,1.86,23.270453835437316,0.05040580213650311,independent_hamiltonian_numerics
+Levine-Pichler,1.87,22.93317272823498,0.05357514391842386,independent_hamiltonian_numerics
+Levine-Pichler,1.8800000000000001,22.58947059529605,0.05680995501431153,independent_hamiltonian_numerics
+Levine-Pichler,1.8900000000000001,22.23923339021158,0.06009668158237837,independent_hamiltonian_numerics
+Levine-Pichler,1.9000000000000001,21.882388246451928,0.06342133329873499,independent_hamiltonian_numerics
+Levine-Pichler,1.9100000000000001,21.518904181171465,0.06676956896520651,independent_hamiltonian_numerics
+Levine-Pichler,1.92,21.148792525775807,0.07012678419509781,independent_hamiltonian_numerics
+Levine-Pichler,1.93,20.77210708609505,0.07347820051063285,independent_hamiltonian_numerics
+Levine-Pichler,1.94,20.388944036512452,0.07680895518891288,independent_hamiltonian_numerics
+Levine-Pichler,1.95,19.99944155385102,0.08010419120079394,independent_hamiltonian_numerics
+Levine-Pichler,1.96,19.603779198208496,0.08334914659892012,independent_hamiltonian_numerics
+Levine-Pichler,1.97,19.202177049248192,0.08652924272713163,independent_hamiltonian_numerics
+Levine-Pichler,1.98,18.794894607692775,0.08963017064339637,independent_hamiltonian_numerics
+Levine-Pichler,1.99,18.382229472927563,0.09263797517209547,independent_hamiltonian_numerics
+Levine-Pichler,2.0,17.964515808690056,0.09553913602868865,independent_hamiltonian_numerics
+Levine-Pichler,2.0100000000000002,17.5421226098029,0.09832064549027311,independent_hamiltonian_numerics
+Levine-Pichler,2.02,17.11545178379197,0.10097008211902415,independent_hamiltonian_numerics
+Levine-Pichler,2.0300000000000002,16.68493606201789,0.10347568008174671,independent_hamiltonian_numerics
+Levine-Pichler,2.04,16.251036755635447,0.10582639364740822,independent_hamiltonian_numerics
+Levine-Pichler,2.05,15.814241372279328,0.1080119564853519,independent_hamiltonian_numerics
+Levine-Pichler,2.06,15.375061109853323,0.11002293542948824,independent_hamiltonian_numerics
+Levine-Pichler,2.07,14.934028244177872,0.11185077841791834,independent_hamiltonian_numerics
+Levine-Pichler,2.08,14.491693427519547,0.11348785636274346,independent_hamiltonian_numerics
+Levine-Pichler,2.09,14.048622915196468,0.11492749875097799,independent_hamiltonian_numerics
+Levine-Pichler,2.1,13.6053957375164,0.11616402282420281,independent_hamiltonian_numerics
+Levine-Pichler,2.11,13.162600834270897,0.11719275623145756,independent_hamiltonian_numerics
+Levine-Pichler,2.12,12.720834168872415,0.11801005309668917,independent_hamiltonian_numerics
+Levine-Pichler,2.13,12.28069583899411,0.11861330348838962,independent_hamiltonian_numerics
+Levine-Pichler,2.14,11.842787200247074,0.11900093632468102,independent_hamiltonian_numerics
+Levine-Pichler,2.15,11.407708019021943,0.11917241579167069,independent_hamiltonian_numerics
+Levine-Pichler,2.16,10.976053670123218,0.11912823139614868,independent_hamiltonian_numerics
+Levine-Pichler,2.17,10.548412394252841,0.11886988181535242,independent_hamiltonian_numerics
+Levine-Pichler,2.18,10.12536262974709,0.11839985274634332,independent_hamiltonian_numerics
+Levine-Pichler,2.19,9.707470432252078,0.11772158899523942,independent_hamiltonian_numerics
+Levine-Pichler,2.2,9.295286995240371,0.11683946108198359,independent_hamiltonian_numerics
+Levine-Pichler,2.21,8.889346283427585,0.11575872666919665,independent_hamiltonian_numerics
+Levine-Pichler,2.22,8.49016279025659,0.11448548715389718,independent_hamiltonian_numerics
+Levine-Pichler,2.23,8.09822942967438,0.11302663978819683,independent_hamiltonian_numerics
+Levine-Pichler,2.24,7.714015571450173,0.11138982571944803,independent_hamiltonian_numerics
+Levine-Pichler,2.25,7.337965228270018,0.10958337436157076,independent_hamiltonian_numerics
+Levine-Pichler,2.2600000000000002,6.970495401804153,0.10761624452731712,independent_hamiltonian_numerics
+Levine-Pichler,2.27,6.611994593887125,0.10549796276601275,independent_hamiltonian_numerics
+Levine-Pichler,2.2800000000000002,6.2628214878767,0.1032385593627678,independent_hamiltonian_numerics
+Levine-Pichler,2.29,5.9233038041816455,0.100848502463252,independent_hamiltonian_numerics
+Levine-Pichler,2.3000000000000003,5.593737332867769,0.09833863079289402,independent_hamiltonian_numerics
+Levine-Pichler,2.31,5.274385145180469,0.09572008544082423,independent_hamiltonian_numerics
+Levine-Pichler,2.32,4.965476984760531,0.09300424117703081,independent_hamiltonian_numerics
+Levine-Pichler,2.33,4.667208838287129,0.090202637766182,independent_hamiltonian_numerics
+Levine-Pichler,2.34,4.379742684264167,0.08732691173339187,independent_hamiltonian_numerics
+Levine-Pichler,2.35,4.103206417673985,0.08438872902604572,independent_hamiltonian_numerics
+Levine-Pichler,2.36,3.837693947269603,0.08139971900173963,independent_hamiltonian_numerics
+Levine-Pichler,2.37,3.5832654613578168,0.07837141015558713,independent_hamiltonian_numerics
+Levine-Pichler,2.38,3.3399478570544745,0.07531516798076529,independent_hamiltonian_numerics
+Levine-Pichler,2.39,3.107735327167389,0.07224213533438595,independent_hamiltonian_numerics
+Levine-Pichler,2.4,2.8865900980898864,0.06916317565677489,independent_hamiltonian_numerics
+Levine-Pichler,2.41,2.6764433113695376,0.06608881936622697,independent_hamiltonian_numerics
+Levine-Pichler,2.42,2.4771960409573985,0.063029213723492,independent_hamiltonian_numerics
+Levine-Pichler,2.43,2.288720437543612,0.05999407643085491,independent_hamiltonian_numerics
+Levine-Pichler,2.44,2.1108609908500244,0.05699265319993308,independent_hamiltonian_numerics
+Levine-Pichler,2.45,1.9434359002788655,0.05403367949046413,independent_hamiltonian_numerics
+Levine-Pichler,2.46,1.7862385439126947,0.05112534658963399,independent_hamiltonian_numerics
+Levine-Pichler,2.47,1.63903903552259,0.048275272168139406,independent_hamiltonian_numerics
+Levine-Pichler,2.48,1.5015858589728182,0.0454904754154404,independent_hamiltonian_numerics
+Levine-Pichler,2.49,1.3736075692080232,0.042777356822768585,independent_hamiltonian_numerics
+Levine-Pichler,2.5,1.2548145488754592,0.04014168264866442,independent_hamiltonian_numerics
+Levine-Pichler,2.5100000000000002,1.1449008095678874,0.037588574068349485,independent_hamiltonian_numerics
+Levine-Pichler,2.52,1.0435458266719002,0.03512250097533336,independent_hamiltonian_numerics
+Levine-Pichler,2.5300000000000002,0.950416396870323,0.032747280371522275,independent_hamiltonian_numerics
+Levine-Pichler,2.54,0.8651685074739778,0.03046607925096265,independent_hamiltonian_numerics
+Levine-Pichler,2.5500000000000003,0.7874492069454102,0.028281421852408242,independent_hamiltonian_numerics
+Levine-Pichler,2.56,0.7168984662231452,0.0261952011273462,independent_hamiltonian_numerics
+Levine-Pichler,2.57,0.6531510207559837,0.02420869424312777,independent_hamiltonian_numerics
+Levine-Pichler,2.58,0.5958381835111617,0.022322581915592683,independent_hamiltonian_numerics
+Levine-Pichler,2.59,0.5445896196233568,0.020536971342203017,independent_hamiltonian_numerics
+Levine-Pichler,2.6,0.4990350738006929,0.01885142248534552,independent_hamiltonian_numerics
+Levine-Pichler,2.61,0.4588060420955151,0.01726497743624818,independent_hamiltonian_numerics
+Levine-Pichler,2.62,0.4235373801774141,0.01577619257297537,independent_hamiltonian_numerics
+Levine-Pichler,2.63,0.39286884081030293,0.014383173211325921,independent_hamiltonian_numerics
+Levine-Pichler,2.64,0.3664465338296975,0.013083610435198382,independent_hamiltonian_numerics
+Levine-Pichler,2.65,0.3439243025371248,0.011874819783185797,independent_hamiltonian_numerics
+Levine-Pichler,2.66,0.32496501107056563,0.010753781460830381,independent_hamiltonian_numerics
+Levine-Pichler,2.67,0.3092417379698584,0.009717181743136905,independent_hamiltonian_numerics
+Levine-Pichler,2.68,0.2964388718285742,0.008761455229594246,independent_hamiltonian_numerics
+Levine-Pichler,2.69,0.28625310560561235,0.007882827614081059,independent_hamiltonian_numerics
+Levine-Pichler,2.7,0.2783943268556741,0.007077358634586456,independent_hamiltonian_numerics
+Levine-Pichler,2.71,0.27258640182418026,0.0063409848726098126,independent_hamiltonian_numerics
+Levine-Pichler,2.72,0.2685678520344751,0.005669562079344115,independent_hamiltonian_numerics
+Levine-Pichler,2.73,0.2660924226696618,0.005058906715209054,independent_hamiltonian_numerics
+Levine-Pichler,2.74,0.26492954271403535,0.004504836400884771,independent_hamiltonian_numerics
+Levine-Pichler,2.75,0.2648646774660847,0.0040032089915857175,independent_hamiltonian_numerics
+Levine-Pichler,2.7600000000000002,0.26569957466296557,0.0035499600017900625,independent_hamiltonian_numerics
+Levine-Pichler,2.77,0.2672524060617003,0.0031411381248536534,independent_hamiltonian_numerics
+Levine-Pichler,2.7800000000000002,0.2693578069020284,0.002772938610749355,independent_hamiltonian_numerics
+Levine-Pichler,2.79,0.2718668162268526,0.0024417342854219535,independent_hamiltonian_numerics
+Levine-Pichler,2.8000000000000003,0.2746467215559298,0.002144104016767829,independent_hamiltonian_numerics
+Levine-Pichler,2.81,0.277580811894203,0.00187685845486789,independent_hamiltonian_numerics
+Levine-Pichler,2.82,0.28056804350611275,0.0016370628976428256,independent_hamiltonian_numerics
+Levine-Pichler,2.83,0.283522623298987,0.0014220571573774277,independent_hamiltonian_numerics
+Levine-Pichler,2.84,0.28637351503084213,0.0012294723283938751,independent_hamiltonian_numerics
+Levine-Pichler,2.85,0.28906387388920396,0.001057244381352232,independent_hamiltonian_numerics
+Levine-Pichler,2.86,0.29155041527652537,0.0009036245350366203,independent_hamiltonian_numerics
+Levine-Pichler,2.87,0.29380272388402795,0.0007671863818587917,independent_hamiltonian_numerics
+Levine-Pichler,2.88,0.29580250933839064,0.0006468297684969983,independent_hamiltonian_numerics
+Levine-Pichler,2.89,0.29754281486455914,0.0005417814579049596,independent_hamiltonian_numerics
+Levine-Pichler,2.9,0.2990271855232233,0.00045159262320095006,independent_hamiltonian_numerics
+Levine-Pichler,2.91,0.3002688026530595,0.00037613324751070286,independent_hamiltonian_numerics
+Levine-Pichler,2.92,0.3012895911767118,0.00031558352652968707,independent_hamiltonian_numerics
+Levine-Pichler,2.93,0.3021193064160502,0.0002704223922365302,independent_hamiltonian_numerics
+Levine-Pichler,2.94,0.30279460700786265,0.00024141329668709284,independent_hamiltonian_numerics
+Levine-Pichler,2.95,0.3033581204168576,0.00022958741401346553,independent_hamiltonian_numerics
+Levine-Pichler,2.96,0.3038575074102418,0.00023622443652237255,independent_hamiltonian_numerics
+Levine-Pichler,2.97,0.30434453168898656,0.0002628311570209112,independent_hamiltonian_numerics
+Levine-Pichler,2.98,0.3048741406669067,0.0003111180440972846,independent_hamiltonian_numerics
+Levine-Pichler,2.99,0.30550356315208754,0.0003829740299628753,independent_hamiltonian_numerics
+Levine-Pichler,3.0,0.30629142941805343,0.00048043974154861617,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.0,756.9890511725398,4.867206437582167e-06,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.01,754.7183140719476,0.00430098256664046,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.02,748.0114197412722,0.01663293672120982,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.03,737.0817846400087,0.035958658321733464,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.04,722.2109968062741,0.06116995247773378,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.05,703.7405733891906,0.0911421021944238,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.06,682.0626804063099,0.12478145934207621,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.07,657.6100946682861,0.16106908933115638,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.08,630.8456948753972,0.19909875179888012,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.09,602.2517669931178,0.2381077856712865,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.1,572.3193986482404,0.2774998077510752,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.11,541.538219214417,0.31685851416927613,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.12,510.3867174725642,0.355952276845541,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.13,479.32333842153093,0.3947296350130857,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.14,448.7785263004355,0.43330617738374727,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.15,419.14784357309577,0.47194367691895506,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.16,390.7862569518577,0.5110226621584585,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.17,364.00364291216624,0.5510098734607946,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.18,339.06152790023975,0.5924222487837352,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.19,316.1710437688922,0.6357892042925991,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.2,295.49204792846496,0.6816150159896147,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.21,277.13333110900993,0.7303430690579296,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.22,261.1538141104604,0.7823236245422518,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.23,247.5646188462184,0.8377865645047593,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.24,236.33188849635792,0.8968203260905273,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.25,227.38022657777526,0.9593579338086764,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.26,220.59662488681232,1.025170701654478,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.27,215.83475505489776,1.0938698177900696,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.28,212.91950719337513,1.1649156604736282,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.29,211.6516709749983,1.2376343409592476,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.3,211.81266860479008,1.311240642735876,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.31,213.16926452723035,1.3848662409859074,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.32,215.47819245690278,1.4575918538656654,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.33,218.49065550784127,1.5284818080480909,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.34,221.95666901991615,1.5966194019784983,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.35000000000000003,225.62922744678968,1.661141425391529,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.36,229.26828583693853,1.7212702434404035,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.37,232.6445526369383,1.7763419756139571,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.38,235.5430935896993,1.8258294876078198,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.39,237.76674639567628,1.8693591597207395,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.4,239.13934274465976,1.9067206869088285,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.41000000000000003,239.50872867677248,1.9378694900935811,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.42,238.74956651488964,1.962921661015796,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.43,236.7658924749793,1.9821417084248178,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.44,233.4933942479728,1.995923706172186,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.45,228.90136315527343,2.0047667489187337,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.46,222.99426672526363,2.0092458849883745,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.47000000000000003,215.81288051118395,2.0099799065810133,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.48,207.43491339839926,2.0075975256236034,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.49,197.97505915646025,2.002703542297271,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.5,187.58440906900933,1.9958466191018465,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.51,176.44916645058868,1.9874902058018016,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.52,164.78861387932693,1.9779880225752766,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.53,152.8522979883469,1.9675653061155565,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.54,140.91641441707782,1.9563067651258867,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.55,129.27939658185147,1.9441518888967142,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.56,118.25673565672201,1.9308979187386264,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.5700000000000001,108.17508477326783,1.9162104416569656,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.58,99.36572703306138,1.8996412142601216,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.59,92.15751346249937,1.88065248806185,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.6,86.86940245342822,1.8586468000609209,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.61,83.80275543711747,1.8330009285255393,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.62,83.23356347697853,1.8031025052120437,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.63,85.4047951554621,1.7683876313935194,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.64,90.51906670899427,1.7283777728758718,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.65,98.73184012422581,1.6827142123704277,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.66,110.14535333159031,1.6311884166562862,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.67,124.8034784169552,1.5737668281034622,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.68,142.68768885257595,1.510608809362778,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.6900000000000001,163.71429530322786,1.442076747454871,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.7000000000000001,187.7330820161053,1.3687376476403514,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.71,214.52744281432257,1.2913559047787047,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.72,243.81607816239108,1.2108773153283443,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.73,275.256273728392,1.1284047707754308,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.74,308.44873755924436,1.045166436979768,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.75,342.9439287562839,0.9624775580575478,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.76,378.2497668019604,0.8816973135051898,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.77,413.8405688793755,0.8041823906055555,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.78,449.1670240485905,0.7312391003712313,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.79,483.6669793205171,0.6640759567653407,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.8,516.7767846946754,0.6037586512019102,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.81,547.9429231219036,0.5511692861777592,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.8200000000000001,576.6336379258871,0.5069715855120515,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.8300000000000001,602.3502650337591,0.4715835795493441,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.84,624.6379807254518,0.44515898037598367,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.85,643.0956875340339,0.42757812589778166,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.86,657.3847811519018,0.41844899608595887,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.87,667.2365691801247,0.41711840508402526,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.88,672.4581475006537,0.4226930655226354,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.89,672.9365809176521,0.43406982305166825,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.9,668.6412802692145,0.44997398621008455,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.91,659.6245170583315,0.46900434477037334,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.92,646.0200672837661,0.48968319244264996,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.93,628.0400269978417,0.5105094589210866,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.9400000000000001,605.9698916005016,0.5300129206250604,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.9500000000000001,580.1620374646706,0.546807404978795,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.96,551.0277867409058,0.5596409322170475,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.97,519.0282728196945,0.5674408505992404,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.98,484.66435383606347,0.5693522112611196,independent_hamiltonian_numerics
+Fromonteil Protocol II,0.99,448.4658439080111,0.5647678902052166,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.0,410.98034588581544,0.5533492866844821,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.01,372.7619749053694,0.5350367965309928,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.02,334.3602589207069,0.5100496609279213,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.03,296.30949085725706,0.4788752094745731,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.04,259.118787570212,0.44224793422917047,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.05,223.26308415731344,0.40111923182661025,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.06,189.175259334203,0.35661901756544917,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.07,157.23954969463912,0.31001073372340027,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.08,127.78636905701983,0.2626415314618661,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.09,101.08860515345336,0.21588959119552686,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.1,77.35942111016854,0.17111065284092625,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.11,56.75154496095187,0.1295858507563873,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.12,39.35798824115715,0.09247288767761322,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.1300000000000001,25.214095843572427,0.060762440192523,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.1400000000000001,14.300794952387475,0.03524147124322777,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.1500000000000001,6.548882001536801,0.016464841803437696,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.16,1.8441640117421105,0.004736275942079059,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.17,0.03325489586277556,9.935482409474226e-05,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.18,0.9298186853553507,0.0023388113064135288,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.19,4.321050168799068,0.010991984123872511,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.2,9.974188943590772,0.02536988598465153,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.21,17.64287492383026,0.04458695957270067,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.22,27.0731712645492,0.06759825478804712,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.23,38.00910361027914,0.09324247316056393,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.24,50.197591556575404,0.12028910262625508,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.25,63.39267811472178,0.1474877164389898,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.26,77.3589946094809,0.17361743954626097,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.27,91.87443060795175,0.19753459666825368,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.28,106.73200998289656,0.21821664762810578,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.29,121.74100392590421,0.23480068294577194,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.3,136.72733861508019,0.2466149889925926,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.31,151.53337841545135,0.25320248699666015,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.32,166.01718422075984,0.25433519143309524,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.33,180.05136029424864,0.2500192065512889,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.34,193.52161139901415,0.24049016948400387,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.35,206.32513500244102,0.22619943847513163,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.36,218.36897098203423,0.20779169926740437,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.37,229.5684238419632,0.18607500636931396,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.3800000000000001,239.84566044730883,0.16198457490434762,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.3900000000000001,249.128570337317,0.13654188110313958,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.4000000000000001,257.34995656596425,0.11081080571347578,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.41,264.4471036172943,0.08585265795102465,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.42,270.3617462002739,0.06268194442510916,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.43,275.040439618614,0.042224697263666754,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.44,278.4353099014421,0.02528105112892645,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.45,280.50514089086556,0.012493565710688243,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.46,281.21673685211704,0.004322537150499847,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.47,280.54648362920176,0.0010292396507155304,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.48,278.48201950469894,0.00266770016958331,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.49,275.0239191699223,0.0090852489098737,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.5,270.1872908330529,0.019931721383779372,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.51,264.0031875716832,0.034676829454986374,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.52,256.5197394777581,0.05263488372309936,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.53,247.80292268079992,0.0729957516466502,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.54,237.93689454473616,0.0948606869742362,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.55,227.02384065065925,0.11728147630897359,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.56,215.1832979229841,0.1393012253755371,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.57,202.55093866339286,0.15999505537378655,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.58,189.27682150281294,0.17850900027580385,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.59,175.52313652020032,0.1940954876021903,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.6,161.46149217081617,0.20614394368956185,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.61,147.26981042042223,0.2142052825728392,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.62,133.1289128706099,0.21800930575779448,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.6300000000000001,119.218894058038,0.21747434673946753,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.6400000000000001,105.71538801071199,0.21270882600143265,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.6500000000000001,92.7858401800036,0.20400472532179814,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.6600000000000001,80.58589882075225,0.19182333006328944,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.67,69.25603770276096,0.17677391052905334,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.68,58.91851580158537,0.15958630504989887,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.69,49.67476958174639,0.14107861624826876,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.7,41.60332003822213,0.1221214277943026,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.71,34.75826031217651,0.10360008411461202,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.72,29.168371056583567,0.08637664471972084,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.73,24.836890486827933,0.07125312566731767,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.74,21.741944951676473,0.05893757364391228,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.75,19.837624665001485,0.0500143865388491,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.76,19.05566870599842,0.04492010419902835,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.77,19.30770424891149,0.0439256527032022,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.78,20.487967885593463,0.04712574544197175,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.79,22.47642243469916,0.0544358365896561,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.8,25.142171265102718,0.06559670034290868,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.81,28.347064253587156,0.08018638623629279,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.82,31.949385272579804,0.09763899053126095,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.83,35.80751065055947,0.11726939909266908,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.84,39.78343131612513,0.1383029101327921,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.85,43.746038143918014,0.1599084458815545,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.86,47.57408006011262,0.18123391873034975,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.87,51.158717320362356,0.20144223539803996,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.8800000000000001,54.40560753456386,0.21974640526527522,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.8900000000000001,57.23647889910712,0.23544226656891615,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.9000000000000001,59.59016307767203,0.24793745426314748,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.9100000000000001,61.42307859017376,0.2567754010444939,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.92,62.70917376969446,0.2616533809210411,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.93,63.43935569611867,0.2624338633315094,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.94,63.62044742582083,0.2591487340785798,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.95,63.27372978871651,0.2519962449394695,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.96,62.433135580885896,0.2413308637991582,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.97,61.14317280430815,0.22764649844463766,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.98,59.456659464416255,0.21155384711995356,independent_hamiltonian_numerics
+Fromonteil Protocol II,1.99,57.432355214216535,0.19375287588653145,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.0,55.13257482859995,0.17500162651733803,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.0100000000000002,52.62086521417256,0.15608271069388685,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.02,49.95982162342918,0.13776894049090316,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.0300000000000002,47.20911025645822,0.12078957779199934,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.04,44.423753887864535,0.10579865523981684,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.05,41.65272500400953,0.09334673007054055,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.06,38.937877673673256,0.08385728375101986,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.07,36.31323552675275,0.07760878113192919,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.08,33.804639308542946,0.0747231613488502,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.09,31.429744024667965,0.07516125916817572,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.1,29.19834317356122,0.07872536140334917,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.11,27.11298640891275,0.08506880074477138,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.12,25.169847548187025,0.09371219147233274,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.13,23.35979243309494,0.10406563043968424,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.14,21.66959095670762,0.11545593407669816,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.15,20.083214712595165,0.12715776837118864,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.16,18.58316121544552,0.1384273626356271,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.17,17.151747422050093,0.1485373861100398,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.18,15.772319194381888,0.15681151359833428,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.19,14.430329165080897,0.16265721443610506,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.2,13.114242897816018,0.16559536768088687,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.21,11.816241937057555,0.1652854325525733,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.22,10.532701933384146,0.1615450815340348,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.23,9.264434110145835,0.15436342675075929,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.24,8.016688498583433,0.14390722906081319,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.25,6.798927215506748,0.13051976306366586,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.2600000000000002,5.624385219873344,0.11471230836722107,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.27,4.5094441304505475,0.097148535834331,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.2800000000000002,3.4728515347645312,0.07862234506607531,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.29,2.5348235477932963,0.06002997447213017,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.3000000000000003,1.716072031425557,0.042337437300165086,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.31,1.0367997765852592,0.026544526713972928,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.32,0.5157070640502208,0.013646772952798111,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.33,0.16905141155418207,0.004596820354321953,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.34,0.009799102808912745,0.0002667184212105672,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.35,0.04690245586150765,0.0014125883660768166,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.36,0.28473095038344826,0.008643036275685417,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.37,0.7226775618051516,0.02239254008595715,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.38,1.3549542378932429,0.04290084597260641,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.39,2.1705827088975163,0.07019917841880235,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.4,3.1535790570439475,0.10410380653037347,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.41,4.283322986844777,0.1442172276755682,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.42,5.535095815592373,0.18993693947457962,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.43,6.880765093697468,0.24047148403884955,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.44,8.289588677737898,0.2948631754217239,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.45,9.729107179223282,0.3520166730760881,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.46,11.166091111808003,0.4107323502130338,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.47,12.567507817682282,0.4697432343485133,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.48,13.90147337432382,0.527754174273009,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.49,15.13815611710873,0.5834818174452693,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.5,16.250601063715397,0.635693966510598,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.5100000000000002,17.215448251438517,0.6832469231897504,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.52,18.013522620378,0.7251195199150604,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.5300000000000002,18.630278387462884,0.760442679993274,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.54,19.05608663237417,0.7885235295834875,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.5500000000000003,19.286360820664715,0.8088633016497008,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.56,19.321520985255106,0.8211685142903624,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.57,19.166803047331044,0.825355163605797,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.58,18.831925071094805,0.8215459342243214,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.59,18.33062692836403,0.8100606884188912,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.6,17.680103744411586,0.7914007374376699,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.61,16.900356487571106,0.7662276170484518,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.62,16.013485073239863,0.735337275293754,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.63,15.042950340249806,0.6996307274436232,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.64,14.012831227349219,0.6600823361676561,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.65,12.9471024721962,0.6177069309264813,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.66,11.868956253377277,0.573526988345163,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.67,10.800188507722973,0.5285410556675236,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.68,9.76066731684379,0.48369451497308424,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.69,8.767896924306047,0.43985366107783647,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.7,7.836686786890787,0.3977839068706944,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.71,6.978930754235261,0.35813274344820156,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.72,6.203497183595028,0.32141787692474166,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.73,5.516226694965422,0.2880207479250977,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.74,4.920030506328368,0.25818542243904813,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.75,4.415078989487947,0.23202263271230278,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.7600000000000002,3.9990673597423503,0.20951855243524298,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.77,3.667543336033556,0.1905477191071382,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.7800000000000002,3.4142802313326293,0.17488937441225524,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.79,3.2316782748722,0.16224638570229874,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.8000000000000003,3.111177017855742,0.15226584166143275,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.81,3.0436623940131824,0.1445603847217026,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.82,3.0198533322794683,0.13872935190777966,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.83,3.030654665965578,0.13437884298788833,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.84,3.06746534904668,0.13113991701827518,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.85,3.122433561472014,0.12868423113923694,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.86,3.1886530406440112,0.12673657319821707,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.87,3.2602977927242973,0.1250838959273325,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.88,3.33269509597865,0.12358062787069785,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.89,3.402339298003575,0.12215020763023632,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.9,3.4668512308799837,0.12078295589250237,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.91,3.5248900405828234,0.11953055706550542,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.92,3.576025785562898,0.11849756277274559,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.93,3.620582261086092,0.11783044738550619,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.94,3.65946012887353,0.1177048367870211,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.95,3.69395057543319,0.11831159247964629,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.96,3.7255494072497886,0.11984246216427086,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.97,3.7557807554241904,0.12247600465142228,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.98,3.7860384613342575,0.126364462417771,independent_hamiltonian_numerics
+Fromonteil Protocol II,2.99,3.817451816463775,0.13162219163804562,independent_hamiltonian_numerics
+Fromonteil Protocol II,3.0,3.850780711371539,0.13831617063495188,independent_hamiltonian_numerics

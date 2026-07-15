@@ -1,0 +1,250 @@
+{
+  "schema_version": 1,
+  "paper_id": "10.1103-PRXQuantum.6.010331",
+  "score_model": "rra_similarity_v1",
+  "targets": [
+    {
+      "target_id": "T001",
+      "label": "Fig. 15 universal Haar and symmetric-Haar responses",
+      "figure_refs": [
+        "Fig. 15"
+      ],
+      "weight": 1,
+      "components": {
+        "feature_match": {
+          "score": 42,
+          "reason": "The Appendix-L curves reproduce the low-frequency plateau, frequency-response dip and second peak, and the main high-frequency decay, but the approximate intensity fits omit the small side peaks visible near normalized frequencies 1.5 and 2.5.",
+          "max_score": 50
+        },
+        "numeric_closeness": {
+          "score": 28,
+          "reason": "The generated data use every Appendix-L coefficient directly and pass the 1.5 MHz sanity value, but no author numerical array is available and the published fit visibly smooths away high-frequency intensity structure.",
+          "max_score": 35
+        },
+        "paper_scope_coverage": {
+          "score": 15,
+          "reason": "Both Fig. 15 panels and both Haar metrics are generated across the full plotted normalized-frequency range.",
+          "max_score": 15
+        }
+      },
+      "evidence": [
+        "outputs/data/universal_response.csv",
+        "outputs/figures/fig15_universal_response.png",
+        "outputs/checks/universal_response.json",
+        "docs/comparisons/fig15_response_comparison.png"
+      ],
+      "remaining_gap": "The final curves reproduce the published Appendix-L envelope, not the small high-frequency intensity side peaks; independent direct recovery awaits the exact optimized phase waveform.",
+      "evaluation": {
+        "critical": true,
+        "paper_level_role": "main_claim",
+        "artifact_pass": true,
+        "data_backed": true,
+        "manual_interventions": 0,
+        "failure_type": "missing_parameters",
+        "parameter_match": "paper_exact",
+        "artifact_stage": "final_reproduction",
+        "reference_comparison": "analytic_reference",
+        "generated_data_provenance": "analytic_reference",
+        "formula_gate": "source_only",
+        "formula_dependencies": [
+          "EQ005",
+          "EQ006"
+        ]
+      },
+      "physics_assertions": [
+        {
+          "assertion_id": "fig15_responses_nonnegative",
+          "tier": "analytic",
+          "essential": true,
+          "status": "passed",
+          "evidence": "outputs/checks/universal_response.json#acceptance.responses_nonnegative",
+          "claim": "All four universal response functions remain nonnegative over the evaluated domain."
+        },
+        {
+          "assertion_id": "fig15_second_frequency_peak",
+          "tier": "numeric",
+          "essential": true,
+          "status": "passed",
+          "evidence": "outputs/checks/universal_response.json#acceptance.frequency_second_peak_present",
+          "claim": "Both frequency-noise responses contain the second peak near normalized frequency 1.2."
+        },
+        {
+          "assertion_id": "fig15_intensity_sanity_value",
+          "tier": "numeric",
+          "essential": true,
+          "status": "passed",
+          "evidence": "outputs/checks/universal_response.json#acceptance.published_1p5_mhz_response",
+          "claim": "The Haar intensity response at normalized frequency 0.5 agrees with the paper's approximately 1.04 reference."
+        }
+      ],
+      "panel_coverage": {
+        "panels": [
+          {
+            "panel_id": "a",
+            "status": "reproduced",
+            "evidence": "outputs/figures/fig15_universal_response.png"
+          },
+          {
+            "panel_id": "b",
+            "status": "reproduced",
+            "evidence": "outputs/figures/fig15_universal_response.png"
+          }
+        ],
+        "panel_scope_cap": 15
+      },
+      "critical": true,
+      "final_reproduction_eligible": true,
+      "final_reproduction_gate": "passed",
+      "physics_status": "passed",
+      "formula_score_cap": 89,
+      "generated_data_provenance_score_cap": 100,
+      "evidence_tier": "physics_reproduction",
+      "physics_score_cap": 100,
+      "parameter_score_cap": 100,
+      "reference_score_cap": 90,
+      "component_total": 85,
+      "score": 85,
+      "similarity_level": "numerical_feature_reproduction"
+    },
+    {
+      "target_id": "T002",
+      "label": "Fig. 6 response and noise-budget panels",
+      "figure_refs": [
+        "Fig. 6"
+      ],
+      "weight": 0.8,
+      "components": {
+        "feature_match": {
+          "score": 40,
+          "reason": "Panel (a) reproduces the dominant Rabi-frequency dependence and envelope, but the intensity-response side peaks inherited from the exact Fig. 15 curve are absent from the Appendix-L approximation.",
+          "max_score": 50
+        },
+        "numeric_closeness": {
+          "score": 26,
+          "reason": "The Eqs. (15)-(16) rescaling at 3.0 and 7.7 MHz collapses back to Appendix L with error 1.42e-14, but author curve arrays are unavailable and the analytic approximation omits fine structure.",
+          "max_score": 35
+        },
+        "paper_scope_coverage": {
+          "score": 7.5,
+          "reason": "Panel (a) is reproduced; panel (b) is experimental context and excluded, while panel (c) remains unreproduced because the raw PSD arrays are unavailable.",
+          "max_score": 15
+        }
+      },
+      "evidence": [
+        "outputs/data/fig6a_scaled_response.csv",
+        "outputs/figures/fig6a_scaled_response.png",
+        "outputs/checks/fig6a_scaled_response.json",
+        "docs/comparisons/fig6_response_comparison.png"
+      ],
+      "remaining_gap": "Panel (a)'s small intensity side peaks require the exact gate trajectory, and panel (c)'s histograms require measured PSD arrays that are not released with the paper.",
+      "evaluation": {
+        "critical": false,
+        "paper_level_role": "supporting",
+        "artifact_pass": true,
+        "data_backed": true,
+        "manual_interventions": 0,
+        "failure_type": "partial_target_coverage",
+        "parameter_match": "paper_exact",
+        "artifact_stage": "final_reproduction",
+        "reference_comparison": "analytic_reference",
+        "generated_data_provenance": "analytic_reference",
+        "formula_gate": "source_only",
+        "formula_dependencies": [
+          "EQ005",
+          "EQ006"
+        ]
+      },
+      "physics_assertions": [
+        {
+          "assertion_id": "fig6a_universal_collapse",
+          "tier": "numeric",
+          "essential": true,
+          "status": "passed",
+          "evidence": "outputs/checks/fig6a_scaled_response.json#maximum_scaling_collapse_error",
+          "claim": "The dimensional responses at both Rabi frequencies collapse onto the same universal response."
+        }
+      ],
+      "panel_coverage": {
+        "panels": [
+          {
+            "panel_id": "a",
+            "status": "reproduced",
+            "evidence": "outputs/figures/fig6a_scaled_response.png"
+          },
+          {
+            "panel_id": "b",
+            "status": "not_applicable",
+            "note": "measured PSD context"
+          },
+          {
+            "panel_id": "c",
+            "status": "not_reproduced",
+            "note": "raw PSD arrays unavailable"
+          }
+        ],
+        "panel_scope_cap": 7.5
+      },
+      "critical": false,
+      "final_reproduction_eligible": true,
+      "final_reproduction_gate": "passed",
+      "physics_status": "passed",
+      "formula_score_cap": 89,
+      "generated_data_provenance_score_cap": 100,
+      "evidence_tier": "physics_reproduction",
+      "physics_score_cap": 100,
+      "parameter_score_cap": 100,
+      "reference_score_cap": 90,
+      "component_total": 73.5,
+      "score": 73.5,
+      "similarity_level": "numerical_feature_reproduction"
+    }
+  ],
+  "overall_score": 79.89,
+  "similarity_level": "numerical_feature_reproduction",
+  "evaluation_summary": {
+    "scored_items": 2,
+    "critical_items": 1,
+    "artifact_pass_rate": 1,
+    "data_backed_rate": 1,
+    "manual_interventions_total": 0,
+    "manual_interventions_per_item": 0,
+    "failure_type_counts": {
+      "missing_parameters": 1,
+      "partial_target_coverage": 1
+    },
+    "parameter_match_counts": {
+      "paper_exact": 2
+    },
+    "reference_comparison_counts": {
+      "analytic_reference": 2
+    },
+    "generated_data_provenance_counts": {
+      "analytic_reference": 2
+    },
+    "evidence_tier_counts": {
+      "physics_reproduction": 2
+    },
+    "formula_gate_counts": {
+      "source_only": 2
+    },
+    "paper_level_role_counts": {
+      "main_claim": 1,
+      "supporting": 1
+    },
+    "physics_status_counts": {
+      "passed": 2
+    },
+    "physics_assertion_status_counts": {
+      "passed": 4
+    },
+    "essential_physics_failures": [],
+    "final_reproduction_ready": true,
+    "final_reproduction_target_ids": [
+      "T001",
+      "T002"
+    ],
+    "final_reproduction_blocked_target_ids": [],
+    "exploratory_target_ids": []
+  },
+  "status": "passed"
+}

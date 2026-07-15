@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "policy": "Computational sources must not read paper-figure pixels. Published comparison composites are external to the numerical pipeline.",
+  "source_figure_data_used_as_computational_input": false,
+  "scanned_sources": [
+    "code/src/__init__.py",
+    "code/src/fidelity_response.py",
+    "code/src/gate_protocols.py",
+    "code/src/many_body_response.py",
+    "code/src/theory_targets.py",
+    "code/scripts/run_formula_theory_targets.py",
+    "code/scripts/run_reproduction.py"
+  ],
+  "generated_data_provenance_allowlist": [
+    "analytic_reference",
+    "formula_numerics",
+    "independent_hamiltonian_numerics",
+    "independent_many_body_numerics",
+    "independent_numerics"
+  ],
+  "forbidden_findings": [],
+  "comparison_only_image_reads": []
+}

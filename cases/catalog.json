@@ -885,6 +885,78 @@
           "figure": "fig5_pixel_comparison.png"
         }
       ]
+    },
+    {
+      "paper_id": "10.1103-PRXQuantum.6.010331",
+      "title": "Benchmarking and Fidelity Response Theory of High-Fidelity Rydberg Entangling Gates",
+      "topic": "Fidelity-response theory and protocol-level noise susceptibility of high-fidelity Rydberg CZ gates",
+      "preprint": {
+        "identifier": "arXiv:2407.20184",
+        "title": "Benchmarking and Fidelity Response Theory of High-Fidelity Rydberg Entangling Gates",
+        "url": "https://arxiv.org/abs/2407.20184"
+      },
+      "publication": {
+        "status": "published",
+        "title": "Benchmarking and Fidelity Response Theory of High-Fidelity Rydberg Entangling Gates",
+        "venue": "PRX Quantum",
+        "citation": "PRX Quantum 6, 010331 (2025)",
+        "doi": "10.1103/PRXQuantum.6.010331",
+        "doi_url": "https://doi.org/10.1103/PRXQuantum.6.010331",
+        "locator": "010331"
+      },
+      "status": "Formula-derived numerical reproduction",
+      "similarity_level": "numerical_feature_reproduction",
+      "audit_score": 79.89,
+      "summary": "Reproduces all nine theory targets closed by printed formulas and public control parameters: Appendix-L universal responses and scaling, error and principal-quantum-number laws, three protocol-level CZ responses, spin-lock and cavity filters, the phase-flip/SSB model, and a seven-site many-body response. Every dataset is generated from formulas or Hamiltonian propagation; no source-figure pixels enter computation.",
+      "limitation": "The 79.89 score covers only T001-T002, which have paper-exact analytic references. Exact absolute curves that require unreleased PSD or calibration arrays, target-specific pulse/ramp identity, atomic geometry, or discrete circuit metadata remain explicitly partial or reconstructed and were not filled by tracing paper figures.",
+      "run_scripts": [
+        "run_reproduction.py",
+        "run_formula_theory_targets.py"
+      ],
+      "extra_dependencies": [],
+      "featured_results": [
+        {
+          "paper_item": "Fig. 15",
+          "result": "Universal Haar and symmetric-Haar frequency/intensity responses from Appendix-L formulas",
+          "figure": "fig15_universal_response.png",
+          "check": "universal_response.json"
+        },
+        {
+          "paper_item": "Fig. 6(a)",
+          "result": "Dimensional response scaling at 3.0 and 7.7 MHz with universal-collapse verification",
+          "figure": "fig6a_scaled_response.png",
+          "check": "fig6a_scaled_response.json"
+        },
+        {
+          "paper_item": "Fig. 9(a,b)",
+          "result": "Independent eight-dimensional Hamiltonian responses for three Rydberg CZ protocols",
+          "figure": "fig9_protocol_responses.png",
+          "check": "formula_theory_targets.json"
+        },
+        {
+          "paper_item": "Fig. 11",
+          "result": "Independent seven-site, 128-dimensional quench and quasi-adiabatic response reconstruction",
+          "figure": "fig11_many_body_responses.png",
+          "check": "formula_theory_targets.json"
+        },
+        {
+          "paper_item": "Fig. 17",
+          "result": "Phase-flip fidelity polynomials and first-order symmetric-stabilizer cancellation",
+          "figure": "fig17_phase_flip_first_order.png",
+          "check": "formula_theory_targets.json"
+        }
+      ],
+      "comparison_attribution": "Tsai et al.",
+      "comparison_results": [
+        {
+          "paper_item": "Fig. 15",
+          "figure": "fig15_response_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 6(a)",
+          "figure": "fig6_response_comparison.png"
+        }
+      ]
     }
   ]
 }
