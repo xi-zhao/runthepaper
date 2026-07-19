@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "target_id": "T001",
+  "parameter_match": "paper_subset",
+  "generated_data_provenance": "independent_numerics",
+  "formula_gate": "reconstructed",
+  "finite_chain_convention": {
+    "gamma": 0.6180339887498949,
+    "site_origin_shift": 1,
+    "lattice_phase": 3.883222077450933,
+    "boundary": "periodic",
+    "evidence": "vector-source IPR path gives pointwise correlation 1.000 for this convention"
+  },
+  "metrics": {
+    "gaa_first_extended_index": 233,
+    "gaa_last_localized_energy_over_J": 0.4395689296183764,
+    "gaa_extended_fraction": 0.3819628647214854,
+    "gaa_extended_band_max_ipr": 0.01840585674140431,
+    "aa_localized_fraction": 1.0,
+    "aa_max_eta_c_over_J": 0.0
+  },
+  "acceptance": {
+    "mobility_edge_index_233": true,
+    "mobility_edge_energy_near_0p44": true,
+    "aa_all_localized": true,
+    "aa_threshold_zero": true,
+    "gaa_extended_band_has_no_edge_states": true
+  }
+}

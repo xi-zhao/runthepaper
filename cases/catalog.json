@@ -957,6 +957,78 @@
           "figure": "fig6_response_comparison.png"
         }
       ]
+    },
+    {
+      "paper_id": "10.1103-PhysRevLett.124.113601",
+      "title": "Localization Driven Superradiant Instability",
+      "topic": "Aubry–André localization, cavity susceptibility, and superradiant instability",
+      "preprint": {
+        "identifier": "arXiv:1909.08125",
+        "title": "Localization Driven Superradiant Instability",
+        "url": "https://arxiv.org/abs/1909.08125"
+      },
+      "publication": {
+        "status": "published",
+        "title": "Localization Driven Superradiant Instability",
+        "venue": "Physical Review Letters",
+        "citation": "Physical Review Letters 124, 113601 (2020)",
+        "doi": "10.1103/PhysRevLett.124.113601",
+        "doi_url": "https://doi.org/10.1103/PhysRevLett.124.113601",
+        "locator": "113601"
+      },
+      "status": "Pixel-registered numerical feature reproduction",
+      "similarity_level": "numerical_feature_reproduction",
+      "audit_score": 88.56,
+      "summary": "Independently reproduces Figs. 2–4 and Supplement Fig. S1 from AA/GAA and cavity mean-field numerics, including a complete Fig. 3 reproduction, a 377-point IPR match, nonlinear photon onset, and pixel-registered paper geometry.",
+      "limitation": "Only Fig. 3 is final-reproduction eligible. Fig. 2 omits the excited-state threshold normalization, Fig. 4 has a published/arXiv detuning-convention split, and Fig. S1 omits pump samples and iterative-solver metadata.",
+      "run_scripts": [
+        "run_linear_targets.py",
+        "run_nonlinear_targets.py",
+        "render_pixel_registered.py"
+      ],
+      "extra_dependencies": [],
+      "featured_results": [
+        {
+          "paper_item": "Fig. 2",
+          "result": "Mobility-edge IPR and state-resolved threshold",
+          "figure": "fig2_pixel_registered.png",
+          "check": "fig2_state_thresholds.json"
+        },
+        {
+          "paper_item": "Fig. 3",
+          "result": "Susceptibility and momentum-scattering mechanism",
+          "figure": "fig3_pixel_registered.png",
+          "check": "fig3_mechanism.json"
+        },
+        {
+          "paper_item": "Fig. 4",
+          "result": "Nonlinear photon onset and critical-pump landscape",
+          "figure": "fig4_pixel_registered.png",
+          "check": "fig4a_photon_number.json"
+        },
+        {
+          "paper_item": "Fig. S1",
+          "result": "Self-consistent normal and superradiant density profiles",
+          "figure": "figs1_pixel_registered.png",
+          "check": "figs1_density_profiles.json"
+        }
+      ],
+      "comparison_attribution": "Yin et al.",
+      "comparison_note": "Each board uses a limited attributed paper excerpt as an audit reference, an independently generated numerical render, and an absolute-pixel-difference panel. Reference pixels and PDF vectors do not enter the numerical model or generated image.",
+      "comparison_results": [
+        {
+          "paper_item": "Fig. 3",
+          "figure": "fig3_pixel_difference.png"
+        },
+        {
+          "paper_item": "Fig. 4",
+          "figure": "fig4_pixel_difference.png"
+        },
+        {
+          "paper_item": "Fig. S1",
+          "figure": "figs1_pixel_difference.png"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "paper_id": "10.1103-PhysRevLett.124.113601",
+  "score_model": "rra_similarity_v1",
+  "status": "passed",
+  "overall_score": 88.56,
+  "similarity_level": "numerical_feature_reproduction",
+  "generated_data_provenance": "independent_numerics",
+  "targets": [
+    {"target_id": "T001", "paper_item": "Fig. 2", "score": 80.0, "artifact_stage": "exploratory", "parameter_match": "paper_subset"},
+    {"target_id": "T002", "paper_item": "Fig. 3", "score": 95.0, "artifact_stage": "final_reproduction", "parameter_match": "paper_exact", "similarity_level": "complete_reproduction"},
+    {"target_id": "T003", "paper_item": "Fig. 4", "score": 89.0, "artifact_stage": "exploratory", "parameter_match": "paper_subset"},
+    {"target_id": "T004", "paper_item": "Fig. S1", "score": 89.0, "artifact_stage": "exploratory", "parameter_match": "paper_subset"}
+  ],
+  "boundary": "Only Fig. 3 is final-reproduction eligible. Fig. 2 threshold normalization, Fig. 4 convention metadata, and Fig. S1 pump/solver metadata are not published."
+}

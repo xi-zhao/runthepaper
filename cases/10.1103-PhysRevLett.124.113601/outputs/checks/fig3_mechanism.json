@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "target_id": "T002",
+  "parameter_match": "paper_exact",
+  "generated_data_provenance": "independent_numerics",
+  "formula_gate": "reconstructed",
+  "metrics": {
+    "clean_f1": 0.36186322041339786,
+    "clean_eta_c_over_J": 0.27680973218553717,
+    "maximum_f1": 3895.238202739032,
+    "maximum_f1_chi_over_J": 1.99,
+    "analytic_channel_indices": {
+      "alpha0": 151,
+      "alpha1": 137,
+      "alpha2": 27
+    },
+    "top_chi1_channel_indices": [
+      137,
+      27,
+      25,
+      149,
+      135,
+      151,
+      136,
+      150
+    ],
+    "chi2p03_diagonal_overlap": 0.5240943982928123
+  },
+  "acceptance": {
+    "clean_intercept_matches": true,
+    "threshold_zero_at_and_above_two": true,
+    "susceptibility_peaks_near_transition": true,
+    "alpha0_near_151": true,
+    "alpha1_near_137": true,
+    "alpha2_near_27": true
+  }
+}

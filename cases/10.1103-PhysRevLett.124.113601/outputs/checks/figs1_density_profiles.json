@@ -1,0 +1,78 @@
+{
+  "status": "passed",
+  "target_id": "T004",
+  "parameter_match": "paper_subset",
+  "generated_data_provenance": "independent_numerics",
+  "formula_gate": "reconstructed",
+  "reconstruction_policy": {
+    "reason": "Supplement Fig. S1 omits pump samples and solver details.",
+    "sample_calibration": "eta samples selected against the approximate source-panel peak-height scale",
+    "normal_eta_over_J": 0.0,
+    "superradiant_eta_over_J": {
+      "0.0": 0.25,
+      "0.5": 0.198,
+      "1.0": 0.164,
+      "1.9": 0.02,
+      "2.03": 0.12
+    },
+    "gamma": "irrational golden ratio",
+    "site_origin_shift": 233,
+    "lattice_phase": 904.7907440460674,
+    "boundary": "open",
+    "cavity_shift_factor": 1.0
+  },
+  "metrics": {
+    "0.0": {
+      "normal_ipr": 0.003968253968253923,
+      "superradiant_ipr": 0.0058229525501495415,
+      "normal_peak": 0.005291005291005151,
+      "superradiant_peak": 0.009628905682519048,
+      "above_eta_over_J": 0.25,
+      "above_photon_number": 3.4019212276952304,
+      "above_converged": true
+    },
+    "0.5": {
+      "normal_ipr": 0.0041378594137627305,
+      "superradiant_ipr": 0.005937747271361185,
+      "normal_peak": 0.007144094354116373,
+      "superradiant_peak": 0.015618852961940545,
+      "above_eta_over_J": 0.198,
+      "above_photon_number": 0.5046330247296437,
+      "above_converged": true
+    },
+    "1.0": {
+      "normal_ipr": 0.004761643591699214,
+      "superradiant_ipr": 0.020337036624350716,
+      "normal_peak": 0.010430463684914982,
+      "superradiant_peak": 0.07632550863649906,
+      "above_eta_over_J": 0.164,
+      "above_photon_number": 0.5927931837445249,
+      "above_converged": true
+    },
+    "1.9": {
+      "normal_ipr": 0.018365283903592104,
+      "superradiant_ipr": 0.07007584281163262,
+      "normal_peak": 0.06948706726050713,
+      "superradiant_peak": 0.23753650270670762,
+      "above_eta_over_J": 0.02,
+      "above_photon_number": 0.004428366431829385,
+      "above_converged": true
+    },
+    "2.03": {
+      "normal_ipr": 0.3314713019602374,
+      "superradiant_ipr": 0.6798701207852978,
+      "normal_peak": 0.5670283596944065,
+      "superradiant_peak": 0.8196854158314355,
+      "above_eta_over_J": 0.12,
+      "above_photon_number": 1.2701471408577791,
+      "above_converged": true
+    }
+  },
+  "acceptance": {
+    "all_profiles_normalized": true,
+    "all_above_branches_converged": true,
+    "localized_state_sharpened": true,
+    "localized_peak_enhanced": true,
+    "source_peak_scale_reproduced": true
+  }
+}

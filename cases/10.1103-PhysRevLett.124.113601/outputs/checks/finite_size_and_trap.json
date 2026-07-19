@@ -1,0 +1,75 @@
+{
+  "status": "passed",
+  "target_id": "D001",
+  "parameter_match": "diagnostic_only",
+  "source_claim": "main text states no finite-size effect from L=300 to 10000 and weak-trap robustness",
+  "metrics": {
+    "finite_size": {
+      "300": {
+        "ipr_chi_1.0": 0.0059805600651332835,
+        "abs_self_overlap_chi_1.0": 7.81636526045393e-06,
+        "ipr_chi_2.03": 0.31702604709890464,
+        "abs_self_overlap_chi_2.03": 0.40915614243807263
+      },
+      "377": {
+        "ipr_chi_1.0": 0.004761581085101704,
+        "abs_self_overlap_chi_1.0": 2.9124699833424482e-05,
+        "ipr_chi_2.03": 0.3319502171888503,
+        "abs_self_overlap_chi_2.03": 0.5240943982927303
+      },
+      "1000": {
+        "ipr_chi_1.0": 0.0017984036522971023,
+        "abs_self_overlap_chi_1.0": 4.298616878677499e-06,
+        "ipr_chi_2.03": 0.32602358068519227,
+        "abs_self_overlap_chi_2.03": 0.5217531494554742
+      },
+      "3000": {
+        "ipr_chi_1.0": 0.0005998937404719938,
+        "abs_self_overlap_chi_1.0": 1.108734849141976e-07,
+        "ipr_chi_2.03": 0.32680348652380187,
+        "abs_self_overlap_chi_2.03": 0.4222228220783366
+      },
+      "10000": {
+        "ipr_chi_1.0": 0.00018000232396286496,
+        "abs_self_overlap_chi_1.0": 3.954090331343611e-09,
+        "ipr_chi_2.03": 0.3268460506463385,
+        "abs_self_overlap_chi_2.03": 0.4224166130350224
+      }
+    },
+    "weak_trap_ipr": {
+      "1.0": {
+        "untrapped": 0.004761581085101704,
+        "weak_trap": 0.011332919641540776
+      },
+      "1.5": {
+        "untrapped": 0.00674102321634131,
+        "weak_trap": 0.01684064347408313
+      },
+      "1.9": {
+        "untrapped": 0.018320104751525852,
+        "weak_trap": 0.04663159963035588
+      },
+      "1.99": {
+        "untrapped": 0.0628280254676028,
+        "weak_trap": 0.11847465410279567
+      },
+      "2.03": {
+        "untrapped": 0.3319502171888503,
+        "weak_trap": 0.2393810643158499
+      },
+      "2.5": {
+        "untrapped": 0.7300121298101435,
+        "weak_trap": 0.7293186687718752
+      }
+    },
+    "trap_edge_offset_over_J": 0.01,
+    "trap_curvature_over_J": 2.8293345405160706e-07
+  },
+  "acceptance": {
+    "extended_ipr_decreases_with_size": true,
+    "localized_ipr_size_stable": true,
+    "localized_self_overlap_remains_finite": true,
+    "weak_trap_preserves_extended_side": true,
+    "weak_trap_preserves_deep_localization": true
+  }
+}

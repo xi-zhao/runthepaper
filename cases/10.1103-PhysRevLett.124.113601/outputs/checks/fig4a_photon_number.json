@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "target_id": "T003",
+  "panel": "FIG004A",
+  "parameter_match": "paper_subset",
+  "generated_data_provenance": "independent_numerics",
+  "formula_gate": "reconstructed",
+  "convention": {
+    "cavity_shift_factor": 1.0,
+    "reason": "literal published Eq. (3) reproduces the published nonlinear onset and endpoint scale",
+    "linear_panel_b_shift_factor": 2.0
+  },
+  "metrics": {
+    "converged_fraction_by_chi": {
+      "0.5": 1.0,
+      "1.0": 1.0,
+      "2.03": 1.0
+    },
+    "onset_eta_over_J_by_chi": {
+      "0.5": 0.198,
+      "1.0": 0.158,
+      "2.03": 0.006000000000000005
+    },
+    "photon_number_at_eta_0p25_by_chi": {
+      "0.5": 4.58164943076701,
+      "1.0": 5.679547645754994,
+      "2.03": 6.545379331235687
+    }
+  },
+  "acceptance": {
+    "all_branches_mostly_converged": true,
+    "clean_onset_source_window": true,
+    "moderate_disorder_onset_source_window": true,
+    "localized_branch_active_at_small_pump": true,
+    "endpoint_photon_numbers_source_scale": true
+  }
+}
