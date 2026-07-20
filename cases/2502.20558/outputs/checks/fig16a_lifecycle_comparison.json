@@ -1,0 +1,31 @@
+{
+  "status": "physically_consistent",
+  "target_id": "T005",
+  "paper_item": "Fig. 16(a)",
+  "artifact_stage": "exploratory",
+  "parameter_match": "paper_subset",
+  "paper_parameters": {
+    "distance": 9,
+    "displayed_rounds": [
+      2,
+      18
+    ],
+    "role_resolved": true
+  },
+  "generated_parameters": {
+    "distance": 9,
+    "displayed_rounds": [
+      2,
+      20
+    ],
+    "role_resolved": "conventional only; SWAP all-qubit invariant"
+  },
+  "feature_checks": {
+    "swap_and_conventional_all_equal": true,
+    "conventional_data_grows": true,
+    "conventional_measure_constant": true
+  },
+  "remaining_gap": "The SWAP data/measure role-resolved subcurves require the author's exact boundary pairing schedule.",
+  "data": "outputs/data/fig16a_lifecycle_comparison.csv",
+  "figure": "outputs/figures/fig16a_lifecycle_comparison.png"
+}

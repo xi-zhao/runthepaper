@@ -1,0 +1,27 @@
+{
+  "status": "physically_consistent",
+  "target_id": "T001",
+  "paper_item": "Fig. 2(b)",
+  "artifact_stage": "exploratory",
+  "parameter_match": "proxy_model",
+  "paper_parameters": {
+    "distance": 5,
+    "p_loss_per_entangling_gate": 0.01,
+    "model": "surface-code logical memory + delayed-erasure/MLE"
+  },
+  "generated_parameters": {
+    "distance": 5,
+    "p_loss_per_opportunity": 0.01,
+    "shots": 200000,
+    "seed": 250220558,
+    "model": "classical repetition-code analogue"
+  },
+  "feature_checks": {
+    "median_improvement_over_paper_round_range": 2.8928902581281966,
+    "delayed_matches_perfect_time_in_timing_marginalized_proxy": true,
+    "absolute_curve_claimed": false
+  },
+  "blocker": "The author surface-code circuit generator, correlated MLE decoder, raw samples, shot count, and seeds are not public.",
+  "data": "outputs/data/fig2b_proxy.csv",
+  "figure": "outputs/figures/fig2b_proxy.png"
+}

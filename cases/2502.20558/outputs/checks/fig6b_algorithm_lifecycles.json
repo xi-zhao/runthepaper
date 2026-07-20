@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "target_id": "T003",
+  "paper_item": "Fig. 6(b)",
+  "artifact_stage": "final_reproduction",
+  "parameter_match": "paper_exact",
+  "paper_parameters": {
+    "GHZ_N": 16,
+    "algorithms": [
+      "GHZ N=16",
+      "15-to-1 distillation",
+      "H/T synthesis",
+      "Adder"
+    ]
+  },
+  "generated_parameters": {
+    "GHZ_N": 16,
+    "algorithms": [
+      "GHZ N=16",
+      "15-to-1 distillation",
+      "H/T synthesis",
+      "Adder"
+    ]
+  },
+  "feature_checks": {
+    "all_printed_counts_exact": true,
+    "values": [
+      [
+        2.0,
+        4.0
+      ],
+      [
+        4.0,
+        5.0
+      ],
+      [
+        7.0,
+        8.0
+      ],
+      [
+        9.0,
+        13.0
+      ]
+    ]
+  },
+  "data": "outputs/data/fig6b_algorithm_lifecycles.csv",
+  "figure": "outputs/figures/fig6b_algorithm_lifecycles.png"
+}

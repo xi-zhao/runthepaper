@@ -1853,6 +1853,97 @@
           "path": "docs/SOURCE_AUDIT.md"
         }
       ]
+    },
+    {
+      "paper_id": "2502.20558",
+      "title": "Leveraging Qubit Loss Detection in Fault-Tolerant Quantum Algorithms",
+      "topic": "Delayed-erasure decoding, qubit lifecycle reduction, and loss-aware fault-tolerant quantum algorithms",
+      "preprint": {
+        "status": "recorded",
+        "identifier": "arXiv:2502.20558",
+        "title": "Leveraging Qubit Loss Detection in Fault-Tolerant Quantum Algorithms",
+        "url": "https://arxiv.org/abs/2502.20558"
+      },
+      "publication": {
+        "status": "published",
+        "title": "Leveraging Qubit Loss Detection in Fault-Tolerant Quantum Algorithms",
+        "venue": "Physical Review X",
+        "citation": "Physical Review X 16, 011002 (2026)",
+        "doi": "10.1103/ycwc-3myc",
+        "doi_url": "https://doi.org/10.1103/ycwc-3myc",
+        "locator": "011002"
+      },
+      "status": "Mixed analytic and mechanism feature reproduction",
+      "similarity_level": "numerical_feature_reproduction",
+      "audit_score": 74.22,
+      "summary": "Independently generates five figure targets and the analytic rows of Table I. The printed Fig. 4(b) lifecycle-threshold relation, the complete Fig. 6(b) lifecycle bar panel, and Table-I lifecycle/overhead rows are paper-exact targets; Figs. 2(b), 14(c), and 16(a) remain explicitly labeled mechanism or paper-subset reproductions.",
+      "limitation": "The released materials contain vector figures but no surface-code circuit generator, correlated MLE implementation, raw samples, shots, seeds, complete grids, or fit windows. Fig. 2(b) is therefore a repetition-code information-mechanism proxy rather than an absolute surface-code result, and 19 numeric panel/table groups remain deferred.",
+      "run_scripts": [
+        "run_reproduction.py"
+      ],
+      "extra_dependencies": [],
+      "additional_resources": [
+        {
+          "label": "Table I analytic rows (CSV)",
+          "path": "outputs/data/table_i_analytic_rows.csv"
+        }
+      ],
+      "featured_results": [
+        {
+          "paper_item": "Fig. 2(b)",
+          "result": "Delayed-erasure information advantage in a clearly labeled distance-five proxy",
+          "figure": "fig2b_proxy.png",
+          "check": "fig2b_proxy.json"
+        },
+        {
+          "paper_item": "Fig. 4(b)",
+          "result": "Paper-exact printed lifecycle-threshold relation; finite-size markers excluded",
+          "figure": "fig4b_lifecycle_threshold.png",
+          "check": "fig4b_lifecycle_threshold.json"
+        },
+        {
+          "paper_item": "Fig. 6(b)",
+          "result": "Complete paper-exact algorithm lifecycle bar panel",
+          "figure": "fig6b_algorithm_lifecycles.png",
+          "check": "fig6b_algorithm_lifecycles.json"
+        },
+        {
+          "paper_item": "Fig. 14(c)",
+          "result": "Paper-subset SWAP all-qubit lifecycle invariant",
+          "figure": "fig14c_swap_lifecycles.png",
+          "check": "fig14c_swap_lifecycles.json"
+        },
+        {
+          "paper_item": "Fig. 16(a)",
+          "result": "Conventional role split and all-qubit lifecycle invariant",
+          "figure": "fig16a_lifecycle_comparison.png",
+          "check": "fig16a_lifecycle_comparison.json"
+        }
+      ],
+      "comparison_attribution": "Baranes et al.",
+      "comparison_note": "Each left panel is a limited excerpt from Baranes et al., Physical Review X 16, 011002 (2026); each right panel is generated independently. These boards validate structure and declared features only. In particular, the Fig. 2(b) right panel is a repetition-code mechanism proxy and does not claim author-data-level, surface-code, or point-for-point equivalence.",
+      "comparison_results": [
+        {
+          "paper_item": "Fig. 2(b)",
+          "figure": "fig2b_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 4(b)",
+          "figure": "fig4b_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 6(b)",
+          "figure": "fig6b_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 14(c)",
+          "figure": "fig14c_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 16(a)",
+          "figure": "fig16a_comparison.png"
+        }
+      ]
     }
   ]
 }

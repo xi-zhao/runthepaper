@@ -1,0 +1,8 @@
+method,data_lifecycle,measure_lifecycle,space_time_overhead,distance_for_numeric_evaluation,generated_data_provenance,parameter_match
+Conventional SE,28,4,2716,7,analytic_reference,paper_exact
+SWAP SE period 1,8,8,2716,7,analytic_reference,paper_exact
+Direct conversion SE period 2,8,4,2716,7,analytic_reference,paper_exact
+Teleportation-based SE,4,4,6132,7,analytic_reference,paper_exact
+Direct conversion SE period 1,4,4,2716,7,analytic_reference,paper_exact
+Direct conversion period 1 + exact loss info,1 detection / 4 replacement,1 detection / 4 replacement,2716,7,analytic_reference,paper_exact
+Direct conversion period 0.25 + exact loss info,1 detection / 1 replacement,1 detection / 1 replacement,2716,7,analytic_reference,paper_exact

@@ -1,0 +1,5 @@
+algorithm,average,maximum,generated_data_provenance,parameter_match
+GHZ N=16,2.0,4,analytic_reference,paper_exact
+15-to-1 distillation,4.0,5.0,analytic_reference,paper_exact
+H/T synthesis,7.0,8.0,analytic_reference,paper_exact
+Adder,9.0,13.0,analytic_reference,paper_exact

@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "target_id": "T004",
+  "paper_item": "Fig. 14(c)",
+  "artifact_stage": "exploratory",
+  "parameter_match": "paper_subset",
+  "paper_parameters": {
+    "distance": 9,
+    "displayed_rounds": [
+      2,
+      20
+    ],
+    "curves": [
+      "SWAP period 1 all",
+      "SWAP period 2 all"
+    ]
+  },
+  "generated_parameters": {
+    "distance": 9,
+    "displayed_rounds": [
+      2,
+      20
+    ],
+    "noisy_rounds_convention": "displayed_rounds - 1"
+  },
+  "feature_checks": {
+    "period_1_equals_period_2": true,
+    "monotonic_to_finite_d_limit": true,
+    "finite_d_deep_limit": 7.2,
+    "large_d_limit": 8.0
+  },
+  "data": "outputs/data/fig14c_swap_lifecycles.csv",
+  "figure": "outputs/figures/fig14c_swap_lifecycles.png"
+}

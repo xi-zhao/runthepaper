@@ -1,0 +1,5 @@
+rounds,shots,no_information_failures,delayed_erasure_failures,perfect_time_failures,no_information_error_rate,delayed_erasure_error_rate,perfect_time_error_rate,no_information_plot_rate,delayed_erasure_plot_rate,perfect_time_plot_rate,mean_flagged_losses,distance,p_loss_per_opportunity,partner_flip_probability,seed,generated_data_provenance,parameter_match
+2,200000,82,19,19,0.00041,9.5e-05,9.5e-05,0.00041249793751031244,9.749951250243748e-05,9.749951250243748e-05,0.100315,5,0.01,0.25,250220558,independent_numerics,proxy_model
+4,200000,298,100,100,0.00149,0.0005,0.0005,0.0014924925375373124,0.0005024974875125624,0.0005024974875125624,0.19731,5,0.01,0.25,250220558,independent_numerics,proxy_model
+6,200000,702,249,249,0.00351,0.001245,0.001245,0.0035124824375878123,0.0012474937625311874,0.0012474937625311874,0.290725,5,0.01,0.25,250220558,independent_numerics,proxy_model
+8,200000,1160,464,464,0.0058,0.00232,0.00232,0.005802470987645062,0.002322488387558062,0.002322488387558062,0.38433,5,0.01,0.25,250220558,independent_numerics,proxy_model

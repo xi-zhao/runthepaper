@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "paper_id": "2502.20558",
+  "status": "passed",
+  "overall_score": 74.22,
+  "similarity_level": "numerical_feature_reproduction",
+  "scope": {
+    "generated_figure_targets": 5,
+    "analytic_table_targets": 1,
+    "paper_exact_targets": ["T002", "T003", "T006"],
+    "exploratory_targets": ["T001", "T004", "T005"],
+    "deferred_numeric_panel_groups": 19,
+    "deferred_blocker": "missing_author_data"
+  },
+  "targets": [
+    {
+      "target_id": "T001",
+      "paper_item": "Fig. 2(b)",
+      "score": 47.5,
+      "stage": "exploratory",
+      "parameter_match": "proxy_model",
+      "status": "physically_consistent",
+      "boundary": "Repetition-code information-mechanism proxy; no surface-code absolute-curve claim."
+    },
+    {
+      "target_id": "T002",
+      "paper_item": "Fig. 4(b) printed fit",
+      "score": 83.5,
+      "stage": "final_reproduction",
+      "parameter_match": "paper_exact",
+      "status": "reproduced",
+      "boundary": "Printed analytic relation only; finite-size markers unavailable."
+    },
+    {
+      "target_id": "T003",
+      "paper_item": "Fig. 6(b)",
+      "score": 89.0,
+      "stage": "final_reproduction",
+      "parameter_match": "paper_exact",
+      "status": "reproduced",
+      "boundary": "Complete numeric bar panel."
+    },
+    {
+      "target_id": "T004",
+      "paper_item": "Fig. 14(c)",
+      "score": 80.0,
+      "stage": "exploratory",
+      "parameter_match": "paper_subset",
+      "status": "physically_consistent",
+      "boundary": "All-qubit invariant reproduced; boundary-round convention reconstructed."
+    },
+    {
+      "target_id": "T005",
+      "paper_item": "Fig. 16(a)",
+      "score": 72.5,
+      "stage": "exploratory",
+      "parameter_match": "paper_subset",
+      "status": "physically_consistent",
+      "boundary": "Conventional role split and all-qubit invariant reproduced; SWAP role-resolved subcurves open."
+    },
+    {
+      "target_id": "T006",
+      "paper_item": "Table I analytic rows",
+      "score": 80.0,
+      "stage": "final_reproduction",
+      "parameter_match": "paper_exact",
+      "status": "reproduced",
+      "boundary": "Lifecycle and overhead rows only; simulation rows deferred."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "paper_id": "2502.20558",
+  "runtime_seconds": 0.7067195000126958,
+  "targets_run": [
+    "T001",
+    "T002",
+    "T003",
+    "T004",
+    "T005",
+    "T006"
+  ],
+  "failed_targets": [],
+  "exact_or_analytic_targets": [
+    "T002",
+    "T003",
+    "T004",
+    "T005",
+    "T006"
+  ],
+  "proxy_targets": [
+    "T001"
+  ],
+  "note": "No source-figure pixels or digitized curves are computational inputs."
+}

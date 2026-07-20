@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "target_id": "T006",
+  "paper_item": "Table I analytic rows",
+  "artifact_stage": "final_reproduction",
+  "parameter_match": "paper_exact",
+  "paper_parameters": {
+    "methods": 7,
+    "rows": [
+      "average data lifecycle",
+      "average measure lifecycle",
+      "space-time overhead"
+    ]
+  },
+  "generated_parameters": {
+    "methods": 7,
+    "distance_for_polynomial_evaluation": 7
+  },
+  "feature_checks": {
+    "method_count": 7,
+    "conventional_data_lifecycle_at_d7": "28",
+    "conventional_space_time_at_d7": "2716",
+    "all_exact": true
+  },
+  "scope_note": "Threshold and effective-distance rows are simulation outputs and remain separately deferred.",
+  "data": "outputs/data/table_i_analytic_rows.csv"
+}

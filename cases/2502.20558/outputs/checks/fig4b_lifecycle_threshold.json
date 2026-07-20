@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "target_id": "T002",
+  "paper_item": "Fig. 4(b)",
+  "artifact_stage": "final_reproduction",
+  "parameter_match": "paper_exact",
+  "paper_parameters": {
+    "lifecycle_domain": [
+      1.0,
+      16.0
+    ],
+    "fit": "7/lifecycle^(1/3) percent"
+  },
+  "generated_parameters": {
+    "lifecycle_domain": [
+      1.0,
+      16.0
+    ],
+    "grid_points": 151,
+    "fit": "7/lifecycle^(1/3) percent"
+  },
+  "feature_checks": {
+    "strictly_decreasing": true,
+    "ell_1_percent": 7.0,
+    "ell_16_percent": 2.777951840944349
+  },
+  "scope_note": "This reproduces the printed analytic trend, not the unavailable finite-size simulation markers.",
+  "data": "outputs/data/fig4b_lifecycle_threshold.csv",
+  "figure": "outputs/figures/fig4b_lifecycle_threshold.png"
+}
