@@ -24,6 +24,19 @@ Every case provides a public overview, Chinese and English getting-started notes
 | [`10.1103-PhysRevLett.124.113601`](cases/10.1103-PhysRevLett.124.113601/README.md) | Aubry–André localization, cavity susceptibility, and superradiant instability | Pixel-registered numerical feature reproduction | 88.56 |
 | [`2607.02157`](cases/2607.02157/README.md) | Non-equilibrium thermodynamic limits of driven open quantum reservoirs; generalized Landauer bound and information-dissipation identity | Feature-level reproduction (paper-exact ensembles) | 79.18 |
 | [`2407.01296`](cases/2407.01296/README.md) | Geometry-adaptive non-Bloch bands, non-Hermitian skin effect, and spectral instability | Main-text scientific reproduction; pixel-registered, not identical | 88.39 |
+| [`prlb-f37350e-000`](cases/prlb-f37350e-000/README.md) | Vacuum-resonance mode conversion and polarization in magnetized neutron-star atmospheres | Paper-figure feature reproduction and PRL-Bench gold audit | 84.00 |
+| [`prlb-f37350e-008`](cases/prlb-f37350e-008/README.md) | Secular resonance and eccentricity excitation in hierarchical black-hole triples | Paper-figure feature reproduction and PRL-Bench source audit | 88.75 |
+| [`prlb-f37350e-009`](cases/prlb-f37350e-009/README.md) | Relic gravitational-wave spectra, adiabatic regularization, and frozen-answer provenance | Paper-exact figure reproduction and composite benchmark audit | 90.25 |
+| [`prlb-f37350e-016`](cases/prlb-f37350e-016/README.md) | Single-impurity resonance in a d-wave superconductor and benchmark identifiability | Formula-level reproduction with unresolved source identity | 85.00 |
+| [`prlb-f37350e-028`](cases/prlb-f37350e-028/README.md) | Macrospin dynamics and deterministic Neel-vector switching in antiferromagnets | Source-grounded macrospin reproduction and benchmark audit | 90.00 |
+| [`prlb-f37350e-040`](cases/prlb-f37350e-040/README.md) | Modulational instability, wedge selection, and nonlinear dynamics in two-component condensates | Equation-level numerical feature reproduction | 80.00 |
+| [`2503.20566`](cases/2503.20566/README.md) | Gauge-invariant tensor-network simulations of Abelian lattice gauge theories | Complete PRL-Bench target reproduction; partial paper coverage | 100.00 |
+| [`prlb-f37350e-058`](cases/prlb-f37350e-058/README.md) | Quantum backflow optimization and large-bandwidth extrapolation | Source-extrapolation feature reproduction and benchmark audit | 83.60 |
+| [`prlb-f37350e-060`](cases/prlb-f37350e-060/README.md) | Fermionic reference states, neutral-atom error correction, and benchmark consistency | Formula-level numerical feature reproduction and benchmark audit | 84.00 |
+| [`prlb-f37350e-063`](cases/prlb-f37350e-063/README.md) | Nonreciprocal condensate phase transitions and critical exceptional points | A100 source-curve feature reproduction and benchmark audit | 89.55 |
+| [`prlb-f37350e-071`](cases/prlb-f37350e-071/README.md) | Parametric amplification, apparent noise, and quantum-memory stability | Complete benchmark-task reproduction and source audit | 90.00 |
+| [`prlb-f37350e-090`](cases/prlb-f37350e-090/README.md) | Spontaneous emission and excitation in photonic time crystals | Complete benchmark-task reproduction and source-consistency audit | 90.00 |
+| [`prlb-f37350e-093`](cases/prlb-f37350e-093/README.md) | Shooting-point exchange, path-space sampling, and free-energy reconstruction | Paper-figure feature reproduction and benchmark statistics audit | 70.10 |
 
 The audit score records evidence strength at export time. It is not a visual-style rating, and it does not erase the limitation stated by each case.
 It is also not a cross-paper ranking or a publishing threshold: publication readiness comes from satisfying the public case contract and stating the remaining boundary honestly.

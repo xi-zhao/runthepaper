@@ -1177,6 +1177,682 @@
           "figure": "fig5_pixel_comparison.png"
         }
       ]
+    },
+    {
+      "paper_id": "prlb-f37350e-000",
+      "title": "Polarized X-Ray Emission from Magnetized Neutron Stars: Signature of Strong-Field Vacuum Polarization",
+      "topic": "Vacuum-resonance mode conversion and polarization in magnetized neutron-star atmospheres",
+      "preprint": {
+        "identifier": "arXiv:astro-ph/0303596",
+        "title": "Polarized X-Ray Emission from Magnetized Neutron Stars: Signature of Strong-Field Vacuum Polarization",
+        "url": "https://arxiv.org/abs/astro-ph/0303596"
+      },
+      "publication": {
+        "status": "published",
+        "title": "Polarized X-Ray Emission from Magnetized Neutron Stars: Signature of Strong-Field Vacuum Polarization",
+        "venue": "Physical Review Letters",
+        "citation": "Physical Review Letters 91, 071101 (2003)",
+        "doi": "10.1103/PhysRevLett.91.071101",
+        "doi_url": "https://doi.org/10.1103/PhysRevLett.91.071101",
+        "locator": "071101"
+      },
+      "status": "Paper-figure feature reproduction and PRL-Bench gold audit",
+      "similarity_level": "numerical_feature_reproduction",
+      "audit_score": 84.0,
+      "summary": "Recomputes the vacuum-resonance density, adiabatic threshold, Landau-Zener conversion, polarization branches, and a paper-exact reconstruction of PRL Fig. 1. The audit also identifies one exponent error and two underdetermined polarization answers in the frozen benchmark.",
+      "limitation": "Only PRL Fig. 1 is independently reconstructed. The benchmark record is outside the declared 2025-2026 PRL window, and source Figs. 3-4 require atmosphere-model arrays and implementation details that are not public.",
+      "run_scripts": [
+        "run_gold_audit.py",
+        "render_prl_fig1.py",
+        "render_idx0_audit.py"
+      ],
+      "extra_dependencies": [],
+      "featured_results": [
+        {
+          "paper_item": "PRL Fig. 1",
+          "result": "Paper-parameter ellipticity branches across the vacuum resonance",
+          "figure": "prl_fig1_reproduced.png",
+          "check": "gold_audit_check.json"
+        }
+      ],
+      "additional_resources": [
+        {
+          "label": "Formula verification",
+          "path": "docs/FORMULA_VERIFICATION.md"
+        },
+        {
+          "label": "Benchmark gold audit",
+          "path": "docs/GOLD_AUDIT.md"
+        },
+        {
+          "label": "Source identity audit",
+          "path": "docs/SOURCE_AUDIT.md"
+        }
+      ]
+    },
+    {
+      "paper_id": "prlb-f37350e-008",
+      "title": "Extreme Resonant Eccentricity Excitation of Stars around Merging Black-Hole Binary",
+      "topic": "Secular resonance and eccentricity excitation in hierarchical black-hole triples",
+      "preprint": {
+        "identifier": "arXiv:2403.03250v2",
+        "title": "Extreme Resonant Eccentricity Excitation of Stars around Merging Black-Hole Binary",
+        "url": "https://arxiv.org/abs/2403.03250v2"
+      },
+      "publication": {
+        "status": "published",
+        "title": "Extreme Resonant Eccentricity Excitation of Stars around Merging Black-Hole Binary",
+        "venue": "Physical Review Letters",
+        "citation": "Physical Review Letters 132, 231403 (2024)",
+        "doi": "10.1103/PhysRevLett.132.231403",
+        "doi_url": "https://doi.org/10.1103/PhysRevLett.132.231403",
+        "locator": "231403"
+      },
+      "status": "Paper-figure feature reproduction and PRL-Bench source audit",
+      "similarity_level": "numerical_feature_reproduction",
+      "audit_score": 88.75,
+      "summary": "Recomputes all seven frozen numerical tasks and independently renders the source phase portrait from the secular Hamiltonian. The numerical gold is consistent, while the frozen record does not satisfy the benchmark's declared publication-window contract.",
+      "limitation": "The reproduced source is a 2024 PRL rather than a paper in the benchmark's declared 2025-2026 window. The public package excludes the original figure and publishes only independently generated data and images.",
+      "run_scripts": [
+        "run_gold_audit.py",
+        "render_prl_figc.py",
+        "render_idx8_audit.py"
+      ],
+      "extra_dependencies": [],
+      "featured_results": [
+        {
+          "paper_item": "Source phase portrait",
+          "result": "Secular-resonance contours and separatrix structure",
+          "figure": "prl_figC_reproduced.png",
+          "check": "figc_pixel_qa.json"
+        }
+      ],
+      "additional_resources": [
+        {
+          "label": "Formula verification",
+          "path": "docs/FORMULA_VERIFICATION.md"
+        },
+        {
+          "label": "Benchmark gold audit",
+          "path": "docs/GOLD_AUDIT.md"
+        },
+        {
+          "label": "Source identity audit",
+          "path": "docs/SOURCE_AUDIT.md"
+        }
+      ]
+    },
+    {
+      "paper_id": "prlb-f37350e-009",
+      "title": "Vacuum and Gravitons of Relic Gravitational Waves, and Regularization of Spectrum and Energy-Momentum Tensor",
+      "topic": "Relic gravitational-wave spectra, adiabatic regularization, and frozen-answer provenance",
+      "preprint": {
+        "identifier": "arXiv:1512.03134v2",
+        "title": "Vacuum and Gravitons of Relic Gravitational Waves, and Regularization of Spectrum and Energy-Momentum Tensor",
+        "url": "https://arxiv.org/abs/1512.03134v2"
+      },
+      "publication": {
+        "status": "published",
+        "title": "Vacuum and Gravitons of Relic Gravitational Waves, and Regularization of Spectrum and Energy-Momentum Tensor",
+        "venue": "Physical Review D",
+        "citation": "Physical Review D 94, 044033 (2016)",
+        "doi": "10.1103/PhysRevD.94.044033",
+        "doi_url": "https://doi.org/10.1103/PhysRevD.94.044033",
+        "locator": "044033"
+      },
+      "status": "Paper-exact figure reproduction and composite benchmark audit",
+      "similarity_level": "numerical_feature_reproduction",
+      "audit_score": 90.25,
+      "summary": "Independently reconstructs a source running-spectrum figure and audits the composite frozen task against its three older source lineages. The figure-level target is paper-exact, while several benchmark counterterms and equation-of-state values are internally inconsistent.",
+      "limitation": "The frozen record combines multiple older non-PRL sources and therefore is not a one-paper PRL reproduction. The public case exposes the independent calculation and audit but does not redistribute source artwork or digitized curves.",
+      "run_scripts": [
+        "run_gold_audit.py",
+        "render_rgw_fig2.py",
+        "render_idx9_audit.py"
+      ],
+      "extra_dependencies": [],
+      "featured_results": [
+        {
+          "paper_item": "Relic-wave running-spectrum figure",
+          "result": "Paper-exact tensor-spectrum running curves",
+          "figure": "rgw_fig2_reproduced.png",
+          "check": "rgw_fig2_pixel_qa.json"
+        }
+      ],
+      "additional_resources": [
+        {
+          "label": "Formula verification",
+          "path": "docs/FORMULA_VERIFICATION.md"
+        },
+        {
+          "label": "Benchmark gold audit",
+          "path": "docs/GOLD_AUDIT.md"
+        },
+        {
+          "label": "Source identity audit",
+          "path": "docs/SOURCE_AUDIT.md"
+        }
+      ]
+    },
+    {
+      "paper_id": "prlb-f37350e-016",
+      "title": "D-wave single-impurity resonance benchmark source/gold audit",
+      "topic": "Single-impurity resonance in a d-wave superconductor and benchmark identifiability",
+      "preprint": {
+        "status": "not_recorded",
+        "checked_at": "2026-07-20"
+      },
+      "publication": {
+        "status": "not_recorded",
+        "checked_at": "2026-07-20"
+      },
+      "status": "Formula-level reproduction with unresolved source identity",
+      "similarity_level": "numerical_feature_reproduction",
+      "audit_score": 85.0,
+      "summary": "Recomputes the frozen impurity-resonance arithmetic, pole equation, and diagnostic curves. The numerical audit is reproducible, but no single PRL source matching the frozen record has been identified.",
+      "limitation": "This is a benchmark-task case rather than a verified one-paper reproduction. The formulas trace to older review literature and a possible newer candidate, while the frozen third task fails its own pole contract.",
+      "run_scripts": [
+        "run_gold_audit.py",
+        "render_idx16_audit.py"
+      ],
+      "extra_dependencies": [],
+      "featured_results": [
+        {
+          "paper_item": "Benchmark impurity-resonance audit",
+          "result": "Pole equation, resonance energies, and source-identity diagnostics",
+          "figure": "idx16_gold_audit.png",
+          "check": "idx16_audit_figure_check.json"
+        }
+      ],
+      "additional_resources": [
+        {
+          "label": "Formula verification",
+          "path": "docs/FORMULA_VERIFICATION.md"
+        },
+        {
+          "label": "Benchmark gold audit",
+          "path": "docs/GOLD_AUDIT.md"
+        },
+        {
+          "label": "Source identity audit",
+          "path": "docs/SOURCE_AUDIT.md"
+        }
+      ]
+    },
+    {
+      "paper_id": "prlb-f37350e-028",
+      "title": "Deterministic Switching of the Neel Vector by Asymmetric Spin Torque",
+      "topic": "Macrospin dynamics and deterministic Neel-vector switching in antiferromagnets",
+      "preprint": {
+        "identifier": "arXiv:2506.10786",
+        "title": "Deterministic Switching of the Neel Vector by Asymmetric Spin Torque",
+        "url": "https://arxiv.org/abs/2506.10786"
+      },
+      "publication": {
+        "status": "published",
+        "title": "Deterministic Switching of the Neel Vector by Asymmetric Spin Torque",
+        "venue": "Physical Review Letters",
+        "citation": "Physical Review Letters 136, 096702 (2026)",
+        "doi": "10.1103/fkyr-z5b8",
+        "doi_url": "https://doi.org/10.1103/fkyr-z5b8",
+        "locator": "096702"
+      },
+      "status": "Source-grounded macrospin reproduction and benchmark audit",
+      "similarity_level": "numerical_feature_reproduction",
+      "audit_score": 90.0,
+      "summary": "Implements the paper's macrospin equations, recomputes switching observables, and audits all four frozen tasks against independent algebra and source constraints. The reproducible result shows that the four frozen answers do not satisfy the verified source model.",
+      "limitation": "The package reproduces the benchmark-relevant macrospin object and audit, not the paper's full micromagnetic or experimental scope. The generated audit figure is independent and the original paper panel is not redistributed.",
+      "run_scripts": [
+        "run_idx28_audit.py",
+        "render_idx28_figures.py"
+      ],
+      "extra_dependencies": [],
+      "featured_results": [
+        {
+          "paper_item": "Macrospin switching audit",
+          "result": "Independent switching trajectory and four-task consistency audit",
+          "figure": "idx28_gold_audit.png",
+          "check": "idx28_figure_check.json"
+        }
+      ],
+      "additional_resources": [
+        {
+          "label": "Formula verification",
+          "path": "docs/FORMULA_VERIFICATION.md"
+        },
+        {
+          "label": "Benchmark gold audit",
+          "path": "docs/GOLD_AUDIT.md"
+        },
+        {
+          "label": "Source identity audit",
+          "path": "docs/SOURCE_AUDIT.md"
+        }
+      ]
+    },
+    {
+      "paper_id": "prlb-f37350e-040",
+      "title": "Nonlinear Stage of Modulational Instability in Repulsive Two-Component Bose-Einstein Condensates",
+      "topic": "Modulational instability, wedge selection, and nonlinear dynamics in two-component condensates",
+      "preprint": {
+        "identifier": "arXiv:2412.17083v2",
+        "title": "Nonlinear Stage of Modulational Instability in Repulsive Two-Component Bose-Einstein Condensates",
+        "url": "https://arxiv.org/abs/2412.17083v2"
+      },
+      "publication": {
+        "status": "published",
+        "title": "Nonlinear Stage of Modulational Instability in Repulsive Two-Component Bose-Einstein Condensates",
+        "venue": "Physical Review Letters",
+        "citation": "Physical Review Letters 135, 113401 (2025)",
+        "doi": "10.1103/6jsr-f8q1",
+        "doi_url": "https://doi.org/10.1103/6jsr-f8q1",
+        "locator": "113401"
+      },
+      "status": "Equation-level numerical feature reproduction",
+      "similarity_level": "numerical_feature_reproduction",
+      "audit_score": 80.0,
+      "summary": "Recomputes the benchmark selection rule and modulational-instability wedge directly from the source equations, with independent analytic and numerical checks.",
+      "limitation": "The source equations and benchmark observables are reproduced, but paper-panel curves are not claimed because the author simulation arrays and full evolution metadata are unavailable.",
+      "run_scripts": [
+        "run_gold_audit.py",
+        "render_idx40_audit.py"
+      ],
+      "extra_dependencies": [],
+      "featured_results": [
+        {
+          "paper_item": "Modulational-instability selection rule",
+          "result": "Analytic wedge and frozen-answer consistency map",
+          "figure": "idx40_selection_rule_audit.png",
+          "check": "gold_audit_check.json"
+        }
+      ],
+      "additional_resources": [
+        {
+          "label": "Formula verification",
+          "path": "docs/FORMULA_VERIFICATION.md"
+        },
+        {
+          "label": "Benchmark gold audit",
+          "path": "docs/GOLD_AUDIT.md"
+        },
+        {
+          "label": "Source identity audit",
+          "path": "docs/SOURCE_AUDIT.md"
+        }
+      ]
+    },
+    {
+      "paper_id": "2503.20566",
+      "title": "Accurate Gauge-Invariant Tensor Network Simulations for Abelian Lattice Gauge Theory in (2+1)D: ground state and real-time dynamics",
+      "topic": "Gauge-invariant tensor-network simulations of Abelian lattice gauge theories",
+      "preprint": {
+        "identifier": "arXiv:2503.20566",
+        "title": "Accurate Gauge-Invariant Tensor Network Simulations for Abelian Lattice Gauge Theory in (2+1)D: ground state and real-time dynamics",
+        "url": "https://arxiv.org/abs/2503.20566"
+      },
+      "publication": {
+        "status": "published",
+        "title": "Accurate Gauge-Invariant Tensor Network Simulations for Abelian Lattice Gauge Theory in (2+1)D: Ground State and Real-Time Dynamics",
+        "venue": "Physical Review Letters",
+        "citation": "Physical Review Letters 135, 130401 (2025)",
+        "doi": "10.1103/3m3j-ds18",
+        "doi_url": "https://doi.org/10.1103/3m3j-ds18",
+        "locator": "130401"
+      },
+      "status": "Complete PRL-Bench target reproduction; partial paper coverage",
+      "similarity_level": "numerical_feature_reproduction",
+      "audit_score": 100.0,
+      "summary": "Independently reproduces all four frozen benchmark targets using exact gauge-invariant bases for odd Z2, pure Z2, Z2 matter, and Z3 dynamics. The generated comparison consolidates the A100 numerical evidence and analytic checks.",
+      "limitation": "The four benchmark targets are complete, but the source paper's wider tensor-network figure set is not fully reproduced. Full numerical reruns require CUDA and CuPy; the default public command regenerates the summary figure from included data.",
+      "run_scripts": [
+        "render_idx47_benchmark_comparison.py"
+      ],
+      "extra_dependencies": [
+        "cupy-cuda12x"
+      ],
+      "featured_results": [
+        {
+          "paper_item": "PRL-Bench idx 47 Tasks 1-4",
+          "result": "Odd-Z2, pure-Z2, Z2-matter, and Z3 benchmark comparison",
+          "figure": "idx47_benchmark_comparison.png",
+          "check": "similarity_scorecard.json"
+        }
+      ],
+      "additional_resources": [
+        {
+          "label": "Formula verification",
+          "path": "docs/FORMULA_VERIFICATION.md"
+        },
+        {
+          "label": "Benchmark gold audit",
+          "path": "docs/GOLD_AUDIT.md"
+        },
+        {
+          "label": "Source identity audit",
+          "path": "docs/SOURCE_AUDIT.md"
+        }
+      ],
+      "full_run_scripts": [
+        "run_odd_z2_vbs_a100.py",
+        "run_z2_vison_a100.py",
+        "run_z2_matter_bulk_a100.py",
+        "run_z3_derivatives_a100.py",
+        "render_idx47_benchmark_comparison.py"
+      ],
+      "full_run_note": "The full benchmark rerun requires an NVIDIA CUDA GPU and a compatible CuPy installation. The four numerical scripts checkpoint their JSON outputs before the summary render.",
+      "full_run_script_arguments": {}
+    },
+    {
+      "paper_id": "prlb-f37350e-058",
+      "title": "General Quantum Backflow in Realistic Wave Packets",
+      "topic": "Quantum backflow optimization and large-bandwidth extrapolation",
+      "preprint": {
+        "identifier": "arXiv:2511.10155",
+        "title": "General Quantum Backflow in Realistic Wave Packets",
+        "url": "https://arxiv.org/abs/2511.10155"
+      },
+      "publication": {
+        "status": "published",
+        "title": "General Quantum Backflow in Realistic Wave Packets",
+        "venue": "Physical Review Letters",
+        "citation": "Physical Review Letters 136, 090202 (2026)",
+        "doi": "10.1103/tm9s-pkg5",
+        "doi_url": "https://doi.org/10.1103/tm9s-pkg5",
+        "locator": "090202"
+      },
+      "status": "Source-extrapolation feature reproduction and benchmark audit",
+      "similarity_level": "numerical_feature_reproduction",
+      "audit_score": 83.6,
+      "summary": "Independently solves the backflow eigenproblem, validates the source extrapolation, and audits four frozen tasks. The paper-level extrapolation is reproduced at feature level; only the first frozen task survives the independent calculation.",
+      "limitation": "The public result validates the source extrapolation rather than reproducing every supplemental curve. Frozen Tasks 2-4 disagree with the independently evaluated operator and are reported as benchmark-gold failures.",
+      "run_scripts": [
+        "run_idx58_audit.py",
+        "render_idx58_figures.py"
+      ],
+      "extra_dependencies": [],
+      "featured_results": [
+        {
+          "paper_item": "Backflow extrapolation",
+          "result": "Finite-bandwidth eigenvalue sequence and asymptotic extrapolation",
+          "figure": "idx58_source_extrapolation.png",
+          "check": "idx58_figure_check.json"
+        }
+      ],
+      "additional_resources": [
+        {
+          "label": "Formula verification",
+          "path": "docs/FORMULA_VERIFICATION.md"
+        },
+        {
+          "label": "Benchmark gold audit",
+          "path": "docs/GOLD_AUDIT.md"
+        },
+        {
+          "label": "Source identity audit",
+          "path": "docs/SOURCE_AUDIT.md"
+        }
+      ]
+    },
+    {
+      "paper_id": "prlb-f37350e-060",
+      "title": "Error-Corrected Fermionic Quantum Processors with Neutral Atoms",
+      "topic": "Fermionic reference states, neutral-atom error correction, and benchmark consistency",
+      "preprint": {
+        "identifier": "arXiv:2412.16081",
+        "title": "Error-Corrected Fermionic Quantum Processors with Neutral Atoms",
+        "url": "https://arxiv.org/abs/2412.16081"
+      },
+      "publication": {
+        "status": "published",
+        "title": "Error-Corrected Fermionic Quantum Processors with Neutral Atoms",
+        "venue": "Physical Review Letters",
+        "citation": "Physical Review Letters 135, 090601 (2025)",
+        "doi": "10.1103/zkpl-hh28",
+        "doi_url": "https://doi.org/10.1103/zkpl-hh28",
+        "locator": "090601"
+      },
+      "status": "Formula-level numerical feature reproduction and benchmark audit",
+      "similarity_level": "numerical_feature_reproduction",
+      "audit_score": 84.0,
+      "summary": "Reconstructs the paper's fermionic reference-state formulas and independently evaluates all frozen tasks. Source identities are exact; one task passes, three fail, and one is underdetermined by the published information.",
+      "limitation": "This case reproduces the benchmark-relevant analytic and small numerical objects, not the full hardware protocol or experimental error-correction campaign.",
+      "run_scripts": [
+        "run_idx60_audit.py",
+        "render_idx60_figures.py"
+      ],
+      "extra_dependencies": [],
+      "featured_results": [
+        {
+          "paper_item": "Fermionic reference benchmark",
+          "result": "Independent five-task formula and identifiability audit",
+          "figure": "idx60_gold_audit.png",
+          "check": "idx60_figure_check.json"
+        }
+      ],
+      "additional_resources": [
+        {
+          "label": "Formula verification",
+          "path": "docs/FORMULA_VERIFICATION.md"
+        },
+        {
+          "label": "Benchmark gold audit",
+          "path": "docs/GOLD_AUDIT.md"
+        },
+        {
+          "label": "Source identity audit",
+          "path": "docs/SOURCE_AUDIT.md"
+        }
+      ]
+    },
+    {
+      "paper_id": "prlb-f37350e-063",
+      "title": "Phase Transitions in Nonreciprocal Driven-Dissipative Condensates",
+      "topic": "Nonreciprocal condensate phase transitions and critical exceptional points",
+      "preprint": {
+        "identifier": "arXiv:2502.05267v3",
+        "title": "Phase Transitions in Nonreciprocal Driven-Dissipative Condensates",
+        "url": "https://arxiv.org/abs/2502.05267v3"
+      },
+      "publication": {
+        "status": "published",
+        "title": "Phase Transitions in Nonreciprocal Driven-Dissipative Condensates",
+        "venue": "Physical Review Letters",
+        "citation": "Physical Review Letters 135, 123401 (2025)",
+        "doi": "10.1103/gphr-d1bc",
+        "doi_url": "https://doi.org/10.1103/gphr-d1bc",
+        "locator": "123401"
+      },
+      "status": "A100 source-curve feature reproduction and benchmark audit",
+      "similarity_level": "numerical_feature_reproduction",
+      "audit_score": 89.55,
+      "summary": "Uses an A100 grid calculation to reproduce the paper's gamma=0.3 lambda-2 branch and independently audits the frozen critical-exceptional-point claims. The paper curve passes its feature gate, while the frozen benchmark gold fails independent evaluation.",
+      "limitation": "The paper-curve result is feature-level rather than author-data exact. Recomputing the full grid requires CUDA/PyTorch; the default public command regenerates figures from the included A100 summaries.",
+      "run_scripts": [
+        "render_idx63_figures.py"
+      ],
+      "extra_dependencies": [
+        "torch"
+      ],
+      "featured_results": [
+        {
+          "paper_item": "gamma=0.3 lambda-2 branch",
+          "result": "A100 nonreciprocal-condensate source-curve reproduction",
+          "figure": "idx63_cep_gamma03_reproduction.png",
+          "check": "idx63_figure_check.json"
+        }
+      ],
+      "additional_resources": [
+        {
+          "label": "Formula verification",
+          "path": "docs/FORMULA_VERIFICATION.md"
+        },
+        {
+          "label": "Benchmark gold audit",
+          "path": "docs/GOLD_AUDIT.md"
+        },
+        {
+          "label": "Source identity audit",
+          "path": "docs/SOURCE_AUDIT.md"
+        }
+      ],
+      "full_run_scripts": [
+        "run_idx63_a100_grid.py",
+        "render_idx63_figures.py"
+      ],
+      "full_run_note": "The full grid rerun requires an NVIDIA CUDA GPU and PyTorch with CUDA support. The included JSON summaries allow the figure to be regenerated without a GPU."
+    },
+    {
+      "paper_id": "prlb-f37350e-071",
+      "title": "Unwanted Couplings Can Induce Amplification in Quantum Memories despite Negligible Apparent Noise",
+      "topic": "Parametric amplification, apparent noise, and quantum-memory stability",
+      "preprint": {
+        "identifier": "arXiv:2411.15362",
+        "title": "Unwanted Couplings Can Induce Amplification in Quantum Memories despite Negligible Apparent Noise",
+        "url": "https://arxiv.org/abs/2411.15362"
+      },
+      "publication": {
+        "status": "published",
+        "title": "Unwanted Couplings Can Induce Amplification in Quantum Memories despite Negligible Apparent Noise",
+        "venue": "Physical Review Letters",
+        "citation": "Physical Review Letters 135, 070802 (2025)",
+        "doi": "10.1103/pz34-47pw",
+        "doi_url": "https://doi.org/10.1103/pz34-47pw",
+        "locator": "070802"
+      },
+      "status": "Complete benchmark-task reproduction and source audit",
+      "similarity_level": "numerical_feature_reproduction",
+      "audit_score": 90.0,
+      "summary": "Independently evaluates all six frozen quantum-memory tasks, including gain, apparent noise, threshold behavior, and the high-precision scalar result. The complete audit shows that three central frozen answers are inconsistent with the verified source equations.",
+      "limitation": "The benchmark-task scope is complete, but this is not a reproduction of every paper figure or experimental implementation. The package publishes only independently generated audit data and graphics.",
+      "run_scripts": [
+        "run_idx71_audit.py",
+        "render_idx71_figures.py"
+      ],
+      "extra_dependencies": [],
+      "featured_results": [
+        {
+          "paper_item": "PRL-Bench idx 71 Tasks 1-6",
+          "result": "Gain, noise, threshold, and precision audit",
+          "figure": "idx71_gold_audit.png",
+          "check": "idx71_figure_check.json"
+        }
+      ],
+      "additional_resources": [
+        {
+          "label": "Formula verification",
+          "path": "docs/FORMULA_VERIFICATION.md"
+        },
+        {
+          "label": "Benchmark gold audit",
+          "path": "docs/GOLD_AUDIT.md"
+        },
+        {
+          "label": "Source identity audit",
+          "path": "docs/SOURCE_AUDIT.md"
+        }
+      ]
+    },
+    {
+      "paper_id": "prlb-f37350e-090",
+      "title": "Spontaneous Emission Decay and Excitation in Photonic Time Crystals",
+      "topic": "Spontaneous emission and excitation in photonic time crystals",
+      "preprint": {
+        "identifier": "arXiv:2404.13287",
+        "title": "Spontaneous Emission Decay and Excitation in Photonic Time Crystals",
+        "url": "https://arxiv.org/abs/2404.13287"
+      },
+      "publication": {
+        "status": "published",
+        "title": "Spontaneous Emission Decay and Excitation in Photonic Time Crystals",
+        "venue": "Physical Review Letters",
+        "citation": "Physical Review Letters 135, 133801 (2025)",
+        "doi": "10.1103/5v2w-yg7v",
+        "doi_url": "https://doi.org/10.1103/5v2w-yg7v",
+        "locator": "133801"
+      },
+      "status": "Complete benchmark-task reproduction and source-consistency audit",
+      "similarity_level": "numerical_feature_reproduction",
+      "audit_score": 90.0,
+      "summary": "Independently evaluates all seven frozen decay and excitation tasks using the source equations and controlled toy limits. Five frozen answers fail literal source or algebra consistency.",
+      "limitation": "The seven-task audit is complete, but the package does not reproduce the paper's full electromagnetic simulation or experimental apparatus. Results are formula- and benchmark-level numerical features.",
+      "run_scripts": [
+        "run_idx90_audit.py",
+        "render_idx90_figures.py"
+      ],
+      "extra_dependencies": [],
+      "featured_results": [
+        {
+          "paper_item": "PRL-Bench idx 90 Tasks 1-7",
+          "result": "Decay, excitation, and algebra consistency audit",
+          "figure": "idx90_gold_audit.png",
+          "check": "idx90_figure_check.json"
+        }
+      ],
+      "additional_resources": [
+        {
+          "label": "Formula verification",
+          "path": "docs/FORMULA_VERIFICATION.md"
+        },
+        {
+          "label": "Benchmark gold audit",
+          "path": "docs/GOLD_AUDIT.md"
+        },
+        {
+          "label": "Source identity audit",
+          "path": "docs/SOURCE_AUDIT.md"
+        }
+      ]
+    },
+    {
+      "paper_id": "prlb-f37350e-093",
+      "title": "Enhanced Sampling of Configuration and Path Space in a Generalized Ensemble by Shooting Point Exchange",
+      "topic": "Shooting-point exchange, path-space sampling, and free-energy reconstruction",
+      "preprint": {
+        "identifier": "arXiv:2302.08757v2",
+        "title": "Enhanced Sampling of Configuration and Path Space in a Generalized Ensemble by Shooting Point Exchange",
+        "url": "https://arxiv.org/abs/2302.08757v2"
+      },
+      "publication": {
+        "status": "published",
+        "title": "Enhanced Sampling of Configuration and Path Space in a Generalized Ensemble by Shooting Point Exchange",
+        "venue": "Physical Review Letters",
+        "citation": "Physical Review Letters 132, 128001 (2024)",
+        "doi": "10.1103/PhysRevLett.132.128001",
+        "doi_url": "https://doi.org/10.1103/PhysRevLett.132.128001",
+        "locator": "128001"
+      },
+      "status": "Paper-figure feature reproduction and benchmark statistics audit",
+      "similarity_level": "numerical_feature_reproduction",
+      "audit_score": 70.1,
+      "summary": "Independently reconstructs Fig. 2B from the source potential and audits the frozen efficiency and speedup claims. The free-energy profile is reproduced, while several claimed statistics lack the event counts and rerun data needed for verification.",
+      "limitation": "The source is a 2024 PRL outside the benchmark's declared window. Author trajectories, event counts, and optimized-coordinate rerun rates are unavailable, so the efficiency and speedup claims remain underdetermined.",
+      "run_scripts": [
+        "render_prl_fig2b.py",
+        "render_idx93_audit.py"
+      ],
+      "extra_dependencies": [],
+      "featured_results": [
+        {
+          "paper_item": "PRL Fig. 2B",
+          "result": "Free-energy profile from deterministic marginalization",
+          "figure": "prl_fig2b_reproduced.png",
+          "check": "gold_audit_check.json"
+        }
+      ],
+      "additional_resources": [
+        {
+          "label": "Formula verification",
+          "path": "docs/FORMULA_VERIFICATION.md"
+        },
+        {
+          "label": "Benchmark gold audit",
+          "path": "docs/GOLD_AUDIT.md"
+        },
+        {
+          "label": "Source identity audit",
+          "path": "docs/SOURCE_AUDIT.md"
+        }
+      ]
     }
   ]
 }

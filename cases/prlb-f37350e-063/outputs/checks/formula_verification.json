@@ -1,0 +1,94 @@
+{
+  "status": "passed",
+  "schema_version": 1,
+  "paper_id": "prlb-f37350e-063",
+  "summary": {
+    "cards_total": 6,
+    "numeric_open": 6,
+    "numeric_closed": 0,
+    "blocked_cards": []
+  },
+  "formulas": {
+    "EQ_OBC_MATRIX": {
+      "title": "Open-boundary Hatano-Nelson matrix",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "src/nonreciprocal_cep_audit.py::hatano_nelson_matrix"
+      ],
+      "open_questions": []
+    },
+    "EQ_OBC_EIGENPAIR": {
+      "title": "Exact OBC eigenvalue-eigenvector pairing",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "src/nonreciprocal_cep_audit.py::exact_obc_eigenpairs",
+        "src/nonreciprocal_cep_audit.py::frozen_obc_eigenpairs"
+      ],
+      "open_questions": []
+    },
+    "EQ_VACUUM_THRESHOLD": {
+      "title": "Finite-N open-boundary vacuum threshold",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "src/nonreciprocal_cep_audit.py::finite_n_vacuum_threshold"
+      ],
+      "open_questions": []
+    },
+    "EQ_BULK_STATIC": {
+      "title": "Bulk static plane-wave solutions",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "src/nonreciprocal_cep_audit.py::bulk_static_solutions"
+      ],
+      "open_questions": []
+    },
+    "EQ_PH_RATIO": {
+      "title": "Particle-hole compatibility ratio",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "src/nonreciprocal_cep_audit.py::ph_ratio"
+      ],
+      "open_questions": []
+    },
+    "EQ_CEP_PROTOCOL": {
+      "title": "Frozen finite-time CEP acceptance protocol",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "scripts/run_idx63_a100_grid.py",
+        "src/nonreciprocal_cep_audit.py::run_frozen_cep_grid"
+      ],
+      "open_questions": []
+    }
+  },
+  "findings": []
+}
