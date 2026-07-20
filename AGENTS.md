@@ -4,7 +4,7 @@
 
 RunThePaper is the public output library for reproduced papers.
 
-PRAgent/RRAgent is the harness we use to reproduce papers: agent workflows,
+PRAgent is the harness we use to reproduce papers: agent workflows,
 diagnostics, internal reference checks, source-material handling, and production
 automation live there.
 
@@ -19,7 +19,7 @@ ready to share:
 - honest reproduction boundaries and lessons learned.
 
 Do not treat RunThePaper as the harness repository. Do not move internal
-PRAgent/RRAgent runtime code, checkpoints, prompts, private diagnostics, raw
+PRAgent runtime code, checkpoints, prompts, private diagnostics, raw
 paper sources, standalone original figures, digitized source curves, or
 source-derived point sets into this repository.
 

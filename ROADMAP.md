@@ -48,7 +48,7 @@ Automation should protect the case contract:
 - scan for raw source artifacts and obvious secrets before merge;
 - keep failures tied to a specific case and script.
 
-CI should stay small. The goal is not to rebuild PRAgent/RRAgent inside this
+CI should stay small. The goal is not to rebuild PRAgent inside this
 repository, but to verify that public cases remain runnable.
 
 ## Phase 4: Publish And Invite Review
