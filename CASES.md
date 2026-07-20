@@ -22,6 +22,7 @@ Every case provides a public overview, Chinese and English getting-started notes
 | [`10.1038-s41586-026-10720-3`](cases/10.1038-s41586-026-10720-3/README.md) | Stimulated Hawking radiation and backreaction in a fibre-optical analogue horizon | Main-figure numerical feature reproduction | 78.47 |
 | [`10.1103-PRXQuantum.6.010331`](cases/10.1103-PRXQuantum.6.010331/README.md) | Fidelity-response theory and protocol-level noise susceptibility of high-fidelity Rydberg CZ gates | Formula-derived numerical reproduction | 79.89 |
 | [`10.1103-PhysRevLett.124.113601`](cases/10.1103-PhysRevLett.124.113601/README.md) | Aubry–André localization, cavity susceptibility, and superradiant instability | Pixel-registered numerical feature reproduction | 88.56 |
+| [`2607.02157`](cases/2607.02157/README.md) | Non-equilibrium thermodynamic limits of driven open quantum reservoirs; generalized Landauer bound and information-dissipation identity | Feature-level reproduction (paper-exact ensembles) | 79.18 |
 
 The audit score records evidence strength at export time. It is not a visual-style rating, and it does not erase the limitation stated by each case.
 It is also not a cross-paper ranking or a publishing threshold: publication readiness comes from satisfying the public case contract and stating the remaining boundary honestly.

@@ -1029,6 +1029,70 @@
           "figure": "figs1_pixel_difference.png"
         }
       ]
+    },
+    {
+      "paper_id": "2607.02157",
+      "title": "Thermodynamics of Quantum Reservoir Computing",
+      "topic": "Non-equilibrium thermodynamic limits of driven open quantum reservoirs; generalized Landauer bound and information-dissipation identity",
+      "preprint": {
+        "status": "recorded",
+        "identifier": "arXiv:2607.02157",
+        "title": "Thermodynamics of Quantum Reservoir Computing",
+        "url": "https://arxiv.org/abs/2607.02157"
+      },
+      "publication": {
+        "status": "not_recorded",
+        "checked_at": "2026-07-20"
+      },
+      "status": "Feature-level reproduction (paper-exact ensembles)",
+      "similarity_level": "numerical_feature_reproduction",
+      "audit_score": 79.18,
+      "summary": "Independently reproduces all three numerical figures of Ding & Qiu's thermodynamics of quantum reservoir computing at the paper's full ensemble sizes: the memory/predictive Holevo capacities, generalized Landauer bound, and coherence decomposition (Fig. 2, both TFIM and cluster architectures), the drive spectral resonance G(omega) and reservoir spectra (Fig. S1), and the multi-step capacities with forecasting error (Fig. S2). The central identity beta*W_irr = chi^d (Eq. 13) holds at machine precision across all runs, and the capacity peaks and NMSE minima coincide inside the quantum critical regions.",
+      "limitation": "Comparison is a feature contract against the paper's raster panels (no author data or tables); score is bound at 80 because the paper releases no numerical data and we decline to digitize its curves. The disorder-ensemble aggregation convention (per-realization vs pooled) was adjudicated to resolve a TFIM peak ambiguity; three unspecified conventions (Mackey-Glass normalization, cluster boundary condition, F(omega) normalization) are documented as questions for the authors.",
+      "run_scripts": [
+        "run_scan.py",
+        "run_nmse.py",
+        "run_figS1.py",
+        "plot_figures.py",
+        "adjudicate_pooling.py",
+        "verify_formulas.py"
+      ],
+      "extra_dependencies": [],
+      "featured_results": [
+        {
+          "paper_item": "Fig. 2",
+          "result": "Holevo capacities, generalized Landauer bound, coherence decomposition; TFIM and cluster, paper-exact ensembles",
+          "figure": "fig2_reproduction.png",
+          "check": "fig2_figS2_feature_contract.json"
+        },
+        {
+          "paper_item": "Fig. S1",
+          "result": "Drive resonance G(omega) peak and TFIM/cluster reservoir spectra",
+          "figure": "figS1_reproduction.png",
+          "check": "figS1_features.json"
+        },
+        {
+          "paper_item": "Fig. S2",
+          "result": "Multi-step memory/predictive capacities and full-Pauli NMSE minima",
+          "figure": "figS2_reproduction.png",
+          "check": "fig2_figS2_feature_contract.json"
+        }
+      ],
+      "comparison_attribution": "Ding and Qiu",
+      "comparison_results": [
+        {
+          "paper_item": "Fig. 2",
+          "figure": "fig2_comparison.png"
+        },
+        {
+          "paper_item": "Fig. S1",
+          "figure": "figS1_comparison.png"
+        },
+        {
+          "paper_item": "Fig. S2",
+          "figure": "figS2_comparison.png"
+        }
+      ]
     }
   ]
 }

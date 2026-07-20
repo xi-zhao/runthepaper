@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "paper_id": "2607.02157",
+  "check": "figS1_features",
+  "status": "passed",
+  "features": {
+    "g_peak_omega": 0.35483146067415733,
+    "g_peak_value": 2.7215293737599398,
+    "g_peak_omega_expected": 0.36,
+    "g_peak_value_expected": 2.3,
+    "mg_spectrum_peak_omega": 0.3543716513249287,
+    "cluster_pbc_bulk_min_gap_alpha": 0.5,
+    "cluster_pbc_bulk_min_gap_alpha_expected": 0.5,
+    "cluster_obc_width_alpha0": 10.827790651025637,
+    "cluster_obc_width_alpha1": 7.238957721438407,
+    "cluster_obc_edge_gap_alpha1": 1.3322676295501878e-15,
+    "tfim_realizations": 400,
+    "n_seq": 400
+  }
+}

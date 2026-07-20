@@ -1,0 +1,344 @@
+{
+  "schema_version": 1,
+  "score_model": "rra_similarity_v1",
+  "paper_id": "2607.02157",
+  "targets": [
+    {
+      "target_id": "T001",
+      "label": "Fig. 2 capacities, Landauer bound, coherence decomposition",
+      "figure_refs": [
+        "Fig. 2"
+      ],
+      "weight": 1.0,
+      "critical": true,
+      "panel_coverage": {
+        "panels": [
+          {
+            "panel_id": "a1",
+            "status": "reproduced",
+            "evidence": "outputs/data/fig2_tfim_scan_paper_exact.csv + nmse_tfim_scan_paper_exact.csv"
+          },
+          {
+            "panel_id": "b1",
+            "status": "reproduced",
+            "evidence": "outputs/data/fig2_tfim_scan_paper_exact.csv"
+          },
+          {
+            "panel_id": "c1",
+            "status": "reproduced",
+            "evidence": "outputs/data/fig2_tfim_scan_paper_exact.csv (incl. classical-MI inset)"
+          },
+          {
+            "panel_id": "a2",
+            "status": "reproduced",
+            "evidence": "outputs/data/fig2_cluster_scan_paper_exact.csv + nmse_cluster_scan_paper_exact.csv"
+          },
+          {
+            "panel_id": "b2",
+            "status": "reproduced",
+            "evidence": "outputs/data/fig2_cluster_scan_paper_exact.csv"
+          },
+          {
+            "panel_id": "c2",
+            "status": "reproduced",
+            "evidence": "outputs/data/fig2_cluster_scan_paper_exact.csv (incl. classical-MI inset)"
+          }
+        ],
+        "panel_scope_cap": 15.0
+      },
+      "evaluation": {
+        "critical": true,
+        "paper_level_role": "main_claim",
+        "artifact_pass": true,
+        "data_backed": true,
+        "manual_interventions": 0,
+        "failure_type": "none",
+        "parameter_match": "paper_exact",
+        "artifact_stage": "exploratory",
+        "reference_comparison": "visual_feature_contract",
+        "generated_data_provenance": "independent_numerics",
+        "formula_gate": "verified",
+        "formula_dependencies": [
+          "EQC001",
+          "EQC002",
+          "EQC003",
+          "EQC004",
+          "EQC005",
+          "EQC006",
+          "EQC007",
+          "EQC008",
+          "EQC009",
+          "EQC010",
+          "EQC013",
+          "EQC014"
+        ]
+      },
+      "components": {
+        "feature_match": {
+          "score": 46.0,
+          "reason": "All contracted features present (14/14 Fig. 2 contract checks): capacity peaks inside both critical regions, Landauer gap with the widening large-J plateau, C_p > C_m coherence ordering at the peak, classical-MI insets without critical scaling, NMSE minima aligned with capacity peaks.",
+          "max_score": 50.0
+        },
+        "numeric_closeness": {
+          "score": 28.0,
+          "reason": "Cluster row near-quantitative: chi_m peak 2.25 vs 2.25, endpoints 1.69/1.11 vs ~1.72/~1.15, beta*W_irr peak 0.499 vs ~0.52. TFIM row close: peak 1.82 vs ~2.0 (-9%, reduced disorder statistics), endpoints and plateau values match. NMSE amplitudes not comparable (reduced readout basis).",
+          "max_score": 35.0
+        },
+        "paper_scope_coverage": {
+          "score": 12.0,
+          "reason": "All six panels and both insets generated; grids coarser than the paper (17 alpha / 13 J points), 8 instead of 100 disorder realizations, NMSE on a reduced feature basis.",
+          "max_score": 15.0
+        }
+      },
+      "evidence": [
+        "outputs/checks/fig2_figS2_feature_contract.json",
+        "outputs/data/fig2_cluster_scan.csv",
+        "outputs/data/fig2_tfim_scan.csv",
+        "outputs/figures/fig2_reproduction.png",
+        "docs/comparisons/fig2_source_vs_repro.png"
+      ],
+      "remaining_gap": "Paper-exact ensembles (5000 sequences; TFIM 100 realizations; full-Pauli NMSE) pending; see PLANNED_LARGE_SCALE_RUNS.md and config/fig2_paper_exact.yaml.",
+      "final_reproduction_eligible": false,
+      "final_reproduction_gate": "exploratory_only",
+      "physics_status": "undeclared",
+      "formula_score_cap": 100.0,
+      "generated_data_provenance_score_cap": 100.0,
+      "evidence_tier": "physics_reproduction",
+      "physics_score_cap": 100.0,
+      "parameter_score_cap": 100.0,
+      "reference_score_cap": 80.0,
+      "component_total": 86.0,
+      "score": 80.0,
+      "similarity_level": "numerical_feature_reproduction"
+    },
+    {
+      "target_id": "T002",
+      "label": "Fig. S1 spectral resonance and energy spectra",
+      "figure_refs": [
+        "Fig. S1"
+      ],
+      "weight": 0.6,
+      "critical": false,
+      "panel_coverage": {
+        "panels": [
+          {
+            "panel_id": "a",
+            "status": "reproduced",
+            "evidence": "outputs/data/figS1a_g_factor.csv, figS1a_mg_spectrum.csv, figS1a_insets.csv"
+          },
+          {
+            "panel_id": "b",
+            "status": "reproduced",
+            "evidence": "outputs/data/figS1b_tfim_spectrum.csv (400 of 10000 realizations)"
+          },
+          {
+            "panel_id": "c",
+            "status": "reproduced",
+            "evidence": "outputs/data/figS1c_cluster_spectrum.csv (deterministic, paper-exact OBC)"
+          }
+        ],
+        "panel_scope_cap": 15.0
+      },
+      "evaluation": {
+        "critical": false,
+        "paper_level_role": "method_validation",
+        "artifact_pass": true,
+        "data_backed": true,
+        "manual_interventions": 0,
+        "failure_type": "none",
+        "parameter_match": "paper_exact",
+        "artifact_stage": "exploratory",
+        "reference_comparison": "visual_feature_contract",
+        "generated_data_provenance": "independent_numerics",
+        "formula_gate": "verified",
+        "formula_dependencies": [
+          "EQC002",
+          "EQC012",
+          "EQC013"
+        ]
+      },
+      "components": {
+        "feature_match": {
+          "score": 47.0,
+          "reason": "G(omega) peak at omega=0.355 (paper ~0.36) aligned with the MG spectral peak; TFIM spectrum shows the level fan-out and gap closing toward the critical region; cluster spectrum reproduces the asymmetric OBC endpoint widths and alpha=1 edge zero modes that fingerprint the paper's boundary convention.",
+          "max_score": 50.0
+        },
+        "numeric_closeness": {
+          "score": 27.0,
+          "reason": "G peak value 2.72 vs closed form 2.27 and paper's ~2.3-2.5 (finite-ensemble estimator bias raises it); OBC spectral widths match the paper's panel to the axis-reading precision; F(omega) amplitude convention assumed (shape and location match).",
+          "max_score": 35.0
+        },
+        "paper_scope_coverage": {
+          "score": 12.0,
+          "reason": "All three panels plus the two insets generated; panel b uses 400 instead of 10000 disorder realizations.",
+          "max_score": 15.0
+        }
+      },
+      "evidence": [
+        "outputs/checks/figS1_features.json",
+        "outputs/figures/figS1_reproduction.png",
+        "docs/comparisons/figS1_source_vs_repro.png"
+      ],
+      "remaining_gap": "Panel b at the paper's 10000 realizations; F(omega) normalization confirmation.",
+      "final_reproduction_eligible": false,
+      "final_reproduction_gate": "exploratory_only",
+      "physics_status": "undeclared",
+      "formula_score_cap": 100.0,
+      "generated_data_provenance_score_cap": 100.0,
+      "evidence_tier": "physics_reproduction",
+      "physics_score_cap": 100.0,
+      "parameter_score_cap": 100.0,
+      "reference_score_cap": 80.0,
+      "component_total": 86.0,
+      "score": 80.0,
+      "similarity_level": "numerical_feature_reproduction"
+    },
+    {
+      "target_id": "T003",
+      "label": "Fig. S2 multi-step capacities and forecasting error",
+      "figure_refs": [
+        "Fig. S2"
+      ],
+      "weight": 0.6,
+      "critical": false,
+      "panel_coverage": {
+        "panels": [
+          {
+            "panel_id": "a1",
+            "status": "reproduced",
+            "evidence": "outputs/data/fig2_tfim_scan_paper_exact.csv (chi_m_tau columns)"
+          },
+          {
+            "panel_id": "b1",
+            "status": "reproduced",
+            "evidence": "outputs/data/fig2_tfim_scan_paper_exact.csv (chi_p_h columns)"
+          },
+          {
+            "panel_id": "c1",
+            "status": "partial",
+            "note": "NMSE generated for h=1,2,3 with a reduced 153-feature readout; absolute floor not comparable"
+          },
+          {
+            "panel_id": "a2",
+            "status": "reproduced",
+            "evidence": "outputs/data/fig2_cluster_scan_paper_exact.csv (chi_m_tau columns)"
+          },
+          {
+            "panel_id": "b2",
+            "status": "reproduced",
+            "evidence": "outputs/data/fig2_cluster_scan_paper_exact.csv (chi_p_h columns)"
+          },
+          {
+            "panel_id": "c2",
+            "status": "partial",
+            "note": "NMSE generated for h=1,2,3 with a reduced 153-feature readout"
+          }
+        ],
+        "panel_scope_cap": 12.5
+      },
+      "evaluation": {
+        "critical": false,
+        "paper_level_role": "supporting",
+        "artifact_pass": true,
+        "data_backed": true,
+        "manual_interventions": 0,
+        "failure_type": "none",
+        "parameter_match": "paper_exact",
+        "artifact_stage": "exploratory",
+        "reference_comparison": "visual_feature_contract",
+        "generated_data_provenance": "independent_numerics",
+        "formula_gate": "verified",
+        "formula_dependencies": [
+          "EQC001",
+          "EQC002",
+          "EQC003",
+          "EQC004",
+          "EQC013",
+          "EQC014"
+        ]
+      },
+      "components": {
+        "feature_match": {
+          "score": 42.0,
+          "reason": "Multi-step peaks stay inside the critical regions; tau/h orderings monotone over the paper-readable region (cluster: everywhere; TFIM: J <= 5); NMSE minima for all horizons inside the critical regions. Deep-MBL tail shows a reproducible tau/h ordering inversion where the paper's curves are visually degenerate (recorded as an observation).",
+          "max_score": 50.0
+        },
+        "numeric_closeness": {
+          "score": 24.0,
+          "reason": "Capacity magnitudes track the Fig. 2 values (same data); systematic reduction with tau and h matches the paper qualitatively; NMSE absolute values inflated by the reduced readout basis.",
+          "max_score": 35.0
+        },
+        "paper_scope_coverage": {
+          "score": 11.0,
+          "reason": "All six panels generated for tau in {0,1,2}, h in {1,2,3}; NMSE panels carry the reduced-readout caveat (marked partial).",
+          "max_score": 15.0
+        }
+      },
+      "evidence": [
+        "outputs/checks/fig2_figS2_feature_contract.json",
+        "outputs/figures/figS2_reproduction.png",
+        "docs/comparisons/figS2_source_vs_repro.png"
+      ],
+      "remaining_gap": "Full-Pauli NMSE readout and paper-exact ensembles; adjudicate the deep-MBL ordering inversion at 5000 sequences.",
+      "final_reproduction_eligible": false,
+      "final_reproduction_gate": "exploratory_only",
+      "physics_status": "undeclared",
+      "formula_score_cap": 100.0,
+      "generated_data_provenance_score_cap": 100.0,
+      "evidence_tier": "physics_reproduction",
+      "physics_score_cap": 100.0,
+      "parameter_score_cap": 100.0,
+      "reference_score_cap": 80.0,
+      "component_total": 77.0,
+      "score": 77.0,
+      "similarity_level": "numerical_feature_reproduction"
+    }
+  ],
+  "overall_score": 79.18,
+  "similarity_level": "numerical_feature_reproduction",
+  "evaluation_summary": {
+    "scored_items": 3,
+    "critical_items": 1,
+    "artifact_pass_rate": 1.0,
+    "data_backed_rate": 1.0,
+    "manual_interventions_total": 0,
+    "manual_interventions_per_item": 0.0,
+    "failure_type_counts": {
+      "none": 3
+    },
+    "parameter_match_counts": {
+      "paper_exact": 3
+    },
+    "reference_comparison_counts": {
+      "visual_feature_contract": 3
+    },
+    "generated_data_provenance_counts": {
+      "independent_numerics": 3
+    },
+    "evidence_tier_counts": {
+      "physics_reproduction": 3
+    },
+    "formula_gate_counts": {
+      "verified": 3
+    },
+    "paper_level_role_counts": {
+      "main_claim": 1,
+      "method_validation": 1,
+      "supporting": 1
+    },
+    "physics_status_counts": {
+      "undeclared": 3
+    },
+    "physics_assertion_status_counts": {},
+    "essential_physics_failures": [],
+    "final_reproduction_ready": false,
+    "final_reproduction_target_ids": [],
+    "final_reproduction_blocked_target_ids": [],
+    "exploratory_target_ids": [
+      "T001",
+      "T002",
+      "T003"
+    ]
+  },
+  "status": "failed"
+}
