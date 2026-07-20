@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "paper_id": "2407.01296",
+  "target_id": "T002",
+  "figure_refs": [
+    "Fig. 4(b)"
+  ],
+  "status": "passed",
+  "pixel_status": "pixel_registered_not_identical",
+  "artifact_stage": "scientific_reproduction",
+  "parameter_match": "paper_subset_unreported_state_sequence_reconstructed",
+  "generated_data_provenance": "independent_numerics",
+  "source_pixels_copied_into_reproduction": false,
+  "model": "Eq. (15)",
+  "geometry": "equal rhombus |x|+|y|<=L",
+  "state_selection": {
+    "main_target_energy": [
+      1.5,
+      0.5
+    ],
+    "rule": "right eigenstate closest to fixed target energy by deterministic shift-invert",
+    "paper_state_sequence_reported": false,
+    "sensitivity_targets": {
+      "lower": [
+        1.3,
+        0.4
+      ],
+      "upper": [
+        1.7,
+        0.6
+      ]
+    }
+  },
+  "gaussian_definition": "|psi(u)|^2=A exp[-kappa (u-u0)^2] on one v=+L edge",
+  "scale": "paper",
+  "radii": [
+    40,
+    42,
+    45,
+    48,
+    52,
+    56,
+    60,
+    65,
+    70,
+    75,
+    80,
+    85,
+    90,
+    95,
+    100
+  ],
+  "runtime_seconds": null,
+  "track_regressions": {
+    "lower": {
+      "slope": 0.8956656943191746,
+      "intercept": -0.0016442663543686023,
+      "slope_standard_error": 0.033804045972020406,
+      "intercept_standard_error": 0.0005745819712147779,
+      "intercept_confidence_interval": [
+        -0.0028855752355485924,
+        -0.0004029574731886122
+      ],
+      "r_squared": 0.9818188970564715,
+      "confidence": 0.95,
+      "point_count": 15
+    },
+    "main": {
+      "slope": 0.6804942096375264,
+      "intercept": -0.0003124600863201272,
+      "slope_standard_error": 0.014166863251251997,
+      "intercept_standard_error": 0.00024080029412964547,
+      "intercept_confidence_interval": [
+        -0.000832677494224406,
+        0.00020775732158415165
+      ],
+      "r_squared": 0.9943972428417023,
+      "confidence": 0.95,
+      "point_count": 15
+    },
+    "upper": {
+      "slope": 0.5155678580547174,
+      "intercept": -0.00038268566366839207,
+      "slope_standard_error": 0.014668393971318748,
+      "intercept_standard_error": 0.000249325028417347,
+      "intercept_confidence_interval": [
+        -0.0009213196403324798,
+        0.0001559483129956957
+      ],
+      "r_squared": 0.9895866457842664,
+      "confidence": 0.95,
+      "point_count": 15
+    }
+  },
+  "profile_fit_r_squared": {
+    "minimum": 0.9797799211224186,
+    "median": 0.9862593410137663
+  },
+  "maximum_normalized_eigen_residual": 1.0037265293228174e-14,
+  "acceptance": {
+    "paper_inverse_length_range_covered": true,
+    "all_shift_invert_residuals_small": true,
+    "all_main_profiles_are_gaussian": true,
+    "kappa_has_positive_inverse_length_slope": true,
+    "main_scaling_is_linear": true,
+    "thermodynamic_intercept_is_zero_compatible": true,
+    "neighboring_energy_tracks_preserve_scaling": true
+  },
+  "canvas_pixels": [
+    338,
+    239
+  ],
+  "dimensions_exact": true,
+  "full_ssim": 0.5716503122413898,
+  "rgb_mae": 0.09958781991005244,
+  "strict_pixel_exact_threshold": 0.95,
+  "strict_pixel_exact": false,
+  "data": {
+    "scaling": "outputs/data/fig4b_scale_free_paper.csv",
+    "profiles": "outputs/data/fig4b_edge_profiles_paper.csv"
+  },
+  "figure": "outputs/figures/fig4b_pixel_registered.png",
+  "editable_exports": [
+    "outputs/figures/fig4b_scale_free.pdf",
+    "outputs/figures/fig4b_scale_free.svg"
+  ],
+  "comparison_board": "docs/comparisons/fig4b_pixel_comparison.png",
+  "board_full_ssim": 0.5716503122413898
+}

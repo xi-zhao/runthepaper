@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "paper_id": "2407.01296",
+  "status": "passed",
+  "overall_score": 88.39,
+  "similarity_level": "numerical_feature_reproduction",
+  "scope": "main_text_scientific_reproduction_complete",
+  "source_pixels_copied_into_reproduction": false,
+  "strict_pixel_exact_threshold": 0.95,
+  "strict_pixel_exact": false,
+  "targets": {
+    "Fig. 1": {"scientific_status": "passed", "full_ssim": 0.8442518560313262},
+    "Fig. 2": {"scientific_status": "passed", "full_ssim": 0.794811979745191, "provenance": "panels a-c independent; panel d author-data-assisted"},
+    "Fig. 3": {"scientific_status": "passed", "full_ssim": 0.6969035267607245, "provenance": "independent_numerics"},
+    "Fig. 4": {"scientific_status": "passed", "full_ssim": 0.5823283609694994, "provenance": "independent_numerics"},
+    "Fig. 5": {"scientific_status": "passed", "full_ssim": 0.8625008770389113}
+  },
+  "remaining_boundary": "Supplementary Figs. S2 and S4-S7 have not been independently rerun panel by panel."
+}

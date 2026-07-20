@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "paper_id": "2407.01296",
+  "target_id": "T002",
+  "figure_refs": [
+    "Fig. 4(e)"
+  ],
+  "status": "passed",
+  "pixel_status": "pixel_registered_not_identical",
+  "artifact_stage": "exploratory",
+  "parameter_match": "paper_exact_except_unreported_random_realization",
+  "generated_data_provenance": "independent_numerics",
+  "source_pixels_copied_into_reproduction": false,
+  "paper_parameters": {
+    "site_count": 3613,
+    "rhombus_radius": 42,
+    "disorder_strength": 0.2
+  },
+  "random_disorder": {
+    "distribution": "uniform_[0,delta]",
+    "seed": 20260720,
+    "paper_seed_reported": false
+  },
+  "runtime_seconds": null,
+  "disordered_spectrum": {
+    "count": 3613,
+    "real_min": -1.8987333020867783,
+    "real_max": 2.1014160370855905,
+    "imag_min": -0.9960626395682509,
+    "imag_max": 0.9960626395682415,
+    "real_span": 4.000149339172369,
+    "imag_span": 1.9921252791364923,
+    "centroid_real": 0.10109546423144244,
+    "centroid_imag": -2.092615222169199e-16,
+    "hull_area": 7.968413963150829
+  },
+  "occupied_energy_bin_fraction": 0.875,
+  "acceptance": {
+    "site_count_matches_paper": true,
+    "all_eigenvalues_finite": true,
+    "disorder_produces_two_dimensional_spectral_cloud": true,
+    "paper_scale_real_span_reproduced": true,
+    "paper_scale_imaginary_span_reproduced": true
+  },
+  "canvas_pixels": [
+    317,
+    277
+  ],
+  "dimensions_exact": true,
+  "full_ssim": 0.4180661179719167,
+  "rgb_mae": 0.09423339144371358,
+  "strict_pixel_exact_threshold": 0.95,
+  "strict_pixel_exact": false,
+  "data": "outputs/data/fig4e_disorder_delta_0p2_paper_size.csv",
+  "figure": "outputs/figures/fig4e_pixel_registered.png",
+  "editable_exports": [
+    "outputs/figures/fig4e_disorder_spectrum.pdf",
+    "outputs/figures/fig4e_disorder_spectrum.svg"
+  ],
+  "comparison_board": "docs/comparisons/fig4e_pixel_comparison.png",
+  "board_full_ssim": 0.4180661179719167
+}

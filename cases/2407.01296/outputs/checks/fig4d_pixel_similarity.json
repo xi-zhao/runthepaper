@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "paper_id": "2407.01296",
+  "target_id": "T002",
+  "figure_refs": [
+    "Fig. 4(d)"
+  ],
+  "status": "pixel_registered_not_identical",
+  "artifact_stage": "exploratory",
+  "parameter_match": "paper_exact",
+  "generated_data_provenance": "independent_numerics",
+  "source_pixels_copied_into_reproduction": false,
+  "site_counts": {
+    "1:3": 3267,
+    "1:2": 3278,
+    "2:1": 3278,
+    "3:1": 3267
+  },
+  "canvas_pixels": [
+    338,
+    251
+  ],
+  "dimensions_exact": true,
+  "full_ssim": 0.4353415141935292,
+  "rgb_mae": 0.12480191774958409,
+  "strict_pixel_exact_threshold": 0.95,
+  "strict_pixel_exact": false,
+  "figure": "outputs/figures/fig4d_pixel_registered.png",
+  "editable_exports": [
+    "outputs/figures/fig4d_boundary_ratio.pdf",
+    "outputs/figures/fig4d_boundary_ratio.svg"
+  ],
+  "comparison_board": "docs/comparisons/fig4d_pixel_comparison.png",
+  "board_full_ssim": 0.4353415141935292
+}

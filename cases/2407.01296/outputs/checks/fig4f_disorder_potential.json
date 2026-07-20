@@ -1,0 +1,210 @@
+{
+  "schema_version": 1,
+  "paper_id": "2407.01296",
+  "target_id": "T002",
+  "figure_refs": [
+    "Fig. 4(f)"
+  ],
+  "status": "passed",
+  "pixel_status": "pixel_registered_not_identical",
+  "artifact_stage": "scientific_reproduction",
+  "parameter_match": "paper_subset_unreported_box_grid_and_seeds_reconstructed",
+  "generated_data_provenance": "independent_numerics",
+  "source_pixels_copied_into_reproduction": false,
+  "method": "exact sparse-LU log|det(H-E)|/N on each finite disordered rhombus",
+  "model": "Eq. (15)",
+  "geometry": "equal rhombus |x|+|y|<=L",
+  "radii": [
+    30,
+    34,
+    38,
+    42,
+    46,
+    50,
+    55,
+    60,
+    65,
+    70,
+    75,
+    80,
+    85,
+    90,
+    100
+  ],
+  "disorder_strengths": [
+    0.0,
+    0.05,
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.3
+  ],
+  "disorder_distribution": "uniform_[0,delta] onsite disorder",
+  "disorder_realizations": 3,
+  "base_seed": 20260720,
+  "probe_box": {
+    "real_axis": [
+      -0.16,
+      -0.08,
+      0.0,
+      0.07999999999999999,
+      0.16
+    ],
+    "imaginary_axis": [
+      -0.14,
+      -0.06000000000000001,
+      0.01999999999999999,
+      0.09999999999999998,
+      0.18
+    ],
+    "count": 25,
+    "paper_exact_grid_reported": false
+  },
+  "theory": {
+    "geometry_momentum_samples": 128,
+    "amoeba_momentum_samples": 96,
+    "mean_amoeba_minus_geometry": 0.2627015398915404,
+    "minimum_pointwise_amoeba_minus_geometry": 0.22932751666857543,
+    "runtime_seconds": 1.3209342500194907
+  },
+  "campaign_runtime_seconds": 204.95110183302313,
+  "artifact_refresh_seconds": 6.958295125514269e-05,
+  "new_conditions_computed": 0,
+  "regressions": {
+    "delta_0": {
+      "slope": -1.1795320998990362,
+      "intercept": 0.09602985913684754,
+      "slope_standard_error": 0.057474595450840986,
+      "intercept_standard_error": 0.0011353411762778907,
+      "intercept_confidence_interval": [
+        0.09357710364522721,
+        0.09848261462846787
+      ],
+      "r_squared": 0.9700584972201508,
+      "confidence": 0.95,
+      "point_count": 15
+    },
+    "delta_0.05": {
+      "slope": -3.90832852229789,
+      "intercept": 0.25394684458277766,
+      "slope_standard_error": 0.047597289266434244,
+      "intercept_standard_error": 0.0009402269291240703,
+      "intercept_confidence_interval": [
+        0.25191560779513744,
+        0.2559780813704179
+      ],
+      "r_squared": 0.9980756276058357,
+      "confidence": 0.95,
+      "point_count": 15
+    },
+    "delta_0.1": {
+      "slope": -3.5257565644318865,
+      "intercept": 0.2556830919809494,
+      "slope_standard_error": 0.03370371684413213,
+      "intercept_standard_error": 0.0006657761960148607,
+      "intercept_confidence_interval": [
+        0.25424476995486106,
+        0.25712141400703775
+      ],
+      "r_squared": 0.9988134700866788,
+      "confidence": 0.95,
+      "point_count": 15
+    },
+    "delta_0.15": {
+      "slope": -3.3324549029194084,
+      "intercept": 0.25720244324358404,
+      "slope_standard_error": 0.03622330594527061,
+      "intercept_standard_error": 0.0007155476338368151,
+      "intercept_confidence_interval": [
+        0.25565659656323814,
+        0.25874828992392995
+      ],
+      "r_squared": 0.9984663565850537,
+      "confidence": 0.95,
+      "point_count": 15
+    },
+    "delta_0.2": {
+      "slope": -3.1996013821110565,
+      "intercept": 0.25873039363962286,
+      "slope_standard_error": 0.032921718908630854,
+      "intercept_standard_error": 0.0006503287718272772,
+      "intercept_confidence_interval": [
+        0.25732544374457245,
+        0.26013534353467327
+      ],
+      "r_squared": 0.9986255805495975,
+      "confidence": 0.95,
+      "point_count": 15
+    },
+    "delta_0.25": {
+      "slope": -3.061689792866605,
+      "intercept": 0.2594763149874132,
+      "slope_standard_error": 0.034910840808654774,
+      "intercept_standard_error": 0.0006896214711497955,
+      "intercept_confidence_interval": [
+        0.25798647837631866,
+        0.2609661515985077
+      ],
+      "r_squared": 0.9983126383815588,
+      "confidence": 0.95,
+      "point_count": 15
+    },
+    "delta_0.3": {
+      "slope": -2.867937598990655,
+      "intercept": 0.25930018688845835,
+      "slope_standard_error": 0.02917301169561149,
+      "intercept_standard_error": 0.0005762775910687958,
+      "intercept_confidence_interval": [
+        0.25805521484329247,
+        0.26054515893362423
+      ],
+      "r_squared": 0.9986566700541663,
+      "confidence": 0.95,
+      "point_count": 15
+    }
+  },
+  "limit_comparison": {
+    "clean_intercept": 0.09602985913684754,
+    "nonzero_intercepts": [
+      0.25394684458277766,
+      0.2556830919809494,
+      0.25720244324358404,
+      0.25873039363962286,
+      0.2594763149874132,
+      0.25930018688845835
+    ],
+    "amoeba_reference": 0.2627015398915404
+  },
+  "acceptance": {
+    "all_conditions_checkpointed": true,
+    "paper_disorder_strengths_covered": true,
+    "boxed_region_has_dozen_scale_probe_count": true,
+    "amoeba_potential_dominates_geometry_potential": true,
+    "nonzero_disorder_extrapolates_to_amoeba": true,
+    "clean_and_disordered_limits_are_distinct": true,
+    "all_finite_size_trends_are_linear": true,
+    "all_curves_grow_toward_TDL": true
+  },
+  "canvas_pixels": [
+    343,
+    277
+  ],
+  "dimensions_exact": true,
+  "full_ssim": 0.4945693741565059,
+  "rgb_mae": 0.1306190552549024,
+  "strict_pixel_exact_threshold": 0.95,
+  "strict_pixel_exact": false,
+  "data": {
+    "theory_probes": "outputs/data/fig4f_theory_probe_potentials.csv",
+    "checkpointed_probe_potentials": "outputs/data/fig4f_probe_potentials_paper.csv",
+    "scaling_summary": "outputs/data/fig4f_disorder_scaling_paper.csv"
+  },
+  "figure": "outputs/figures/fig4f_pixel_registered.png",
+  "editable_exports": [
+    "outputs/figures/fig4f_disorder_potential.pdf",
+    "outputs/figures/fig4f_disorder_potential.svg"
+  ],
+  "comparison_board": "docs/comparisons/fig4f_pixel_comparison.png",
+  "board_full_ssim": 0.4945693741565059
+}

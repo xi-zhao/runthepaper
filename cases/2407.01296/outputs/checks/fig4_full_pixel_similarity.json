@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "paper_id": "2407.01296",
+  "target_id": "T002",
+  "figure_refs": [
+    "Fig. 4(a-f)"
+  ],
+  "status": "passed",
+  "pixel_status": "pixel_registered_not_identical",
+  "artifact_stage": "scientific_reproduction",
+  "generated_data_provenance": "independent_numerics",
+  "source_pixels_copied_into_reproduction": false,
+  "panel_scientific_status": {
+    "a": "passed",
+    "b": "passed",
+    "c": "passed",
+    "d": "passed",
+    "e": "passed",
+    "f": "passed"
+  },
+  "panel_pixel_metrics": {
+    "a": {
+      "canvas_pixels": [
+        322,
+        239
+      ],
+      "full_ssim": 0.9106749164396457,
+      "rgb_mae": 0.029452870226982307
+    },
+    "b": {
+      "canvas_pixels": [
+        338,
+        239
+      ],
+      "full_ssim": 0.5716503122413898,
+      "rgb_mae": 0.09958781991005244
+    },
+    "c": {
+      "canvas_pixels": [
+        316,
+        253
+      ],
+      "full_ssim": 0.7041992393634416,
+      "rgb_mae": 0.05669117933192523
+    },
+    "d": {
+      "canvas_pixels": [
+        338,
+        251
+      ],
+      "full_ssim": 0.4353415141935292,
+      "rgb_mae": 0.12480191774958409
+    },
+    "e": {
+      "canvas_pixels": [
+        317,
+        277
+      ],
+      "full_ssim": 0.4180661179719167,
+      "rgb_mae": 0.09423339144371358
+    },
+    "f": {
+      "canvas_pixels": [
+        343,
+        277
+      ],
+      "full_ssim": 0.4945693741565059,
+      "rgb_mae": 0.1306190552549024
+    }
+  },
+  "acceptance": {
+    "all_six_panels_present": true,
+    "all_panel_dimensions_exact": true,
+    "all_scientific_panel_checks_pass": true,
+    "all_panels_have_editable_exports": true,
+    "formal_full_canvas_exact": true
+  },
+  "canvas_pixels": [
+    660,
+    770
+  ],
+  "dimensions_exact": true,
+  "full_ssim": 0.5823283609694994,
+  "rgb_mae": 0.09074617064456637,
+  "strict_pixel_exact_threshold": 0.95,
+  "strict_pixel_exact": false,
+  "figure": "outputs/figures/fig4_full_pixel_registered.png",
+  "composite_exports": [
+    "outputs/figures/fig4_full_pixel_registered.pdf",
+    "outputs/figures/fig4_full_pixel_registered.svg"
+  ],
+  "editable_panel_exports": {
+    "a": [
+      "outputs/figures/fig4a_aggregate_density.pdf",
+      "outputs/figures/fig4a_aggregate_density.svg"
+    ],
+    "b": [
+      "outputs/figures/fig4b_scale_free.pdf",
+      "outputs/figures/fig4b_scale_free.svg"
+    ],
+    "c": [
+      "outputs/figures/fig4c_spectral_density.pdf",
+      "outputs/figures/fig4c_spectral_density.svg"
+    ],
+    "d": [
+      "outputs/figures/fig4d_boundary_ratio.pdf",
+      "outputs/figures/fig4d_boundary_ratio.svg"
+    ],
+    "e": [
+      "outputs/figures/fig4e_disorder_spectrum.pdf",
+      "outputs/figures/fig4e_disorder_spectrum.svg"
+    ],
+    "f": [
+      "outputs/figures/fig4f_disorder_potential.pdf",
+      "outputs/figures/fig4f_disorder_potential.svg"
+    ]
+  },
+  "comparison_board": "docs/comparisons/fig4_full_pixel_comparison.png",
+  "board_full_ssim": 0.5823283609694994
+}

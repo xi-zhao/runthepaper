@@ -1093,6 +1093,90 @@
           "figure": "figS2_comparison.png"
         }
       ]
+    },
+    {
+      "paper_id": "2407.01296",
+      "title": "Geometry-adaptive formulation of non-Bloch bands in arbitrary dimensions and spectral instability",
+      "topic": "Geometry-adaptive non-Bloch bands, non-Hermitian skin effect, and spectral instability",
+      "preprint": {
+        "identifier": "arXiv:2407.01296",
+        "title": "Non-Hermitian skin effect in arbitrary dimensions: non-Bloch band theory and classification",
+        "url": "https://arxiv.org/abs/2407.01296"
+      },
+      "publication": {
+        "status": "published",
+        "title": "Geometry-adaptive formulation of non-Bloch bands in arbitrary dimensions and spectral instability",
+        "venue": "Communications Physics",
+        "citation": "Communications Physics 9, 127 (2026)",
+        "doi": "10.1038/s42005-026-02546-2",
+        "doi_url": "https://doi.org/10.1038/s42005-026-02546-2",
+        "locator": "Article 127"
+      },
+      "status": "Main-text scientific reproduction; pixel-registered, not identical",
+      "similarity_level": "numerical_feature_reproduction",
+      "audit_score": 88.39,
+      "summary": "Completes the main-text scientific evidence chain for Figs. 1-5. Figs. 2(a-c), 3, and 4(a-f) are independently recomputed; Fig. 2(d) is author-data-assisted; Figs. 1 and 5 are analytic redraws. Every formal canvas is registered, while strict SSIM 0.95 pixel identity is explicitly not claimed.",
+      "limitation": "Supplementary Figs. S2 and S4-S7 are not independently complete. Fig. 2(d) uses author-released ED tables, and unreported state selection, integer boundary vertices, random seeds, probe grids, three-dimensional projection, and renderer details limit pixel identity in Fig. 3 and several Fig. 4 panels.",
+      "run_scripts": [
+        "run_reproduction_smoke.py"
+      ],
+      "extra_dependencies": [],
+      "featured_results": [
+        {
+          "paper_item": "Fig. 1",
+          "result": "Analytic geometry-adaptive spectral-potential schematic",
+          "figure": "fig1_pixel_registered.png",
+          "check": "main_schematic_pixel_similarity.json"
+        },
+        {
+          "paper_item": "Fig. 2",
+          "result": "Geometry-dependent spectra, skin density, potential, and finite-size convergence",
+          "figure": "fig2_full_pixel_registered.png",
+          "check": "fig2_full_pixel_similarity.json"
+        },
+        {
+          "paper_item": "Fig. 3",
+          "result": "Geometry-dependent generalized Brillouin zones with corrected projection and view",
+          "figure": "fig3_gbz_pixel_registered.png",
+          "check": "fig3_gbz_pixel_similarity.json"
+        },
+        {
+          "paper_item": "Fig. 4(a-f)",
+          "result": "Critical boundary modes and spectral instability across all six panels",
+          "figure": "fig4_full_pixel_registered.png",
+          "check": "fig4_full_pixel_similarity.json"
+        },
+        {
+          "paper_item": "Fig. 5",
+          "result": "Analytic basis-transformation schematic",
+          "figure": "fig5_pixel_registered.png",
+          "check": "main_schematic_pixel_similarity.json"
+        }
+      ],
+      "comparison_attribution": "Xing, Xiong, and Hu",
+      "comparison_note": "Each board contains a limited attributed excerpt from the formal paper beside the independently generated registered result. The excerpts are used only for presentation audit; no reference pixels enter numerical computation. The boards demonstrate remaining differences and do not assert pixel identity.",
+      "comparison_results": [
+        {
+          "paper_item": "Fig. 1",
+          "figure": "fig1_pixel_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 2",
+          "figure": "fig2_full_pixel_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 3",
+          "figure": "fig3_gbz_pixel_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 4",
+          "figure": "fig4_full_pixel_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 5",
+          "figure": "fig5_pixel_comparison.png"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "paper_id": "2407.01296",
+  "status": "main_text_scientific_reproduction_complete",
+  "main_text": {
+    "covered_figures": ["Fig. 1", "Fig. 2", "Fig. 3", "Fig. 4(a-f)", "Fig. 5"],
+    "independent_numerical_panels": ["Fig. 2(a-c)", "Fig. 3", "Fig. 4(a-f)"],
+    "source_assisted_panels": ["Fig. 2(d)"],
+    "analytic_redraws": ["Fig. 1", "Fig. 5"]
+  },
+  "pixel_status": "registered_not_identical",
+  "strict_ssim_threshold": 0.95,
+  "supplementary_status": "not_independently_complete",
+  "supplementary_remaining": ["Fig. S2", "Fig. S4", "Fig. S5", "Fig. S6", "Fig. S7"]
+}

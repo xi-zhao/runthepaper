@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "paper_id": "2407.01296",
+  "target_id": "T003",
+  "figure_refs": [
+    "Fig. 3(a-b)"
+  ],
+  "status": "passed",
+  "pixel_status": "pixel_registered_not_identical",
+  "artifact_stage": "exploratory",
+  "parameter_match": "paper_exact_model_energy_sweep_subset",
+  "generated_data_provenance": "independent_numerics",
+  "source_pixels_copied_into_reproduction": false,
+  "formula_dependencies": [
+    "EQC001",
+    "EQC003",
+    "Eq. S9-S11"
+  ],
+  "energy_sampling": {
+    "method": "deterministic_farthest_point_cover_of_independent_OBC_spectrum",
+    "target_per_geometry": 256
+  },
+  "top_momentum_samples": 101,
+  "top_sampling_method": "regular_momentum_projection_of_mu_surfaces",
+  "surface_grid_samples": 128,
+  "surface_view": {
+    "elevation_degrees": 24,
+    "azimuth_degrees": -41
+  },
+  "surface_box_aspect": [
+    4.0,
+    4.0,
+    4.0
+  ],
+  "surface_box_zoom": 1.0820035616009187,
+  "surface_shading": "unshaded_saturated_faces",
+  "runtime_seconds": {
+    "square": 4.083767207921483,
+    "rhombus": 4.747820332995616,
+    "total": 8.831588875036687
+  },
+  "results": {
+    "square": {
+      "energy_count": 256,
+      "gbz_point_count": 1406,
+      "characteristic_residual_max": 3.695311980991003e-12,
+      "mu_1": {
+        "min": 0.4016718004005255,
+        "max": 0.6515529464604622,
+        "mean": 0.5677276121991512,
+        "std": 0.05071915442665549,
+        "positive_fraction": 1.0
+      },
+      "mu_2": {
+        "min": -0.36392072990051905,
+        "max": -0.11395955815014523,
+        "mean": -0.28004372673187566,
+        "std": 0.050719338293453826,
+        "negative_fraction": 1.0
+      },
+      "beta_1_radius": {
+        "min": 1.494320816693346,
+        "max": 1.9185178723603509,
+        "std": 0.08837349088453504
+      },
+      "beta_2_radius": {
+        "min": 0.6949462810203648,
+        "max": 0.892294041174365,
+        "std": 0.03893073046998238
+      }
+    },
+    "rhombus": {
+      "energy_count": 256,
+      "gbz_point_count": 2944,
+      "characteristic_residual_max": 9.991980119378498e-08,
+      "mu_1": {
+        "min": 0.1438084073636872,
+        "max": 0.14386861720180977,
+        "mean": 0.14384000524118523,
+        "std": 9.498530869056889e-06,
+        "positive_fraction": 1.0
+      },
+      "mu_2": {
+        "min": -0.5175202297722267,
+        "max": -0.24484939159614724,
+        "mean": -0.38005424859058085,
+        "std": 0.058154973956650584,
+        "negative_fraction": 1.0
+      },
+      "beta_1_radius": {
+        "min": 1.1546628624291637,
+        "max": 1.154732386586195,
+        "std": 1.0967911786844897e-05
+      },
+      "beta_2_radius": {
+        "min": 0.5959966517675631,
+        "max": 0.7828224290005077,
+        "std": 0.04022008580270878
+      }
+    }
+  },
+  "acceptance": {
+    "all_characteristic_equations_solved": true,
+    "square_has_lower_right_localization_signs": true,
+    "rhombus_has_flat_mu1_surface": true,
+    "geometries_have_distinct_beta1_radial_width": true
+  },
+  "canvas_pixels": [
+    663,
+    571
+  ],
+  "dimensions_exact": true,
+  "full_ssim": 0.6969035267607245,
+  "rgb_mae": 0.06394496332624669,
+  "strict_pixel_exact_threshold": 0.95,
+  "strict_pixel_exact": false,
+  "data": "outputs/data/fig3_gbz_independent.csv",
+  "figure": "outputs/figures/fig3_gbz_pixel_registered.png",
+  "comparison_board": "docs/comparisons/fig3_gbz_pixel_comparison.png",
+  "board_full_ssim": 0.6969035267607245
+}

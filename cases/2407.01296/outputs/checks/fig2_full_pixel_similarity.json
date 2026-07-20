@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "paper_id": "2407.01296",
+  "target_id": "T001",
+  "figure_refs": [
+    "Fig. 2(a-d)"
+  ],
+  "status": "pixel_registered_not_identical",
+  "artifact_stage": "exploratory",
+  "parameter_match": "paper_exact_visual_layout_mixed_numeric_provenance",
+  "generated_data_provenance": "mixed_independent_and_source_reference",
+  "panel_provenance": {
+    "a": "independent_numerics",
+    "b": "independent_numerics",
+    "c": "independent_numerics_with_source_calibrated_palette",
+    "d": "author_released_ed_recomputed_observable"
+  },
+  "source_pixels_copied_into_reproduction": false,
+  "scaling_display_filter": {
+    "rule": "retain_monotone_branch_from_minimum_deviation_to_smaller_sizes",
+    "reason": "exclude large-size non-normal eigensolver instability",
+    "raw_csv_preserved": true,
+    "line_fit": "least_squares_constrained_through_origin"
+  },
+  "canvas_pixels": [
+    1619,
+    2500
+  ],
+  "strict_pixel_exact_threshold": 0.95,
+  "strict_pixel_exact": false,
+  "metrics": {
+    "dimensions_exact": true,
+    "reference_shape": [
+      2500,
+      1619,
+      3
+    ],
+    "generated_shape": [
+      2500,
+      1619,
+      3
+    ],
+    "full_ssim": 0.794811979745191,
+    "row_ssim": {
+      "a": 0.8879971248879489,
+      "b": 0.8204987522315663,
+      "c": 0.699550359533925,
+      "d": 0.719895024008061
+    },
+    "rgb_mae": 0.03876818660756458
+  },
+  "comparison_board": "docs/comparisons/fig2_full_pixel_comparison.png",
+  "board_full_ssim": 0.794811979745191,
+  "scaling_rows": 500,
+  "scaling_data": "outputs/data/fig2_scaling_author_assisted.csv"
+}

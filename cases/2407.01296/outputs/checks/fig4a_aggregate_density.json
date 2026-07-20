@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "paper_id": "2407.01296",
+  "target_id": "T002",
+  "figure_refs": [
+    "Fig. 4(a)"
+  ],
+  "status": "passed",
+  "pixel_status": "pixel_registered_not_identical",
+  "artifact_stage": "scientific_reproduction",
+  "parameter_match": "paper_exact",
+  "generated_data_provenance": "independent_numerics",
+  "source_pixels_copied_into_reproduction": false,
+  "model": "Eq. (15)",
+  "geometry": "equal rhombus |x|+|y|<=56",
+  "site_count": 6385,
+  "runtime_seconds": 127.46166941593401,
+  "artifact_refresh_seconds": 0.3445773330749944,
+  "eigenpair_residuals": {
+    "maximum": 1.2931878614029015e-14,
+    "median": 9.139198523264198e-15,
+    "p95": 1.1517329556483096e-14
+  },
+  "raw_density": {
+    "summary": {
+      "max_site": [
+        -37,
+        19
+      ],
+      "center_of_mass": [
+        0.006959378839621487,
+        -0.21151129097752525
+      ],
+      "max_normalized_density": 0.005918079813993467,
+      "top_one_percent_weight": 0.26642025295540783
+    },
+    "localization": {
+      "radius": 56,
+      "boundary_strip_width": 6,
+      "boundary_mass_fraction": 0.8737342927424615,
+      "boundary_site_fraction": 0.23241973375097885,
+      "boundary_enrichment": 3.759294783800955,
+      "corner_mass_fraction": 0.007545948655249281,
+      "corner_site_fraction": 0.015661707126076743,
+      "corner_fraction_of_boundary_mass": 0.008636434117246553,
+      "corner_fraction_of_boundary_sites": 0.06738544474393532
+    },
+    "edge_orientation": {
+      "exact_edge_masses": {
+        "u_negative": 0.09738196532201475,
+        "u_positive": 0.09586502785128591,
+        "v_negative": 0.0974025677158817,
+        "v_positive": 0.09578501007048945
+      },
+      "coefficient_of_variation": 0.008116956180307902
+    }
+  },
+  "reflection_symmetrized_density": {
+    "reason": "Eq. (15) and the equal rhombus have exact x/y reflection symmetries; averaging removes near-degenerate solver-basis orientation without changing total probability or the boundary-versus-corner claim.",
+    "summary": {
+      "max_site": [
+        -37,
+        -19
+      ],
+      "center_of_mass": [
+        4.095573706563993e-17,
+        -7.615436059538183e-16
+      ],
+      "max_normalized_density": 0.005794823783210382,
+      "top_one_percent_weight": 0.26642025295540783
+    },
+    "localization": {
+      "radius": 56,
+      "boundary_strip_width": 6,
+      "boundary_mass_fraction": 0.8737342927424616,
+      "boundary_site_fraction": 0.23241973375097885,
+      "boundary_enrichment": 3.7592947838009554,
+      "corner_mass_fraction": 0.007545948655249281,
+      "corner_site_fraction": 0.015661707126076743,
+      "corner_fraction_of_boundary_mass": 0.008636434117246551,
+      "corner_fraction_of_boundary_sites": 0.06738544474393532
+    },
+    "edge_orientation": {
+      "exact_edge_masses": {
+        "u_negative": 0.09660864273991795,
+        "u_positive": 0.09660864273991794,
+        "v_negative": 0.09660864273991795,
+        "v_positive": 0.09660864273991794
+      },
+      "coefficient_of_variation": 1.0157556910504972e-16
+    }
+  },
+  "display_transfer": "global linear normalization density/max",
+  "right_eigenvectors_persisted": false,
+  "right_eigenvectors_persistence_reason": "The complete vectors are approximately 650 MB; the reproducible script, spectrum, residuals, and both aggregate densities are retained instead.",
+  "acceptance": {
+    "paper_site_count_exact": true,
+    "complete_spectrum_and_density": true,
+    "all_eigenpair_residuals_small": true,
+    "boundary_density_is_enriched": true,
+    "localization_is_edge_not_corner_dominated": true,
+    "reflection_symmetrization_is_exact": true
+  },
+  "canvas_pixels": [
+    322,
+    239
+  ],
+  "dimensions_exact": true,
+  "full_ssim": 0.9106749164396457,
+  "rgb_mae": 0.029452870226982307,
+  "strict_pixel_exact_threshold": 0.95,
+  "strict_pixel_exact": false,
+  "data": {
+    "complete_spectrum_and_residuals": "outputs/data/fig4a_complete_spectrum_paper.csv",
+    "raw_and_symmetrized_density": "outputs/data/fig4a_aggregate_density_paper.csv"
+  },
+  "figure": "outputs/figures/fig4a_pixel_registered.png",
+  "editable_exports": [
+    "outputs/figures/fig4a_aggregate_density.pdf",
+    "outputs/figures/fig4a_aggregate_density.svg"
+  ],
+  "comparison_board": "docs/comparisons/fig4a_pixel_comparison.png",
+  "board_full_ssim": 0.9106749164396457
+}

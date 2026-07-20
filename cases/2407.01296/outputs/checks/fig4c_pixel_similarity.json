@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "paper_id": "2407.01296",
+  "target_id": "T002",
+  "figure_refs": [
+    "Fig. 4(c)"
+  ],
+  "status": "passed",
+  "pixel_status": "pixel_registered_not_identical",
+  "artifact_stage": "exploratory",
+  "parameter_match": "paper_exact_model_geometry_numerical_grid",
+  "generated_data_provenance": "independent_numerics",
+  "source_pixels_copied_into_reproduction": false,
+  "formula_dependencies": [
+    "EQC003",
+    "EQC004"
+  ],
+  "runtime_seconds": null,
+  "grid_shape": [
+    45,
+    85
+  ],
+  "momentum_samples": 512,
+  "density_shape": [
+    43,
+    83
+  ],
+  "density_min": -0.13544368681327468,
+  "density_max": 3.9934076614987077,
+  "negative_density_mass_ratio": 0.030145435672271095,
+  "conjugation_symmetry_mean_error": 0.0007788909940359679,
+  "acceptance": {
+    "density_is_finite": true,
+    "conjugation_symmetry_mean_error_below_0_02": true,
+    "central_crossing_is_resolved": true,
+    "nonzero_support_is_two_dimensional": true,
+    "negative_density_mass_ratio_below_0_05": true
+  },
+  "canvas_pixels": [
+    316,
+    253
+  ],
+  "dimensions_exact": true,
+  "full_ssim": 0.7041992393634416,
+  "rgb_mae": 0.05669117933192523,
+  "strict_pixel_exact_threshold": 0.95,
+  "strict_pixel_exact": false,
+  "data": "outputs/data/fig4c_spectral_density_independent.npz",
+  "figure": "outputs/figures/fig4c_pixel_registered.png",
+  "editable_exports": [
+    "outputs/figures/fig4c_spectral_density.pdf",
+    "outputs/figures/fig4c_spectral_density.svg"
+  ],
+  "comparison_board": "docs/comparisons/fig4c_pixel_comparison.png",
+  "board_full_ssim": 0.7041992393634416
+}
