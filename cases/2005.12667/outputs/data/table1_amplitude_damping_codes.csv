@@ -1,0 +1,8 @@
+property,four_qubit_code,simplest_binomial_code
+logical_zero,(|0000>+|1111>)/sqrt(2),(|0>+|4>)/sqrt(2)
+logical_one,(|1100>+|0011>)/sqrt(2),|2>
+mean_excitation,2,2
+hilbert_dimension,16,5
+correctable_errors,5,2
+stabilizers,3,1
+approximate_qec,first order in gamma t,first order in kappa t

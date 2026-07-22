@@ -1944,6 +1944,166 @@
           "figure": "fig16a_comparison.png"
         }
       ]
+    },
+    {
+      "paper_id": "2005.12667",
+      "title": "Circuit Quantum Electrodynamics",
+      "topic": "Circuit quantization, Jaynes-Cummings and dispersive physics, open quantum systems, measurement, control, bosonic codes, and microwave quantum optics",
+      "preprint": {
+        "status": "recorded",
+        "identifier": "arXiv:2005.12667",
+        "title": "Circuit Quantum Electrodynamics",
+        "url": "https://arxiv.org/abs/2005.12667"
+      },
+      "publication": {
+        "status": "published",
+        "title": "Circuit Quantum Electrodynamics",
+        "venue": "Reviews of Modern Physics",
+        "citation": "Reviews of Modern Physics 93, 025005 (2021)",
+        "doi": "10.1103/RevModPhys.93.025005",
+        "doi_url": "https://doi.org/10.1103/RevModPhys.93.025005",
+        "locator": "025005"
+      },
+      "status": "Full formula derivation and numerical-feature reproduction",
+      "similarity_level": "numerical_feature_reproduction",
+      "audit_score": 90.28,
+      "summary": "Reproduces the full executable theory chain of the circuit-QED review: 30 formula families spanning main-text Eqs. (1)-(164) and Appendices A-C, plus 18 independent numerical or tabular targets. All formula gates and target checks pass. The package includes step-by-step derivations, runnable public code, structured data, generated figures, limited reference comparisons, and a complete Chinese PDF report.",
+      "limitation": "Full review means all theory recoverable from public equations and parameters, not unavailable author evidence. Fig. 4(b-e) remains blocked by the missing COMSOL project; the experimental panels of Figs. 21, 28, and 32 require author-level raw data and calibration. Targets with incomplete absolute parameters are explicitly labeled paper-subset or analytic-reference rather than exact.",
+      "run_scripts": [
+        "run_reproduction.py",
+        "run_full_rmp_reproduction.py"
+      ],
+      "extra_dependencies": [],
+      "additional_resources": [
+        {
+          "label": "Full step-by-step derivation trace",
+          "path": "docs/DERIVATION_TRACE.md"
+        },
+        {
+          "label": "Formula verification report",
+          "path": "docs/FORMULA_VERIFICATION.md"
+        },
+        {
+          "label": "Consistency and source-version audit",
+          "path": "docs/CONSISTENCY_REPORT.md"
+        }
+      ],
+      "featured_results": [
+        {
+          "paper_item": "Sec. II / Figs. 5-6",
+          "result": "Transmon phase wavefunctions and exponential charge-dispersion suppression",
+          "figure": "fig6_transmon_charge_dispersion.png",
+          "check": "section2_checks.json"
+        },
+        {
+          "paper_item": "Sec. III / Fig. 8",
+          "result": "Jaynes-Cummings doublets with exact 2g sqrt(n) splitting",
+          "figure": "fig8_jaynes_cummings_spectrum.png",
+          "check": "chapter3_checks.json"
+        },
+        {
+          "paper_item": "Sec. IV / Eqs. 66-75",
+          "result": "Hermitian bath coupling, thermal Lindblad dynamics, and passive one-port input-output response",
+          "figure": "eq66_75_open_system_validation.png",
+          "check": "open_system_checks.json"
+        },
+        {
+          "paper_item": "Sec. V / Figs. 18-19",
+          "result": "Dispersive measurement pointer trajectories and cavity pull",
+          "figure": "fig18_readout_phase_space.png",
+          "check": "section5_checks.json"
+        },
+        {
+          "paper_item": "Sec. VI / Figs. 20-26",
+          "result": "Strong-coupling crossover, vacuum-Rabi splitting, avoided crossing, and spectroscopy",
+          "figure": "fig20_coupling_regimes.png",
+          "check": "section6_checks.json"
+        },
+        {
+          "paper_item": "Sec. VII / Table I and Fig. 31",
+          "result": "DRAG control, amplitude-damping code contracts, and cat-code Wigner functions",
+          "figure": "fig31_cat_code_wigner.png",
+          "check": "section7_checks.json"
+        },
+        {
+          "paper_item": "Sec. VIII / Figs. 32-33",
+          "result": "Fock-superposition and squeezed-state Wigner functions",
+          "figure": "fig33_squeezing.png",
+          "check": "section8_checks.json"
+        }
+      ],
+      "comparison_attribution": "Blais, Grimsmo, Girvin, and Wallraff",
+      "comparison_note": "Each board contains a limited paper excerpt used only to identify the target's physical structure, beside an independently generated equation-driven result. These boards audit features, invariants, and declared parameter scope; they do not claim author-data-level pointwise equivalence.",
+      "comparison_results": [
+        {
+          "paper_item": "Fig. 8",
+          "figure": "fig8_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 9",
+          "figure": "fig9_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 2(c) / T005",
+          "figure": "t005_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 5(a) / T006",
+          "figure": "t006_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 6 / T007",
+          "figure": "t007_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 18 / T008",
+          "figure": "t008_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 19 / T009",
+          "figure": "t009_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 20 / T010",
+          "figure": "t010_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 21 theory / T011",
+          "figure": "t011_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 22 / T012",
+          "figure": "t012_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 24 / T013",
+          "figure": "t013_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 25 / T014",
+          "figure": "t014_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 26 / T015",
+          "figure": "t015_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 28 simulation / T016",
+          "figure": "t016_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 31 / T018",
+          "figure": "t018_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 32 theory / T019",
+          "figure": "t019_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 33(a,b) / T020",
+          "figure": "t020_comparison.png"
+        }
+      ]
     }
   ]
 }

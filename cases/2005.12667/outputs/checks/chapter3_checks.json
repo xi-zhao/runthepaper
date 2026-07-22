@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "paper_id": "2005.12667",
+  "scope": "arXiv v1 Section III, Eqs. (29)-(63)",
+  "fig8": {
+    "max_eigenvalue_error": 0.0,
+    "max_sqrt_law_error": 5.773159728050814e-15
+  },
+  "fig9": {
+    "max_energy_error": 2.9625405240096825e-06,
+    "minimum_bare_state_overlap": 0.9929790936247763,
+    "lambda_abs": 0.03,
+    "ncrit_j0": 277.77777777777777,
+    "ncrit_j1": 144.34259259259258,
+    "omega_r_dressed": 6.00072,
+    "omega_q_dressed": 4.9991,
+    "chi": -0.00017999999999999998
+  },
+  "other_equations": {
+    "eq31_eq33_identity_error": 0.0,
+    "bogoliubov_frequency_error": 0.0,
+    "eq51_cross_kerr_relation_error": 0.0,
+    "eq51_formal_self_kerr_error": 0.0,
+    "black_box_participation_error": 1.734723475976807e-18,
+    "black_box_symmetry_error": 0.0,
+    "generic_multilevel_lamb_finite": 1.0,
+    "generic_multilevel_chi_finite": 1.0,
+    "longitudinal_completed_square_error": 7.105427357601002e-15
+  },
+  "thresholds": {
+    "fig8_machine_precision": true,
+    "fig8_sqrt_law": true,
+    "fig9_dispersive_energy": true,
+    "fig9_state_identity": true,
+    "fig9_regime": true,
+    "coupling_identity": true,
+    "bogoliubov_diagonalization": true,
+    "formal_eq51_self_kerr": true,
+    "black_box_identity": true,
+    "longitudinal_completed_square": true
+  }
+}

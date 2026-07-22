@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "targets": {
+    "T008": {
+      "data": "outputs/data/fig18_readout_phase_space.csv",
+      "figure": "outputs/figures/fig18_readout_phase_space.png",
+      "max_steady_photon_error": 7.829637131573364e-05,
+      "snr_peak_two_chi_over_kappa": [
+        1.196128333078754,
+        1.005129969225681
+      ],
+      "runtime_seconds": 0.6147736670682207
+    },
+    "T009": {
+      "data": "outputs/data/fig19_dispersive_cavity_pull.csv",
+      "figure": "outputs/figures/fig19_dispersive_cavity_pull.png",
+      "center_amplitude_symmetry_error": 0.0,
+      "center_phase_separation": 2.214297435588181,
+      "runtime_seconds": 0.43002379196695983
+    }
+  }
+}

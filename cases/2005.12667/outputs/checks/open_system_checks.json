@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "paper_id": "2005.12667",
+  "scope": "arXiv v1 Eqs. (66)-(68), (70)-(75), with Eqs. (64)-(65), (69) and Appendix C",
+  "source_correction": {
+    "arxiv_v1_eq67": "The printed minus form is anti-Hermitian for real lambda.",
+    "published_rmp_eq69": "The formal publication replaces it with a b^dagger + a^dagger b, restoring Hermiticity.",
+    "input_output_signs": "The executable form uses the passive one-port relative sign and records the convention explicitly."
+  },
+  "metrics": {
+    "eq66_full_hermiticity_residual": 0.0,
+    "eq67_arxiv_literal_hermiticity_residual": 0.5939696961967,
+    "eq67_published_correction_hermiticity_residual": 0.0,
+    "eq68_max_mean_number_error": 4.977837586572775e-11,
+    "eq68_max_trace_error": 6.661338147750939e-16,
+    "eq68_max_hermiticity_error": 0.0,
+    "eq68_min_density_eigenvalue": 0.0,
+    "eq75_max_passivity_error": 3.3306690738754696e-16
+  },
+  "thresholds": {
+    "eq66_hermitian": true,
+    "eq67_arxiv_typo_detected": true,
+    "eq67_published_correction_hermitian": true,
+    "eq68_mean_number": true,
+    "eq68_trace": true,
+    "eq68_hermiticity": true,
+    "eq68_positivity": true,
+    "eq75_passivity": true
+  }
+}

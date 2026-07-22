@@ -1,0 +1,74 @@
+{
+  "status": "passed",
+  "targets": {
+    "T010": {
+      "data": "outputs/data/fig20_coupling_regimes.csv",
+      "figure": "outputs/figures/fig20_coupling_regimes.png",
+      "peak_positions_over_g": {
+        "bad_cavity": [
+          -1.0,
+          1.0
+        ],
+        "bad_qubit": [
+          -0.0024999999999999467,
+          0.0024999999999999467
+        ],
+        "strong": [
+          -1.0,
+          1.0
+        ]
+      },
+      "strong_peak_split_error": 0.0,
+      "runtime_seconds": 0.6844163750065491
+    },
+    "T011": {
+      "data": "outputs/data/fig21_vacuum_rabi_theory.csv",
+      "figure": "outputs/figures/fig21_vacuum_rabi_theory.png",
+      "split_errors_MHz": [
+        0.04712499999999942,
+        0.24062500000002274
+      ],
+      "runtime_seconds": 0.2770317500689998
+    },
+    "T012": {
+      "data": "outputs/data/fig22_avoided_crossing.csv",
+      "figure": "outputs/figures/fig22_avoided_crossing.png",
+      "resonant_split_over_g": 2.0,
+      "split_error": 0.0,
+      "runtime_seconds": 0.3974045829381794
+    },
+    "T013": {
+      "data": "outputs/data/fig24_qubit_spectroscopy.csv",
+      "figure": "outputs/figures/fig24_qubit_spectroscopy.png",
+      "max_linewidth_grid_error_MHz": 0.003965001287408454,
+      "saturation_limit": 0.4962779156327543,
+      "runtime_seconds": 0.5281910829944536
+    },
+    "T014": {
+      "data": "outputs/data/fig25_ac_stark.csv",
+      "figure": "outputs/figures/fig25_ac_stark.png",
+      "weak_panel_mean_photons": [
+        0.0,
+        3.2,
+        12.8
+      ],
+      "strong_peak_spacing_MHz": 10.0,
+      "runtime_seconds": 0.409155708970502
+    },
+    "T015": {
+      "data": "outputs/data/fig26_nonlinear_cavity_pull.csv",
+      "figure": "outputs/figures/fig26_nonlinear_cavity_pull.png",
+      "high_photon_return_errors_GHz": [
+        0.006428298349192119,
+        0.006375819810500616,
+        0.008775395676565267,
+        0.0018672203057121806,
+        0.010526378106476386,
+        0.009283050415234584,
+        0.006117586166936917,
+        0.004112189524050791
+      ],
+      "runtime_seconds": 0.2908345840405673
+    }
+  }
+}

@@ -1,0 +1,457 @@
+{
+  "status": "passed",
+  "schema_version": 1,
+  "paper_id": "2005.12667",
+  "summary": {
+    "cards_total": 30,
+    "numeric_open": 30,
+    "numeric_closed": 0,
+    "blocked_cards": []
+  },
+  "formulas": {
+    "EQ001_006": {
+      "title": "LC resonator canonical quantization",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/cqed_reproduction.py::annihilation",
+        "code/tests/test_cqed_reproduction.py::test_jc_block_matches_eq38"
+      ],
+      "open_questions": []
+    },
+    "EQ007_019": {
+      "title": "Distributed transmission-line and cavity normal modes",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/full_rmp_reproduction.py::cpw_transmission",
+        "code/scripts/run_full_rmp_reproduction.py::reproduce_t005"
+      ],
+      "open_questions": [
+        "Fig. 4(b-e) cannot be regenerated without the original 3D geometry, material, boundary, and meshing files."
+      ]
+    },
+    "EQ020_028": {
+      "title": "Transmon Hamiltonian, Duffing limit, and SQUID tunability",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/full_rmp_reproduction.py::transmon_charge_hamiltonian",
+        "code/src/full_rmp_reproduction.py::transmon_phase_wavefunctions",
+        "code/scripts/run_full_rmp_reproduction.py::reproduce_t006",
+        "code/scripts/run_full_rmp_reproduction.py::reproduce_t007"
+      ],
+      "open_questions": []
+    },
+    "EQ029_034": {
+      "title": "Transmon-resonator coupling and Jaynes-Cummings reduction",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/cqed_reproduction.py::transmon_coupling",
+        "code/src/cqed_reproduction.py::transmon_coupling_via_alpha",
+        "code/src/cqed_reproduction.py::duffing_jc_hamiltonian"
+      ],
+      "open_questions": []
+    },
+    "EQ035_039": {
+      "title": "Exact Jaynes-Cummings diagonalization",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/cqed_reproduction.py::jc_block",
+        "code/src/cqed_reproduction.py::jc_analytic_energies",
+        "code/scripts/run_reproduction.py::reproduce_figure_8"
+      ],
+      "open_questions": []
+    },
+    "EQ040_044": {
+      "title": "Schrieffer-Wolff dispersive Hamiltonian and critical photon number",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/cqed_reproduction.py::transmon_dispersive_shifts",
+        "code/src/cqed_reproduction.py::transmon_dispersive_energy",
+        "code/src/cqed_reproduction.py::critical_photon_number",
+        "code/scripts/run_reproduction.py::reproduce_figure_9"
+      ],
+      "open_questions": []
+    },
+    "EQ045_051": {
+      "title": "Bogoliubov normal modes and inherited Kerr nonlinearities",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/cqed_reproduction.py::linear_dressed_frequencies",
+        "code/src/cqed_reproduction.py::bogoliubov_kerrs"
+      ],
+      "open_questions": []
+    },
+    "EQ052_058": {
+      "title": "Black-box quantization of a multimode electromagnetic environment",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/cqed_reproduction.py::black_box_kerr"
+      ],
+      "open_questions": [
+        "A geometry-specific finite-element impedance Z(omega) is outside the user-selected scope; the universal quantization map itself is reproduced."
+      ]
+    },
+    "EQ059_062": {
+      "title": "Arbitrary multilevel artificial atom in the dispersive regime",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/cqed_reproduction.py::generic_multilevel_shifts"
+      ],
+      "open_questions": []
+    },
+    "EQ063": {
+      "title": "Longitudinal light-matter coupling",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/cqed_reproduction.py::longitudinal_block",
+        "code/src/cqed_reproduction.py::longitudinal_analytic_energy"
+      ],
+      "open_questions": []
+    },
+    "EQ064_065": {
+      "title": "Continuum transmission-line bath and canonical fields",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/cqed_reproduction.py::discretized_bath_hamiltonians"
+      ],
+      "open_questions": []
+    },
+    "EQ066": {
+      "title": "Microscopic oscillator-bath Hamiltonian",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/cqed_reproduction.py::discretized_bath_hamiltonians"
+      ],
+      "open_questions": []
+    },
+    "EQ067": {
+      "title": "Narrow-band rotating-wave system-bath coupling and source correction",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/cqed_reproduction.py::discretized_bath_hamiltonians"
+      ],
+      "open_questions": []
+    },
+    "EQ068_069": {
+      "title": "Born-Markov thermal Lindblad master equation",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/cqed_reproduction.py::dissipator",
+        "code/src/cqed_reproduction.py::lindblad_rhs",
+        "code/src/cqed_reproduction.py::thermal_oscillator_evolution"
+      ],
+      "open_questions": []
+    },
+    "EQ070_071": {
+      "title": "Traveling-wave voltage and Kirchhoff boundary condition",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/cqed_reproduction.py::passive_one_port_response"
+      ],
+      "open_questions": []
+    },
+    "EQ072": {
+      "title": "Input-output boundary relation",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/cqed_reproduction.py::passive_one_port_response"
+      ],
+      "open_questions": []
+    },
+    "EQ073_074": {
+      "title": "Narrow-band temporal input and output fields",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/cqed_reproduction.py::passive_one_port_response"
+      ],
+      "open_questions": []
+    },
+    "EQ075": {
+      "title": "Quantum Langevin equation and passive sign convention",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "reconstructed",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/cqed_reproduction.py::passive_one_port_response"
+      ],
+      "open_questions": [
+        "The paper does not explicitly discuss the relative input-output sign as a scattering-unitarity convention; the case therefore labels this card reconstructed while preserving all observable checks."
+      ]
+    },
+    "EQ076_086": {
+      "title": "Traveling voltage, transmon decoherence, dispersive dissipation, and coherent drive",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/cqed_reproduction.py::thermal_oscillator_evolution",
+        "code/src/full_rmp_reproduction.py::one_excitation_dynamics",
+        "code/tests/test_full_rmp_reproduction.py::test_pointer_trajectory_reaches_analytic_unit_population"
+      ],
+      "open_questions": []
+    },
+    "EQ087_099": {
+      "title": "Filtered microwave detection, quantum-limited amplification, and IQ quadratures",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/full_rmp_reproduction.py::phase_preserving_amplifier_metrics",
+        "code/tests/test_full_rmp_reproduction.py::test_phase_preserving_amplifier_preserves_commutator_and_adds_half_quantum"
+      ],
+      "open_questions": []
+    },
+    "EQ100_106": {
+      "title": "Wigner, characteristic, marginal, and Husimi-Q representations",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/full_rmp_reproduction.py::fock_state_wigner",
+        "code/tests/test_full_rmp_reproduction.py::test_fock_wigner_normalizes_and_has_odd_parity_at_origin"
+      ],
+      "open_questions": []
+    },
+    "EQ107_120": {
+      "title": "Dispersive pointer states, measurement SNR, efficiency, and longitudinal readout",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/full_rmp_reproduction.py::dispersive_pointer_trajectory",
+        "code/src/full_rmp_reproduction.py::integrated_pointer_snr",
+        "code/scripts/run_full_rmp_reproduction.py::reproduce_t008",
+        "code/scripts/run_full_rmp_reproduction.py::reproduce_t009"
+      ],
+      "open_questions": []
+    },
+    "EQ121_125": {
+      "title": "Resonant coupling regimes, Maxwell-Bloch response, and Purcell interpolation",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/full_rmp_reproduction.py::linear_cqed_response",
+        "code/src/full_rmp_reproduction.py::one_excitation_dynamics",
+        "code/src/full_rmp_reproduction.py::thermal_jc_spectrum",
+        "code/scripts/run_full_rmp_reproduction.py::reproduce_t010"
+      ],
+      "open_questions": []
+    },
+    "EQ126_128": {
+      "title": "Dispersive spectroscopy, ac-Stark response, and measurement-induced dephasing",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/full_rmp_reproduction.py::bloch_excited_population",
+        "code/src/full_rmp_reproduction.py::photon_number_split_spectrum",
+        "code/src/full_rmp_reproduction.py::duffing_cavity_pull",
+        "code/scripts/run_full_rmp_reproduction.py::reproduce_t013"
+      ],
+      "open_questions": [
+        "Fig. 26 does not fully specify the conversion from applied drive amplitude to intracavity occupation, so only the dressed-energy feature is a final claim."
+      ]
+    },
+    "EQ129_153": {
+      "title": "Single-qubit control and two-qubit gate Hamiltonians",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/full_rmp_reproduction.py::drag_pi_pulse",
+        "code/scripts/run_full_rmp_reproduction.py::reproduce_t016"
+      ],
+      "open_questions": [
+        "Fig. 28 experimental randomized-benchmarking data and calibration pulses are unavailable; the independent DRAG model is feature-level."
+      ]
+    },
+    "EQ154_157": {
+      "title": "Bosonic amplitude-damping codes and cat-code basis states",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/full_rmp_reproduction.py::binomial_code_metrics",
+        "code/src/full_rmp_reproduction.py::cat_state_coefficients",
+        "code/scripts/run_full_rmp_reproduction.py::reproduce_t017",
+        "code/scripts/run_full_rmp_reproduction.py::reproduce_t018"
+      ],
+      "open_questions": []
+    },
+    "EQ158_164": {
+      "title": "Degenerate parametric amplification, squeezing, and remote parity interaction",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/full_rmp_reproduction.py::squeezed_vacuum_wigner",
+        "code/src/full_rmp_reproduction.py::squeezed_quadrature_variance",
+        "code/scripts/run_full_rmp_reproduction.py::reproduce_t019",
+        "code/scripts/run_full_rmp_reproduction.py::reproduce_t020"
+      ],
+      "open_questions": [
+        "Fig. 32 experimental tomography values are unavailable; only the specified theoretical states are independently reproduced."
+      ]
+    },
+    "APPA001_A010": {
+      "title": "Appendix A: voltage-biased transmon and capacitive oscillator coupling",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/cqed_reproduction.py::transmon_coupling",
+        "code/src/cqed_reproduction.py::duffing_jc_hamiltonian"
+      ],
+      "open_questions": []
+    },
+    "APPB001_B032": {
+      "title": "Appendix B: BCH, Schrieffer-Wolff, Bogoliubov, and off-resonant drive",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "verified",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/cqed_reproduction.py::transmon_dispersive_shifts",
+        "code/src/cqed_reproduction.py::linear_dressed_frequencies",
+        "code/tests/test_cqed_reproduction.py::test_bogoliubov_frequencies_match_matrix_diagonalization"
+      ],
+      "open_questions": []
+    },
+    "APPC001_C020": {
+      "title": "Appendix C: transmission-line boundary derivation of input-output theory",
+      "numeric_gate": "open",
+      "numeric_gate_policy": "source_and_symbolic",
+      "derivation_status": "reconstructed",
+      "failed_checks": [],
+      "source_verified": true,
+      "derivation_verified": true,
+      "code_refs": [
+        "code/src/cqed_reproduction.py::passive_one_port_response"
+      ],
+      "open_questions": [
+        "The arXiv main-text input-output signs require a consistent port phase choice; observables and Appendix boundary conditions fix the executable convention."
+      ]
+    }
+  },
+  "findings": []
+}

@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "targets": {
+    "T016": {
+      "data": "outputs/data/fig28_drag_simulation.csv",
+      "figure": "outputs/figures/fig28_drag_simulation.png",
+      "median_short_gate_improvement": 3.829639828844435,
+      "max_norm_error": 8.400369289063292e-10,
+      "runtime_seconds": 1.7386594580020756
+    },
+    "T017": {
+      "data": "outputs/data/table1_amplitude_damping_codes.csv",
+      "check": "outputs/checks/table1_amplitude_damping_checks.json",
+      "identity_residual": 2.220446049250313e-16,
+      "equal_loss_residual": 6.280369834735101e-16,
+      "logical_loss_residual": 0.0,
+      "normalized_loss_orthogonality": 0.0,
+      "mean_excitation_zero": 1.9999999999999996,
+      "mean_excitation_one": 2.0000000000000004,
+      "runtime_seconds": 0.000540749984793365
+    },
+    "T018": {
+      "data": "outputs/data/fig31_cat_code_wigner.csv",
+      "figure": "outputs/figures/fig31_cat_code_wigner.png",
+      "wigner_integrals": [
+        0.9999704072677271,
+        0.9999704072741052
+      ],
+      "minimum_wigner": [
+        -0.2703415297620842,
+        -0.2885047786596463
+      ],
+      "runtime_seconds": 20.034179417067207
+    }
+  }
+}

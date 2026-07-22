@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "paper_id": "2005.12667",
+  "scope": "full RMP independent numerical targets T005-T020",
+  "status": "passed",
+  "thresholds": {
+    "T005_peak_positions": true,
+    "T006_wavefunction_normalization": true,
+    "T006_negative_anharmonicity": true,
+    "T007_charge_periodicity": true,
+    "T007_dispersion_suppression": true,
+    "T008_steady_population": true,
+    "T008_long_time_optimum": true,
+    "T009_center_symmetry": true,
+    "T010_strong_split": true,
+    "T011_vacuum_rabi_split": true,
+    "T012_avoided_crossing": true,
+    "T013_bloch_linewidth": true,
+    "T013_saturation": true,
+    "T014_number_spacing": true,
+    "T015_high_power_return": true,
+    "T016_drag_improvement": true,
+    "T016_norm": true,
+    "T017_knill_laflamme": true,
+    "T018_wigner_normalization": true,
+    "T019_wigner_normalization": true,
+    "T020_wigner_normalization": true,
+    "T020_squeezing_db": true
+  },
+  "targets": {
+    "T005": {
+      "data": "outputs/data/fig2_cpw_transmission.csv",
+      "figure": "outputs/figures/fig2_cpw_transmission.png",
+      "max_peak_error_GHz": 0.0031806361272224137,
+      "runtime_seconds": 0.30323399999178946
+    },
+    "T006": {
+      "data": "outputs/data/fig5_transmon_wavefunctions.csv",
+      "figure": "outputs/figures/fig5_transmon_wavefunctions.png",
+      "max_wavefunction_norm_error": 4.440892098500626e-16,
+      "anharmonicity_over_EC": -1.1492230292254177,
+      "runtime_seconds": 0.24963295902125537
+    },
+    "T007": {
+      "data": "outputs/data/fig6_transmon_charge_dispersion.csv",
+      "figure": "outputs/figures/fig6_transmon_charge_dispersion.png",
+      "max_periodicity_error_GHz": 4.440892098500626e-15,
+      "charge_dispersion_GHz": [
+        3.003508109499283,
+        0.14044649395764974,
+        9.907574632705973e-06
+      ],
+      "dispersion_suppression_ratio": 3.298667515286873e-06,
+      "runtime_seconds": 0.35886591696180403
+    },
+    "T008": {
+      "data": "outputs/data/fig18_readout_phase_space.csv",
+      "figure": "outputs/figures/fig18_readout_phase_space.png",
+      "max_steady_photon_error": 7.829637131573364e-05,
+      "snr_peak_two_chi_over_kappa": [
+        1.196128333078754,
+        1.005129969225681
+      ],
+      "runtime_seconds": 0.6147736670682207
+    },
+    "T009": {
+      "data": "outputs/data/fig19_dispersive_cavity_pull.csv",
+      "figure": "outputs/figures/fig19_dispersive_cavity_pull.png",
+      "center_amplitude_symmetry_error": 0.0,
+      "center_phase_separation": 2.214297435588181,
+      "runtime_seconds": 0.43002379196695983
+    },
+    "T010": {
+      "data": "outputs/data/fig20_coupling_regimes.csv",
+      "figure": "outputs/figures/fig20_coupling_regimes.png",
+      "peak_positions_over_g": {
+        "bad_cavity": [
+          -1.0,
+          1.0
+        ],
+        "bad_qubit": [
+          -0.0024999999999999467,
+          0.0024999999999999467
+        ],
+        "strong": [
+          -1.0,
+          1.0
+        ]
+      },
+      "strong_peak_split_error": 0.0,
+      "runtime_seconds": 0.6844163750065491
+    },
+    "T011": {
+      "data": "outputs/data/fig21_vacuum_rabi_theory.csv",
+      "figure": "outputs/figures/fig21_vacuum_rabi_theory.png",
+      "split_errors_MHz": [
+        0.04712499999999942,
+        0.24062500000002274
+      ],
+      "runtime_seconds": 0.2770317500689998
+    },
+    "T012": {
+      "data": "outputs/data/fig22_avoided_crossing.csv",
+      "figure": "outputs/figures/fig22_avoided_crossing.png",
+      "resonant_split_over_g": 2.0,
+      "split_error": 0.0,
+      "runtime_seconds": 0.3974045829381794
+    },
+    "T013": {
+      "data": "outputs/data/fig24_qubit_spectroscopy.csv",
+      "figure": "outputs/figures/fig24_qubit_spectroscopy.png",
+      "max_linewidth_grid_error_MHz": 0.003965001287408454,
+      "saturation_limit": 0.4962779156327543,
+      "runtime_seconds": 0.5281910829944536
+    },
+    "T014": {
+      "data": "outputs/data/fig25_ac_stark.csv",
+      "figure": "outputs/figures/fig25_ac_stark.png",
+      "weak_panel_mean_photons": [
+        0.0,
+        3.2,
+        12.8
+      ],
+      "strong_peak_spacing_MHz": 10.0,
+      "runtime_seconds": 0.409155708970502
+    },
+    "T015": {
+      "data": "outputs/data/fig26_nonlinear_cavity_pull.csv",
+      "figure": "outputs/figures/fig26_nonlinear_cavity_pull.png",
+      "high_photon_return_errors_GHz": [
+        0.006428298349192119,
+        0.006375819810500616,
+        0.008775395676565267,
+        0.0018672203057121806,
+        0.010526378106476386,
+        0.009283050415234584,
+        0.006117586166936917,
+        0.004112189524050791
+      ],
+      "runtime_seconds": 0.2908345840405673
+    },
+    "T016": {
+      "data": "outputs/data/fig28_drag_simulation.csv",
+      "figure": "outputs/figures/fig28_drag_simulation.png",
+      "median_short_gate_improvement": 3.829639828844435,
+      "max_norm_error": 8.400369289063292e-10,
+      "runtime_seconds": 1.7386594580020756
+    },
+    "T017": {
+      "data": "outputs/data/table1_amplitude_damping_codes.csv",
+      "check": "outputs/checks/table1_amplitude_damping_checks.json",
+      "identity_residual": 2.220446049250313e-16,
+      "equal_loss_residual": 6.280369834735101e-16,
+      "logical_loss_residual": 0.0,
+      "normalized_loss_orthogonality": 0.0,
+      "mean_excitation_zero": 1.9999999999999996,
+      "mean_excitation_one": 2.0000000000000004,
+      "runtime_seconds": 0.000540749984793365
+    },
+    "T018": {
+      "data": "outputs/data/fig31_cat_code_wigner.csv",
+      "figure": "outputs/figures/fig31_cat_code_wigner.png",
+      "wigner_integrals": [
+        0.9999704072677271,
+        0.9999704072741052
+      ],
+      "minimum_wigner": [
+        -0.2703415297620842,
+        -0.2885047786596463
+      ],
+      "runtime_seconds": 20.034179417067207
+    },
+    "T019": {
+      "data": "outputs/data/fig32_fock_superposition_wigner.csv",
+      "figure": "outputs/figures/fig32_fock_superposition_wigner.png",
+      "wigner_integrals": [
+        0.9994892202555932,
+        0.9994892202555931,
+        0.9994892202555932,
+        0.9994892202555932,
+        0.9994892202555932
+      ],
+      "max_integral_error": 0.0005107797444069417,
+      "runtime_seconds": 0.626027625054121
+    },
+    "T020": {
+      "data": "outputs/data/fig33_squeezing.csv",
+      "figure": "outputs/figures/fig33_squeezing.png",
+      "wigner_integral": 0.998043536637832,
+      "minimum_dB": [
+        -4.342944819032518,
+        -8.685889638065037,
+        -13.028834457097556
+      ],
+      "max_minimum_dB_error": 1.7763568394002505e-15,
+      "runtime_seconds": 0.7529483330436051
+    }
+  },
+  "runtime_seconds": 27.696244915947318
+}

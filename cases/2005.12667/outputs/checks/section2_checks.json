@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "targets": {
+    "T005": {
+      "data": "outputs/data/fig2_cpw_transmission.csv",
+      "figure": "outputs/figures/fig2_cpw_transmission.png",
+      "max_peak_error_GHz": 0.0031806361272224137,
+      "runtime_seconds": 0.30323399999178946
+    },
+    "T006": {
+      "data": "outputs/data/fig5_transmon_wavefunctions.csv",
+      "figure": "outputs/figures/fig5_transmon_wavefunctions.png",
+      "max_wavefunction_norm_error": 4.440892098500626e-16,
+      "anharmonicity_over_EC": -1.1492230292254177,
+      "runtime_seconds": 0.24963295902125537
+    },
+    "T007": {
+      "data": "outputs/data/fig6_transmon_charge_dispersion.csv",
+      "figure": "outputs/figures/fig6_transmon_charge_dispersion.png",
+      "max_periodicity_error_GHz": 4.440892098500626e-15,
+      "charge_dispersion_GHz": [
+        3.003508109499283,
+        0.14044649395764974,
+        9.907574632705973e-06
+      ],
+      "dispersion_suppression_ratio": 3.298667515286873e-06,
+      "runtime_seconds": 0.35886591696180403
+    }
+  }
+}

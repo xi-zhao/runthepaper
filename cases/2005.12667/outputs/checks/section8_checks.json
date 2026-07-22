@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "targets": {
+    "T019": {
+      "data": "outputs/data/fig32_fock_superposition_wigner.csv",
+      "figure": "outputs/figures/fig32_fock_superposition_wigner.png",
+      "wigner_integrals": [
+        0.9994892202555932,
+        0.9994892202555931,
+        0.9994892202555932,
+        0.9994892202555932,
+        0.9994892202555932
+      ],
+      "max_integral_error": 0.0005107797444069417,
+      "runtime_seconds": 0.626027625054121
+    },
+    "T020": {
+      "data": "outputs/data/fig33_squeezing.csv",
+      "figure": "outputs/figures/fig33_squeezing.png",
+      "wigner_integral": 0.998043536637832,
+      "minimum_dB": [
+        -4.342944819032518,
+        -8.685889638065037,
+        -13.028834457097556
+      ],
+      "max_minimum_dB_error": 1.7763568394002505e-15,
+      "runtime_seconds": 0.7529483330436051
+    }
+  }
+}
