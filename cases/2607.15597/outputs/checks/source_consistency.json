@@ -1,0 +1,9 @@
+{
+  "status": "inconsistency_found",
+  "caption_model": "2*p_T/N_ops",
+  "caption_model_derivative": "-2*p_T/N_ops^2 < 0",
+  "generated_curve_monotonic": "decreasing",
+  "source_figure_visual_slope": "increasing",
+  "source_claim_consistent": false,
+  "interpretation": "The reproduction follows the caption and main-text amortization logic; it does not imitate the contradictory source raster."
+}

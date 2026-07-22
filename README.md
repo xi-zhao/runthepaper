@@ -16,7 +16,7 @@ explicit reproduction boundary.
 ## Reproduction Catalog / 论文复现目录
 
 <!-- case-catalog:start -->
-**35 public cases.** Open a paper below, then choose the reading or
+**36 public cases.** Open a paper below, then choose the reading or
 reproduction resource you need.
 
 | Paper | Preprint / formal publication | Reproduction status | Open package |
@@ -56,6 +56,7 @@ reproduction resource you need.
 | [Enhanced Sampling of Configuration and Path Space in a Generalized Ensemble by Shooting Point Exchange](cases/prlb-f37350e-093/README.md) | [arXiv:2302.08757v2](https://arxiv.org/abs/2302.08757v2)<br>[Physical Review Letters 132, 128001 (2024)](https://doi.org/10.1103/PhysRevLett.132.128001) · DOI `10.1103/PhysRevLett.132.128001` | Paper-figure feature reproduction and benchmark statistics audit | [中文 Note](cases/prlb-f37350e-093/note/reproduction-note.zh-CN.md) · [English Note](cases/prlb-f37350e-093/note/reproduction-note.en.md)<br>[Code](cases/prlb-f37350e-093/code/README.md) · [Figures](cases/prlb-f37350e-093/outputs/figures/) · [Checks](cases/prlb-f37350e-093/outputs/checks/) |
 | [Leveraging Qubit Loss Detection in Fault-Tolerant Quantum Algorithms](cases/2502.20558/README.md) | [arXiv:2502.20558](https://arxiv.org/abs/2502.20558)<br>[Physical Review X 16, 011002 (2026)](https://doi.org/10.1103/ycwc-3myc) · DOI `10.1103/ycwc-3myc` | Mixed analytic and mechanism feature reproduction | [中文 Note](cases/2502.20558/note/reproduction-note.zh-CN.md) · [English Note](cases/2502.20558/note/reproduction-note.en.md)<br>[Code](cases/2502.20558/code/README.md) · [Figures](cases/2502.20558/outputs/figures/) · [Checks](cases/2502.20558/outputs/checks/) |
 | [Circuit Quantum Electrodynamics](cases/2005.12667/README.md) | [arXiv:2005.12667](https://arxiv.org/abs/2005.12667)<br>[Reviews of Modern Physics 93, 025005 (2021)](https://doi.org/10.1103/RevModPhys.93.025005) · DOI `10.1103/RevModPhys.93.025005` | Full formula derivation and numerical-feature reproduction | [中文 Note](cases/2005.12667/note/reproduction-note.zh-CN.md) · [English Note](cases/2005.12667/note/reproduction-note.en.md)<br>[Code](cases/2005.12667/code/README.md) · [Figures](cases/2005.12667/outputs/figures/) · [Checks](cases/2005.12667/outputs/checks/) |
+| [Deterministic atom-shuttle interconnects via ultrafast atom-ion entangling gate](cases/2607.15597/README.md) | [arXiv:2607.15597](https://arxiv.org/abs/2607.15597)<br>Not recorded / 未检索到正式发表（checked 2026-07-23） | Numerical feature reproduction with pixel-registered figures | [中文 Note](cases/2607.15597/note/reproduction-note.zh-CN.md) · [English Note](cases/2607.15597/note/reproduction-note.en.md)<br>[Code](cases/2607.15597/code/README.md) · [Figures](cases/2607.15597/outputs/figures/) · [Checks](cases/2607.15597/outputs/checks/) |
 
 Status describes reproduction scope, not rank. See [how to read reproduction quality](#how-to-read-reproduction-quality) and the [detailed case index](CASES.md) for audit scores and explicit boundaries.
 <!-- case-catalog:end -->

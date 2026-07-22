@@ -1,0 +1,7 @@
+parameter,paper_value,generated_value,unit,provenance
+trap_frequency_kHz,200.0,200.0,kHz,paper_input
+gate_time_us,5.0,5.0,us,analytic_reference
+ion_zero_point_nm,12.0,12.156135899589664,nm,analytic_reference
+coupling_kHz,71.0,70.71067811865474,kHz,analytic_reference
+d_CZ_um,12.0,11.442350903026469,um,analytic_reference_from_paper_C4
+max_loop_radius,0.7071067811865475,0.7071067811865475,quanta,analytic_reference

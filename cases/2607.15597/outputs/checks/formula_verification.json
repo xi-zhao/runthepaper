@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "paper_id": "2607.15597",
+  "status": "passed",
+  "summary": {"cards_total": 13, "numeric_open": 13, "numeric_closed": 0},
+  "cards": [
+    {"id": "EQC001", "status": "verified", "code": "code/src/gate_model.py::branch_forces"},
+    {"id": "EQC002", "status": "verified", "code": "code/src/gate_model.py::displacement"},
+    {"id": "EQC003", "status": "verified", "code": "code/src/gate_model.py::GateParameters"},
+    {"id": "EQC004", "status": "verified", "code": "code/src/gate_model.py::reduced_spin_state"},
+    {"id": "EQC005", "status": "verified", "code": "code/src/gate_model.py::decay_infidelity"},
+    {"id": "EQC006", "status": "reconstructed", "code": "code/src/gate_model.py::anharmonic_infidelity"},
+    {"id": "EQC007", "status": "reconstructed", "code": "code/src/gate_model.py::chain_gate_duration_us"},
+    {"id": "EQC008", "status": "reconstructed", "code": "code/src/gate_model.py::interconnect_times_us"},
+    {"id": "EQC009", "status": "verified", "code": "code/src/gate_model.py::hybrid_storage_error_per_operation"},
+    {"id": "EQC010", "status": "source_only", "code": "code/src/gate_model.py::fowler_logical_error"},
+    {"id": "EQC011", "status": "verified", "code": "code/src/ion_chain.py::optimize_toggle_schedule"},
+    {"id": "EQC012", "status": "verified", "code": "code/src/gate_model.py::cz_distance_m"},
+    {"id": "EQC013", "status": "source_only", "code": "code/src/gate_model.py::total_gate_infidelity"}
+  ]
+}

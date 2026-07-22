@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "paper_id": "2607.15597",
+  "status": "passed",
+  "decision": {
+    "status": "feature_reproduced_large_scale_blocked",
+    "reason": "All declared local targets have evidence; author-run equivalence remains blocked by missing scientific inputs."
+  },
+  "runtime_seconds": 2.999954207916744,
+  "generated_data_provenance": "independent_numerics_and_analytic_reference",
+  "results": {
+    "T001_fig2": {
+      "max_closure_displacement_T": 1.7319121124709863e-16,
+      "concurrence_T": 0.9999999999999997,
+      "concurrence_2T": 1.4618879089163042e-12,
+      "population_sum_max_error": 1.1102230246251565e-16
+    },
+    "T002_fig3": {
+      "duration_N1_us": 5.0,
+      "duration_N100_us": 15.0,
+      "low_l_infidelity_N100": 0.0706460117874711,
+      "circular_infidelity_N100": 0.0010630212380738204
+    },
+    "T003_fig4": {
+      "hybrid_photon_cross_um": 1995.0,
+      "hybrid_ion_cross_um": null,
+      "hybrid_faster_than_ion_for_positive_distance": true,
+      "pure_atom_error_per_op": 0.00014282467738784457,
+      "pure_ion_error_per_op": 2.1121640344904525e-06,
+      "source_consistency": {
+        "status": "inconsistency_found",
+        "caption_model": "2*p_T/N_ops",
+        "caption_model_derivative": "-2*p_T/N_ops^2 < 0",
+        "generated_curve_monotonic": "decreasing",
+        "source_figure_visual_slope": "increasing",
+        "source_claim_consistent": false,
+        "interpretation": "The reproduction follows the caption and main-text amortization logic; it does not imitate the contradictory source raster."
+      }
+    },
+    "T004_T005_tables": {
+      "zero_point_nm": 12.156135899589664,
+      "d_CZ_um": 11.442350903026469,
+      "coupling_kHz": 70.71067811865474
+    },
+    "T007_figs1": {
+      "frequencies": [
+        0.9999999999999971,
+        1.7320508075688752,
+        2.4168423481991836,
+        3.0671821118581644,
+        3.6914404150743403,
+        4.295508978559686,
+        4.8834694071613365,
+        5.458191822187297,
+        6.0217624569023,
+        6.575751632831298
+      ],
+      "segment_count": 25,
+      "closure_cost": 4.168142363514063e-28,
+      "max_closure_residual": 1.0640924456569287e-14,
+      "source_segment_conflict": {
+        "prose_and_figure": 25,
+        "table_s4": 17
+      }
+    },
+    "T008_figs3": {
+      "n60_anharmonic_at_nbar1": 0.0007879928053025468,
+      "n80_anharmonic_at_nbar1": 0.00019708756810791702,
+      "eta2_ratio_at_nbar1": 3.998186252270739
+    },
+    "T009_table_s7": {
+      "steane_atom_ion": 7,
+      "bb_atom_ion": 72,
+      "bb_per_logical": 6
+    },
+    "T010_figs5_table_s11": {
+      "hybrid_boost": 66.0,
+      "atom_threshold": 0.0057,
+      "hybrid_threshold": 0.0034
+    },
+    "T011_T014_circular": {
+      "circular_concurrence_T_approx": 0.999167013792458,
+      "circular_n60_generated_distance_um": 11.686023633268444,
+      "circular_n80_generated_distance_um": 17.54069907143107
+    }
+  },
+  "limitations": [
+    "Thermal figures use the disclosed analytic feature model, not QuTiP.",
+    "Fig. 3 uses a source-constrained duration surrogate; author schedules are absent.",
+    "qLDPC curves are Fowler projections; published MC markers are not rerun.",
+    "Fig. 4(b) source raster conflicts with its caption; reproduction follows the caption."
+  ]
+}

@@ -39,6 +39,7 @@ Every case provides a public overview, Chinese and English getting-started notes
 | [`prlb-f37350e-093`](cases/prlb-f37350e-093/README.md) | Shooting-point exchange, path-space sampling, and free-energy reconstruction | Paper-figure feature reproduction and benchmark statistics audit | 70.10 |
 | [`2502.20558`](cases/2502.20558/README.md) | Delayed-erasure decoding, qubit lifecycle reduction, and loss-aware fault-tolerant quantum algorithms | Mixed analytic and mechanism feature reproduction | 74.22 |
 | [`2005.12667`](cases/2005.12667/README.md) | Circuit quantization, Jaynes-Cummings and dispersive physics, open quantum systems, measurement, control, bosonic codes, and microwave quantum optics | Full formula derivation and numerical-feature reproduction | 90.28 |
+| [`2607.15597`](cases/2607.15597/README.md) | Rydberg atom-ion geometric gates, multi-ion mode closure, deterministic interconnect timing, and hybrid qLDPC memory | Numerical feature reproduction with pixel-registered figures | 75.21 |
 
 The audit score records evidence strength at export time. It is not a visual-style rating, and it does not erase the limitation stated by each case.
 It is also not a cross-paper ranking or a publishing threshold: publication readiness comes from satisfying the public case contract and stating the remaining boundary honestly.

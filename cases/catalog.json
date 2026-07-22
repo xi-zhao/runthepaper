@@ -2108,6 +2108,86 @@
           "figure": "t020_comparison.png"
         }
       ]
+    },
+    {
+      "paper_id": "2607.15597",
+      "title": "Deterministic atom-shuttle interconnects via ultrafast atom-ion entangling gate",
+      "topic": "Rydberg atom-ion geometric gates, multi-ion mode closure, deterministic interconnect timing, and hybrid qLDPC memory",
+      "preprint": {
+        "status": "recorded",
+        "identifier": "arXiv:2607.15597",
+        "title": "Deterministic atom-shuttle interconnects via ultrafast atom-ion entangling gate",
+        "url": "https://arxiv.org/abs/2607.15597"
+      },
+      "publication": {
+        "status": "not_recorded",
+        "checked_at": "2026-07-23"
+      },
+      "status": "Numerical feature reproduction with pixel-registered figures",
+      "similarity_level": "numerical_feature_reproduction",
+      "audit_score": 75.21,
+      "summary": "Independently reconstructs the single-ion geometric CZ gate, exact operating-point and decay tables, ten-ion axial modes with a deterministic 25-segment closure sequence, the approximately 2 mm interconnect crossover, disclosed qLDPC projections, and circular-state feature models. Eight generated figures are also registered to the paper canvas; all dimensions match exactly, while strict full-image pixel identity is explicitly not claimed.",
+      "limitation": "Author curve points and optimized Fig. 3 schedules are unavailable; the thermal and circular figures use labelled analytic feature models rather than the full QuTiP/Lindblad workflow; MQDT and qLDPC Monte Carlo require unpublished scientific inputs and run metadata. Pixel registration reaches best SSIM 0.8297 and 0 of 8 images meet the strict 0.95 threshold.",
+      "run_scripts": [
+        "run_reproduction.py"
+      ],
+      "extra_dependencies": [],
+      "additional_resources": [
+        {
+          "label": "Full human-readable derivation trace",
+          "path": "docs/DERIVATION_TRACE.md"
+        },
+        {
+          "label": "Formula verification summary",
+          "path": "outputs/checks/formula_verification.json"
+        },
+        {
+          "label": "Pixel-registration metrics",
+          "path": "outputs/checks/pixel_metrics.json"
+        }
+      ],
+      "featured_results": [
+        {
+          "paper_item": "Fig. 2",
+          "result": "Closed branch trajectories, CZ populations, and concurrence at the paper operating point",
+          "figure": "fig2_pixel_registered.png",
+          "check": "reproduction_result.json"
+        },
+        {
+          "paper_item": "Fig. S1",
+          "result": "Ten-ion axial spectrum and independently optimized simultaneous mode closure",
+          "figure": "figs1_multimode_pixel_registered.png",
+          "check": "reproduction_result.json"
+        },
+        {
+          "paper_item": "Fig. 4",
+          "result": "Approximately 2 mm interconnect crossover and caption-consistent passive-memory amortization",
+          "figure": "fig4_reproduction.png",
+          "check": "source_consistency.json"
+        },
+        {
+          "paper_item": "Fig. S5",
+          "result": "Disclosed Fowler qLDPC projections and architecture timing",
+          "figure": "figs5_qldpc_projection_reproduction.png",
+          "check": "reproduction_result.json"
+        }
+      ],
+      "comparison_attribution": "Mu Qiao",
+      "comparison_note": "Each board uses a limited attributed figure excerpt from Mu Qiao, arXiv:2607.15597, beside an independently generated pixel-registered render and an absolute-difference panel. Reference pixels are used only after rendering for presentation diagnostics; they do not enter the numerical model or generated image. The boards do not establish author-data-level or pixel-exact equivalence.",
+      "comparison_results": [
+        {
+          "paper_item": "Fig. 2",
+          "figure": "fig2_pixel_comparison.png"
+        },
+        {
+          "paper_item": "Fig. 4",
+          "figure": "fig4_pixel_comparison.png"
+        },
+        {
+          "paper_item": "Fig. S1",
+          "figure": "figs1_pixel_comparison.png"
+        }
+      ]
     }
   ]
 }

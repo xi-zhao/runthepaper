@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "score_model": "rra_similarity_v1",
+  "paper_id": "2607.15597",
+  "status": "passed",
+  "overall_score": 75.21,
+  "similarity_level": "numerical_feature_reproduction",
+  "interpretation": "The score evaluates scientific features and provenance, not visual styling or pixel similarity.",
+  "targets": [
+    {"target_id": "T001", "paper_item": "Fig. 2", "score": 80, "parameter_match": "paper_exact", "formula_gate": "verified", "verdict": "feature_match"},
+    {"target_id": "T002", "paper_item": "Fig. 3", "score": 50, "parameter_match": "unknown", "formula_gate": "reconstructed", "verdict": "partial"},
+    {"target_id": "T003", "paper_item": "Fig. 4", "score": 76, "parameter_match": "paper_subset", "formula_gate": "verified", "verdict": "source_inconsistency"},
+    {"target_id": "T004", "paper_item": "Table S1", "score": 99, "parameter_match": "paper_exact", "formula_gate": "verified", "verdict": "reproduced"},
+    {"target_id": "T005", "paper_item": "Table S2", "score": 100, "parameter_match": "paper_exact", "formula_gate": "verified", "verdict": "reproduced"},
+    {"target_id": "T007", "paper_item": "Fig. S1", "score": 80, "parameter_match": "paper_subset", "formula_gate": "verified", "verdict": "feature_match"},
+    {"target_id": "T008", "paper_item": "Fig. S3", "score": 55, "parameter_match": "proxy_model", "formula_gate": "reconstructed", "verdict": "proxy_feature"},
+    {"target_id": "T009", "paper_item": "Table S7", "score": 100, "parameter_match": "paper_exact", "formula_gate": "not_applicable", "verdict": "reproduced"},
+    {"target_id": "T010", "paper_item": "Fig. S5", "score": 80, "parameter_match": "paper_exact", "formula_gate": "source_only", "verdict": "projection_match"},
+    {"target_id": "T011", "paper_item": "Table S13", "score": 89, "parameter_match": "paper_exact", "formula_gate": "source_only", "verdict": "feature_match"},
+    {"target_id": "T012", "paper_item": "Fig. S6", "score": 55, "parameter_match": "proxy_model", "formula_gate": "source_only", "verdict": "proxy_feature"},
+    {"target_id": "T013", "paper_item": "Fig. S7", "score": 55, "parameter_match": "proxy_model", "formula_gate": "reconstructed", "verdict": "proxy_feature"},
+    {"target_id": "T014", "paper_item": "Table S14", "score": 89, "parameter_match": "paper_exact", "formula_gate": "source_only", "verdict": "feature_match"}
+  ]
+}
