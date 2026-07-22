@@ -14,6 +14,7 @@ Reproduces the full executable theory chain of the circuit-QED review: 30 formul
 
 - [中文复现 Note](note/reproduction-note.zh-CN.md)
 - [English reproduction note](note/reproduction-note.en.md)
+- [RTP WeChat article / 公众号推文](docs/WECHAT_ARTICLE.zh-CN.md)
 - [Full step-by-step derivation trace](docs/DERIVATION_TRACE.md)
 - [Formula verification report](docs/FORMULA_VERIFICATION.md)
 - [Consistency and source-version audit](docs/CONSISTENCY_REPORT.md)
