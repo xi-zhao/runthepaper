@@ -12,6 +12,7 @@ Independently reconstructs the single-ion geometric CZ gate, exact operating-poi
 
 - [中文复现 Note](note/reproduction-note.zh-CN.md)
 - [English reproduction note](note/reproduction-note.en.md)
+- [RTP WeChat article / 公众号推文](docs/WECHAT_ARTICLE.zh-CN.md)
 - [Full human-readable derivation trace](docs/DERIVATION_TRACE.md)
 - [Formula verification summary](outputs/checks/formula_verification.json)
 - [Pixel-registration metrics](outputs/checks/pixel_metrics.json)

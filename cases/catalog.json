@@ -2134,6 +2134,10 @@
       "extra_dependencies": [],
       "additional_resources": [
         {
+          "label": "RTP WeChat article / 公众号推文",
+          "path": "docs/WECHAT_ARTICLE.zh-CN.md"
+        },
+        {
           "label": "Full human-readable derivation trace",
           "path": "docs/DERIVATION_TRACE.md"
         },
